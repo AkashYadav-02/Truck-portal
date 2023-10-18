@@ -1,0 +1,54 @@
+
+[
+
+	{ "Date": "2023-11-01", "Description": "Repayment","Principal": "$2,771","EMI":"$3,244","Verdanaest":"$473","LoanAmount":"$69,019","APR":"7.90%" },
+
+	{ "Date": "2023-12-01", "Description": "Repayment","Principal": "$2,789","EMI":"$3,244","Verdanaest":"$454","LoanAmount":"$66,230","APR":"7.90%" },
+
+	{ "Date": "2024-01-01", "Description": "Repayment","Principal": "$2,808","EMI":"$3,244","Verdanaest":"$436","LoanAmount":"$63,422","APR":"7.90%" },
+
+	{ "Date": "2024-02-01", "Description": "Repayment","Principal": "$2,826","EMI":"$3,244","Verdanaest":"$418","LoanAmount":"$60,596","APR":"7.90%" },
+
+	{ "Date": "2024-03-01", "Description": "Repayment","Principal": "$2,845","EMI":"$3,244","Verdanaest":"$399","LoanAmount":"$57,751","APR":"7.90%" },
+
+	{ "Date": "2024-04-01", "Description": "Repayment","Principal": "$2,863","EMI":"$3,244","Verdanaest":"$380","LoanAmount":"$54,888","APR":"7.90%" },
+
+	{ "Date": "2024-05-01", "Description": "Repayment","Principal": "$2,882","EMI":"$3,244","Verdanaest":"$361","LoanAmount":"$52,006","APR":"7.90%" },
+
+	{ "Date": "2024-06-01", "Description": "Repayment","Principal": "$2,901","EMI":"$3,244","Verdanaest":"$342","LoanAmount":"$49,105","APR":"7.90%" },
+
+	{ "Date": "2024-07-01", "Description": "Repayment","Principal": "$2,920","EMI":"$3,244","Verdanaest":"$323","LoanAmount":"$46,184","APR":"7.90%" },
+
+	{ "Date": "2024-08-01", "Description": "Repayment","Principal": "$2,940","EMI":"$3,244","Verdanaest":"$304","LoanAmount":"$43,245","APR":"7.90%" },
+
+	{ "Date": "2024-09-01", "Description": "Repayment","Principal": "$2,959","EMI":"$3,244","Verdanaest":"$285","LoanAmount":"$40,286","APR":"7.90%" },
+
+	{ "Date": "2024-10-01", "Description": "Repayment","Principal": "$2,978","EMI":"$3,244","Verdanaest":"$265","LoanAmount":"$37,307","APR":"7.90%" },
+
+	{ "Date": "2024-11-01", "Description": "Repayment","Principal": "$2,998","EMI":"$3,244","Verdanaest":"$246","LoanAmount":"$34,309","APR":"7.90%" },
+
+	{ "Date": "2024-12-01", "Description": "Repayment","Principal": "$3,018","EMI":"$3,244","Verdanaest":"$226","LoanAmount":"$31,292","APR":"7.90%" },
+
+	{ "Date": "2025-01-01", "Description": "Repayment","Principal": "$3,038","EMI":"$3,244","Verdanaest":"$206","LoanAmount":"$28,254","APR":"7.90%" },
+
+	{ "Date": "2025-02-01", "Description": "Repayment","Principal": "$3,058","EMI":"$3,244","Verdanaest":"$186","LoanAmount":"$25,197","APR":"7.90%" },
+
+	{ "Date": "2025-03-01", "Description": "Repayment","Principal": "$3,078","EMI":"$3,244","Verdanaest":"$166","LoanAmount":"$22,119","APR":"7.90%" },
+
+	{ "Date": "2025-04-01", "Description": "Repayment","Principal": "$3,098","EMI":"$3,244","Verdanaest":"$146","LoanAmount":"$19,021","APR":"7.90%" },
+
+	{ "Date": "2025-05-01", "Description": "Repayment","Principal": "$3,118","EMI":"$3,244","Verdanaest":"$125","LoanAmount":"$15,903","APR":"7.90%" },
+
+	{ "Date": "2025-06-01", "Description": "Repayment","Principal": "$3,139","EMI":"$3,244","Verdanaest":"$105","LoanAmount":"$12,764","APR":"7.90%" },
+
+	{ "Date": "2025-07-01", "Description": "Repayment","Principal": "$3,160","EMI":"$3,244","Verdanaest":"$84","LoanAmount":"$9,604","APR":"7.90%" },
+
+	{ "Date": "2025-08-01", "Description": "Repayment","Principal": "$3,180","EMI":"$3,244","Verdanaest":"$63","LoanAmount":"$6,424","APR":"7.90%" },
+
+	{ "Date": "2025-09-01", "Description": "Repayment","Principal": "$3,201","EMI":"$3,244","Verdanaest":"$42","LoanAmount":"$3,222","APR":"7.90%" },
+
+	{ "Date": "2025-10-01", "Description": "Repayment","Principal": "$3,222","EMI":"$3,244","Verdanaest":"$21","LoanAmount":"$0","APR":"7.90%" }
+
+ 
+
+]

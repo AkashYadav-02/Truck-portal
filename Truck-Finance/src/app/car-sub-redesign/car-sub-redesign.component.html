@@ -1,0 +1,631 @@
+<app-navbar-after-home-page [navtheme]="'whitetheme'"></app-navbar-after-home-page>
+
+<div style="padding-top: 5.4rem; ">
+    <app-stepper [firstBg]="'#B0D7E9'" [first]="'black'" [ani]="'first'"></app-stepper>
+</div>
+
+<!-- <div style="width: 100%; margin-top: -4.5rem; ">
+    <app-stepper [firstBg]="'#DB2423'" [first]="'white'"></app-stepper>
+</div> -->
+
+<div class="car-subs">
+    <div class="car-subs-header d-flex">
+        <p style="cursor: poVerdana;" (click)="homepage()">HOME</p>
+        <img src="../../assets/logos/Vector.png">
+        <!-- <p>POPULAR CARS</p> -->
+        <!-- <img src="../../assets/logos/Vector.png"> -->
+        <p style="cursor: poVerdana;" (click)="backPage()">TOYOTA CARS</p>
+        <img src="../../assets/logos/Vector.png">
+        <p>{{techDetailsParameter.name.toUpperCase()}}</p>
+    </div>
+    <div class="bodyclass">
+        <div class="right-section">
+            <div class="car-images">
+                <div class="car-main-img">
+                    <img src="{{techDetailsParameter.imgUrl}}" alt="car-img">
+                </div>
+                <div class="car-etc-img-div">
+                    <img src="../../assets/Toyota-Fortuner-Interior 1.png" alt="...">
+                    <img src="../../assets/toyota_fortuner_29 1.png" alt="...">
+                </div>
+            </div>
+
+            <div class="left-card my-3 py-3 px-2 d-flex" style="gap: 50px;">
+                <div>
+                    <div class="car-details py-2 px-2">
+                        <h2>{{techDetailsParameter.name}}</h2>
+                        <p class="mb-4 mt-3">Engine Capacity {{specificaiton.engine_capacity}} ·
+                            {{specificaiton.Fuel_Type}} · {{specificaiton.transmmission_type}} </p>
+                        <h2>Service Package</h2>
+
+                        <div class="d-flex radio-btn-group mt-3">
+                            <label class="mt-auto mb-auto stanAdv" for="">Standard</label>
+                            <input class="ms-4 checked-radio" type="radio" name="warranty" id="specifyColor"
+                                checked="checked" (change)="selecService(0)" value="Standard" [(ngModel)]="serviceName">
+                            <p class="mt-auto mb-auto ms-3">3 year warranty with free service</p>
+                        </div>
+
+                        <div class="d-flex radio-btn-group mt-3">
+                            <label class="mt-auto mb-auto stanAdv" for="">Advanced</label>
+                            <input class="ms-4 checked-radio" type="radio" name="warranty" id="specifyColor"
+                                (change)="selecService(1)" value="Advanced" [(ngModel)]="serviceName">
+                            <p class="mt-auto mb-auto ms-3">5 year warranty with RSA</p>
+                        </div>
+
+                        <h2 class="mt-4">Mileage Package</h2>
+                        <div>
+                            <div class="d-flex radio-btn-group mt-3">
+                                <input class=" mileage-radio" type="radio" name="Mileage" id="specifyColor"
+                                    checked="checked" (change)="selecMile(0)">
+                                <label class="mt-auto mb-auto mr-5 ms-3 mileage-text1 milegae-cc d-flex" for="">Low
+                                    <span class="label-des">10,000 KM/Year</span>
+                                    <div class="d-flex">
+                                        <img class="exclamation-icon icon" src="../../assets/info-circle.png" alt="">
+                                        <div class="info">Charged at $1.00 for every additional 10 Kms</div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="d-flex radio-btn-group mt-3">
+                                <input class=" mileage-radio" type="radio" name="Mileage" id="specifyColor"
+                                    (change)="selecMile(1)">
+
+                                <label class="mt-auto mb-auto mr-5 ms-3 mileage-text2 milegae-cc d-flex" for="">Normal
+                                    <span class="label-des">15,000 KM/Year
+                                    </span>
+                                    <div class="d-flex">
+                                        <img class="exclamation-icon icon" src="../../assets/info-circle.png" alt="">
+                                        <div class="info">Charged at $2.00 for every additional 10 Kms</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="d-flex radio-btn-group mt-3">
+
+                                <input class=" mileage-radio" type="radio" name="Mileage" id="specifyColor"
+                                    (change)="selecMile(2)">
+
+                                <label class="mt-auto mb-auto mr-5 ms-3 mileage-text3 milegae-cc d-flex" for="">Ultimate
+                                    <span class="label-des">25,000 KM/Year</span>
+                                    <div class="d-flex">
+                                        <img class="exclamation-icon icon" src="../../assets/info-circle.png" alt="">
+                                        <div class="info">Charged at $5.00 for every additional 10 Kms</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="left-card-right-side ms-5">
+
+                    <div class="mt-2 d-flex select-variant">
+                        <h2>Select Variant</h2>
+                    </div>
+                    <div class="select-var-div">
+                        <div *ngFor="let car of carDetails">
+                            <div *ngIf="techDetailsParameter.name==car.name">
+                                <div class="d-flex radio-btn-group mt-2"
+                                    *ngFor="let vari of car.select_variant;let idx=index">
+                                    <input class="ms-4 checked-radio" type="radio" name="var" value={{idx}}
+                                        id="specifyColor" [checked]="(idx === 0)" (change)="selecVar(idx)">
+                                    <p class="mt-auto mb-auto ms-3">{{vari}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="color-div">
+
+                        <p class="mt-4">Color</p>
+
+                        <div style="display: flex;">
+
+                            <div *ngFor="let item of colorList">
+
+                                <button class="dot redbtn color{{item}}" style="outline: solid 2px #a38c8c;"
+                                    (click)="outline($event)"></button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <h2 class="mt-4 accessories">Accessories <span>(optional)</span></h2>
+
+                        <div class="d-flex mt-3 my-2">
+                            <div>
+
+                                <img (click)="addBorder()" id="speedometer" class="speedometer iconss"
+                                    src="../../assets/logos/dashcam.png" style="margin-right: 20px;">
+                                <div class="info">Dashcam</div>
+                            </div>
+
+                            <div>
+                                <img (click)="addBorder2()" class="iconss" id="engine" src="../../assets/logos/built-in-wifi.jpg">
+                                <div class="info">Built-in WiFi</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="rightcard">
+
+            <p class="lc-header" (click)="onClick()">Subscription Type<i class="fa-solid"
+                    [class.fa-angle-down]="isUpperVisible" [class.fa-angle-up]="!isUpperVisible"></i></p>
+
+            <div [style.display]="isUpperVisible ? 'inherit' : 'none'"
+                [style.height]="isUpperVisible ? 'fit-content' : '0'">
+
+                <div class="radio-body">
+
+                    <div class="leasehire form-check form-check-inline"
+                        style="margin-left: -21px; margin-right: 5.8rem;">
+
+                        <input type="radio" name="radio1" [(ngModel)]="loanHire" value="Loan" checked>
+
+                        <label class="form-check-label" for="inlineRadio1">Loan</label>
+
+                    </div>
+
+                    <div class="leasehire form-check form-check-inline">
+
+                        <input type="radio" name="radio1" [(ngModel)]="loanHire" value="HirePurchase">
+
+                        <label class="form-check-label" for="inlineRadio1">Hire Purchase</label>
+
+                    </div>
+
+                </div>
+
+
+
+                <p class='subhead'>Tenure <span class="text-secondary">(Months)</span></p>
+
+                <p style="font-weight: bold; font-size: 13px; color: grey; margin-top: -15px;">Select Preferred
+
+                    Tenure</p>
+
+                <div class="numbers select-size">
+
+                    <input (click)="calculateTenure('small')" class="numbtn" type="radio" name="s-size" id="small"
+                        value="small" [(ngModel)]="selectedRadio" />
+
+                    <input (click)="calculateTenure('medium')" class="numbtn" type="radio" name="s-size" id="medium"
+                        value="medium" [(ngModel)]="selectedRadio" />
+
+                    <input (click)="calculateTenure('large')" class="numbtn" type="radio" name="s-size" id="large"
+                        value="large" [(ngModel)]="selectedRadio" />
+
+                    <input (click)="calculateTenure('xl')" class="numbtn" type="radio" name="s-size" id="x-large"
+                        value="xl" [(ngModel)]="selectedRadio" />
+
+                    <input (click)="calculateTenure('xxl')" class="numbtn" type="radio" name="s-size" id="xx-large"
+                        value="xxl" [(ngModel)]="selectedRadio" />
+
+                    <input (click)="calculateTenure('xxxl')" class="numbtn" type="radio" name="s-size" id="xtra-large"
+                        value="xxxl" [(ngModel)]="selectedRadio" />
+
+                    <label for="small" class="option-text">
+                        <p>24</p>
+                    </label>
+
+                    <label for="medium" class="option-text">
+                        <p>36</p>
+                    </label>
+                    <label for="large" class="option-text">
+                        <p>48</p>
+                    </label>
+                    <label for="x-large" class="option-text">
+                        <p>60</p>
+                    </label>
+                    <label for="xx-large" class="option-text">
+                        <p>72</p>
+                    </label>
+                    <label for="xtra-large" class="option-text">
+                        <p>84</p>
+                    </label>
+
+                </div>
+
+
+
+
+
+                <p class='subhead'>Ownership</p>
+
+                <div class="radio-body jointBusi">
+                    <div class="form-check form-check-inline" style="margin-left: -18px;">
+                        <input type="radio" name="radio2" value="Individual" class="radiobtn" [(ngModel)]="ownership">
+                        <label class="form-check-label" for="inlineRadio1">Individual</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input type="radio" name="radio2" value="Joint" class="radiobtn" [(ngModel)]="ownership">
+                        <label class="form-check-label" for="inlineRadio2">Joint</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" name="radio2" value="Business" class="radiobtn" [(ngModel)]="ownership">
+                        <label class="form-check-label" for="inlineRadio2">Business</label>
+                    </div>
+                </div>
+
+                <div [style.display]="loanHire=='Loan'? 'none' : 'inherit'">
+
+                    <div class="downpayment">
+
+                        <p class="subhead">Downpayment : </p>
+
+                        <input type="text" placeholder="$0.00">
+
+                    </div>
+
+                    <p style="font-size: 11px; margin-top: -6px; font-weight: bold; color:grey">
+
+                        <!-- Maximum amount should be: $ {{maxDownPayment}}</p> -->
+
+                </div>
+
+
+
+                <div [style.display]="loanHire=='Loan'? 'inherit' : 'none'">
+
+                    <div class="d-flex" style="align-items: baseline;">
+
+                        <p class='subhead'>Buyback</p>
+
+                        <div class="form-check form-switch" style="margin-left: 35px;">
+
+                            <input class="form-check-input buyback-toggle" type="checkbox" role="switch"
+                                id="flexSwitchCheckChecked" checked>
+
+                            <label class="form-check-label" for="flexSwitchCheckChecked">Yes</label>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="d-flex perAm" style="gap:10px; justify-content: space-between;">
+
+                        <div class="d-flex">
+
+                            <p><b>Percentage: </b></p>
+
+                            <p class="rangerr"><b>{{percentageValue}} %</b></p>
+
+                        </div>
+
+                        <div class="d-flex">
+
+                            <p><b>Amount: </b></p>
+
+                            <p class="amountt"><b>$ {{numberWithCommas(amm)}}</b></p>
+
+                        </div>
+
+                    </div>
+
+                    <p style="font-size: 11px; margin-top: -10px; margin-bottom: 10px; font-weight: bold; color:grey">
+
+                        Adjust Slider or Type in the Percentage</p>
+                    <!-- #E42346; -->
+                    <input type="range" [(ngModel)]="percentageValue" (input)="updatePercentage($event)" id="vol"
+                        name="vol" min="5" max="35" list="tickmarks"
+                        style=" accent-color: #B7C301; width: 100%; height: 5px;" step="5">
+
+                    <div></div>
+
+                    <datalist id="tickmarks">
+                        <option value="0" label="5%"></option>
+                        <option value="15" label="10%"></option>
+                        <option value="30" label="15%"></option>
+
+                        <option value="45" label="20%"></option>
+
+                        <option value="60" label="25%"></option>
+
+                        <option value="75" label="30%"></option>
+
+                        <option value="100" label="35%"></option>
+
+                    </datalist>
+
+                </div>
+
+
+
+                <!-- <div class="container text-center mt-3">
+
+                        <button class="btn btn-secondary buybtn mb-2" style="justify-content: center;">Buy Back Pack
+
+                            Amount</button>
+
+                    </div> -->
+
+            </div>
+
+            <hr>
+
+            <p class="lc-header" (click)="onTap()">Quote Summary
+                <i class="fa-solid" [class.fa-angle-down]="isMidVisible" [class.fa-angle-up]="!isMidVisible"></i>
+            </p>
+
+            <div [style.display]="isMidVisible ? 'inherit' : 'none'"
+                [style.height]="isMidVisible ? 'fit-content' : '0'">
+                <div class="qoute-fields">
+                    <div class="qoute-head1">
+                        <label>YOUR ON ROAD CASH PRICE:</label>
+                        <label>$ {{numberWithCommas(price)}}</label>
+                    </div>
+
+                    <div class="qoute-radio-body1" style="margin-left: 0;">
+                        <div class="qoute-leasehire form-checkbox form-check-inline">
+                            <input type="checkbox" name="radio11" checked disabled>
+                            <label class="form-check-label" for="inlineRadio1">{{variantName}}</label>
+                        </div>
+                        <label class="qoute-num">$ {{numberWithCommas(variant * 10000)}}</label>
+                    </div>
+                    <div class="qoute-radio-body1" style="margin-left: 0;">
+                        <div class="qoute-leasehire form-checkbox form-check-inline">
+                            <input type="checkbox" name="radio12" checked disabled>
+                            <label class="form-check-label" for="inlineRadio1">{{serviceName}}</label>
+                        </div>
+                        <label class="qoute-num">$ {{numberWithCommas(service * 10000)}}</label>
+                    </div>
+                    <div class="qoute-radio-body1" style="margin-left: 0;">
+                        <div class="qoute-leasehire form-checkbox form-check-inline">
+                            <input type="checkbox" id="radio13" value="dashcam" disabled>
+                            <label class="form-check-label" for="inlineRadio1">Dashcam</label>
+                        </div>
+                        <label class="qoute-num">{{dashCamPrice}}</label>
+                    </div>
+                    <div class="qoute-radio-body1" style="margin-left: 0;">
+                        <div class="qoute-leasehire form-checkbox form-check-inline">
+                            <input type="checkbox" id="radio14" value="wifi" disabled>
+                            <label class="form-check-label" for="inlineRadio1">Built-in WiFi</label>
+                        </div>
+                        <label class="qoute-num">{{wifiPrice}}</label>
+                    </div>
+
+
+                    <div class="qoute-head2">
+                        <label>Total On-Road Price:</label>
+                        <label>$ {{numberWithCommas(storePrice)}}</label>
+                    </div>
+                    <div class="head2-body">
+                        <label>Finance Option: </label>
+                        <label>{{loanHire}}</label>
+
+                    </div>
+                    <div class="head2-body">
+                        <label>Program Downpayment/RV</label>
+                        <label>$0000</label>
+                    </div>
+
+                    <div class="qoute-head2">
+                        <label>Total Amount of Finance:</label>
+                        <label>$ {{numberWithCommas(storePrice)}}</label>
+                    </div>
+
+                    <div class="head2-body">
+                        <label>Default Repayment Frequency</label>
+                        <label>Monthly</label>
+                    </div>
+                    <div *ngFor="let ten of tenureList | keyvalue">
+                        <div class="head2-body" *ngIf="ten.key==selectedRadio">
+                            <label>Program Default Tenure</label>
+                            <label> {{ten.value}} Months</label>
+                        </div>
+
+                    </div>
+                    <div class="head2-body">
+                        <label>Program APR</label>
+                        <label>7.9%</label>
+                    </div>
+                    <div class="head2-body">
+                        <label>Applying as: </label>
+                        <label>{{ownership}}</label>
+                        <!-- <div class="qoute-radio-body">
+                            <div class="qoute-leasehire form-check-inline">
+                                <input type="radio" name="radio7" value="Loan" checked>
+                                <label for="inlineRadio1">Individual</label>
+                            </div>
+                            <div class="qoute-leasehire form-check-inline">
+                                <input type="radio" name="radio7" value="Lease">
+                                <label for="inlineRadio1">Joint</label>
+                            </div>
+                            <div class="qoute-leasehire form-check-inline">
+                                <input type="radio" name="radio7" value="Lease">
+                                <label for="inlineRadio1">Business</label>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="qoute-head2">
+                        <label>YOUR FINAL INSTALLMENT IS</label>
+                        <label>$ {{numberWithCommas(showEmi(calculateEMI(techDetailsParameter.price)))}}</label>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <hr>
+
+            <p class="lc-header" (click)="onPress()">Eligibility
+
+                <i class="fa-solid" [class.fa-angle-down]="isLowerVisible" [class.fa-angle-up]="!isLowerVisible"></i>
+
+            </p>
+            <form [formGroup]="eligibleForm">
+                <div [style.display]="isLowerVisible ? 'inherit' : 'none'"
+                    [style.height]="isLowerVisible ? 'fit-content' : '0'">
+
+
+
+                    <div class="fields">
+
+                        <div class="input-group d-flex">
+
+                            <p>Monthly Income : </p>
+                            <span class="input-group-text" id="basic-addon1">$</span>
+                            <input type="text" formControlName="Income" placeholder="0.00">
+
+                        </div>
+
+                        <div class="input-group d-flex">
+
+                            <p>Monthly Expenses : </p>
+                            <span class="input-group-text" id="basic-addon1">$</span>
+                            <input type="text" formControlName="Expense" placeholder="0.00">
+
+                        </div>
+
+                        <div class="input-group d-flex">
+                            <p>Monthly Liabilities : </p>
+                            <span class="input-group-text" id="basic-addon1">$</span>
+                            <input type="text" formControlName="Liabilities" placeholder="0.00">
+                        </div>
+
+                        <div class="non-dollar d-flex">
+                            <p>Years of Employment : </p>
+                            <input type="text" value="2">
+                        </div>
+
+                        <div class="non-dollar d-flex">
+                            <p>Age : </p>
+                            <input type="text">
+                        </div>
+
+                    </div>
+
+                    <div class="container text-center mt-3">
+
+                        <button (click)="checkNow()" class="btn btn-secondary checkbtn mb-3"
+                            style="justify-content: center;background-color:#B7C301 ; color:black">Check Now <i
+                                class="fa-solid fa-arrow-right"></i></button>
+
+                    </div>
+
+                    <div *ngIf="eligibality() == 'true'" class="mt-3">
+                        <h5 style="font-family:Verdana  ;font-weight: 800;">RESULT : <span class="text"
+                                style="color: rgb(0, 187, 12);  font-family:Verdana  ;font-weight: 800;"><b>ELIGIBLE</b></span>
+                        </h5>
+                    </div>
+                    <div *ngIf="eligibality() == 'false'">
+                        <h5 style="font-family:Verdana  ;font-weight: 800;">RESULT : <span class="text"
+                                style="color: rgb(232, 8, 8);  font-family:Verdana  ;font-weight: 600;"><b>Please Add an
+                                    Additional Income Source</b></span>
+
+                        </h5>
+                    </div>
+                    <div *ngIf="eligibality() == 'none'">
+                        <h5 style="font-family:Verdana  ;font-weight: 800;">RESULT : <span class="text"
+                                style="color: rgb(232, 8, 8);  font-family:Verdana  ;font-weight: 600;"><b>
+                                </b></span>
+
+                        </h5>
+                    </div>
+
+                    <!-- <p style="font-weight: bold; font-size: 14px; color: grey;">(You're eligible for an upgrade to
+
+                    higher variant)</p> -->
+                    <!-- #db0000; -->
+                    <p style="color: #0381BA; font-size: 14px; font-family: Verdana;"><b><U>SWITCH MODEL</U></b></p>
+
+                    <div style="display: flex; gap: 10px;">
+
+                        <div class="small-card">
+
+                            <img src={{techDetailsParameter.imgUrl}}>
+
+                        </div>
+
+                        <div class="small-card">
+
+                            <img src="../../assets/toyota vellfire.png">
+
+                        </div>
+
+                        <div class="small-card">
+
+                            <img src="../../assets/Cars/carr1.png">
+
+                        </div>
+
+                    </div><br>
+
+                    <div class="container text-center">
+
+                        <!-- #db0000; -->
+                        <p style="color: #0381BA; font-size: 14px; font-family: Verdana;"><b>View all <i
+                                    class="fa-solid fa-arrow-right"></i></b></p>
+
+                    </div>
+
+
+
+                </div>
+            </form>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="car-subs-footer">
+
+    <div class="cs-footer-com">
+
+        <!-- <button href="car-sub-submit" class=" roadprice">On-road price</button> -->
+
+        <h6 class="price">On Road Price: ${{numberWithCommas(storePrice)}}</h6>
+
+    </div>
+
+    <div class="cs-footer-com" style="padding-top: 5px;">
+
+        <h6 class="price" style="font-size: 15px;">Monthly Payment from:
+            ${{numberWithCommas(showEmi(calculateEMI(techDetailsParameter.price)))}}/m
+
+        </h6>
+
+        <div>
+            <img src="../../assets/logos/info-circle.png" style="height:15px; margin-right: 10px; margin-left: -12px;">
+        </div>
+
+        <h6 class="redtxt" style="font-size: 14px;">View Benefits</h6>
+
+    </div>
+
+    <div class="cs-footer-com" (click)="applyNow()">
+
+        <button class="btn roadprice">Apply Now</button>
+
+    </div>
+
+
+
+</div>

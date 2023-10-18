@@ -1,0 +1,280 @@
+<app-navbar-after-home-page [navtheme]="'whitetheme'"></app-navbar-after-home-page>
+
+<div class="an-pending">
+    <div class="card left-card border border-2">
+            <div (click)="redirect('car-sub')"  *ngFor="let car of carDetails">
+                <img class="car-card" src='{{techDetailsParameter.pramData.pramData.image}}'>
+            </div>
+              <h5 class="card-title" style="font-family: 'Verdana';"><b>Application ID: {{techDetailsParameter.pramData.tableData.appID}}</b></h5>
+            <div class="d-flex" style="gap:20px">
+                <div class="package-details" style="min-width: 15rem;">
+                    <p style="font-family: 'Verdana';"><b>Your chosen package: </b></p>
+                    <p style="font-family: 'Verdana'; color: #0381BA;"><b>Your current installment is:</b></p>
+                    <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>Your Total Amount of Finance </b></p>
+                    <p style="font-family: 'Verdana';">Down Payment</p>    
+                    <p style="font-family: 'Verdana';">Repayment Frequency </p>
+                    <p style="font-family: 'Verdana';">APR of </p>
+                    <p style="font-family: 'Verdana';">Add on (installment)</p>
+                    <!-- <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>Your Final Installment is</b></p> -->
+                    <p style="font-family: 'Verdana';"><b>Your first payment is</b></p>
+            
+                </div>
+                <div class="package-details" style="margin-right: 0;">
+                    <p style="font-family: 'Verdana';"><b>{{package}}</b></p>
+            
+                    <p style="font-family: 'Verdana'; color: #0381BA;"><b>${{numberWithCommas(techDetailsParameter.pramData.pramData.leftcard.currentInstallment)}} / month</b></p>
+            
+                    <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>{{numberWithCommas(techDetailsParameter.pramData.tableData.financing)}}</b></p>
+            
+                    <p style="font-family: 'Verdana';">{{techDetailsParameter.pramData.pramData.leftcard.downpayment}}</p>
+            
+                    <p style="font-family: 'Verdana';">Monthly</p>
+            
+                    <p style="font-family: 'Verdana';">{{techDetailsParameter.pramData.pramData.leftcard.APR}}</p>
+            
+                    <p style="font-family: 'Verdana';">{{techDetailsParameter.pramData.pramData.leftcard.addonInstallment}}</p>
+            
+                    <!-- <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>{{techDetailsParameter.pramData.pramData.leftcard.yourfinalinstallment}}</b></p> -->
+            
+                    <p style="font-family: 'Verdana';"><b>{{techDetailsParameter.pramData.pramData.leftcard.yourfirstpayment}}</b></p>
+            
+                </div>
+            </div>
+            <div class="package-details mt-1">
+                <p style="font-weight: 700; color: #0381BA;">Your monthly deduction starts from November 2023, every 1st of the month</p>
+            </div>
+    </div>
+    <div>
+        <div class="mb-3">
+            <div class="an-body">
+                <p><b>Application Status :</b> <span
+                        style="border-radius: 10px;
+                
+                        background: #0A8835; padding: 5px 10px; margin-left: 3rem; color: white;">Approved</span>
+                </p>
+                    <div>
+                            <img routerLink="/work-space" src="../../assets/arrow-circle-left.png">
+                    </div>
+            </div>
+
+        </div>
+
+        <div class="card right-side">
+
+            <p class="an-head">VEHICLE DETAILS:</p>
+
+            <div class="an-body">
+
+                <p><b>Engine :</b>  1.6L 4 Cylinder 150HP</p>
+
+                <p><b>Registration : </b> KA19EQ1316</p>
+
+                <p><b> Insurance : </b> 19EISQ4516</p>
+
+            </div>
+
+            <div class="an-drag">
+
+            </div>
+
+        </div>
+
+        <div class="card right-side">
+
+            <p class="an-head">DEALERSHIP FOR DELIVERY:</p>
+
+            <div class="an-body dealership">
+
+                <p class="deal"><b>Street :</b> 1 Lowther Street</p>
+
+                <p class="deal"><b>City :</b> Christchurch</p>
+
+                <p><b>State / Province / Area :</b> Sockburn</p>
+
+            </div>
+
+            <div class="an-body dealership">
+
+                <p class="deal"><b>Zip Code :</b> 0142</p>
+
+                <p class="deal"><b>Country :</b> New Zealand</p>
+
+            </div>
+
+        </div>
+
+ 
+
+        <div class="card right-side">
+
+            <div class="topnav">
+
+                
+                <a href="javascript:void(0);" (click)="showTransactionTable()" [ngClass]="{'active': activeLink === 'Repayment Schedule'}">Repayment Schedule</a>
+               
+                <a href="javascript:void(0);" (click)="showAccountDetails()" [ngClass]="{'active': activeLink === 'GIRO'}">GIRO</a>
+                
+                <a href="javascript:void(0);" (click)="showDisbursementDetails()"[ngClass]="{'active': activeLink === 'Disbursement History'}" >Disbursement History</a>
+
+            </div>
+
+ 
+
+            <div *ngIf="showAccount" style="margin-top: 1rem;">
+
+                <div class="d-flex request-disbursement" style="    float: right;margin-top: -4rem;">
+
+                    <div class="d-flex">
+
+                        <img style="width: 1.2rem; height: 1.2rem;" src="../assets/request.png" alt="img">
+
+                        <p>Request</p>
+
+                        <img style="width: 1.2rem; height: 1.2rem; margin-left:1rem;" src="../assets/receive-square-red.png" alt="img">
+
+                        <p style="color: #0381BA; margin-right: 1rem;">Download</p>
+
+                    </div>
+
+                </div>
+
+                <p class="an-head ">GIRO Details</p>
+
+                <div class="an-body accountDetails">
+                    <p><b>Bank and Branch Name:</b> {{ accountDetails.bankandbranchname }}</p>
+                    
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <p><b>Account Name:</b> {{ accountDetails.AccounName }}</p>
+
+ 
+
+                </div>
+
+ 
+
+                <div class="an-body accountDetails ">
+                    <p><b>Account Number:</b> {{ accountDetails.accountNumber }}</p>
+                    
+                    
+                    <p style="    margin-left: 4.9rem;  "><b>Account Type: </b> {{ accountDetails.AccountType }}</p>
+                    
+                </div>
+                
+                <div class="an-body ">
+                    
+                        <p><b>Payment Method:</b> {{ accountDetails.paymentMethod }}</p>
+                  
+
+                </div>
+
+            </div>
+
+ 
+
+            <div *ngIf="showDisbursement" style="margin-top: 1rem;">
+
+                <div class="d-flex request-disbursement" style="    float: right;margin-top: -4rem;">
+
+                    <img style="width: 1.2rem; height: 1.2rem;" src="../assets/receive-square.png" alt="img">
+
+                    <p>Request Disbursement</p>
+
+                </div>
+
+                <p class="an-head ">Disbursement Details</p>
+
+                <div class="an-body accountDetails">
+
+                    <p><b>Total Sanction Amount:</b> {{ disbursmentdetails.totalsanctionamount }}</p>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <p><b>Total Disbursement Amount:</b> {{ disbursmentdetails.totaldisbursedamount }}</p>
+
+                </div>
+
+                <p class="an-head " style="font-size: 1rem;">Disbursement History</p>
+
+                <!-- <div>
+
+                    <div class="btn-group d-flex" role="group" aria-label="Basic example">
+
+                        <button type="button" class="btn btn-secondary w-100 btn-grp-below-disbursment">All</button>
+
+                        <button type="button" class="btn btn-secondary w-100 btn-grp-below-disbursment">Income</button>
+
+                        <button type="button" class="btn btn-secondary w-100 btn-grp-below-disbursment">Outcome</button>
+
+                    </div>
+
+                </div> -->
+
+                <div class="mt-2">
+
+                    <div class="d-flex">
+
+                        <div class="empty-box"></div>
+
+                        <div class="ps-2 mt-2">
+
+                            <p class="empty-box-p1"><b>$71,790.00</b></p>
+
+                            <p class="text-muted empty-box-p2">11-10-2023, 04:15pm</p>
+
+                            <p class="empty-box-p3"><b>Ref.No:637232772</b></p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- <div class="d-flex">
+
+                        <div class="empty-box"></div>
+
+                        <div class="ps-2 mt-2">
+
+                            <p class="empty-box-p1"><b>$10700.00</b></p>
+
+                            <p class="text-muted empty-box-p2">27-07-2023, 04:15pm</p>
+
+                            <p class="empty-box-p3"><b>Ref.No:637232772</b></p>
+
+                        </div>
+
+                    </div> -->
+
+                </div>
+
+            </div>
+
+            <div *ngIf="showTransaction" style="margin-top: 1rem;">
+
+                <div class="d-flex request-disbursement" style="    float: right;margin-top: -4rem;">
+
+                    <div class="d-flex">
+
+                        <img style="width: 1.2rem; height: 1.2rem; margin-right: 0rem;" src="../assets/receive-square-red.png" alt="img">
+
+                        <p style="color: #0381BA; margin-right: 1rem;">Download</p>
+
+                        <img style="width: 1.2rem; height: 1.2rem;" src="../assets/sms.png" alt="img">
+
+                        <p>Email</p>
+
+                    </div>
+
+                </div>
+
+                <p class="an-head"> Repayment Schedule</p>
+
+                <div class="an-body table-settings">
+
+                    <ag-grid-angular style="width: 150%; height: 17.5rem; overflow: hidden;" class="ag-theme-alpine"
+
+                        [rowData]="rowData$ | async" [columnDefs]="columnDefs" [defaultColDef]="defaultColDef"
+
+                        [rowHeight]="33">
+
+                    </ag-grid-angular>
