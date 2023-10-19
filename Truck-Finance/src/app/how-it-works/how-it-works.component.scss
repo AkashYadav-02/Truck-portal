@@ -169,6 +169,8 @@ width: 2rem;
     // justify-content: flex-end;
 }
 
+
+
 .viewAll {
     font-family: Verdana;
     font-weight: 600;
@@ -268,8 +270,20 @@ width: 2rem;
 
 .car-types {
     gap: 1rem;
+    align-items: center;
+    justify-content: center;
     font-size: 13px;
 }
+
+.car-row{
+    max-width: 13.4rem;
+    min-width: 13.4rem;
+
+    p{
+        margin-top: 6px;
+    }
+}
+
 
 .brands-view-all {
     margin: 15px -10px;
