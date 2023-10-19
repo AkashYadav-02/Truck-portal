@@ -1118,15 +1118,15 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 .finding-car-btn {
 
+  
+
   display: flex;
-
-  justify-content: space-between;
-
-  width: 42rem;
-
-  padding: 1rem;
-
-  margin-left: 27rem !important;
+    gap: 40%;
+    /* justify-content: space-between; */
+    width: 42rem;
+    padding: 1rem;
+    margin-left: 33rem !important;
+    margin-bottom: 1rem;
 
 }
 
