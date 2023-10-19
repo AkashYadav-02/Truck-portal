@@ -18,9 +18,9 @@ export class RmCarCollecComponent {
 
       name:"T680 Next Gen",
 
-      price: "$17,949",
+      price: "17,949",
 
-      imgUrl : "../../assets/truck1.png",
+      imgUrl : "../../assets/Truck1.png",
 
       speed: 'MX-13',
 
@@ -36,9 +36,9 @@ export class RmCarCollecComponent {
 
       name:"T680 Signature Edition",
 
-      price: "$61,490",
+      price: "61,490",
 
-      imgUrl: "../../assets/kenworth.png",
+      imgUrl: "../../assets/Truck2.png",
 
       speed: 'MX-11',
 
@@ -53,8 +53,8 @@ export class RmCarCollecComponent {
     {
 
       name:"T880",
-      price: "$30,990",
-      imgUrl: "../../assets/crysta.png",
+      price: "30,990",
+      imgUrl: "../../assets/Truck3.png",
 
       speed: 'MX-13',
 
@@ -72,7 +72,7 @@ export class RmCarCollecComponent {
 
       price: "$130,830",
 
-      imgUrl: "../../assets/toyota vellfire.png",
+      imgUrl: "../../assets/Truck4.png",
 
       speed: 'PX-9',
 
@@ -90,7 +90,7 @@ export class RmCarCollecComponent {
 
       price: "$25,989",
 
-      imgUrl: "../../assets/urban-cruiser-hyryder-exterior-right-front-three-quarter-72 2.png",
+      imgUrl: "../../assets/Truck5.png",
 
       speed: 'MX-13',
 
@@ -108,7 +108,7 @@ export class RmCarCollecComponent {
 
       price: "$47,390",
 
-      imgUrl: "../../assets/CamryModelImage 2.png",
+      imgUrl: "../../assets/Truck6.png",
 
       speed: 'PX-9',
 
