@@ -209,18 +209,16 @@ hr {
 .real-car {
     position: absolute;
     // z-index: 2;
-    left: 95px;
+    left: 70px;
     // size: 50px;
     height: 332px;
     margin-top: 183px;
 
 }
-
 .car-container {
     margin-top: 6.5rem;
     position: relative;
 }
-
 .Why-Choose-Us {
     color: #FFF;
     text-align: center;
@@ -238,7 +236,6 @@ hr {
     transform: translate(-50%, -50%);
     margin-top: 10px;
 }
-
 .Why-Choose-Us-description {
     color: #fff;
     text-align: center;
@@ -254,9 +251,7 @@ hr {
     transform: translate(-50%, -50%);
     margin-top: 1rem;
 }
-
 .call {
-
     border-radius: 10px;
     border: solid;
     width: 40px;
@@ -269,10 +264,8 @@ hr {
     top: 3px;
     // right: 50%;
 }
-
 .call-logo-div {
     margin-top: 7%;
-
     position: absolute;
     top: 25%;
     right: 110px;
@@ -281,15 +274,11 @@ hr {
 
 .price-ada-logo-div {
     margin-top: 40px;
-
     position: absolute;
     top: 50%;
     right: 110px;
     width: 35rem;
-
-
 }
-
 .price-tag {
     border-radius: 10px;
     border-width: 10px;
@@ -381,7 +370,8 @@ hr {
 }
 
 .backgroundImage {
-    background-image: url(../../assets/home_page_bacground.png);
+    background-image: url(../../assets/truck-background.png);
+    // background-image: url(../../assets/Kenwoprth-Signature-T680-1200-removebg-preview 1.png);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
