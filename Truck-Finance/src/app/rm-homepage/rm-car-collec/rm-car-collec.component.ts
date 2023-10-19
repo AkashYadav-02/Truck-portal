@@ -53,9 +53,7 @@ export class RmCarCollecComponent {
     {
 
       name:"T880",
-
       price: "$30,990",
-
       imgUrl: "../../assets/crysta.png",
 
       speed: 'MX-13',
