@@ -19,59 +19,165 @@ export class HomeCarCollecComponent {
   value: number = 50;
   carDetails=[
     {
-      name:"2023 Toyota Glanza",
+
+      name:"T680 Next Gen",
+
       price: "$17,949",
-      imgUrl : "../../assets/Toyota-Glanza-060520221539 2.png",
-      speed: 2000,
-      gear:"Manual",
-      capacity:5,
-      type:"Petrol"
+
+      imgUrl : "../../assets/truck1.png",
+
+      speed: 'MX-13',
+
+      gear:"1,550-1,850 lb",
+
+      capacity:12.9,
+
+      type:"405-510 HP"
+
     },
+
     {
-      name:"2023 Toyota Fortuner",
+
+      name:"T680 Signature Edition",
+
       price: "$61,490",
-      imgUrl: "../../assets/Toyota-Fortuner-110120211829 2.png",
-    
-      speed: 3577,
-      gear:"Automatic",
-      capacity:7,
-      type:"Diesel"
+
+      imgUrl: "../../assets/kenworth.png",
+
+      speed: 'MX-11',
+
+      gear:"1,250-1,700 lb",
+
+      capacity:10.8,
+
+      type:"355-455 HP"
+
     },
+
     {
-      name:"2023 Toyota Innova Crysta",
+
+      name:"T880",
+
       price: "$30,990",
+
       imgUrl: "../../assets/crysta.png",
-      speed: 4200,
-      gear:"Automatic",
-      capacity:7,
-      type:"Diesel"
+
+      speed: 'MX-13',
+
+      gear:"1,450–1,850 lb",
+
+      capacity:12.9,
+
+      type:"405-510 HP"
+
     },
+
     {
-      name:"2023 Toyota Vellfire ",
+
+      name:"T280",
+
       price: "$130,830",
+
       imgUrl: "../../assets/toyota vellfire.png",
-      speed: 2500,
-      gear:"CVT",
-      capacity:8,
-      type:"Petrol"
+
+      speed: 'PX-9',
+
+      gear:"860–1,250lb",
+
+      capacity:12.9 ,
+
+      type:"260-450 HP"
+
     },
+
     {
-      name:"2023 Toyota Urban Cruiser ",
+
+      name:"W990",
+
       price: "$25,989",
+
       imgUrl: "../../assets/urban-cruiser-hyryder-exterior-right-front-three-quarter-72 2.png",
-      speed: 4000,
-      gear:"Automatic",
-      capacity:4,
-      type:"Electric"
+
+      speed: 'MX-13',
+
+      gear:"1,450–1,850lb",
+
+      capacity:12.9,
+
+      type:"405-510 HP"
+
     },
+
     {
-      name:"Toyota Camry",
+
+      name:"T380",
+
       price: "$47,390",
+
       imgUrl: "../../assets/CamryModelImage 2.png",
-      speed: 2593,
+
+      speed: 'PX-9',
+
+      gear:"860–1,250 lb",
+
+      capacity:12.5,
+
+      type:"260-450 HP"
+
+    },
+
+    {
+
+      name:"LF 260",
+
+      price: "$47,390",
+
+      imgUrl: "../../assets/CamryModelImage 2.png",
+
+      speed: 'PX-7',
+
+      gear:"6 cylinder",
+
+      capacity:6.7,
+
+      type:"264HP"
+
+    },
+
+    {
+
+      name:"LF 290",
+
+      price: "$47,390",
+
+      imgUrl: "../../assets/CamryModelImage 2.png",
+
+      speed: 'PX-7',
+
+      gear:"6 cylinder",
+
+      capacity:6.7,
+
+      type:"295HP"
+
+    },
+
+    {
+
+      name:"XF FTT",
+
+      price: "$47,390",
+
+      imgUrl: "../../assets/CamryModelImage 2.png",
+
+      speed: 'MX-13',
+
       gear:"Automatic",
-      capacity:5,
-      type:"Hybrid"
+
+      capacity:12.9,
+
+      type:"530HP/2,600 Nm"
+
     },
     
    
