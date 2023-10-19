@@ -40,7 +40,7 @@ export class LandingpageComponent {
       gear:"Manual",
       capacity:5,
       type:"Petrol",
-      subscription:"If you’re after a car, and want to lease or loan, then an Aurionpro Auto Finance could for you"
+      subscription:"If you’re after a truck, and want to lease or loan, then an Aurionpro Auto Finance could for you"
     },
     {
       name:"Retail Finance",
