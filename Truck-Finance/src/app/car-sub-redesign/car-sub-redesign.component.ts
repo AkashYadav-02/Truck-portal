@@ -239,7 +239,7 @@ export class CarSubRedesignComponent implements OnInit {
   
   carDetails = [
     {
-      name: '2023 Toyota Glanza',
+      name: 'T680 Next Gen',
       engine_capacity: '2.8L/213',
       transmmission_type: 'Mannual',
       Fuel_Type: 'Petrol',
@@ -253,7 +253,7 @@ export class CarSubRedesignComponent implements OnInit {
       select_variant: ['GX', 'GX Hybrid', 'ZR Hybrid'],
     },
     {
-      name: '2023 Toyota Fortuner',
+      name: 'T680 Signature Edition',
       engine_capacity: '3.5L/213',
       transmmission_type: 'Automatic',
       Fuel_Type: 'Diesel',
@@ -266,7 +266,7 @@ export class CarSubRedesignComponent implements OnInit {
       select_variant: ['GXL', 'GXL limited'],
     },
     {
-      name: '2023 Toyota Innova Crysta',
+      name: 'T880',
       engine_capacity: '2.2L/213',
       transmmission_type: 'Automatic',
       Fuel_Type: 'Diesel',
