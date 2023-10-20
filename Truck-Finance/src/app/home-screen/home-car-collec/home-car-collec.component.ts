@@ -24,7 +24,7 @@ export class HomeCarCollecComponent {
 
       price: "$17,949",
 
-      imgUrl : "../../assets/truck1.png",
+      imgUrl : "../../assets/Truck1.png",
 
       speed: 'MX-13',
 
@@ -42,7 +42,7 @@ export class HomeCarCollecComponent {
 
       price: "$61,490",
 
-      imgUrl: "../../assets/kenworth.png",
+      imgUrl: "../../assets/Truck2.png",
 
       speed: 'MX-11',
 
@@ -60,7 +60,7 @@ export class HomeCarCollecComponent {
 
       price: "$30,990",
 
-      imgUrl: "../../assets/crysta.png",
+      imgUrl: "../../assets/Truck3.png",
 
       speed: 'MX-13',
 
@@ -78,7 +78,7 @@ export class HomeCarCollecComponent {
 
       price: "$130,830",
 
-      imgUrl: "../../assets/toyota vellfire.png",
+      imgUrl: "../../assets/Truck4.png",
 
       speed: 'PX-9',
 
@@ -96,7 +96,7 @@ export class HomeCarCollecComponent {
 
       price: "$25,989",
 
-      imgUrl: "../../assets/urban-cruiser-hyryder-exterior-right-front-three-quarter-72 2.png",
+      imgUrl: "../../assets/Truck5.png",
 
       speed: 'MX-13',
 
@@ -114,7 +114,7 @@ export class HomeCarCollecComponent {
 
       price: "$47,390",
 
-      imgUrl: "../../assets/CamryModelImage 2.png",
+      imgUrl: "../../assets/Truck6.png",
 
       speed: 'PX-9',
 
@@ -126,59 +126,59 @@ export class HomeCarCollecComponent {
 
     },
 
-    {
+    // {
 
-      name:"LF 260",
+    //   name:"LF 260",
 
-      price: "$47,390",
+    //   price: "$47,390",
 
-      imgUrl: "../../assets/CamryModelImage 2.png",
+    //   imgUrl: "../../assets/CamryModelImage 2.png",
 
-      speed: 'PX-7',
+    //   speed: 'PX-7',
 
-      gear:"6 cylinder",
+    //   gear:"6 cylinder",
 
-      capacity:6.7,
+    //   capacity:6.7,
 
-      type:"264HP"
+    //   type:"264HP"
 
-    },
+    // },
 
-    {
+    // {
 
-      name:"LF 290",
+    //   name:"LF 290",
 
-      price: "$47,390",
+    //   price: "$47,390",
 
-      imgUrl: "../../assets/CamryModelImage 2.png",
+    //   imgUrl: "../../assets/CamryModelImage 2.png",
 
-      speed: 'PX-7',
+    //   speed: 'PX-7',
 
-      gear:"6 cylinder",
+    //   gear:"6 cylinder",
 
-      capacity:6.7,
+    //   capacity:6.7,
 
-      type:"295HP"
+    //   type:"295HP"
 
-    },
+    // },
 
-    {
+    // {
 
-      name:"XF FTT",
+    //   name:"XF FTT",
 
-      price: "$47,390",
+    //   price: "$47,390",
 
-      imgUrl: "../../assets/CamryModelImage 2.png",
+    //   imgUrl: "../../assets/CamryModelImage 2.png",
 
-      speed: 'MX-13',
+    //   speed: 'MX-13',
 
-      gear:"Automatic",
+    //   gear:"Automatic",
 
-      capacity:12.9,
+    //   capacity:12.9,
 
-      type:"530HP/2,600 Nm"
+    //   type:"530HP/2,600 Nm"
 
-    },
+    // },
     
    
     
