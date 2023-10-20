@@ -18,7 +18,7 @@ export class RmCarCollecComponent {
 
       name:"T680 Next Gen",
 
-      price: "17,949",
+      price: "284,640",
 
       imgUrl : "../../assets/Truck1.png",
 
@@ -36,7 +36,7 @@ export class RmCarCollecComponent {
 
       name:"T680 Signature Edition",
 
-      price: "61,490",
+      price: "286,384",
 
       imgUrl: "../../assets/Truck2.png",
 
@@ -53,7 +53,7 @@ export class RmCarCollecComponent {
     {
 
       name:"T880",
-      price: "30,990",
+      price: "367,840",
       imgUrl: "../../assets/Truck3.png",
 
       speed: 'MX-13',
@@ -70,7 +70,7 @@ export class RmCarCollecComponent {
 
       name:"T280",
 
-      price: "$130,830",
+      price: "$271,840",
 
       imgUrl: "../../assets/Truck4.png",
 
@@ -88,7 +88,7 @@ export class RmCarCollecComponent {
 
       name:"W990",
 
-      price: "$25,989",
+      price: "$366,267",
 
       imgUrl: "../../assets/Truck5.png",
 
@@ -106,7 +106,7 @@ export class RmCarCollecComponent {
 
       name:"T380",
 
-      price: "$47,390",
+      price: "$171,120",
 
       imgUrl: "../../assets/Truck6.png",
 
