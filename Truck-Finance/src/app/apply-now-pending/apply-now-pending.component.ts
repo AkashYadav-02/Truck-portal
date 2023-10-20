@@ -98,6 +98,12 @@ export class ApplyNowPendingComponent implements OnInit{
     console.log("Ok clicked", this.techDetailsParameter);
     this.redirectMenu.redirectWithdata('work-space', this.techDetailsParameter);
   }
+  
+  
+   formatDate = (date: Date): string =>date instanceof Date && !isNaN(date.getTime())
+    ? date.toLocaleDateString('en-GB').replace(/\//g, '-')
+    : 'Invalid input. Please provide a valid Date object';
+  currentDate = this.formatDate(new Date(new Date().getTime() + 4 * 24 * 60 * 60 * 1000));
 
   onCancel() {
     // this.techDetailsParameter.comp = 'credit';

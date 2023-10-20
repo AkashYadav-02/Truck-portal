@@ -1,12 +1,12 @@
 
 .mainclass {
   width: 100vw;
-  height: fit-content;
+  height: 115.5vh;
   // background-color: aqua;
   // z-index: -1;
   position: absolute;
   background-image: url(../../assets/login-truck.png);
-  background-size: 100% 100%;
+  background-size: 110% 100%;
   // background-repeat: no-repeat;
   display: flex;
   gap: 12%;
@@ -88,7 +88,7 @@ font-family: 'ZenKakuGothicAntique';
   border-radius: 10px;
   position: relative;
   width: 37%;
-  height: 100vh  ;
+  height: 105vh  ;
   padding: 1rem 2rem;
   background-color: white;
 }
@@ -100,7 +100,7 @@ font-family: 'ZenKakuGothicAntique';
   font-size: 1.25rem;
   margin-bottom: 1.1rem;
   // margin-top: 1.5;
-  font-family: 'ZenKakuGothicAntique';
+  font-family: Verdana;
   color: #000;
   font-style: normal;
   font-weight:bold  ;
@@ -113,7 +113,7 @@ font-family: 'ZenKakuGothicAntique';
   color: #000;
   font-size: 0.7rem;
   font-style: normal;
-  font-family: 'ZenKakuGothicAntique';
+  font-family: Verdana;
   font-weight: 500;
   line-height: 0.8rem;
   margin-top: 0.8rem;
@@ -266,7 +266,7 @@ select.did-floating-select::-ms-expand {
 }
 //////
 .started {
-  background-color: #DB2423;
+  background-color:#B7C301;
   color: white;
   font-size: 0.8rem;
   // font-family: 'Verdana';
@@ -329,7 +329,7 @@ select.did-floating-select::-ms-expand {
 .termscon{
   // font-size: 10px;
   // vertical-align: middle;
-  color: #DB2423;
+  color: #3D85D8;
   // display: flex;  
   font-size: 12.8px
 }
