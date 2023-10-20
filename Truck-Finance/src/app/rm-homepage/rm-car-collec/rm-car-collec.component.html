@@ -9,7 +9,9 @@
         <div class="collec-cards" >
             <div   *ngFor="let car of carDetails; let i = index">
                 <div class="car-card" *ngIf="!allowCars(i)">
-                    <img src={{car.imgUrl}}>
+                    <div class="car-img">
+                        <img src={{car.imgUrl}}>
+                    </div>
                     <div class="container">
                         <div class="cardhead">
                             <p>{{car.name}}</p>
@@ -38,7 +40,10 @@
                     </div>
                 </div>
                 <div class="car-card" *ngIf="allowCars(i)" >
-                    <img src={{car.imgUrl}}>
+                    <div class="car-img">
+                        <img src={{car.imgUrl}}>
+                    </div>
+                    
                     <div class="container">
                         <div class="cardhead">
                             <p>{{car.name}}</p>
