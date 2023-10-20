@@ -34,7 +34,7 @@
   <app-stepper [firstBg]="'#0380ba'" [ani]="'second'" [secondBg]="'#B0D7E9'" [first]="'white'"></app-stepper>
 </div>
 
- 
+
 
 <!-- <div class=" card-timeline border-0 " style="padding-top: 5rem; margin-bottom: 3rem; ">
 
@@ -67,7 +67,7 @@
   </ul>
 
 </div> -->
-
+<div class="left-card">
 <div class="card" style="width: 24rem;" >
 
   <div (click)="redirect('car-sub')" *ngFor="let car of carDetails">
@@ -76,7 +76,7 @@
 
   </div>
 
- 
+
 
   <h5 class="card-title" style="font-family: 'Verdana'">
 
@@ -92,7 +92,7 @@
 
       <p style="color: #0381BA; "><b>Your current installment is:</b></p>
 
-      <p  ><b>Your Total Amount of Finance</b></p>
+      <p><b>Your Total Amount of Finance</b></p>
 
       <p>Down Payment</p>
 
@@ -142,17 +142,19 @@
 
       <p><b>$ {{ numberWithCommas(display_First_Pay) }}</b> </p>
 
- 
+
 
     </div>
 
   </div>
 
-  <p style="font-size:15px;color:#0381BA;; font-family: 'Verdana'; margin-left: 0.5rem;"><b>Your monthly deduction starts
+  <p style="font-size:15px;color:#0381BA;; font-family: 'Verdana'; margin-left: 0.5rem;"><b>Your monthly repayment starts
 
       from November 2023, every 1st of the month</b>
 
   </p>
+
+</div>
 
 </div>
 
@@ -338,7 +340,7 @@
 
 </div> -->
 
- 
+
 
 <!-- <div class="customer-details-dropdown">
 
@@ -496,7 +498,7 @@
 
 </div> -->
 
- 
+
 
 <!-- <div class="card1" id="right-panel1">
 
@@ -674,7 +676,7 @@
 
 </div> -->
 
- 
+
 
 <!-- <div class="card2" id="right-panel2">
 
@@ -770,7 +772,7 @@
 
 </div> -->
 
- 
+
 
 <!-- <div class="car-subs-footer">
 
@@ -830,39 +832,39 @@
 
       <label class="text-label"><b>Applying as</b></label>
 
- 
+
 
       <div class="content">
 
         <div class="form-check form-check-inline">
 
-          <input type="radio" id="specifyColor" name="radio1" value="Individual" [(ngModel)]="radio1"/>
+          <input type="radio" id="specifyColor" name="radio1" value="Individual" [(ngModel)]="radio1" />
 
- 
+
 
           <label for="specifyColor">&nbsp; Individual</label>
 
         </div>
 
- 
+
 
         <div class="form-check form-check-inline">
 
           <input type="radio" id="specifyColor" name="radio1" value="Joint" />
 
- 
+
 
           <label for="specifyColor">&nbsp; Joint</label>
 
         </div>
 
- 
+
 
         <div class="form-check form-check-inline">
 
           <input type="radio" id="specifyColor" name="radio1" value="Business" />
 
- 
+
 
           <label for="specifyColor">&nbsp; Business</label>
 
@@ -872,17 +874,17 @@
 
     </div>
 
- 
+
 
     <hr class="hr-1" />
 
- 
+
 
     <div class="existing-customer">
 
       <label class="text-label"><b>Existing UDC Customer</b></label>
 
- 
+
 
       <div class="content">
 
@@ -890,7 +892,7 @@
 
           <!-- <input type="radio" id="specifyColor" name="radio2" value="Individual" (change)="radioChanged($event)"> -->
 
- 
+
 
           <!-- <label for="specifyColor" class="label1"><b>&nbsp; Last Name: </b></label>
 
@@ -900,7 +902,7 @@
 
                     id="lastName" [(ngModel)]="lastName"> -->
 
- 
+
 
           <!-- <label for="specifyColor" class="label2"><b>&nbsp; Driver's License: </b></label>
 
@@ -914,15 +916,14 @@
 
                 <button class="retrieve-btn" (click)="datapopulate($event)">Retrieve Details</button> -->
 
-          <input class="d-flex" style="position: absolute;    margin-top: 0.4rem;"  type="radio" [(ngModel)]="radio2"
-
+          <input class="d-flex" style="position: absolute;    margin-top: 0.4rem;" type="radio" [(ngModel)]="radio2"
             id="specifyColor" name="radio2" value="Individual" (change)="radioChanged($event)" />
 
           <div class="abc">
 
             <label for="specifyColor" class="label1"><b> Last Name: </b></label>
 
-            <input  type="text" style="
+            <input type="text" style="
 
                 border-radius: 5px;
 
@@ -946,7 +947,7 @@
 
           </div>
 
- 
+
 
           <div class="def">
 
@@ -970,7 +971,7 @@
 
               " id="driversLicense" [(ngModel)]="driversLicense" />
 
- 
+
 
             <button (click)="clearForm()" class="retrieve-btn">Clear Details</button>
 
@@ -982,7 +983,7 @@
 
     </div>
 
- 
+
 
     <hr class="hr-2" />
 
@@ -1020,7 +1021,8 @@
 
           <div class="did-floating-label-content label-input w-full">
 
-            <input class="did-floating-input" type="text" style="width: 12rem;" id="licenseNo" [(ngModel)]="licenseNo" />
+            <input class="did-floating-input" type="text" style="width: 12rem;" id="licenseNo"
+              [(ngModel)]="licenseNo" />
 
             <label class="did-floating-label" style="font-size: -0.3rem">License No</label>
 
@@ -1042,7 +1044,7 @@
 
   </div>
 
- 
+
 
   <!-- <div class="customer-details-dropdown">
 
@@ -1200,7 +1202,7 @@
 
 </div> -->
 
- 
+
 
   <div class="card1" id="right-panel1">
 
@@ -1218,7 +1220,7 @@
 
       <b>CUSTOMER DETAILS</b>
 
- 
+
 
       <i class="fa-solid" [class.fa-angle-down]="isLowerVisible" [class.fa-angle-up]="!isLowerVisible"></i>
 
@@ -1262,7 +1264,7 @@
 
       </div>
 
- 
+
 
       <h6 style="font-family: 'Verdana'; color: #0381BA">
 
@@ -1270,7 +1272,7 @@
 
       </h6>
 
- 
+
 
       <div class="form-check2 form-check-inline" style="font-family: 'Verdana'; margin-top: 2rem; margin-left: 0rem">
 
@@ -1284,7 +1286,7 @@
 
         <div style="margin-left: 0rem; width: 14.2rem;" class="did-floating-label-content label-input w-full">
 
-          <input class="did-floating-input"   type="text" id="home" [(ngModel)]="home" />
+          <input class="did-floating-input" type="text" id="home" [(ngModel)]="home" />
 
           <label class="did-floating-label" style="font-size: -0.3rem">Home</label>
 
@@ -1292,9 +1294,7 @@
 
         <div style="margin-right: 1rem;" class="did-floating-label-content label-input w-full">
 
-          <input style="width: 22rem;" class="did-floating-input" type="text" id="email"
-
-            [(ngModel)]="email" />
+          <input style="width: 22rem;" class="did-floating-input" type="text" id="email" [(ngModel)]="email" />
 
           <label class="did-floating-label" style="font-size: -0.3rem">Email</label>
 
@@ -1313,29 +1313,29 @@
         </div>
 
         <div class="did-floating-label-content label-input w-full" style="width: 205px; margin-right: 23.1rem;">
-         <!-- <input class="did-floating-input" type="text" id="resident" [(ngModel)]="resident" /> 
+          <!-- <input class="did-floating-input" type="text" id="resident" [(ngModel)]="resident" /> 
 
           <label class="did-floating-label" style="font-size: -0.3rem">Resident Status</label>-->
-		<select class="did-floating-input" name="language" id="language">
+          <select class="did-floating-input" name="language" id="language">
 
-      <option value="" selected *ngFor="let class of Resident_status" [selected]="class == 'Boarding'">
+            <option value="" selected *ngFor="let class of Resident_status" [selected]="class == 'Boarding'">
 
-        {{ class }}
+              {{ class }}
 
-      </option>
+            </option>
 
-      <label class="did-floating-label" style="font-size: -0.3rem; color: black">Resident Status</label>
+            <label class="did-floating-label" style="font-size: -0.3rem; color: black">Resident Status</label>
 
-    </select>
+          </select>
 
-    <label class="did-floating-label" style="font-size: -0.3rem; margin-left: -1px;">Resident Status</label>
+          <label class="did-floating-label" style="font-size: -0.3rem; margin-left: -1px;">Resident Status</label>
 
 
-</div>
+        </div>
 
       </div>
 
- 
+
 
       <h6 style="font-family: 'Verdana'; color: #0381BA">
 
@@ -1343,7 +1343,7 @@
 
       </h6>
 
- 
+
 
       <div class="form-check4 form-check-inline" style="
 
@@ -1395,7 +1395,7 @@
 
         <div class="did-floating-label-content label-input w-full" style="margin-left: -160px;">
 
-          <input class="did-floating-input" type="text" style="width: 11.3rem;"   id="country" [(ngModel)]="country" />
+          <input class="did-floating-input" type="text" style="width: 11.3rem;" id="country" [(ngModel)]="country" />
 
           <label class="did-floating-label" style="font-size: -0.3rem">Country</label>
 
@@ -1415,7 +1415,7 @@
 
   </div>
 
- 
+
 
   <div class="card2" id="right-panel2">
 
@@ -1423,19 +1423,16 @@
 
       <b>WORK DETAILS</b>
 
- 
+
 
       <i class="fa-solid" style="padding-right: 1rem" [class.fa-angle-down]="isLowerVisible1"
-
         [class.fa-angle-up]="!isLowerVisible1"></i>
 
     </p>
 
     <div [style.display]="isLowerVisible1 ? 'inherit' : 'none'" [style.height]="isLowerVisible1 ? 'fit-content' : '0'">
 
-      <div class="form-check6 form-check-inline"
-
-        style="font-family: 'Verdana'; margin-top: 2rem; margin-left: 1.5rem">
+      <div class="form-check6 form-check-inline" style="font-family: 'Verdana'; margin-top: 2rem; margin-left: 1.5rem">
 
         <div class="did-floating-label-content label-input w-full">
 
@@ -1471,7 +1468,7 @@
 
       </div>
 
- 
+
 
       <h6 style="
 
@@ -1489,7 +1486,7 @@
 
       </h6>
 
- 
+
 
       <div class="form-check7 form-check-inline" style="font-family: 'Verdana'; margin-left: 2rem">
 
@@ -1533,34 +1530,21 @@
 
 </div>
 
- 
+
 
 <div class="car-subs-footer">
 
   <div class="cs-footer-com">
 
-    <h6 class="redtxt" (click)="goBack()" style="cursor:pointer; color: #ffffff; font-weight: 700; font-family: 'Verdana';">BACK</h6>
+    <h6 class="redtxt" (click)="goBack()"
+      style="cursor:pointer; color: grey; font-weight: 700; font-family: 'Verdana';">BACK</h6>
 
   </div>
 
- 
 
-  <div class="cs-footer-com">
-
-    <h6 class="price" style="color: #ffffff; cursor: pointer; font-family: 'Verdana'; font-weight: 700;" >SAVE AS DRAFT</h6>
-
-  </div>
-
- 
-
-  <div class="cs-footer-com">
-
-    <!-- <button class="btn">CLEAR</button> -->
-
-    <!-- <button class="btn btn-danger">Clear</button> -->
-
-    <button (click)="saveAndProceed()" class="btn" style="color:black; font-weight: 700;">SAVE & PROCEED</button>
-
+  <div class="cs-footer-right">
+    <button class="btn savebtn">SAVE AS DRAFT</button>
+    <button class="btn submitbtn" (click)="saveAndProceed()">SAVE & PROCEED</button>
   </div>
 
 </div>

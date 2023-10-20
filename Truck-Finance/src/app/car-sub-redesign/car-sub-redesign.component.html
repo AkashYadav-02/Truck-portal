@@ -25,8 +25,8 @@
                     <img src="{{techDetailsParameter.imgUrl}}" alt="car-img">
                 </div>
                 <div class="car-etc-img-div">
-                    <img src="../../assets/Toyota-Fortuner-Interior 1.png" alt="...">
-                    <img src="../../assets/toyota_fortuner_29 1.png" alt="...">
+                    <img src="../../assets/truck-interior1.png" alt="...">
+                    <img src="../../assets/truck-interior2.png" alt="...">
                 </div>
             </div>
 
@@ -57,11 +57,11 @@
                             <div class="d-flex radio-btn-group mt-3">
                                 <input class=" mileage-radio" type="radio" name="Mileage" id="specifyColor"
                                     checked="checked" (change)="selecMile(0)">
-                                <label class="mt-auto mb-auto mr-5 ms-3 mileage-text1 milegae-cc d-flex" for="">Low
+                                <label class="mt-auto mb-auto mr-5 ms-3 mileage-text1 milegae-cc d-flex" for="">Standard
                                     <span class="label-des">10,000 KM/Year</span>
                                     <div class="d-flex">
                                         <img class="exclamation-icon icon" src="../../assets/info-circle.png" alt="">
-                                        <div class="info">Charged at $1.00 for every additional 10 Kms</div>
+                                        <div class="info">Charged at $0.20 for every additional KMs</div>
                                     </div>
                                 </label>
                             </div>
@@ -70,12 +70,12 @@
                                 <input class=" mileage-radio" type="radio" name="Mileage" id="specifyColor"
                                     (change)="selecMile(1)">
 
-                                <label class="mt-auto mb-auto mr-5 ms-3 mileage-text2 milegae-cc d-flex" for="">Normal
-                                    <span class="label-des">15,000 KM/Year
+                                <label class="mt-auto mb-auto mr-5 ms-3 mileage-text2 milegae-cc d-flex" for="">High
+                                    <span class="label-des" id="label-1">15,000 KM/Year
                                     </span>
                                     <div class="d-flex">
                                         <img class="exclamation-icon icon" src="../../assets/info-circle.png" alt="">
-                                        <div class="info">Charged at $2.00 for every additional 10 Kms</div>
+                                        <div class="info">Charged at $0.35 for every additional KMs</div>
                                     </div>
                                 </label>
                             </div>
@@ -84,11 +84,11 @@
                                 <input class=" mileage-radio" type="radio" name="Mileage" id="specifyColor"
                                     (change)="selecMile(2)">
 
-                                <label class="mt-auto mb-auto mr-5 ms-3 mileage-text3 milegae-cc d-flex" for="">Ultimate
+                                <label class="mt-auto mb-auto mr-5 ms-3 mileage-text3 milegae-cc d-flex" for="">High
                                     <span class="label-des">25,000 KM/Year</span>
                                     <div class="d-flex">
                                         <img class="exclamation-icon icon" src="../../assets/info-circle.png" alt="">
-                                        <div class="info">Charged at $5.00 for every additional 10 Kms</div>
+                                        <div class="info">Charged at $0.05 for every additional KMs</div>
                                     </div>
                                 </label>
                             </div>
@@ -458,7 +458,7 @@
                         </div> -->
                     </div>
                     <div class="qoute-head2">
-                        <label>YOUR FINAL INSTALLMENT IS</label>
+                        <label>YOUR MONTHLY INSTALLMENT IS</label>
                         <label>$ {{numberWithCommas(showEmi(calculateEMI(techDetailsParameter.price)))}}</label>
                     </div>
 

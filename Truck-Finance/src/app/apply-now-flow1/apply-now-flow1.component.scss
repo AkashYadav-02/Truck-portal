@@ -293,19 +293,9 @@
  
 
 .card {
-
-  height: 50rem;
-
- 
-
+  height: 40rem;
   margin-left: 4rem;
-
- 
-
   margin-right: 4rem;
-
- 
-
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 11px 0 rgba(0, 0, 0, 0.08);
 
 }
@@ -342,10 +332,11 @@
   font-size: 14px;
   font-family: "Verdana";
 }
+
 #right-panel {
   margin-left: 29rem;
   margin-right: 4rem;
-  margin-top: -50rem;
+  margin-top: -40rem;
   width: 51.8rem;
   height: 14.5rem;
 }
@@ -1186,9 +1177,6 @@ hr-2 {
 .car-subs-footer {
 
   position: fixed;
-
- 
-
   bottom: 0px;
 
  
@@ -1217,7 +1205,7 @@ hr-2 {
 
  
 
-  background-color: #65B2D4;
+  background-color: white;
 
  
 
@@ -1270,13 +1258,7 @@ hr-2 {
  
 
 .redtxt {
-
-  color: #c41628;
-
- 
-
   padding-right: 20px;
-
 }
 
  
@@ -1303,27 +1285,41 @@ hr-2 {
  
 
 .cs-footer-com button {
-
-  color: white;
-
- 
-
+  color: grey;
   height: 40px;
-
- 
-
-  background-color: #B7C301;
-
- 
-
   padding: 0 3rem;
-
- 
-
   margin-right: -2rem;
-
 }
 
+.cs-footer-right {
+
+  .submitbtn{
+    color: #000;
+  height: 40px;
+  background-color: #B7C301;
+  
+  padding: 0 3rem;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: Verdana;
+
+  }
+
+  .savebtn{
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Verdana;
+    border-radius: 8px;
+    color:#0381BA;
+    border: solid 2px #0381BA;
+    background-color: white;
+  }
+
+  
+
+}
  
 
 /////////////floating text css
@@ -1754,7 +1750,7 @@ select.did-floating-select::-ms-expand {
 
 }
 
- 
+
 
 .lc-header {
 

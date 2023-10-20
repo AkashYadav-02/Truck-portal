@@ -12,48 +12,66 @@
 
 }
 
- 
-
 .car-subs-footer {
 
   position: fixed;
-
-  border-top: 1px solid rgb(141, 140, 140);
-
-  height: 60px;
-
-  z-index: 7;
-
-  background-color: #65B2D4;
-
-  display: flex;
-
-  padding-left: 60px;
-
-  padding-right: 60px;
-
-  justify-content: space-between;
-
-  align-items: center;
-
   bottom: 0px;
 
-  right: 0px;
+ 
 
   left: 0px;
 
+ 
+
+  width: 100%;
+
+ 
+
+  border-top: 1px solid rgb(141, 140, 140);
+
+ 
+
+  height: 60px;
+
+ 
+
+  z-index: 7;
+
+ 
+
+  margin-top: 7rem;
+
+ 
+
+  background-color: white;
+
+ 
+
+  display: flex;
+
+ 
+
+  padding-left: 60px;
+
+ 
+
+  padding-right: 60px;
+
+ 
+
+  justify-content: space-between;
+
+ 
+
+  align-items: center;
+
 }
+
 
  
 
 .redtxt {
-
-  color: #c41628;
-
-  font-weight: bold;
-
   padding-right: 20px;
-
 }
 
  
@@ -70,43 +88,47 @@
 
 }
 
+.cs-footer-com {
+
+  display: flex;
+  // background-color: #0381BA;
+
+}
+
  
+
+.cs-footer-com button {
+  color: grey;
+  height: 40px;
+  padding: 0 3rem;
+  margin-right: -2rem;
+}
 
 .cs-footer-right {
 
-  display: flex;
-
-}
-
- 
-
-.cs-footer-right button {
-
-  color: #000;
-
+  .submitbtn{
+    color: #000;
   height: 40px;
-
   background-color: #B7C301;
-
+  
   padding: 0 3rem;
-
-  font-size: 1.2rem;
-
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
   font-family: Verdana;
 
-}
+  }
 
- 
-
-.cs-footer-left {
-
-  margin-left: -50px;
-
-  display: flex;
-
-  margin-bottom: 4px;
-
-  font-family: 'Verdana';
+  .savebtn{
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Verdana;
+    border-radius: 8px;
+    color:#0381BA;
+    border: solid 2px #0381BA;
+    background-color: white;
+  }
 
 }
 

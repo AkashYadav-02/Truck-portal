@@ -241,7 +241,7 @@ export class CarSubRedesignComponent implements OnInit {
     {
       name: 'T680 Next Gen',
       engine_capacity: '2.8L/213',
-      transmmission_type: 'Mannual',
+      transmmission_type: 'Manual',
       Fuel_Type: 'Petrol',
       color_options: {
         white: 'White',
