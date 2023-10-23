@@ -216,7 +216,7 @@ export class CarSubRedesignComponent implements OnInit {
 
           console.log(this.price);
 
-          this.amm = this.techDetailsParameter.price.replace(/,/g, '') * 0.35;
+          this.amm = Math.ceil(this.techDetailsParameter.price.replace(/,/g, '') * 0.35);
 
           this.storePrice = this.updatedPrice;
           console.log('stored price', this.storePrice);
