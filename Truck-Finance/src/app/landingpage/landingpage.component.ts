@@ -35,7 +35,7 @@ export class LandingpageComponent {
     {
       name:"Auto Finance",
       price: "$17,949",
-      imgUrl : "../../assets/AutoFinance.png",
+      imgUrl : "https://c4.wallpaperflare.com/wallpaper/897/103/818/2012-kenworth-t680-tractor-semi-desktop-images-wallpaper-preview.jpg",
       speed: 2000,
       gear:"Manual",
       capacity:5,
