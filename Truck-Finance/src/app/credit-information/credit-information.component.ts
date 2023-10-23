@@ -43,7 +43,7 @@ export class CreditInformationComponent implements OnInit {
   techDetailsParameter: any;
 
   creditScreenData: any;
-
+  display_First_Pay: number = 0
   leftcard = leftcard;
   currentInstallment : any;
 
