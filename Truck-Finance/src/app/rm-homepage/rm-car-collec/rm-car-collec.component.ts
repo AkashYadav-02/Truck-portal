@@ -37,7 +37,7 @@ export class RmCarCollecComponent {
 
       name:"T680",
 
-      price: "286,384",
+      price: "172,784",
 
       imgUrl: "../../assets/Truck2.png",
 
