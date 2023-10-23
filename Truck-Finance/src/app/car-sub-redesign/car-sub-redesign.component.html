@@ -84,7 +84,7 @@
                                 <input class=" mileage-radio" type="radio" name="Mileage" id="specifyColor"
                                     (change)="selecMile(2)">
 
-                                <label class="mt-auto mb-auto mr-5 ms-3 mileage-text3 milegae-cc d-flex" for="">High
+                                <label class="mt-auto mb-auto mr-5 ms-3 mileage-text3 milegae-cc d-flex" for="">Ultimate
                                     <span class="label-des">25,000 KM/Year</span>
                                     <div class="d-flex">
                                         <img class="exclamation-icon icon" src="../../assets/info-circle.png" alt="">
@@ -177,9 +177,9 @@
                     <div class="leasehire form-check form-check-inline"
                         style="margin-left: -21px; margin-right: 5.8rem;">
 
-                        <input type="radio" name="radio1" [(ngModel)]="loanHire" value="Loan" checked>
+                        <input type="radio" name="radio1" [(ngModel)]="loanHire" value="Lease" checked>
 
-                        <label class="form-check-label" for="inlineRadio1">Loan</label>
+                        <label class="form-check-label" for="inlineRadio1">Lease</label>
 
                     </div>
 
@@ -265,7 +265,7 @@
                     </div>
                 </div>
 
-                <div [style.display]="loanHire=='Loan'? 'none' : 'inherit'">
+                <div [style.display]="loanHire=='Lease'? 'none' : 'inherit'">
 
                     <div class="downpayment">
 
@@ -283,7 +283,7 @@
 
 
 
-                <div [style.display]="loanHire=='Loan'? 'inherit' : 'none'">
+                <div [style.display]="loanHire=='Lease'? 'inherit' : 'none'">
 
                     <div class="d-flex" style="align-items: baseline;">
 
