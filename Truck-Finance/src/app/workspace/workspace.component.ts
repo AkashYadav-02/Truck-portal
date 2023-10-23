@@ -141,16 +141,16 @@ export class WorkspaceComponent {
 
     if (data.colDef.field === 'status') {
       let transferData;
-      if (data.data.appID == "UNE8783") {
+      if (data.data.appID == "UNE8967") {
         transferData = {};
         transferData = {
           tableData: data.data,
           pramData: {
 
-            "image": "../../assets/20201015102234_2021-Toyota-Innova-Crysta-facelift-grey-studio 2.png",
-            "name": "2023 Toyota  Glanza",
-            "price": "1,40,000,",
-            "applicationId": "UNE8783",
+            "image": "../../assets/Truck3.png",
+            "name": "T880",
+            "price": "3,67,840,",
+            "applicationId": "UNE8967",
             leftcard: {
               "currentInstallment": "$1,420",
               "downpayment": "$12,000",
@@ -163,15 +163,15 @@ export class WorkspaceComponent {
           },
           "comp": "credit"
         }
-      } else if (data.data.appID == "UNE8512") {
+      } else if (data.data.appID == "UNE9445") {
         transferData = {};
         transferData = {
           tableData: data.data,
           pramData: {
-            "image": "../../assets/20201015102234_2021-Toyota-Innova-Crysta-facelift-grey-studio 2.png",
-            "name": "2023 Toyota  Fortuner",
-            "price": "1,72,000,",
-            "applicationId": "UNE8783",
+            "image": "../../assets/Truck2.png",
+            "name": "T680 Signature Edition",
+            "price": "2,86,384,",
+            "applicationId": "UNE9445",
             leftcard: {
               "currentInstallment": "$1,420",
               "downpayment": "$12,000",
