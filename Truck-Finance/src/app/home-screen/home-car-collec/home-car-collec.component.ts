@@ -41,7 +41,7 @@ export class HomeCarCollecComponent {
 
       name:"T680",
 
-      price: "172,784",
+      price: "$172,784",
 
       imgUrl: "../../assets/Truck2.png",
 
