@@ -1117,15 +1117,12 @@ input[type="range"]::-webkit-slider-runnable-track {
  
 
 .finding-car-btn {
-
-  
-
   display: flex;
-    gap: 40%;
+    // gap: 40%;
     /* justify-content: space-between; */
     width: 42rem;
     padding: 1rem;
-    margin-left: 33rem !important;
+    // margin-left: 33rem !important;
     margin-bottom: 1rem;
 
 }
@@ -1135,12 +1132,11 @@ input[type="range"]::-webkit-slider-runnable-track {
 .finding-car-btn-btn {
 
   border: solid rgba(0, 0, 0, 0.16);
-
   border-radius: 58px;
 
-  width: 11rem;
+  width: 11rem !important;
 
-  margin-left: -12rem;
+  // margin-left: -12rem;
   font-family: Verdana;
   height: 3.5rem;
 
