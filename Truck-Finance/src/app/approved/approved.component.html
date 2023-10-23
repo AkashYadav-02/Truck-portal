@@ -187,11 +187,11 @@
 
                 <div class="an-body accountDetails">
 
-                    <p><b>Total Sanction Amount:</b> {{ disbursmentdetails.totalsanctionamount }}</p>
+                    <p><b>Total Sanction Amount:</b> {{numberWithCommas(techDetailsParameter.pramData.tableData.financing)}}</p>
 
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                    <p><b>Total Disbursement Amount:</b> {{ disbursmentdetails.totaldisbursedamount }}</p>
+                    <p><b>Total Disbursement Amount:</b>  {{numberWithCommas(techDetailsParameter.pramData.tableData.financing)}}</p>
 
                 </div>
 
@@ -219,7 +219,7 @@
 
                         <div class="ps-2 mt-2">
 
-                            <p class="empty-box-p1"><b>$71,790.00</b></p>
+                            <p class="empty-box-p1"><b> {{numberWithCommas(techDetailsParameter.pramData.tableData.financing)}}</b></p>
 
                             <p class="text-muted empty-box-p2">11-10-2023, 04:15pm</p>
 
