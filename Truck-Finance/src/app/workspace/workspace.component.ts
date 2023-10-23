@@ -86,6 +86,18 @@ export class WorkspaceComponent {
             'border-bottom': 'solid 3.5px #F4F6FB',
             'padding-top': '-50px', 'margin-top': '0', 'background-color': '#DB2423'
           };
+        } else if (params.node.data.status == 'Prospect') {
+          return {
+            'color': 'white', 'text-align': 'center', 'border-radius': '20px',
+            'border-top': 'solid 3.5px #F4F6FB',
+            'line-height': '2.3',
+            'font-size': '11.5px',
+            'font-family': 'Verdana', 'font-weight': '500',
+            'border-left': 'solid 5px #F4F6FB',
+            'border-right': 'solid 5px #F4F6FB',
+            'border-bottom': 'solid 3.5px #F4F6FB',
+            'padding-top': '-50px', 'margin-top': '0', 'background-color': '#0381BA'
+          };
         } else if (params.node.data.status == 'Pending') {
           return {
             'color': 'black', 'text-align': 'center', 'border-radius': '20px',
