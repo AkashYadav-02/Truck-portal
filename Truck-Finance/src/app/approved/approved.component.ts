@@ -117,7 +117,7 @@ ngOnInit() {
     { field: 'Description',cellStyle: { 'font-size': '12px' } },
     { field: 'EMI',cellStyle: { 'font-size': '12px' } },
     { field: 'Principal',cellStyle: { 'font-size': '12px' } },
-    { field: 'Verdanaest',cellStyle: { 'font-size': '12px' } },
+    { field: 'Interest',cellStyle: { 'font-size': '12px' } },
     { field: 'LoanAmount',cellStyle: { 'font-size': '12px' } },
     { field: 'APR' ,cellStyle: { 'font-size': '12px' }},
     ]
