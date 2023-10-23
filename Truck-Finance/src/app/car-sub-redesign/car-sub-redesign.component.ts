@@ -268,9 +268,9 @@ export class CarSubRedesignComponent implements OnInit {
       transmmission_type: 'Automatic',
       Fuel_Type: 'Diesel',
       color_options: {
-        white: 'White',
-        black: 'Black',
-        blue: 'Blue',
+        white: 'Orange',
+        black: 'Blue',
+        blue: 'Grey',
       },
       emi: '1,400',
       select_variant: ['T680', 'Next Generation', 'Signature Edition'],
