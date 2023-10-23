@@ -26,11 +26,9 @@ export class CarSubRedesignComponent implements OnInit {
   ownership:any = "Individual";
   currentCarDetails!:any;
   eligibleForm: FormGroup;
-
   techDetailsParameter: any = 0;
   amountCalc: any;
   amm = 0;
-
   price = 0;
 
   specificaiton: any;
@@ -196,7 +194,6 @@ export class CarSubRedesignComponent implements OnInit {
 
   constructor(
     private redirectMenu: RedirectMenuService,
-
     private router: Router,
     private renderer: Renderer2,
     private formBuilder: FormBuilder
@@ -250,7 +247,7 @@ export class CarSubRedesignComponent implements OnInit {
         grey: 'Grey',
       },
       emi: '811',
-      select_variant: ['GX', 'GX Hybrid', 'ZR Hybrid'],
+      select_variant: ['T680', 'Next Generation', 'Signature Edition'],
     },
     {
       name: 'T680 Signature Edition',
@@ -263,7 +260,7 @@ export class CarSubRedesignComponent implements OnInit {
         grey: 'Grey',
       },
       emi: '2,778',
-      select_variant: ['GXL', 'GXL limited'],
+      select_variant: ['T680', 'Next Generation', 'Signature Edition'],
     },
     {
       name: 'T880',
@@ -276,7 +273,7 @@ export class CarSubRedesignComponent implements OnInit {
         blue: 'Blue',
       },
       emi: '1,400',
-      select_variant: ['VX 2.4', 'GX 7 STR', 'G SLF 8 STR'],
+      select_variant: ['T680', 'Next Generation', 'Signature Edition'],
     },
     {
       name: '2023 Toyota Vellfire ',
