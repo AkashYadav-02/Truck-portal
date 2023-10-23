@@ -15,54 +15,56 @@ export class RmCarCollecComponent {
      ) {}
   carDetails=[
     {
+      name:"W990",
 
-      name:"T680 Next Gen",
+      price: "366,267",
 
-      price: "284,640",
-
-      imgUrl : "../../assets/Truck1.png",
+      imgUrl: "../../assets/Truck5.png",
 
       speed: 'MX-13',
 
-      gear:"1,550-1,850 lb",
+      gear:"1,850lb",
 
-      capacity:12.9,
+      capacity:300,
 
-      type:"405-510 HP"
+      type:"510 HP"
+
+      
 
     },
 
     {
 
-      name:"T680 ",
+      name:"T680",
 
       price: "286,384",
 
       imgUrl: "../../assets/Truck2.png",
 
-      speed: 'MX-11',
+      speed: 'MX-13',
 
-      gear:"1,250-1,700 lb",
+      gear:"1,850lb",
 
-      capacity:10.8,
+      capacity:120,
 
-      type:"355-455 HP"
+      type:"455 HP"
 
     },
 
     {
 
       name:"T880",
+
       price: "367,840",
       imgUrl: "../../assets/Truck3.png",
 
       speed: 'MX-13',
 
-      gear:"1,450–1,850 lb",
+      gear:"1,850 lb",
 
-      capacity:12.9,
+      capacity:150,
 
-      type:"405-510 HP"
+      type:"510 HP"
 
     },
 
@@ -86,19 +88,20 @@ export class RmCarCollecComponent {
 
     {
 
-      name:"W990",
 
-      price: "$366,267",
+      name:"W900",
 
-      imgUrl: "../../assets/Truck5.png",
+      price: "284,640",
+
+      imgUrl : "../../assets/W900.png", 
 
       speed: 'MX-13',
 
-      gear:"1,450–1,850lb",
+      gear:"1,550-1,850 lb",
 
-      capacity:12.9,
+      capacity:300,
 
-      type:"405-510 HP"
+      type:"625 HP"
 
     },
 

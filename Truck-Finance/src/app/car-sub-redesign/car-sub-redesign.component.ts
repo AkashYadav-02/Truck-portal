@@ -236,7 +236,7 @@ export class CarSubRedesignComponent implements OnInit {
   
   carDetails = [
     {
-      name: 'T680 Next Gen',
+      name: 'W990',
       engine_capacity: '2.8L/213',
       transmmission_type: 'Manual',
       Fuel_Type: 'Petrol',
@@ -250,7 +250,7 @@ export class CarSubRedesignComponent implements OnInit {
       select_variant: ['T680', 'Next Generation', 'Signature Edition'],
     },
     {
-      name: 'T680 Signature Edition',
+      name: 'T680',
       engine_capacity: '3.5L/213',
       transmmission_type: 'Automatic',
       Fuel_Type: 'Diesel',
@@ -260,7 +260,7 @@ export class CarSubRedesignComponent implements OnInit {
         grey: 'Grey',
       },
       emi: '2,778',
-      select_variant: ['T680', 'Next Generation', 'Signature Edition'],
+      select_variant: ['Next Generation', 'Signature Edition'],
     },
     {
       name: 'T880',
