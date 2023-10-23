@@ -57,7 +57,7 @@ export class WorkspaceComponent {
   columnDefs: ColDef[] = [
     { field: 'appID' },
     { field: 'customerName' },
-    { field: 'carSelection' },
+    { field: 'carSelection', headerName:'Truck Selection' },
     { field: 'financing' },
     {
       field: 'status', width: 100, cellStyle: function (params) {
