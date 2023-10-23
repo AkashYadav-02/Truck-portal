@@ -34,7 +34,7 @@ export class RmCarCollecComponent {
 
     {
 
-      name:"T680 Signature Edition",
+      name:"T680 ",
 
       price: "286,384",
 
