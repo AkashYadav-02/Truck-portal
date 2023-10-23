@@ -21,7 +21,7 @@ export class HomeCarCollecComponent {
     {
       name:"W990",
 
-      price: "366,267",
+      price: "$366,267",
 
       imgUrl: "../../assets/Truck5.png",
 
@@ -41,7 +41,7 @@ export class HomeCarCollecComponent {
 
       name:"T680",
 
-      price: "286,384",
+      price: "$286,384",
 
       imgUrl: "../../assets/Truck2.png",
 
@@ -59,7 +59,7 @@ export class HomeCarCollecComponent {
 
       name:"T880",
 
-      price: "367,840",
+      price: "$367,840",
       imgUrl: "../../assets/Truck3.png",
 
       speed: 'MX-13',
@@ -95,7 +95,7 @@ export class HomeCarCollecComponent {
 
       name:"W900",
 
-      price: "284,640",
+      price: "$284,640",
 
       imgUrl : "../../assets/W900.png", 
 
