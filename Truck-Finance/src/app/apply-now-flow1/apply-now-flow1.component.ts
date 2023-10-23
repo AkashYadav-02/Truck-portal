@@ -181,17 +181,19 @@ export class ApplyNowFlow1Component implements OnInit {
       this.lname = 'Smith';
       this.mname = 'M';
       this.dob = '1975-10-11';
-      this.mobile = '(021) 825 234';
-      this.home = '(06) 455 4465';
+      this.mobile = '(+61) 3 9721 1500';
+      this.home = '(+61) 3 4737 9530';
       this.email = 'john.smith@gmail.com';
-      this.citizen = 'New Zealand';
+      this.citizen = 'Australia';
       this.resident = 'Permanent';
-      this.yearsataddress = '03';
-      this.street = '144 Willow Walk';
-      this.city = 'Port Nelson';
-      this.state = 'Nelson';
-      this.country = 'New Zealand';
-      this.zipcode = '7010';
+      this.yearsataddress = '64';
+      this.street = 'Canterbury Rd'; 
+
+      // ,  VIC 3153, Australia
+      this.state = 'Victoria';
+      this.city = 'Bayswater North';
+      this.country = 'Australia';
+      this.zipcode = '3153';
       this.employer = 'Ace Viticulture LTD';
       this.yearsatjob = '03';
       this.designation = 'Manager';
