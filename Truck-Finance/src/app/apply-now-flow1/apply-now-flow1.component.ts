@@ -189,7 +189,7 @@ export class ApplyNowFlow1Component implements OnInit {
       this.yearsataddress = '64';
       this.street = 'Canterbury Rd'; 
 
-      // ,  VIC 3153, Australia
+      // ,  VIC 3153, Australia  U 8 796 HIGH STREET KEW EAST, VICTORIA, 3102
       this.state = 'Victoria';
       this.city = 'Bayswater North';
       this.country = 'Australia';
@@ -198,10 +198,10 @@ export class ApplyNowFlow1Component implements OnInit {
       this.yearsatjob = '03';
       this.designation = 'Manager';
       this.remotework = 'Yes';
-      this.workstreet = '107 Parsonage Road';
-      this.workcity = 'Woodend Beach';
-      this.workstate = 'Waimakariri';
-      this.workzip = '7610';
+      this.workstreet = 'U8 796 high street';
+      this.workcity = 'Kew East';
+      this.workstate = 'Victoria';
+      this.workzip = '3102';
     }
   }
 

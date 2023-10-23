@@ -91,7 +91,7 @@ export class RmCarCollecComponent {
 
       name:"W900",
 
-      price: "284,640",
+      price: "$284,640",
 
       imgUrl : "../../assets/W900.png", 
 
