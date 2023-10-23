@@ -1,4 +1,4 @@
 [
-    {"appID":"UNE8783", "customerName":"Jane Cooper", "carSelection":"2023 Toyota Glanza", "financing":"$17,949", "status":"Pending"},
-    {"appID":"UNE8512", "customerName":"Floyd Miles", "carSelection":"2023 Toyota Fortuner", "financing":"$62,150", "status":"Pending"}
+    {"appID":"UNE8783", "customerName":"Jane Cooper", "carSelection":"T280", "financing":"$17,949", "status":"Pending"},
+    {"appID":"UNE8512", "customerName":"Floyd Miles", "carSelection":"W900", "financing":"$62,150", "status":"Pending"}
 ]

@@ -63,7 +63,7 @@ export class LandingpageComponent {
       subscription:"Review Transactions Make Payments online"
     },
     {
-      name:"My Account Ascess",
+      name:"My Account Access",
       price: "$130,830",
       imgUrl: "../../assets/MyAccount.png",
       speed: 2500,
