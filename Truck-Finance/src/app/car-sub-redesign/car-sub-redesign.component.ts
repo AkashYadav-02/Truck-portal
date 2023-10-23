@@ -356,6 +356,10 @@ export class CarSubRedesignComponent implements OnInit {
 
   ngOnInit() {
     const labels = document.querySelectorAll('label');
+    
+    this.currentCarDetails=this.carDetails.filter((car)=> {return car.name === this.techDetailsParameter.name});
+    console.log(this.currentCarDetails);
+    this.variantName=this.currentCarDetails[0].select_variant[0];
 
     labels.forEach((label) => {
       this.renderer.listen(label, 'click', () => {
@@ -388,9 +392,6 @@ export class CarSubRedesignComponent implements OnInit {
     });
     
 
-    this.currentCarDetails=this.carDetails.filter((car)=> {return car.name === this.techDetailsParameter.name});
-    console.log(this.currentCarDetails);
-    this.variantName=this.currentCarDetails[0].select_variant[0];
     
     // this.variantName = this.currentCarDetails[0].select_variant[this.variant];
     
