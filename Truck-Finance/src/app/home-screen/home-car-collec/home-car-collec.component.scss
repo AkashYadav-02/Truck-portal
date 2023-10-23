@@ -125,8 +125,14 @@
   border: solid black 1px;
   border-radius: 20px;
   margin-top: 10px;
+  padding: 0px 20px;
   font-size: 15px;
   // width: 150px;
+}
+
+.car-collec-nav button:hover{
+  background-color: #000;
+  color: white;
 }
 
 .long-card {
@@ -237,6 +243,11 @@
 .car-img{
   max-width: 330px;
   min-height: 200px;
+}
+
+.car-card button:hover{
+  background-color: #B7C301;
+  color:black;
 }
 
 .car-card img {
