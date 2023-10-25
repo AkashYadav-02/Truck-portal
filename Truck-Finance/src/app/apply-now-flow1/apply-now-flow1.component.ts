@@ -186,7 +186,7 @@ export class ApplyNowFlow1Component implements OnInit {
       this.email = 'john.smith@gmail.com';
       this.citizen = 'Australia';
       this.resident = 'Permanent';
-      this.yearsataddress = '64';
+      this.yearsataddress = '10';
       this.street = 'Canterbury Rd'; 
 
       // ,  VIC 3153, Australia  U 8 796 HIGH STREET KEW EAST, VICTORIA, 3102
