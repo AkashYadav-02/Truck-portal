@@ -251,7 +251,7 @@ export class CarSubRedesignComponent implements OnInit {
     },
     {
       name: 'T680',
-      engine_capacity: '3.5L/213',
+      engine_capacity: '12.6L',
       transmmission_type: 'Automatic',
       Fuel_Type: 'Diesel',
       color_options: {
