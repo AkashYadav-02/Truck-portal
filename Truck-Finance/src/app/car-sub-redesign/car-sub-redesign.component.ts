@@ -71,6 +71,15 @@ export class CarSubRedesignComponent implements OnInit {
 
   globalEMI: number = 0;
 
+  isCarCardVisible=false;
+  expandCard(){
+    if (this.isCarCardVisible){
+      this.isCarCardVisible=false;
+    }else {
+      this.isCarCardVisible=true;
+    }
+  }
+
   showEmi(input: number) {
     if (input == 3169) {
       this.techDetailsParameter.emi = 3244;
