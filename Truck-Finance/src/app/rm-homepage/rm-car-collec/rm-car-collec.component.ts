@@ -194,7 +194,7 @@ export class RmCarCollecComponent {
     }
   }
 
-  buyNow(num:number, event:Event){
+  buyNow(num:number){
     this.isChecked = !this.isChecked;
       for (let index = 0; index < this.carDetails.length; index++) {
         if(index == num){
@@ -202,7 +202,7 @@ export class RmCarCollecComponent {
           break;
         }
       }
-      // this.redirectWithData("car-sub-redesign",this.data);
+      this.redirectWithData("car-sub-redesign",this.data);
   }
 
   allowCars(num : number){
