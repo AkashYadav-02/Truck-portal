@@ -1,22 +1,22 @@
 <div style="margin: 0px 67px 0px 61px;">
     <div class="progress">
-        
-        
         <!-- <div class="progress-bar" role="progressbar" [style.width]="'33.4%'" [style.background-color]="thirdBg"></div> -->
         
         <div class="stepperLabel" [class.firstani]="ani == 'first'" [class.secondani]="ani == 'second'" [class.thirdani]="ani == 'third'">
-            <div style="position: relative; flex: 1;">
+            <div class="step1" [class.activee]="firstBg == '#B0D7E9'">
                 <div class="progress-bar" id="p1" role="progressbar" [style.width]="firstwidth"  [style.background-color]="firstBg"></div>
-                <p [style.color]="first">Choose Plan</p>
+                <p class="stepName" [style.color]="first">Choose Plan</p>
+                <p class="stepTime">{{date1}}</p>
             </div>
-            <div style="position: relative; flex: 1;">
+            <div class="step1" [class.activee]="secondBg == '#B0D7E9'">
                 <div class="progress-bar" id="p2" role="progressbar" [style.width]="secondwidth"  [style.background-color]="secondBg"></div>
-                <p [style.color]="second">Enter Details</p>
-                
+                <p class="stepName" [style.color]="second">Enter Details</p>
+                <p class="stepTime">{{date2}}</p>
             </div>
-            <div style="position: relative; flex: 1;">
+            <div class="step1" [class.activee]="thirdBg == '#B0D7E9'">
                 <div class="progress-bar" id="p3" role="progressbar" [style.width]="thirdwidth" [style.background-color]="thirdBg"></div>
-                <p [style.color]="third">Upload Document</p>
+                <p class="stepName" [style.color]="third">Upload Document</p>
+                <p class="stepTime">{{date3}}</p>
             </div>
         </div>
         <div class="stepperNumber">

@@ -71,6 +71,15 @@ export class CarSubRedesignComponent implements OnInit {
 
   globalEMI: number = 0;
 
+  isCarCardVisible=false;
+  expandCard(){
+    if (this.isCarCardVisible){
+      this.isCarCardVisible=false;
+    }else {
+      this.isCarCardVisible=true;
+    }
+  }
+
   showEmi(input: number) {
     if (input == 3169) {
       this.techDetailsParameter.emi = 3244;
@@ -571,6 +580,7 @@ export class CarSubRedesignComponent implements OnInit {
   }
 
   applyNow() {
+    const now = new Date()
     // Income Liabilities
     this.techDetailsParameter.price = this.storePrice;
     if(this.globalEMI==3169){
@@ -588,6 +598,7 @@ export class CarSubRedesignComponent implements OnInit {
       emi: this.techDetailsParameter.emi,
 
       option: this.service_package,
+      datee: now.toLocaleString()
     };
 
     console.log('data->', data);

@@ -54,6 +54,7 @@ import { Howitworks2Component } from './howitworks2/howitworks2.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { landingHomeupperpageComponent } from './landinghomeupperpage/landinghomeupperpage.component';
 import { NavbarDealerComponent } from './navbardealer/navbardealer.component';
+import { CarSubsCardComponent } from './car-subs-card/car-subs-card.component';
 
 
 // import { ToastmssageComponent } from './toastmssage/toastmssage.component';
@@ -101,7 +102,8 @@ import { NavbarDealerComponent } from './navbardealer/navbardealer.component';
     StepperComponent,
     NavbarAfterHomePageComponent,
     Howitworks2Component,
-    LandingpageComponent
+    LandingpageComponent,
+    CarSubsCardComponent
 
 
   ],

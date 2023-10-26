@@ -18,6 +18,12 @@ export class StepperComponent implements OnInit{
   @Input() thirdBg:any='rgb(0,0,0,0)';
   @Input() ani:any='none';
 
+  
+
+  @Input() date1:any = '';
+  @Input() date2:any = '';
+  @Input() date3:any = '';
+
   firstwidth='30vw';
   secondwidth='30vw';
   thirdwidth='100%';

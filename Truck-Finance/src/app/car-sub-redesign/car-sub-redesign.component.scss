@@ -7,165 +7,50 @@
     padding-bottom: 4rem;
 }
 
-img {
-    height: 2.5rem;
-}
-
-.car-subs-location button {
-    width: 11rem;
-    height: 2.5rem;
-    font-weight: 500;
-    background-color: #f4f4f4;
-}
-
-.car-subs-search input {
-    background-color: #f4f4f4;
-    width: 20rem;
-    height: 2.5rem;
-}
-
-.car-subs-search img {
-    max-width: 20%;
-    max-height: 20%;
-}
-
-.vr {
-    width: 2px;
-    color: black;
-}
-
+// Mid Section
 .car-subs-header {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
+
+    p {
+        font-family: "Verdana";
+        font-weight: bold;
+        font-size: 17px;
+        color: black;
+    }
+
+    img {
+        max-width: 1rem;
+        max-height: 1rem;
+        margin-top: 0.3rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
 }
 
-.car-subs-header p {
-    font-family: "Verdana";
-    font-weight: bold;
-    font-size: 17px;
-    color: black;
+.cardangle{
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
 }
 
-.car-subs-header img {
-    max-width: 1rem;
-    max-height: 1rem;
-    margin-top: 0.3rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+.left-section{
+    margin-top: 1.4rem;
+    width: 56vw;
+    border-radius: 6px;
+    //background: rgba(245, 245, 245, 0.24);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    height: fit-content;
 }
 
-.car-subs-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-top: 1px solid rgb(141, 140, 140);
-    height: 60px;
-    z-index: 7;
-    background-color: #ffffff;
-    display: flex;
-    padding-left: 60px;
-    padding-right: 60px;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.redtxt {
-    color: grey;
-    font-weight: 500;
-    padding-right: 20px;
-}
-
-.price {
-    color: #000000;
-    font-weight: bold;
-    padding-right: 20px;
-    padding-right: 20px;
-}
-
-.cs-footer-com {
-    display: flex;
-    align-items: baseline;
-    font-family: "Verdana";
-}
-
-.applybtn {
-    color: #DB2423;
-    font-family: "Verdana";
-    font-weight: 700;
-    height: 40px;
-    font-size: 15px;
-    background-color: #ffffff;
-    width: 11rem;
-}
-
-.roadprice {
-    width: 10rem;
-    //color: #DB2423;
-    color :#000000;
-    font-family: "Verdana";
-    font-weight: 600;
-    height: 40px;
-    font-size: 15px;
-    margin-right: 15px;
-    background-color: #B7C301; //#ffffff;
-    width: 8rem;
-}
-
-.slide {
-    width: 48rem;
-    height: 32rem;
-}
-
-#demo {
-    height: 25rem !important;
-    width: auto !important;
-    border-radius: 10px;
-    background-size: 48rem 25rem !important;
-}
-
-
-
-.leftcard {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    font-family: "Verdana";
-    color: black;
-    min-width: 68%;
-    padding: 2.5rem;
-    // padding-bottom: 5rem;
-    border-radius: 5px;
-    // height: 18rem;
-    margin-bottom: 10rem;
-}
-
-.leftcard h2 {
-    font-weight: bold;
-    font-family: "Verdana";
-}
-
-.leftcard p {
-    font-family: "Verdana";
-    font-size: 23px;
-    font-weight: 700
-}
-
-.leftcard h3 {
-    font-weight: 700;
-    margin-bottom: 25px;
-}
-
-.lc-header {
+.rc-header {
     font-size: 17px;
     font-weight: bold;
     cursor: pointer;
-}
 
-.lc-header i {
-    float: right;
-    margin-top: 2px;
-}
-
-.buybtn {
-    width: 2rem;
+    i {
+        float: right;
+        margin-top: 2px;
+    }
 }
 
 .redbtn {
@@ -175,27 +60,6 @@ img {
     margin-right: 10px;
     border: solid 6px #ffffff;
 }
-
-// .step li {
-//     padding: 0;
-// }
-
-// .step p {
-//     background-color: #e9e4e4;
-//     width: max-content;
-//     margin-top: 5px;
-//     padding: 2px 10px;
-//     font-size: 11px;
-//     border-radius: 10px;
-//     font-weight: bold;
-//     color: #8C8C8C;
-//     font-family: "Verdana";
-// }
-
-// .step .activestep {
-//     background-color: #DB2423;
-//     color: #ffffff;
-// }
 
 .coloraccessories {
     display: flex;
@@ -219,11 +83,11 @@ img {
     padding: 1.5rem;
     font-family: "Verdana";
     color: black;
-    height: 45.7rem;
+    height: 47.7rem;
     overflow-y: scroll;
     overflow-x: scroll;
     overflow-x: scroll;
-    margin-bottom: 1rem;
+    margin: 1.4rem 0rem;
 }
 
 .rightcard hr {
@@ -258,21 +122,6 @@ img {
     background-color: #0381BA;
 }
 
-// .rightcard-input-radio {
-//     accent-color: #DB2423;
-//     // margin-right: 1rem;
-//     height: 21px;
-//     width: 21px;
-//     height: 21px;
-//     width: 21px;
-// }
-
-// .rightcard-label {
-//     font-size: 16px;
-//     font-weight: bold;
-//     padding-bottom: 100px;
-// }
-
 .form-check {
     transform: scale(1.1);
     accent-color: #0381BA;
@@ -303,13 +152,6 @@ img {
     }
 
 }
-
-
-// .leasehire label{
-//     margin-right: 40px;
-// }
-
-
 
 .subhead {
     font-size: 17px;
@@ -402,17 +244,6 @@ img {
 }
 
 
-
-// #middle1{
-//     margin-left: 2rem;
-//     margin-right: 1rem;
-// }
-
-// #middle2{
-//     margin-right: 2rem;
-//     margin-left: 1rem;
-// }
-
 .bs4-order-tracking {
     padding-left: 0px;
 }
@@ -453,23 +284,19 @@ img {
 
 .perAm {
     margin-top: 20px;
+
+    p {
+        font-size: 14px;
+        margin-right: 15px;
+        padding-top: 2px;
+    }
 }
 
-.perAm p {
-    font-size: 14px;
-    margin-right: 15px;
-    padding-top: 2px;
-}
 
 .bs4-order-tracking li:first-child:after {
     width: 50%;
     left: 50%
 }
-
-// .bs4-order-tracking li:last-child:after {
-//     width: 100%;
-//     right: 50%;
-// }
 
 .bs4-order-tracking li:last-child:after {
     width: 50% !important;
@@ -480,17 +307,9 @@ img {
     color: #dc3545
 }
 
-// .bs4-order-tracking li.active>div {
-//     background: #dc3545
-// }
-
 .bs4-order-tracking li.active:after {
     background: #dc3545
 }
-
-// .bs4-order-tracking li.finished>div {
-//     background: #027e00
-// }
 
 .bs4-order-tracking li.finished:after {
     background: #027e00
@@ -657,9 +476,9 @@ datalist option {
 }
 
 .left-card {
-    border-radius: 6px;
-    background: rgba(245, 245, 245, 0.24);
-    box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.22);
+    //border-radius: 6px;
+    //background: rgba(245, 245, 245, 0.24);
+    //box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.22);
 }
 
 .exclamation-icon {
@@ -990,5 +809,64 @@ datalist option {
     padding-left: 0.2rem;
     padding-right: 0.2rem;
     border-radius: 0.4rem;
+}
+
+
+// footer
+.car-subs-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid rgb(141, 140, 140);
+    height: 60px;
+    z-index: 7;
+    background-color: #ffffff;
+    display: flex;
+    padding-left: 60px;
+    padding-right: 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.redtxt {
+    color: grey;
+    font-weight: 500;
+    padding-right: 20px;
+}
+
+.price {
+    color: #000000;
+    font-weight: bold;
+    padding-right: 20px;
+    padding-right: 20px;
+}
+
+.cs-footer-com {
+    display: flex;
+    align-items: baseline;
+    font-family: "Verdana";
+}
+
+.applybtn {
+    color: #DB2423;
+    font-family: "Verdana";
+    font-weight: 700;
+    height: 40px;
+    font-size: 15px;
+    background-color: #ffffff;
+    width: 11rem;
+}
+
+.roadprice {
+    width: 10rem;
+    //color: #DB2423;
+    color :#000000;
+    font-family: "Verdana";
+    font-weight: 600;
+    height: 40px;
+    font-size: 15px;
+    margin-right: 15px;
+    background-color: #B7C301; //#ffffff;
+    width: 8rem;
 }
 
