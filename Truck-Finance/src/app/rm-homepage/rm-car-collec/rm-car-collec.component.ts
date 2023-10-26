@@ -10,6 +10,8 @@ import { RedirectMenuService } from 'src/services/redirect-menu.service';
 })
 export class RmCarCollecComponent {
   data:any = {};
+  isChecked: boolean = false;
+
   constructor(private router:Router,private fb: FormBuilder,
     private redirectMenu : RedirectMenuService,
      ) {}
@@ -91,7 +93,7 @@ export class RmCarCollecComponent {
 
       name:"W900",
 
-      price: "284,640",
+      price: "$284,640",
 
       imgUrl : "../../assets/W900.png", 
 
@@ -192,15 +194,15 @@ export class RmCarCollecComponent {
     }
   }
 
-  buyNow(num:number){
-
+  buyNow(num:number, event:Event){
+    this.isChecked = !this.isChecked;
       for (let index = 0; index < this.carDetails.length; index++) {
         if(index == num){
           this.data = this.carDetails[index];
           break;
         }
       }
-      this.redirectWithData("car-sub-redesign",this.data);
+      // this.redirectWithData("car-sub-redesign",this.data);
   }
 
   allowCars(num : number){
