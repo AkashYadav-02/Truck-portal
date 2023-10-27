@@ -42,6 +42,8 @@ export class ApplyNowPendingComponent implements OnInit{
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
+  isCarCardVisible:boolean = false;
+
   ngOnInit(): void {
     console.log(this.techDetailsParameter);
     console.log("asldasldlsadl "+ this.techDetailsParameter.pramData.option);
