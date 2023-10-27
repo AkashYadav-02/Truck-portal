@@ -10,6 +10,9 @@ import { RedirectMenuService } from 'src/services/redirect-menu.service';
 })
 export class RmCarCollecComponent {
   data:any = {};
+
+
+
   constructor(private router:Router,private fb: FormBuilder,
     private redirectMenu : RedirectMenuService,
      ) {}
@@ -191,18 +194,36 @@ export class RmCarCollecComponent {
       this.heartURL=this.white
     }
   }
+  isChecked: boolean[] = new Array(this.carDetails.length).fill(false);
+  carList: any[] = [];
+  cartCount: number = 0;
 
-  buyNow(num:number){
+ 
+  buyNow(num: number, event: Event) {
+   
+    this.isChecked[num] = !this.isChecked[num];
+    this.data = this.carDetails[num];
 
-      for (let index = 0; index < this.carDetails.length; index++) {
-        if(index == num){
-          this.data = this.carDetails[index];
-          break;
-        }
+    if (this.isChecked[num]) {
+  
+      this.carList.push(this.carDetails[num]);
+    
+      this.cartCount++;
+    } else {
+     
+      const index = this.carList.findIndex((item) => item === this.carDetails[num]);
+      if (index !== -1) {
+        this.carList.splice(index, 1);
+        
+        this.cartCount--;
       }
-      this.redirectWithData("car-sub-redesign",this.data);
-  }
+    }
+    console.log(this.carList)
 
+  }
+redirecttocarsubs(){
+  this.redirectWithData("car-sub-redesign",this.data)
+}
   allowCars(num : number){
     let list = [0,1,2];
 
@@ -212,7 +233,9 @@ export class RmCarCollecComponent {
       }
       return false;
   }
-
+ 
+ 
+  
   redirect(path : string){
     this.redirectMenu.redirectTo(path);
   }

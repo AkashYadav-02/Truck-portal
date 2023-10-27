@@ -5,7 +5,7 @@
   
     </div> 
     <div style="margin-top: 5rem; margin-bottom: 1rem;">
-        <app-stepper [firstBg]="'#0381BA'" [ani]="'third'" [secondBg]="'#B0D7E9'" [first]="'white'"></app-stepper>
+        <app-stepper [firstBg]="'#0381BA'" [ani]="'third'" [secondBg]="'#B0D7E9'" [first]="'white'" [date1]="techDetailsParameter.datee"></app-stepper>
     </div>
 
     <div class="cs-cred-info-main-screen">
@@ -81,16 +81,16 @@
                    </div>
                    <div class="asset">
                     <h6 class="sub-header-two">  Yearly Operating Expenses:</h6>
-                    <input type="number"(keydown)="changevalue()" [(ngModel)]="optcost"  class="AssetInput" style=" text-align: left; margin-left: 5%;" placeholder="$" (blur)="calcnetcost()" >
+                    <input type="number" [(ngModel)]="optcost"  class="AssetInput" style=" text-align: left; margin-left: 5%;" placeholder="$" (blur)="calcnetcost()" >
                     
                    </div>
                    <div class="asset">
                     <h6 class="sub-header-two"> Yearly Net Operating Income:</h6>
-                    <label type="number"  #idt class="AssetInput" style=" text-align: left; margin-left: 3%;" placeholder="$" >{{netcost}}</label>
+                    <label type="number"  #idt class="AssetInput" style=" text-align: left; margin-left: 3%; padding:.6%;" placeholder="$" >${{netcost}}</label>
                    </div>
                    <div class="asset">
                     <h6 class="sub-header-two"> Total debt Service Cost:</h6>
-                    <input type="number" [ngModel]="debt"  class="AssetInput" style=" text-align: left; margin-left: 9%;" placeholder="$">
+                    <input type="number" [(ngModel)]="debt"  class="AssetInput" style=" text-align: left; margin-left: 9%; " placeholder="$" (blur)="calDsr()">
                    </div>
                    
                    
@@ -127,7 +127,7 @@
                     </div>
 
                     <span class="mt-2.95 mx-4 my-2" style="font-weight:bold">DSR:<span
-                            class="cs-percentage mx-5">{{DSR_ratio}}%</span></span>
+                            class="cs-percentage mx-5">{{dsr}}%</span></span>
 
                 </div>
 

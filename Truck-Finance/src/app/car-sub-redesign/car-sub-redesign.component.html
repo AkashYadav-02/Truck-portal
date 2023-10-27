@@ -9,22 +9,20 @@
 </div> -->
 
 <div class="car-subs">
-    <div class="car-subs-header d-flex">
-        <p style="cursor: poVerdana;" (click)="homepage()">HOME</p>
-        <img src="../../assets/logos/Vector.png">
-        <!-- <p>POPULAR CARS</p> -->
-        <!-- <img src="../../assets/logos/Vector.png"> -->
-        <p style="cursor: poVerdana;" (click)="backPage()">Trucks</p>
-        <img src="../../assets/logos/Vector.png">
-        <p>{{techDetailsParameter.name.toUpperCase()}}</p>
-    </div>
     <div class="bodyclass">
-        <div class="card"  > 
-
-            <!-- <i class="fa-solid" [class.fa-angle-down]="isUpperVisible" [class.fa-angle-up]="!isUpperVisible"></i> -->
-            <div class="right-section">
-               <i class="fa-solid" (click)="onClickMenu()"
-                    [class.fa-angle-down]="isUpperVisible" [class.fa-angle-up]="!isUpperVisible"></i>
+        <div class="left-section">
+            <div style="display: flex; justify-content: space-between; padding: 0px 20px;" (click)="expandCard()">
+                <div class="car-subs-header d-flex">
+                    <p style="cursor: poVerdana;" (click)="backPage()">KENWORTH</p>
+                    <img src="../../assets/logos/Vector.png">
+                    <p>{{techDetailsParameter.name.toUpperCase()}}</p>
+                </div>
+                <i class="fa-solid cardangle" [class.fa-angle-down]="isCarCardVisible" [class.fa-angle-up]="!isCarCardVisible"></i>
+            <!-- <div [style.display]="isCarCardVisible ? 'inherit' : 'none'"
+                [style.height]="isCarCardVisible ? 'fit-content' : '0'"> -->
+            </div>
+            <div [style.display]="isCarCardVisible ? 'inherit' : 'none'"
+            [style.height]="isCarCardVisible ? 'fit-content' : '0'">
                 <div class="car-images">
                     <div class="car-main-img">
                         <img src="{{techDetailsParameter.imgUrl}}" alt="car-img">
@@ -34,7 +32,6 @@
                         <img src="../../assets/truck-interior2.png" alt="...">
                     </div>
                 </div>
-    
                 <div class="left-card my-3 py-3 px-2 d-flex" style="gap: 50px;">
                     <div>
                         <div class="car-details py-2 px-2">
@@ -88,7 +85,6 @@
     
                                     <input class=" mileage-radio" type="radio" name="Mileage" id="specifyColor"
                                         (change)="selecMile(2)">
-    
                                     <label class="mt-auto mb-auto mr-5 ms-3 mileage-text3 milegae-cc d-flex" for="">Ultimate
                                         <span class="label-des">25,000 KM/Year</span>
                                         <div class="d-flex">
@@ -124,113 +120,69 @@
     
     
                         <div class="color-div">
-    
                             <p class="mt-4">Color</p>
-    
                             <div style="display: flex;">
-    
                                 <div *ngFor="let item of colorList">
-    
                                     <button class="dot redbtn color{{item}}" style="outline: solid 2px #a38c8c;"
                                         (click)="outline($event)"></button>
-    
                                 </div>
-    
                             </div>
-    
                         </div>
-    
-    
-    
                         <div>
-    
                             <h2 class="mt-4 accessories">Accessories <span>(optional)</span></h2>
-    
                             <div class="d-flex mt-3 my-2">
                                 <div>
-    
                                     <img (click)="addBorder()" id="speedometer" class="speedometer iconss"
                                         src="../../assets/logos/dashcam.png" style="margin-right: 20px;">
                                     <div class="info">Dashcam</div>
                                 </div>
-    
                                 <div>
                                     <img (click)="addBorder2()" class="iconss" id="engine" src="../../assets/logos/built-in-wifi.jpg">
                                     <div class="info">Built-in WiFi</div>
                                 </div>
-    
                             </div>
-    
                         </div>
-    
                     </div>
-    
                 </div>
-    
             </div>
+            
         </div>
-      
-
         <div class="rightcard">
-
-          
-
+            <p class="rc-header" (click)="onClick()">Subscription Type<i class="fa-solid"
+                    [class.fa-angle-down]="isUpperVisible" [class.fa-angle-up]="!isUpperVisible"></i></p>
             <div [style.display]="isUpperVisible ? 'inherit' : 'none'"
                 [style.height]="isUpperVisible ? 'fit-content' : '0'">
-
                 <div class="radio-body">
-
                     <div class="leasehire form-check form-check-inline"
                         style="margin-left: -21px; margin-right: 5.8rem;">
-
                         <input type="radio" name="radio1" [(ngModel)]="loanHire" value="Lease" checked>
-
                         <label class="form-check-label" for="inlineRadio1">Lease</label>
-
                     </div>
-
                     <div class="leasehire form-check form-check-inline">
-
                         <input type="radio" name="radio1" [(ngModel)]="loanHire" value="HirePurchase">
-
                         <label class="form-check-label" for="inlineRadio1">Hire Purchase</label>
-
                     </div>
-
                 </div>
 
-
-
                 <p class='subhead'>Tenure <span class="text-secondary">(Months)</span></p>
-
                 <p style="font-weight: bold; font-size: 13px; color: grey; margin-top: -15px;">Select Preferred
-
                     Tenure</p>
-
                 <div class="numbers select-size">
-
                     <input (click)="calculateTenure('small')" class="numbtn" type="radio" name="s-size" id="small"
                         value="small" [(ngModel)]="selectedRadio" />
-
                     <input (click)="calculateTenure('medium')" class="numbtn" type="radio" name="s-size" id="medium"
                         value="medium" [(ngModel)]="selectedRadio" />
-
                     <input (click)="calculateTenure('large')" class="numbtn" type="radio" name="s-size" id="large"
                         value="large" [(ngModel)]="selectedRadio" />
-
                     <input (click)="calculateTenure('xl')" class="numbtn" type="radio" name="s-size" id="x-large"
                         value="xl" [(ngModel)]="selectedRadio" />
-
                     <input (click)="calculateTenure('xxl')" class="numbtn" type="radio" name="s-size" id="xx-large"
                         value="xxl" [(ngModel)]="selectedRadio" />
-
                     <input (click)="calculateTenure('xxxl')" class="numbtn" type="radio" name="s-size" id="xtra-large"
                         value="xxxl" [(ngModel)]="selectedRadio" />
-
                     <label for="small" class="option-text">
                         <p>24</p>
                     </label>
-
                     <label for="medium" class="option-text">
                         <p>36</p>
                     </label>
@@ -355,21 +307,11 @@
 
                 </div>
 
-
-
-                <!-- <div class="container text-center mt-3">
-
-                        <button class="btn btn-secondary buybtn mb-2" style="justify-content: center;">Buy Back Pack
-
-                            Amount</button>
-
-                    </div> -->
-
             </div>
 
             <hr>
 
-            <p class="lc-header" (click)="onTap()">Quote Summary
+            <p class="rc-header" (click)="onTap()">Quote Summary
                 <i class="fa-solid" [class.fa-angle-down]="isMidVisible" [class.fa-angle-up]="!isMidVisible"></i>
             </p>
 
@@ -477,7 +419,7 @@
 
             <hr>
 
-            <p class="lc-header" (click)="onPress()">Eligibility
+            <p class="rc-header" (click)="onPress()">Eligibility
 
                 <i class="fa-solid" [class.fa-angle-down]="isLowerVisible" [class.fa-angle-up]="!isLowerVisible"></i>
 
@@ -596,7 +538,6 @@
 
 
         </div>
-
     </div>
 
 </div>

@@ -47,7 +47,7 @@ export class CreditInformationComponent implements OnInit {
   leftcard = leftcard;
   currentInstallment : any;
 
-  DSR_ratio : number = 100;
+  DSR_ratio : number | undefined ;
 
   uploadedFiles: any[] = [];
 
@@ -63,7 +63,8 @@ export class CreditInformationComponent implements OnInit {
   
   expense:any;
   debt:any;
-
+   
+  dsr:any;
   
   text1: any = 'chooseOption';
 
@@ -170,14 +171,27 @@ export class CreditInformationComponent implements OnInit {
   netcost:any = '';
 
   calcnetcost(){
-    console.log("heloo");
+    
     
   this.netcost =  this.yearly - this.optcost;
   }
+  calDsr(){
+   console.log("eee")
 
-  calculate(){
-    this.DSR_ratio=100;
+     this.DSR_ratio= this.netcost/this.debt;
+     console.log(this.netcost);
+     console.log(this.debt);
+     
+     this.dsr=(Math.round(this.DSR_ratio * 100) / 100).toFixed(2);
+
+     
+
+
+    
+     
   }
+  
+  
 
   onSubmit() {
 
