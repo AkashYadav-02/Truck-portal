@@ -102,7 +102,32 @@
             </div>
 
         </div>
+        <div class="card down-side">
 
+            <p class="an-head">Contract Details</p>
+            <p class="an-subhead">Contract-784</p>
+
+            <div class="d-flex">
+                <div class="dealershipp" >
+                    <p class="deall"><b>Program :</b> 28-Hire Purchase</p>
+                    <p class="deall"><b>Installment Frequency :</b> Monthly</p> 
+                    <p class="deall"><b>Lessor Rate :</b> 5.24%</p> 
+                </div>
+                
+                <div class="dealershipp" >
+                    <p class="deall"><b>Product :</b> Hire Purchase </p>
+                    <p class="deall"><b>Installment Timing  :</b> Advance </p>
+                    <p class="deall"><b>Contract Start Date  :</b> 02/11/2023 </p>
+                </div>
+    
+                <div class="dealershipp">
+                    <p class="deall"><b>Currency  :</b> USD ($) </p>
+                    <p class="deall"><b>Business Unit  :</b> Paccar </p>
+                    <p class="deall"><b>Contract Maturity Date  :</b> 02/11/2028 </p>
+                </div>
+
+            </div>
+        </div>
  
 
         <div class="card right-side">
@@ -112,7 +137,7 @@
                 
                 <a href="javascript:void(0);" (click)="showTransactionTable()" [ngClass]="{'active': activeLink === 'Repayment Schedule'}">Repayment Schedule</a>
                
-                <a href="javascript:void(0);" (click)="showAccountDetails()" [ngClass]="{'active': activeLink === 'GIRO'}">GIRO</a>
+                <a href="javascript:void(0);" (click)="showAccountDetails()" [ngClass]="{'active': activeLink === 'GIRO'}">Direct Debit</a>
                 
                 <a href="javascript:void(0);" (click)="showDisbursementDetails()"[ngClass]="{'active': activeLink === 'Disbursement History'}" >Disbursement History</a>
 
@@ -138,7 +163,7 @@
 
                 </div>
 
-                <p class="an-head ">GIRO Details</p>
+                <p class="an-head ">Direct Debit Details</p>
 
                 <div class="an-body accountDetails">
                     <p><b>Bank and Branch Name:</b> {{ accountDetails.bankandbranchname }}</p>

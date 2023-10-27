@@ -3,15 +3,62 @@
     padding: 3% 6%;
     color: black;
 }
-// .checkbox{
-//     background-color:#004f8f2c ;
-//     margin-right: 2rem;
-// }
+.checkbox{
+    background-color:#004f8f2c ;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
 .home-card-sec{
     display: flex;
     gap: 1%;
 }
-
+body {
+    background: rgb(0, 0, 0);
+  }
+  
+  .cartt {
+    // position: relative;
+    right: 1rem;
+    position: fixed;
+    bottom: 1rem;
+    cursor: pointer;
+    // z-index: -1;
+    // display: block;
+    width: 70px;
+    height: 70px;
+    // height: auto;
+    border-radius: 50%;
+    // overflow: hidden;
+    background-color: #0381BA;
+    // padding: 20px;
+    // align-items: center;
+ 
+    
+    .material-icons {
+      position: relative;
+      top: 30%;left: 30%;
+      z-index: 1;
+      font-size: 30px;
+      color: #F5F5F5;
+    }
+    .count {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      font-size: 11px;
+      border-radius: 50%;
+      background: #B7C301;
+      width: 16px;
+      height: 16px;
+      line-height:16px;
+      display: block;
+      text-align: center;
+      color: #0F0F0F;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+    }
+  }
 .car-collec-nav{
     display: flex;
     justify-content: center;

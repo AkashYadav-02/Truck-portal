@@ -5,7 +5,7 @@
 
     display:flex;
 
-    gap: 20px;
+    gap: 22px;
 
     justify-content: space-between;
 
@@ -38,7 +38,7 @@
 .right-side{
 
     width: 59.2vw;
-
+    
     padding: 25px 37px 5px 25px;
 
     margin-bottom: 15px;
@@ -49,6 +49,19 @@
 
 }
 
+.down-side{
+
+    width: 59.2vw;
+    
+    padding: 25px 37px 8px 25px;
+
+    margin-bottom: 15px;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    border: solid 1px rgb(244, 238, 238);
+
+}
  
 
 .an-drop{
@@ -172,27 +185,33 @@ margin-bottom: 1rem;
   }
 
 .an-body{
-
     display: flex;
-
     color: black;
-
     font-family: "Verdana";
-
-    font-size: 14px;
-
+    font-size : 0.8rem;
     font-weight: 500;
-
+    gap: 1.8rem;
     justify-content: space-between;
-
 }
 
  
 
 .dealership{
+    justify-content: left;  
+}
 
-    justify-content: left;
-
+.dealershipp{
+    color: black;
+    font-family: "Verdana";
+    font-size : 0.8rem;
+    font-weight: 500;
+}
+.subhead{
+    
+}
+.deall{
+    min-width: 16rem;
+    max-width: 16rem;
 }
 
  
