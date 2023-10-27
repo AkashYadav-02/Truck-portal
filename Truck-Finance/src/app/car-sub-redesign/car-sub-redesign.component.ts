@@ -23,7 +23,7 @@ export class CarSubRedesignComponent implements OnInit {
   variantName:any = "Default";
   
   // currentCar:any;
-  ownership:any = "Individual";
+  ownership:any = "Business";
   currentCarDetails!:any;
   eligibleForm: FormGroup;
   techDetailsParameter: any = 0;

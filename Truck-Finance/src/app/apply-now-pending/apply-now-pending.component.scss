@@ -7,9 +7,26 @@
 
 .left-card {
     height: 46.5rem;
-    padding: 10px;
+    padding: 20px 10px;
     width: 31.5vw;
     max-width: 31.5vw;
+}
+
+.car-card-details{
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 10px 10px 5px 10px;
+    font-family: "Verdana";
+    margin: 20px 0px;
+}
+
+.car-name{
+    display: flex;
+    justify-content: space-between;
+
+    p{
+        font-size: 14.5px;
+    }
 }
 
 .car-card img {
