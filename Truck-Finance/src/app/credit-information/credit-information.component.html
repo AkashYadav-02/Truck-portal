@@ -1,18 +1,9 @@
 <div class="navbar">
-    <app-navbar-after-home-page [navtheme]="'whitetheme'"></app-navbar-after-home-page>
+    <!-- <app-navbar-after-home-page [navtheme]="'whitetheme'"></app-navbar-after-home-page> -->
 </div>
 <div *ngIf="showCredit">
-    <!-- <div class="stepper">
-        <div class="progress" aria-label="Danger example">
-            <div class="progress-bar bg-success" style="width: 33.33%"></div>
-            <div class="progress-bar bg-danger" style="width: 33.33%"></div>
-        </div>
-        <div class="stepper-label">
-            <p style="font-family: Verdana;">Choose Plan</p>
-            <p style="font-family: Verdana;">Enter Details</p>
-            <p style="font-family: Verdana;">Upload Documents</p>
-        </div>
-    </div> -->
+  
+    </div> 
     <div style="margin-top: 5rem; margin-bottom: 1rem;">
         <app-stepper [firstBg]="'#0381BA'" [ani]="'third'" [secondBg]="'#B0D7E9'" [first]="'white'"></app-stepper>
     </div>
@@ -69,382 +60,61 @@
 
                     <h5 class="header-one">Credit Information</h5>
 
-                    <!-- <input class="radio-button" type="checkbox" [(ngModel)]="isChecked">
-
-                    <h6 class="header-two-one">Validated with BUD</h6> -->
 
                 </div>
 
-                <div class="sub-header-one">
-
-                    <h6><b>Asset details :</b></h6>
-
-                </div>
+             
 
                 <div class="drop-one">
+                   <div class="asset">
+                    <h6 class="sub-header-two"> Total Assets:</h6>
+                    <input type="number" [ngModel]="asset"  class="AssetInput" style=" text-align: left; margin-left: 20%;" placeholder="$">
+                   </div>
+                   <div class="asset">
+                    <h6 class="sub-header-two"> Total Liabilities:</h6>
+                    <input type="number" [ngModel]="liabilities"  class="AssetInput" style=" text-align: left; margin-left:17%;" placeholder="$">
+                   </div>
+                   <div class="asset">
+                    <h6 class="sub-header-two"> Yearly Operating Income  :</h6>
+                    <input type="number" [(ngModel)]="yearly" class="AssetInput" style=" text-align: left; margin-left: 6.5%;" placeholder="$">
+                    
+                   </div>
+                   <div class="asset">
+                    <h6 class="sub-header-two">  Yearly Operating Expenses:</h6>
+                    <input type="number"(keydown)="changevalue()" [(ngModel)]="optcost"  class="AssetInput" style=" text-align: left; margin-left: 5%;" placeholder="$" (blur)="calcnetcost()" >
+                    
+                   </div>
+                   <div class="asset">
+                    <h6 class="sub-header-two"> Yearly Net Operating Income:</h6>
+                    <label type="number"  #idt class="AssetInput" style=" text-align: left; margin-left: 3%;" placeholder="$" >{{netcost}}</label>
+                   </div>
+                   <div class="asset">
+                    <h6 class="sub-header-two"> Total debt Service Cost:</h6>
+                    <input type="number" [ngModel]="debt"  class="AssetInput" style=" text-align: left; margin-left: 9%;" placeholder="$">
+                   </div>
+                   
+                   
+                   
+                    
 
-                    <h6 class="sub-header-two">Asset type :</h6>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    
 
 
 
-                    <select name="choose" class="Choose" id="Choose" [ngModel]="text1" #addid1
-                        aria-placeholder="Choose">
-
-                        <option value="chooseOption">Choose</option>
-
-                        <option value="Home">Home</option>
-
-                        <option value="Vehicle">Vehicle</option>
-
-                        <option value="KiwiSaver">KiwiSaver</option>
-
-                        <option value="Investments">Investments</option>
-
-                        <option value="Savings">Savings</option>
-
-                        <option value="Marine Equipment (e.g. Boat)">Marine Equipment (e.g. Boat)</option>
-
-                        <option value="Property">Property</option>
-
-                        <option value="Motor Vehicles, Campervans, Motorcycles">Motor Vehicles, Campervans, Motorcycles
-                        </option>
-
-                        <option value="Farm Equipment">Farm Equipment</option>
-
-                        <option value="Shares">Shares</option>
-
-                        <option value="Live stock">Live stock</option>
-
-                        <option value="Other">Other</option>
-
-                    </select>
-
-                    <input type="number" [ngModel]="text" #addid class="AssetInput px-3" style="text-align: left;" placeholder="$">
-
-                    <button class="AssetAdd" (click)="add(addid.value, addid1.value,'assetAdd')"></button>
-
+            
                 </div>
 
-                <!-- <span *ngFor="let val of txt_full_arr">
-
-                    <h6 class="sub-header-two"><b>Asset type :</b>&nbsp;{{val.dropdownVal}}
-
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{val.cost}}
-
-                        </h6>
-
-                </span> -->
-
-                <table class="w-75" style="margin-left: 1.5rem;">
-
-                    <tbody>
-
-                        <tr *ngFor="let asset of txt_full_arr; index as i ">
-
-                            <td id="assetLabel" [ngStyle]="alignText(i)" class="">{{getAssetLabel(i)}}</td>
-
-                            <td style="width: 12.3rem">{{asset.dropdownVal}}</td>
-
-                            <td style="padding-left: 1rem;">{{numberWithCommas(asset.cost)}}</td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-                <!-- <div *ngFor="let asset of txt_full_arr;index as i" class="w-100 d-flex justify-content-around">
-
-                    <h6 [ngStyle]="alignText(i)">{{getAssetLabel(i)}}</h6>
-
-                    <span>{{asset.dropdownVal}}</span>
-
-                    <span>{{asset.cost}}</span>
-
-                </div> -->
-
-                <h6 class="sub-header-two-one">Total : $ {{numberWithCommas(sum)}}</h6>
-
-            </div>
-
-            <div class="cs-step-two">
-
-                <div class="header">
-
-                    <h6 class="header-one-first">Monthly Income Details</h6>
-
-                    <!-- <input class="radio-button" type="radio" checked>
-
-                <h6 class="header-two">Validated with BUD</h6> -->
-
-                </div>
-
-                <!-- <div class="sub-header-one">
-
-                <h5>Income Type :</h5>
-
-            </div> -->
-
-                <div class="drop-one">
-
-                    <h6 class="sub-header-two">Income Type :</h6>
-
-                    <select name="choose" class="Choose rounded-border" id="Choose" [ngModel]="text1" #addid3
-                        aria-placeholder="Choose">
-
-
-
-                        <option value="chooseOption">Choose </option>
-
-                        <option value="Rental">Rental</option>
-
-                        <option value="Working for Families">Working for Families</option>
-
-                        <option value="Superannuation">Superannuation</option>
-
-                        <option value="WINZ">WINZ</option>
-
-                        <option value="Boarder">Boarder</option>
-
-                        <option value="ACC">ACC</option>
-
-                        <option value="Investment/Shares">Investment/Shares</option>
-
-                        <option value="Overseas Income">Overseas Income</option>
-
-                    </select>
-
-                    <input type="number" [ngModel]="text" #addid2 class="AssetInput px-3" style="text-align: left;" placeholder="$">
-
-                    <button class="AssetAdd" (click)="add(addid2.value, addid3.value,'incomeAdd')"></button>
-
-                </div>
-
-
-
-                <!-- <span>
-
-                    <h6 class="sub-header-two">(i)Income Type :&nbsp;Royalty
-
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                        $1000
-
-                    </h6>
-
-                </span> -->
-
-                <table class="w-75" style="margin-left: 1.5rem;">
-
-                    <tbody>
-
-                        <tr *ngFor="let asset of txt_full_arr1;index as i ">
-
-                            <td id="assetLabel" [ngStyle]="alignText(i)" class="">{{getAssetLabel(i)}}</td>
-
-                            <td style="width: 12.3rem">{{asset.dropdownVal}}</td>
-
-                            <td style="padding-left: 1rem;">{{numberWithCommas(asset.cost)}}</td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-
-
-                <h6 class="sub-header-two-one">Total : $ {{numberWithCommas(sum1)}}</h6>
-
-
+            
+                
+            
 
             </div>
 
 
 
-            <div class="cs-step-three">
 
-                <div class="header">
-
-                    <h6 class="header-one d-flex">Monthly Expense Details</h6>
-
-                    <!-- <input class="radio-button" type="radio" checked>
-
-                <h6 class="header-two">Validated with BUD</h6> -->
-
-                </div>
-
-                <!-- <div class="sub-header-one">
-
-                <h5>Asset details :</h5>
-
-            </div> -->
-
-                <div class="drop-one">
-
-                    <h6 class="sub-header-two ">Expense type :</h6>
-
-                    <select name="choose" class="Choose" id="Choose" #addExpense>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-
-                            <path
-                                d="M10 18.3332C14.6024 18.3332 18.3334 14.6022 18.3334 9.99984C18.3334 5.39746 14.6024 1.6665 10 1.6665C5.39765 1.6665 1.66669 5.39746 1.66669 9.99984C1.66669 14.6022 5.39765 18.3332 10 18.3332Z"
-                                stroke="#DB2423" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                                stroke-linejoin="round" />
-
-                        </svg>
-
-
-
-                        <option value="chooseOption"><b>Choose</b> </option>
-
-                        <option value="Council Rates">Council Rates</option>
-
-                        <option value="Home Insurance">Home Insurance</option>
-
-                        <option value="Utilities">Utilities</option>
-
-                        <option value="Living Expenses">Living Expenses</option>
-
-                        <option value="Motor Vehicle">Motor Vehicle</option>
-
-                        <option value="Dependent Education">Dependent Education</option>
-
-                        <option value="Other insurance">Other insurance</option>
-
-                        <option value="Child Support/care">Child Support/care</option>
-
-                        <option value="Lifestyle">Lifestyle</option>
-
-                        <option value="Other">Other</option>
-
-                    </select>
-
-                    <input type="number" [ngModel]="text" #addExpenseAmount class="AssetInput px-3" style="text-align: left;" placeholder="$">
-
-                    <button class="AssetAdd"
-                        (click)="add(addExpenseAmount.value,addExpense.value,'expenseAdd')"></button>
-
-                </div>
-
-                <!-- <span>
-
-                    <h6 class="sub-header-two">(i)Expense Type :&nbsp;Rent
-
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                        $800&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Monthly
-
-                        Income:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$800
-
-                    </h6>
-
-                </span> -->
-
-                <table class="w-75" style="margin-left: 1.5rem;">
-
-                    <tbody>
-
-                        <tr *ngFor="let asset of txt_full_arr2 ;index as i ">
-
-                            <td id="assetLabel" [ngStyle]="alignText(i)" class="">{{getAssetLabel(i)}}</td>
-
-                            <td style="width: 12.3rem">{{asset.dropdownVal}}</td>
-
-                            <td style="padding-left: 1rem;">{{numberWithCommas(asset.cost)}}</td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-
-
-                <h6 class="sub-header-two-one">Total : $ {{numberWithCommas(sum2)}}</h6>
-
-
-
-            </div>
-
-            <div class="cs-step-four">
-
-                <div class="header">
-
-                    <h6 class="header-one">&nbsp;&nbsp;&nbsp;Monthly Liability Details</h6>
-
-                </div>
-
-                <div class="drop-one">
-
-                    <h6 class="sub-header-two">&nbsp;&nbsp;&nbsp;&nbsp;Liability Type:</h6>
-
-                    <select name="choose" class="Choose" id="Choose" #addLiability>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-
-                            <path
-                                d="M10 18.3332C14.6024 18.3332 18.3334 14.6022 18.3334 9.99984C18.3334 5.39746 14.6024 1.6665 10 1.6665C5.39765 1.6665 1.66669 5.39746 1.66669 9.99984C1.66669 14.6022 5.39765 18.3332 10 18.3332Z"
-                                stroke="#DB2423" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-                                stroke-linejoin="round" />
-
-                        </svg>
-
-
-
-                        <option value="chooseOption"><b>Choose</b> </option>
-
-                        <option value="Credit Cards">Credit Cards</option>
-
-                        <option value="Mortgage">Mortgage</option>
-
-                        <option value="Loan">Loan</option>
-
-                    </select>
-
-                    <input type="number" [ngModel]="text" #addLiabilityAmount class="AssetInput px-3" style="text-align: left;" placeholder="$">
-
-                    <button class="AssetAdd"
-                        (click)="add(addLiabilityAmount.value,addLiability.value,'liabilityAdd')"></button>
-
-                </div>
-
-                <!-- <span>
-
-                    <h6 class="sub-header-two">(i) Liability Type: Loan:
-
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                        $2000</h6>
-
-                </span> -->
-
-                <table class="w-75" style="margin-left: 1.5rem;">
-
-                    <tbody>
-
-                        <tr *ngFor="let asset of txt_full_arr3;index as i ">
-
-                            <td id="assetLabel" [ngStyle]="alignText(i)" class="">{{getAssetLabel(i)}}</td>
-
-                            <td style="width: 12.3rem; padding-left: 2rem;">{{asset.dropdownVal}}</td>
-
-                            <td style="padding-left: 1rem;">{{numberWithCommas(asset.cost)}}</td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-
-
-                <h6 class="sub-header-two-one">Total : $ {{numberWithCommas(sum3)}}</h6>
-
-
-
-            </div>
+          
 
             <div class="cs-step-five d-flex align-items-center">
 
@@ -471,153 +141,36 @@
 
                     <h5 class="header-one mt-2 mx-0">Consent for Credit Score</h5>
 
-                    <span>
-
-                        <h6 class="sub-header-two-credit mx-3 " style="margin-top:-15px ;color: #000;">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Credit Score: 750</h6>
-
-                    </span>
+                
 
                 </div>
 
                 <div class="cs-run-cred-score d-flex justify-content-end mx-3">
 
-                    <button class="retrieve-btn-credit">Credit Score</button>
+                    <button class="retrieve-btn-credit">Run Business Credit</button>
 
                 </div>
 
 
 
             </div>
+         
 
-            <!-- <div class="cs-step-seven">
-
-                <div class="header">
-
-                    <h5>
-
-                        Upload Document
-
-                    </h5>
-
-                </div>
-
-                <div class="drop-one">
-
-                    <h6 class="sub-header-two">Document Type:</h6>
-
-                    <select name="choose" class="Choose" id="Choose">
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-
-                            <path
-
-                                d="M10 18.3332C14.6024 18.3332 18.3334 14.6022 18.3334 9.99984C18.3334 5.39746 14.6024 1.6665 10 1.6665C5.39765 1.6665 1.66669 5.39746 1.66669 9.99984C1.66669 14.6022 5.39765 18.3332 10 18.3332Z"
-
-                                stroke="#DB2423" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
-
-                                stroke-linejoin="round" />
-
-                        </svg>
-
- 
-
-                        <option value="choose"><b>Choose</b> </option>
-
-                        <option value="Savings Account">Savings Account</option>
-
-                        <option value="Current Account">Current Account</option>
-
-                        <option value="Draft Account">Draft Account</option>
-
-                    </select>
-
-                </div>
-
-                <div class="an-drag">
-
-                    <p-toast></p-toast>
-
-                    <p-fileUpload name="files[]" url="https://www.primefaces.org/cdn/api/upload.php"
-
-                        chooseLabel="Drag Your Files Here" (onUpload)="onUpload($event)" [multiple]="true"
-
-                        [showCancelButton]="false" accept="image/*" [maxFileSize]="1000000">
-
-                        <ul *ngIf="uploadedFiles.length">
-
-                            <li *ngFor="let file of uploadedFiles">{{ file.name }} - {{ file.size }} bytes</li>
-
-                        </ul>
-
-                    </p-fileUpload>
-
-                     <p class="drag-file-text">Drag your files here</p> -->
-
-
-
-            <!-- </div>
-
-                <p style="font-size: 11px; color: grey; font-family: Verdana; font-weight: bold;" class="mx-4">Max file is 10MB.
-
-                    Supported file format are JPG, PNG, PDF.</p>
-
- 
-
-            </div> -->
-
-            <div class="cs-step-eight d-flex justify-content-around">
-
-                <button (click)="onClicked1()">
-
-                    Initiate Income and Expense Verification 
-
-                </button>
-
-                <button (click)="onClicked1()">
-
-                    Update/Replace Assets and Liabilities
-
-                </button>
-
-            </div>
-
+          
         </div>
-
-        <div *ngIf="isShowInfoMsg">Hello</div>
-
     </div>
-
-
-
     <div class="car-subs-footer">
-
         <div class="cs-footer-left">
-
             <button class="redtxt" style="margin-left: -2rem; cursor:pointer; color: grey; font-weight: 700; font-family: 'Verdana';" (click)="redirectToApplyNow()">Back</button>
-
-
         </div>
-
-
 
         <div class="cs-footer-right">
             <button class="btn savebtn">SAVE AS DRAFT</button>
             <button class="btn submitbtn" style="font-weight: 600; font-family: Verdana;" (click)="onSubmit()">Submit</button>
 
-
-
         </div>
 
-
-
-
-
     </div>
-
-</div>
-
-
 
 <div *ngIf="submitPopup" class="popup-container" (click)="onCancel()">
 
@@ -667,19 +220,7 @@
 
         <div class="popup-header">
 
-            <button (click)="onCancel1()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24" fill="none">
-
-                    <path d="M9.17004 14.8299L14.83 9.16992" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-
-                    <path d="M14.83 14.8299L9.17004 9.16992" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-
-                    <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-
-                </svg></button>
+            <button (click)="onCancel1()"></button>
 
         </div>
 
@@ -703,18 +244,3 @@
 
 </div>
 
-<!-- <div *ngIf="isShowInfoMsg" class="popup-container" (click)="onCancel()">
-
-    <div class="popup-box">
-
-        <div class="popup-message">
-
-            <p>To start income verification process, we have sent you an email to <span>john.smith@gmail.com</span>containing your unique link, which is valid for 24 hours.</p>
-
-        </div> -->
-
-
-
-<!-- </div>
-
-</div> -->

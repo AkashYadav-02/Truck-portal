@@ -6,9 +6,10 @@
 
 }
 
-.AssetInput {
+.AssetInput{
 
   text-align: right;
+  // margin-left: 36%;
 
 }
 
@@ -328,7 +329,7 @@
 
     height: 75px;
 
-    margin: 3px 0px;
+  
 
     flex-shrink: 0;
 
@@ -376,13 +377,9 @@
 
       margin-left: 20px;
 
- 
-
-      h5 {
-
-        margin: 0px 20px;
-
-      }
+ .mb-3 {
+  margin-bottom: 1.3rem !important;
+ }
 
     }
 
@@ -439,6 +436,13 @@
     // border: 2px solid rgb(141, 140, 140);
 
     // box-shadow: 0px -1px 4px 4px rgba(0, 0, 0, 0.08);
+
+
+
+
+
+
+
 
     border: 1px solid rgb(202, 202, 202);
 
@@ -681,6 +685,7 @@
   background-repeat: no-repeat;
 
   width: 250px;
+  
 
   // background-image: url('../../assets/Group 1171275956.png');
 
@@ -713,6 +718,7 @@
 .retrieve-btn-credit {
 
   margin-top: -30px;
+  width: auto !important;
 
 }
 
@@ -908,10 +914,12 @@ select::-ms-expand {
 
 .drop-one {
 
-  display: flex;
-
+  // display: flex;
+  
 }
-
+.asset{
+  display: flex;
+}
  
 
 .drop-image {
@@ -1034,7 +1042,7 @@ select::-ms-expand {
 
   display: flex;
 
-  margin-top: 10px;
+  margin-top: 9px;
 
   margin-left: 20px;
 
