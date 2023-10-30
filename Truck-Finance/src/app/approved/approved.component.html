@@ -1,11 +1,83 @@
 <app-navbar-after-home-page [navtheme]="'whitetheme'"></app-navbar-after-home-page>
 
 <div class="an-pending">
+    
     <div class="card left-card border border-2">
-            <div (click)="redirect('car-sub')"  *ngFor="let car of carDetails">
+            <!-- <div (click)="redirect('car-sub')"  *ngFor="let car of carDetails">
                 <img class="car-card" src='{{techDetailsParameter.pramData.pramData.image}}'>
+            </div> -->
+            <h5 class="card-title" style="font-family: 'Verdana'; text-align: center; color:#0381BA; font-size: 15px;">
+                <b>Application ID: {{techDetailsParameter.pramData.pramData.applicationId}}</b>
+            </h5>
+            <div class="car-card-details">
+                <div class="car-name" (click)="isCarCardVisible = !isCarCardVisible">
+                    <p><b>{{techDetailsParameter.pramData.pramData.name}}</b></p>
+                    <i class="fa-solid cardangle" [class.fa-angle-down]="isCarCardVisible" [class.fa-angle-up]="!isCarCardVisible"></i>
+                </div>
+            
+                <div [style.display]="isCarCardVisible ? 'inherit' : 'none'"
+                    [style.height]="isCarCardVisible ? 'fit-content' : '0'">
+                    <div class="d-flex" style="justify-content: space-between;">
+                        <!-- <div class="package-details">
+                            <p><b>Your chosen package:</b> </p>
+                            <p style="color: #0381BA;"><b>Your current installment is:</b></p>
+                            <p><b>Your Total Amount of Finance</b></p>
+                            <p>Down Payment</p>
+                            <p>Repayment Frequency </p>
+                            <p>APR of</p>
+                            <p>Add on (installment)</p>
+                            <p><b>Your Final Installment is</b></p>
+                            <p><b>Your first payment is</b></p>
+                        </div> -->
+                        <!-- <div class="package-details">
+                            <p><b>{{package}}</b> </p>
+                            <p style="color: #0381BA;">
+                                <b>{{numberWithCommas(techDetailsParameter.pramData.leftcard.currentInstallment)}}/month</b>
+                            </p>
+                            <p><b>{{techDetailsParameter.tableData.financing}}</b></p>
+                            <p>{{techDetailsParameter.pramData.leftcard.downpayment}}</p>
+                            <p>{{techDetailsParameter.pramData.leftcard.repaymentfrequency}} </p>
+                            <p>{{techDetailsParameter.pramData.leftcard.APR}}</p>
+                            <p>{{techDetailsParameter.pramData.leftcard.addonInstallment}}</p>
+                            <p ><b>{{techDetailsParameter.pramData.leftcard.yourfinalinstallment}}</b></p>
+                            <p><b>${{numberWithCommas(techDetailsParameter.pramData.leftcard.currentInstallment)}}</b></p>
+                        </div> -->
+                        <div class="package-details" style="min-width: 15rem;">
+                            <p style="font-family: 'Verdana';"><b>Your chosen package: </b></p>
+                            <p style="font-family: 'Verdana'; color: #0381BA;"><b>Your current installment is:</b></p>
+                            <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>Your Total Amount of Finance </b></p>
+                            <p style="font-family: 'Verdana';">Down Payment</p>    
+                            <p style="font-family: 'Verdana';">Repayment Frequency </p>
+                            <p style="font-family: 'Verdana';">APR of </p>
+                            <p style="font-family: 'Verdana';">Add on (installment)</p>
+                            <!-- <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>Your Final Installment is</b></p> -->
+                            <p style="font-family: 'Verdana';"><b>Your first payment is</b></p>
+                    
+                        </div>
+                        <div class="package-details" style="margin-right: 0;">
+                            <p style="font-family: 'Verdana';"><b>{{package}}</b></p>
+                    
+                            <p style="font-family: 'Verdana'; font-size: 12.8px; color: #0381BA;"><b>${{numberWithCommas(techDetailsParameter.pramData.pramData.leftcard.currentInstallment)}} / month</b></p>
+                    
+                            <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>{{numberWithCommas(techDetailsParameter.pramData.tableData.financing)}}</b></p>
+                    
+                            <p style="font-family: 'Verdana';">{{techDetailsParameter.pramData.pramData.leftcard.downpayment}}</p>
+                    
+                            <p style="font-family: 'Verdana';">Monthly</p>
+                    
+                            <p style="font-family: 'Verdana';">{{techDetailsParameter.pramData.pramData.leftcard.APR}}</p>
+                    
+                            <p style="font-family: 'Verdana';">{{techDetailsParameter.pramData.pramData.leftcard.addonInstallment}}</p>
+                    
+                            <!-- <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>{{techDetailsParameter.pramData.pramData.leftcard.yourfinalinstallment}}</b></p> -->
+                    
+                            <p style="font-family: 'Verdana';"><b>$ {{numberWithCommas(techDetailsParameter.pramData.pramData.leftcard.currentInstallment)}}</b></p>
+                    
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
-              <h5 class="card-title" style="font-family: 'Verdana';"><b>Application ID: {{techDetailsParameter.pramData.tableData.appID}}</b></h5>
             <div class="d-flex" style="gap:20px">
                 <div class="package-details" style="min-width: 15rem;">
                     <p style="font-family: 'Verdana';"><b>Your chosen package: </b></p>

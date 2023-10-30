@@ -1,1535 +1,342 @@
 <div class="navbar">
-
   <app-navbar-after-home-page [navtheme]="'whitetheme'"></app-navbar-after-home-page>
-
 </div>
-
-<!-- <div class="stepper">
-
-  <div class="progress" aria-label="Danger example">
-
-    <div class="progress-bar bg-success" style="width: 33.33%"></div>
-
-    <div class="progress-bar bg-danger" style="width: 33.33%"></div>
-
-  </div>
-
-  <div class="stepper-label">
-
-    <p style="font-family: Verdana">Choose Plan</p>
-
- 
-
-    <p style="font-family: Verdana">Enter Details</p>
-
- 
-
-    <p style="font-family: Verdana">Upload Documents</p>
-
-  </div>
-
-</div> -->
 
 <div style="margin-top: 5rem; margin-bottom: 1rem;">
-  <app-stepper [firstBg]="'#0380ba'" [ani]="'second'" [secondBg]="'#B0D7E9'" [first]="'white'" [date1]="techDetailsParameter.datee"></app-stepper>
+  <app-stepper [firstBg]="'#0380ba'" [ani]="'second'" [secondBg]="'#B0D7E9'" [first]="'white'"
+    [date1]="techDetailsParameter.datee"></app-stepper>
+</div>
+
+<div class="left-card">
+  <div class="card">
+    <h5 class="card-title" style="font-family: 'Verdana'">
+      <b>Application ID:{{ applicationId }}</b>
+    </h5>
+    <div class="car-card-details">
+      <div class="car-name" (click)="isCarCardVisible = !isCarCardVisible">
+        <p><b>{{techDetailsParameter.name}}</b></p>
+        <i class="fa-solid cardangle" [class.fa-angle-down]="isCarCardVisible"
+          [class.fa-angle-up]="!isCarCardVisible"></i>
+
+        <div [style.display]="isCarCardVisible ? 'inherit' : 'none'"
+          [style.height]="isCarCardVisible ? 'fit-content' : '0'">
+
+          <div class="d-flex" style="justify-content: space-between;">
+            <div class="package-details">
+              <p><b>Your chosen package:</b> </p>
+              <p style="color: #0381BA;"><b>Your current installment is:</b></p>
+              <p><b>Your Total Amount of Finance</b></p>
+              <p>Down Payment</p>
+              <p>Repayment Frequency </p>
+              <p>APR of</p>
+              <p>Add on (installment)</p>
+              <!-- <p><b>Your Final Installment is</b></p> -->
+              <p><b>Your first payment is</b></p>
+            </div>
+
+            <div class="package-details">
+              <p><b>{{package}}</b> </p>
+              <p style="color: #0381BA;">
+                <b>{{numberWithCommas(techDetailsParameter.emi)}}/month</b>
+              </p>
+              <b>$ {{numberWithCommas(total_amt)}}</b>
+              <p>{{leftcard.downpayment }}</p>
+              <p>{{leftcard.repaymentfrequency}} </p>
+              <p>{{leftcard.APR}}</p>
+              <p>{{ leftcard.addonInstallment }}</p>
+
+              <p><b>${{numberWithCommas(display_First_Pay)}}</b></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="d-flex" style="gap:20px">
+        <div class="package-details" style="min-width: 15rem;">
+            <p style="font-family: 'Verdana';"><b>Your chosen package: </b></p>
+            <p style="font-family: 'Verdana'; color: #0381BA;"><b>Your current installment is:</b></p>
+            <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>Your Total Amount of Finance </b></p>
+            <p style="font-family: 'Verdana';">Down Payment</p>    
+            <p style="font-family: 'Verdana';">Repayment Frequency </p>
+            <p style="font-family: 'Verdana';">APR of </p>
+            <p style="font-family: 'Verdana';">Add on (installment)</p>
+            <!-- <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>Your Final Installment is</b></p> -->
+            <p style="font-family: 'Verdana';"><b>Your first payment is</b></p>
+    
+        </div>
+        <div class="package-details" style="margin-right: 0;">
+            <p style="font-family: 'Verdana';"><b>{{package}}</b></p>
+            <!-- <b>{{numberWithCommas(techDetailsParameter.emi)}}/month</b> -->
+            <p style="font-family: 'Verdana'; font-size: 12.8px; color: #0381BA;"><b>${{numberWithCommas(techDetailsParameter.emi)}} / month</b></p>
+    
+            <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>{{numberWithCommas(total_amt)}}</b></p>
+    
+            <p style="font-family: 'Verdana';">{{leftcard.downpayment}}</p>
+    
+            <p style="font-family: 'Verdana';">{{leftcard.repaymentfrequency}}</p>
+    
+            <p style="font-family: 'Verdana';">{{leftcard.APR}}</p>
+    
+            <p style="font-family: 'Verdana';">{{ leftcard.addonInstallment }}</p>
+    
+            <!-- <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>{{techDetailsParameter.pramData.pramData.leftcard.yourfinalinstallment}}</b></p> -->
+    
+            <p style="font-family: 'Verdana';"><b>$ {{numberWithCommas(display_First_Pay)}}</b></p>
+    
+        </div>
+    </div>
+    <div class="package-details mt-1">
+        <!-- <p style="font-weight: 700; color: #0381BA;">Your monthly repayment starts from November 2023, every 1st of the month</p> -->
+    </div>
+    </div>
+
+    <p style="font-size:15px; color:#0381BA; font-family: 'Verdana'; margin-left: 0.5rem;">
+      <b>Your monthly repayment starts from November 2023, every 1st of the month</b>
+    </p>
+
+  </div>
+
+</div>
+
+<div class="card" id="right-panel">
+
+  <div class="applying-as">
+
+    <label class="text-label">Applying as</label>
+
+    <div class="content">
+
+      <div class="form-check form-check-inline">
+        <input type="radio" id="specifyColor" name="radio1" value="Individual" [(ngModel)]="radio1" />
+        <label for="specifyColor">&nbsp; Individual</label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input type="radio" id="specifyColor" name="radio1" value="Joint" />
+        <label for="specifyColor">&nbsp; Joint</label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input type="radio" id="specifyColor" name="radio1" value="Business" />
+        <label for="specifyColor">&nbsp; Business</label>
+      </div>
+
+    </div>
+
+  </div>
+
+  <hr class="hr-1" />
+
+  <div class="business-name">
+    <label class="text-label">Business Trading Name </label>
+
+    <div class="form-check form-check-inline">
+
+      <input type="text" style="
+            border-radius: 5px;
+            color: #121111;
+            font-size: 12PX;
+            border-width: 0.1rem;
+            width: 20rem;
+            height: 25px; 
+            margin-left: 3.8rem;" />
+
+      <button class="retrieve-btn" (click)="datapopulate($event)">Retrieve Details</button>
+
+    </div>
+  </div>
+
+  <hr class="hr-2" />
+
+  <div class="aust-company-number d-flex">
+
+    <label class="text-label" style="max-width: 14.4rem;">Australian Company Number (ACN)</label>
+    <input type="text" style="
+            border-radius: 5px;
+            color: #121111;
+            font-size: 12PX;
+            border-width: 0.1rem;
+            width: 20rem;
+            height: 25px; 
+            margin-left: 1.8rem;
+            " />
+
+  </div>
+
 </div>
 
 
+<div class="card1">
 
-<!-- <div class=" card-timeline border-0 " style="padding-top: 5rem; margin-bottom: 3rem; ">
+  <p class="lc-header" (click)="onPress()" style="
+      font-family: 'Verdana';
+      color: #0381BA;
+      padding-left: -1rem;
+      margin-left: -2rem;">
 
-  <ul class="bs4-order-tracking">
+    <b>COMPANY DETAILS</b>
 
-      <li class="step finished" >
-
-          <div style="padding-top: 1px;" ><i class="fa-solid fa-circle-dot" style="color: #db0000; font-size: 16px;"></i></div>
-
-          <p class="activestep" style="margin-left: 30px;">Build Car</p>
-
-      </li>
-
-      <li class="step active">
-
-          <div style="padding-top: 1px;"><i class="fa-solid fa-circle-dot" style="color: #544c4c; font-size: 16px;"></i></div>
-
-           <p style="margin-left: 22px;">Personal Info</p>
-
-      </li>
-
-      <li class="step">
-
-          <div style="padding-top: 1px;"><i class="fa-solid fa-circle-dot" style="color: #544c4c; font-size: 16px;"></i></div>
-
-          <p style="margin-left: 32px;">Payment</p>
-
-      </li>
-
-  </ul>
-
-</div> -->
-<div class="left-card">
-<div class="card" style="width: 24rem;" >
-
-  <div (click)="redirect('car-sub')" *ngFor="let car of carDetails">
-
-    <img class="car-card" src="{{ techDetailsParameter.image }}" />
-
-  </div>
-
-
-
-  <h5 class="card-title" style="font-family: 'Verdana'">
-
-    <b>Application ID:{{ applicationId }}</b>
-
-  </h5>
-
-  <div class="d-flex" style="justify-content: space-between;">
-
-    <div class="package-details" style="min-width: 8rem;">
-
-      <p style="font-family: 'Verdana'"><b>Your chosen package: </b></p>
-
-      <p style="color: #0381BA; "><b>Your current installment is:</b></p>
-
-      <p style="font-size: 13.5px;"><b>Your Total Amount of Finance</b></p>
-
-      <p>Down Payment</p>
-
-      <p>Repayment Frequency</p>
-
-      <p>APR of</p>
-
-      <p>Add on (installment)</p>
-
-      <!-- <p><b>Your Final Installment is</b></p> -->
-
-      <p><b>Your First payment is</b></p>
-
-    </div>
-
-    <div class="package-details">
-
-      <p><b>{{package}}</b></p>
-
-      <p style="color: #0381BA">
-
-        <!-- {{techDetailsParameter | json}} -->
-
-        <b style="font-size: 14px; margin-right: 10px;">${{ numberWithCommas(techDetailsParameter.emi) }}/month</b>
-
-      </p>
-
-      <p>
-
-        <b>$ {{numberWithCommas(total_amt)}}</b>
-
-      </p>
-
-      <p>{{ leftcard.downpayment }}</p>
-
-      <p>{{ leftcard.repaymentfrequency }}</p>
-
-      <p>{{ leftcard.APR }}</p>
-
-      <p>{{ leftcard.addonInstallment }}</p>
-
-      <!-- <p> -->
-
-      <!-- <b>{{ leftcard.yourfinalinstallment }}</b> -->
-
-      <!-- </p> -->
-
-      <p><b>$ {{ numberWithCommas(display_First_Pay) }}</b> </p>
-
-
-
-    </div>
-
-  </div>
-
-  <p style="font-size:15px;color:#0381BA;; font-family: 'Verdana'; margin-left: 0.5rem;"><b>Your monthly repayment starts
-
-      from November 2023, every 1st of the month</b>
+    <i class="fa-solid" [class.fa-angle-down]="isLowerVisible" [class.fa-angle-up]="!isLowerVisible"></i>
 
   </p>
 
-</div>
+  <div [style.display]="isLowerVisible ? 'inherit' : 'none'" [style.height]="isLowerVisible ? 'fit-content' : '0'">
 
-</div>
+    <div class="form-check1 form-check-inline custom-class-form" style="font-family: 'Verdana'">
 
-<!-- <div class="card" id="right-panel">
+      <div class="did-floating-label-content label-input w-full" style="width: 16.3rem;">
 
- 
+        <input class="did-floating-input" type="text" id="yearsataddress" [(ngModel)]="yearsataddress" />
 
-    <div class="applying-as">
-
- 
-
-        <label class="text-label"><b>Applying as</b></label>
-
- 
-
-        <div class="content">
-
- 
-
-            <div class="form-check form-check-inline">
-
- 
-
-                <input type="radio" id="specifyColor" name="radio1" value="Individual">
-
- 
-
-                <label for="specifyColor">&nbsp; Individual</label>
-
- 
-
-            </div>
-
- 
-
-            <div class="form-check form-check-inline">
-
- 
-
-                <input type="radio" id="specifyColor" name="radio1" value="Joint">
-
- 
-
-                <label for="specifyColor">&nbsp; Joint</label>
-
- 
-
-            </div>
-
- 
-
-            <div class="form-check form-check-inline">
-
- 
-
-                <input type="radio" id="specifyColor" name="radio1" value="Business">
-
- 
-
-                <label for="specifyColor">&nbsp; Business</label>
-
- 
-
-            </div>
-
- 
-
-        </div>
-
- 
-
-    </div>
-
- 
-
-    <hr class="hr-1" />
-
- 
-
-    <div class="existing-customer">
-
- 
-
-        <label class="text-label"><b>Existing UDC Customer</b></label>
-
- 
-
-        <div class="content">
-
- 
-
-            <div class="form-check form-check-inline">
-
- 
-
-                <input type="radio" id="specifyColor" name="radio2" value="Individual" (change)="radioChanged($event)">
-
- 
-
- 
-
-                <label for="specifyColor" class="label1"><b>&nbsp; Last Name: </b></label>
-
-                <input type="text"
-
-                    style="width: 6rem; margin-left: -1.5rem; border-radius: 2px; border: 1px; color: #DB2423;"
-
-                    id="lastName" [(ngModel)]="lastName">
-
- 
-
-                <label for="specifyColor" class="label2"><b>&nbsp; Driver's License: </b></label>
-
-                <input type="text"
-
-                    style="width: 7.5rem; margin-left: -2.5rem; border-radius: 2px; border: 1px; color: #DB2423;"
-
-                    id="driversLicense" [(ngModel)]="driversLicense">
-
- 
-
-                <button class="retrieve-btn" (click)="datapopulate($event)">Retrieve Details</button>
-
- 
-
- 
-
- 
-
-            </div>
-
- 
-
-        </div>
-
- 
-
-    </div>
-
- 
-
-    <hr class="hr-2" />
-
-    <div class="license-details">
-
-        <label class="text-label"><b>License Details</b></label>
-
-        <div class="content1">
-
-            <div class="form-check1 form-check-inline">
-
-                <div class="did-floating-label-content label-input w-full">
-
-                    <input class="did-floating-input" type="text" id="licenseClass" [(ngModel)]="licenseClass">
-
-                    <label class="did-floating-label" style="font-size: -0.3rem;">Driving Licence CLass</label>
-
-                </div>
-
-                <div class="did-floating-label-content label-input w-full">
-
-                    <input class="did-floating-input" type="text" id="licenseNo" [(ngModel)]="licenseNo">
-
-                    <label class="did-floating-label" style="font-size: -0.3rem;">License No</label>
-
-                </div>
-
-                <div class="did-floating-label-content label-input w-full">
-
-                    <input class="did-floating-input" type="text" id="licenseValidity" [(ngModel)]="licenseValidity">
-
-                    <label class="did-floating-label" style="font-size: -0.3rem;">License Validity</label>
-
-                </div>
-
-            </div>
-
-        </div>
-
- 
-
-    </div>
-
-</div> -->
-
-
-
-<!-- <div class="customer-details-dropdown">
-
- 
-
-    <div class="collapsible">
-
- 
-
-        <input type="checkbox" id="collapsible-head">
-
- 
-
-        <label for="collapsible-head">CUSTOMER DETAILS</label>
-
- 
-
-        <div class="collapsible-data">
-
-           
-
-            <div class="data1">
-
-                <p class="fname">First Name: John </p>
-
-                <p class="lname">Last Name: Smith</p>
-
-                <p class="mname">Middle Name: M</p>
-
-                <p class="dob">Date of Birth: 01/01/1975</p>
-
-            </div>
-
-            <div class="contact-details">
-
-                <p><b>Contact Details</b></p>
-
-            </div>
-
-            <div class="data2">
-
-                <p class="mob">Mobile: (021) 825 234</p>
-
-                <p class="home">Home: (06) 455 4465</p>
-
-                <p class="email">Email: johnsmith@hotmail.com</p>
-
-            </div>
-
-            <div class="data3">
-
-                <p class="citizen">Citizenship: New Zealander</p>
-
-                <p class="resident">Resident Status: Permanent</p>
-
-            </div>
-
-            <div class="address-details">
-
-                <p>Address Details</p>
-
-            </div>
-
-            <div class="data4">
-
-                <p class="street">Street: 144 Willow Walk</p>
-
-                <p class="city">City: Port Nelson</p>
-
-                <p class="state">State/Province/Area: Nelson</p>
-
-            </div>
-
-            <div class="data5">
-
-                <p class="country">Country: New Zealand</p>
-
-                <p class="zipcode">Zip Code: 7010</p>
-
-                <p class="yearsataddress">Years at Address: 3</p>
-
-            </div>
-
-        </div>
-
- 
-
-    </div>
-
- 
-
-</div>
-
- 
-
- 
-
-<div class="work-details-dropdown">
-
-    <div class="collapsible1">
-
-        <input type="checkbox" id="collapsible1-head">
-
- 
-
-        <label for="collapsible1-head">WORK DETAILS</label>
-
- 
-
-        <div class="collapsible1-data">
-
-            <div class="data6">
-
-                <p class="employer">Current Employer: Ace Viticulture LTD</p>
-
-                <p class="yearsatjob">Years at Job: 3</p>
-
-                <p class="designation">Designation: Manager</p>
-
-            </div>
-
-            <div class="data7">
-
-                <p class="remotework">Remote Work: Yes/No</p>
-
-            </div>
-
-            <div class="work-address">
-
-                <p>Work Address:</p>
-
-            </div>
-
-            <div class="data8">
-
-                <p class="work-street">Street: 107 Parsonage Road</p>
-
-                <p class="work-city">City: Woodend Beach</p>
-
-            </div>
-
-            <div class="data9">
-
-                <p class="work-state">State/Province/Area: Waimakariri</p>
-
-                <p class="work-zipcode">Zip Code: 7610</p>
-
-                <p class="work-country">Country: New Zealand</p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div> -->
-
-
-
-<!-- <div class="card1" id="right-panel1">
-
- 
-
-    <p class="lc-header" (click)="onPress()" style="font-family: 'Verdana'; color: #DB2423; padding-left: -1rem;margin-left: -2rem;"><b>CUSTOMER DETAILS</b>
-
- 
-
-        <i class="fa-solid" [class.fa-angle-down]="isLowerVisible" [class.fa-angle-up]="!isLowerVisible"></i>
-
-    </p>
-
-    <div [style.display]="isLowerVisible ? 'inherit' : 'none'" [style.height]="isLowerVisible ? 'fit-content' : '0'">
-
-        <div class="form-check1 form-check-inline custom-class-form" style="font-family: 'Verdana';">
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="fname" [(ngModel)]="fname">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">First Name</label>
-
-            </div>
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="lname" [(ngModel)]="lname">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Last Name</label>
-
-            </div>
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="mname" [(ngModel)]="mname">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Middle Name</label>
-
-            </div>
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="date" id="dob" [(ngModel)]="dob">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Date of Birth</label>
-
-            </div>
-
-        </div>
-
- 
-
-        <h6 style="font-family: 'Verdana'; color: #DB2423;"><b>Contact Details</b></h6>
-
- 
-
-        <div class="form-check2 form-check-inline" style="font-family: 'Verdana';     margin-top: 2rem;
-
-        margin-left: 0rem;">
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="mobile" [(ngModel)]="mobile">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Mobile</label>
-
-            </div>
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="home" [(ngModel)]="home">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Home</label>
-
-            </div>
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input style="width: 20rem;" class="did-floating-input" type="text" id="email" [(ngModel)]="email">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Email</label>
-
-            </div>
-
-        </div>
-
-        <div class="form-check3 form-check-inline" style="font-family: 'Verdana'; margin-left: 0REM;">
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="citizen" [(ngModel)]="citizen">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Citizenship</label>
-
-            </div>
-
-            <div class="did-floating-label-content label-input w-full" style="margin-right: 23.5rem;">
-
-                <input class="did-floating-input" type="text" id="resident" [(ngModel)]="resident">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Resident Status</label>
-
-            </div>
-
-        </div>
-
- 
-
-        <h6 style="font-family: 'Verdana'; color: #DB2423;"><b>Address Details</b></h6>
-
- 
-
-        <div class="form-check4 form-check-inline" style="font-family: 'Verdana';    margin-left: 0rem;
-
-        font-family: 'Verdana';
-
-        margin-top: 2rem;">
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="yearsataddress" [(ngModel)]="yearsataddress">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Years at Address</label>
-
-            </div>
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="street" [(ngModel)]="street">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Street</label>
-
-            </div>
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="city" [(ngModel)]="city">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">City</label>
-
-            </div>
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="state" [(ngModel)]="state">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">State/Province/Area</label>
-
-            </div>
-
-        </div>
-
-        <div class="form-check5 form-check-inline" style="font-family: 'Verdana'; margin-left: 0rem;">
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="country" [(ngModel)]="country">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Country</label>
-
-            </div>
-
-            <div class="did-floating-label-content label-input w-full" style="margin-right: 25.7rem;">
-
-                <input class="did-floating-input" type="text" id="zipcode" [(ngModel)]="zipcode">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Zip Code</label>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div> -->
-
-
-
-<!-- <div class="card2" id="right-panel2">
-
-    <p class="lc-header" (click)="onPress1()" style="font-family: 'Verdana'; color: #DB2423;"><b>WORK DETAILS</b>
-
- 
-
-        <i class="fa-solid" style="padding-right: 1rem;" [class.fa-angle-down]="isLowerVisible1" [class.fa-angle-up]="!isLowerVisible1"></i>
-
-    </p>
-
-    <div [style.display]="isLowerVisible1 ? 'inherit' : 'none'" [style.height]="isLowerVisible1 ? 'fit-content' : '0'">
-
-        <div class="form-check6 form-check-inline" style="font-family: 'Verdana'; margin-top: 2rem; margin-left: 1.5rem;">
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="employer" [(ngModel)]="employer">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Current Employer</label>
-
-            </div>
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="yearsatjob" [(ngModel)]="yearsatjob">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Years at Job</label>
-
-            </div>
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="designation" [(ngModel)]="designation">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Designation</label>
-
-            </div>
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="remotework" [(ngModel)]="remotework">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Remote Work</label>
-
-            </div>
-
-        </div>
-
- 
-
-        <h6 style="font-family: 'Verdana'; color: #DB2423; padding: 2rem; margin-top: -2rem;"><b>Work Address</b></h6>
-
- 
-
-        <div class="form-check7 form-check-inline" style="font-family: 'Verdana'; margin-left: 2rem;">
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="workstate" [(ngModel)]="workstate">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">State</label>
-
-            </div>
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="workcity" [(ngModel)]="workcity">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">City</label>
-
-            </div>
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="workstate" [(ngModel)]="workstate">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">State</label>
-
-            </div>
-
-            <div class="did-floating-label-content label-input w-full">
-
-                <input class="did-floating-input" type="text" id="workzip" [(ngModel)]="workzip">
-
-                <label class="did-floating-label" style="font-size: -0.3rem;">Zip Code</label>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div> -->
-
-
-
-<!-- <div class="car-subs-footer">
-
- 
-
-    <div class="cs-footer-com">
-
- 
-
-        <h6 class="redtxt">BACK</h6>
-
- 
-
-    </div>
-
- 
-
- 
-
- 
-
-    <div class="cs-footer-com">
-
- 
-
-        <h6 class="price">SAVE AS DRAFT</h6>
-
- 
-
-    </div>
-
- 
-
- 
-
- 
-
-    <div class="cs-footer-com">
-
-       
-
-        <button (click)="saveAndProceed()" class="btn">SAVE & PROCEED</button>
-
- 
-
-    </div>  
-
- 
-
-</div> -->
-
-<div style="padding-bottom: 1rem">
-
-  <div class="card" id="right-panel">
-
-    <div class="applying-as">
-
-      <label class="text-label"><b>Applying as</b></label>
-
-
-
-      <div class="content">
-
-        <div class="form-check form-check-inline">
-
-          <input type="radio" id="specifyColor" name="radio1" value="Individual" [(ngModel)]="radio1" />
-
-
-
-          <label for="specifyColor">&nbsp; Individual</label>
-
-        </div>
-
-
-
-        <div class="form-check form-check-inline">
-
-          <input type="radio" id="specifyColor" name="radio1" value="Joint" />
-
-
-
-          <label for="specifyColor">&nbsp; Joint</label>
-
-        </div>
-
-
-
-        <div class="form-check form-check-inline">
-
-          <input type="radio" id="specifyColor" name="radio1" value="Business" />
-
-
-
-          <label for="specifyColor">&nbsp; Business</label>
-
-        </div>
+        <label class="did-floating-label" style="font-size: -0.3rem">Entity Type</label>
 
       </div>
 
-    </div>
+      <div class="did-floating-label-content label-input w-full" style="width: 16.3rem;">
 
+        <input class="did-floating-input" type="text" id="yearsataddress" [(ngModel)]="yearsataddress" />
 
-
-    <hr class="hr-1" />
-
-
-
-    <div class="existing-customer">
-
-      <label class="text-label" style="font-size: 13.7px;"><b>Existing Paccar Customer</b></label>
-
-
-
-      <div class="content">
-
-        <div class="form-check form-check-inline">
-
-          <!-- <input type="radio" id="specifyColor" name="radio2" value="Individual" (change)="radioChanged($event)"> -->
-          <!-- <label for="specifyColor" class="label1"><b>&nbsp; Last Name: </b></label>
-                <input type="text"
-                    style="width: 6rem; margin-left: -1.5rem; border-radius: 2px; color: #DB2423;"
-                    id="lastName" [(ngModel)]="lastName"> -->
-          <!-- <label for="specifyColor" class="label2"><b>&nbsp; Driver's License: </b></label>
-                <input type="text"
-                    style="width: 7.5rem; margin-left: -2.5rem; border-radius: 2px; color: #DB2423;"
-                    id="driversLicense" [(ngModel)]="driversLicense">
-                <button class="retrieve-btn" (click)="datapopulate($event)">Retrieve Details</button> -->
-
-          <input class="d-flex" style="position: absolute;    margin-top: 0.4rem;" type="radio" [(ngModel)]="radio2"
-            id="specifyColor" name="radio2" value="Individual" (change)="radioChanged($event)" />
-
-          <div class="abc">
-
-            <label for="specifyColor" class="label1"><b> Last Name: </b></label>
-
-            <input type="text" style="
-
-                border-radius: 5px;
-
-                color: #121111;
-
-                font-size: 12PX;
-
-                border-width: 0.1rem;
-
-                width: 7.9rem;
-
-    height: 25px; margin-left: 2.3rem;
-
-              " id="lastName" [(ngModel)]="lastName" />
-
-            <button class="retrieve-btn" (click)="datapopulate($event)">
-
-              Retrieve Details
-
-            </button>
-
-          </div>
-
-
-
-          <div class="def">
-
-            <label for="specifyColor" class="label2" style="margin-left: 20px"><b>Driver's License: </b></label>
-
-            <input type="text" style="
-
-                font-size: 12px;
-
-                border-radius: 5px;
-
-                color: #000000;
-
-                margin-left: -19.5px;
-
-                border-width: 0.1rem;
-
-                width: 8rem;
-
-                height: 25px;
-
-              " id="driversLicense" [(ngModel)]="driversLicense" />
-
-
-
-            <button (click)="clearForm()" class="retrieve-btn">Clear Details</button>
-
-          </div>
-
-        </div>
+        <label class="did-floating-label" style="font-size: -0.3rem">Status</label>
 
       </div>
 
-    </div>
+      <div class="did-floating-label-content label-input w-full" style="width: 16.3rem;">
 
+        <input class="did-floating-input" type="date" id="yearsataddress" [(ngModel)]="yearsataddress" />
 
-
-    <hr class="hr-2" />
-
-    <div class="license-details">
-
-      <label class="text-label"><b>License Details</b></label>
-
-      <div class="content1">
-
-        <div class="form-check1 form-check-inline">
-
-          <div class="did-floating-label-content label-input w-full">
-
-            <!-- <input class="did-floating-input" type="text" id="licenseClass" [(ngModel)]="licenseClass">
-
-                    <label class="did-floating-label" style="font-size: -0.1rem;  color: black;">Driving Licence Class</label> -->
-
-            <select class="did-floating-input" name="language" id="language" style="margin-left: 14px;">
-
-              <option value="" selected *ngFor="let class of Driving_License_Class" [selected]="class == '1L'">
-
-                {{ class }}
-
-              </option>
-
-              <label class="did-floating-label" style="font-size: -0.1rem; color: black">Driving Licence Class</label>
-
-            </select>
-
-            <label class="did-floating-label" style="font-size: -0.3rem; margin-left: 14px;">License Class</label>
-
-          </div>
-
-          <!-- <label class="did-floating-label" style="font-size: -0.3rem">License No</label> -->
-
-          <div class="did-floating-label-content label-input w-full">
-
-            <input class="did-floating-input" type="text" style="width: 12rem;" id="licenseNo"
-              [(ngModel)]="licenseNo" />
-
-            <label class="did-floating-label" style="font-size: -0.3rem">License No</label>
-
-          </div>
-
-          <div class="did-floating-label-content label-input w-full">
-
-            <input class="did-floating-input" type="text" id="licenseValidity" [(ngModel)]="licenseValidity" />
-
-            <label class="did-floating-label" style="font-size: -0.3rem">License Validity</label>
-
-          </div>
-
-        </div>
+        <label class="did-floating-label" style="font-size: -0.3rem">Registration Date</label>
 
       </div>
-
     </div>
-
   </div>
-
-
-
-  <!-- <div class="customer-details-dropdown">
-
- 
-
-    <div class="collapsible">
-
- 
-
-        <input type="checkbox" id="collapsible-head">
-
- 
-
-        <label for="collapsible-head">CUSTOMER DETAILS</label>
-
- 
-
-        <div class="collapsible-data">
-
-           
-
-            <div class="data1">
-
-                <p class="fname">First Name: John </p>
-
-                <p class="lname">Last Name: Smith</p>
-
-                <p class="mname">Middle Name: M</p>
-
-                <p class="dob">Date of Birth: 01/01/1975</p>
-
-            </div>
-
-            <div class="contact-details">
-
-                <p><b>Contact Details</b></p>
-
-            </div>
-
-            <div class="data2">
-
-                <p class="mob">Mobile: (021) 825 234</p>
-
-                <p class="home">Home: (06) 455 4465</p>
-
-                <p class="email">Email: johnsmith@hotmail.com</p>
-
-            </div>
-
-            <div class="data3">
-
-                <p class="citizen">Citizenship: New Zealander</p>
-
-                <p class="resident">Resident Status: Permanent</p>
-
-            </div>
-
-            <div class="address-details">
-
-                <p>Address Details</p>
-
-            </div>
-
-            <div class="data4">
-
-                <p class="street">Street: 144 Willow Walk</p>
-
-                <p class="city">City: Port Nelson</p>
-
-                <p class="state">State/Province/Area: Nelson</p>
-
-            </div>
-
-            <div class="data5">
-
-                <p class="country">Country: New Zealand</p>
-
-                <p class="zipcode">Zip Code: 7010</p>
-
-                <p class="yearsataddress">Years at Address: 3</p>
-
-            </div>
-
-        </div>
-
- 
-
-    </div>
-
- 
-
 </div>
 
- 
+<div class="card2">
 
- 
+  <p class="lc-header" (click)="onPress1()" style="
+      font-family: 'Verdana';
+      color: #0381BA;
+      padding-left: -1rem;
+      margin-left: -2rem;">
 
-<div class="work-details-dropdown">
+    <b>BUSINESS DETAILS</b>
 
-    <div class="collapsible1">
+    <i class="fa-solid" [class.fa-angle-down]="isLowerVisible1" [class.fa-angle-up]="!isLowerVisible1"></i>
 
-        <input type="checkbox" id="collapsible1-head">
+  </p>
 
- 
+  <div [style.display]="isLowerVisible1 ? 'inherit' : 'none'" [style.height]="isLowerVisible1 ? 'fit-content' : '0'">
 
-        <label for="collapsible1-head">WORK DETAILS</label>
+    <div class="form-check2 form-check-inline custom-class-form" style="font-family: 'Verdana'">
 
- 
+      <div class="did-floating-label-content label-input w-full">
 
-        <div class="collapsible1-data">
+        <input class="did-floating-input name" type="text" id="fname" [(ngModel)]="fname" />
 
-            <div class="data6">
+        <label class="did-floating-label" style="font-size: -0.3rem">Name</label>
 
-                <p class="employer">Current Employer: Ace Viticulture LTD</p>
-
-                <p class="yearsatjob">Years at Job: 3</p>
-
-                <p class="designation">Designation: Manager</p>
-
-            </div>
-
-            <div class="data7">
-
-                <p class="remotework">Remote Work: Yes/No</p>
-
-            </div>
-
-            <div class="work-address">
-
-                <p>Work Address:</p>
-
-            </div>
-
-            <div class="data8">
-
-                <p class="work-street">Street: 107 Parsonage Road</p>
-
-                <p class="work-city">City: Woodend Beach</p>
-
-            </div>
-
-            <div class="data9">
-
-                <p class="work-state">State/Province/Area: Waimakariri</p>
-
-                <p class="work-zipcode">Zip Code: 7610</p>
-
-                <p class="work-country">Country: New Zealand</p>
-
-            </div>
-
-        </div>
-
+      </div>
     </div>
 
+    <div class="division-2">
+      <label class="industry">Industry Sector</label>
+      <div class="sector">
+        <div class="first-row-radio">
+          <div class="form-check-industry form-check-inline">
+            <input type="radio" id="specifyColor" name="radio1" value="Individual" [(ngModel)]="radio1" />
+            <label for="specifyColor">&nbsp; Limited Company</label>
+          </div>
+
+          <div class="form-check-industry form-check-inline">
+            <input type="radio" id="specifyColor" name="radio1" value="Joint" />
+            <label for="specifyColor">&nbsp; Private Company</label>
+          </div>
+
+          <div class="form-check-industry form-check-inline">
+            <input type="radio" id="specifyColor" name="radio1" value="Business" />
+            <label for="specifyColor">&nbsp; Sole Trading</label>
+          </div>
+
+          <div class="form-check-industry form-check-inline">
+            <input type="radio" id="specifyColor" name="radio1" value="Business" />
+            <label for="specifyColor">&nbsp; Trust</label>
+          </div>
+        </div>
+
+        <div class="second-row-radio">
+          <div class="form-check-industry form-check-inline">
+            <input type="radio" id="specifyColor" name="radio1" value="Individual" [(ngModel)]="radio1" />
+            <label for="specifyColor">&nbsp; Partnership</label>
+          </div>
+
+          <div class="form-check-industry form-check-inline">
+            <input type="radio" id="specifyColor" name="radio1" value="Joint" />
+            <label for="specifyColor">&nbsp; Government</label>
+          </div>
+
+          <div class="form-check-industry form-check-inline">
+            <input type="radio" id="specifyColor" name="radio1" value="Business" />
+            <label for="specifyColor">&nbsp; Utilities</label>
+          </div>
+
+          <div class="form-check-industry form-check-inline">
+            <input type="radio" id="specifyColor" name="radio1" value="Business" />
+            <label for="specifyColor">&nbsp; Other</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="division-3">
+      <div class="did-floating-label-content label-input w-full">
+        <input class="did-floating-input abn-reg-number" type="text" id="fname" [(ngModel)]="fname" />
+        <label class="did-floating-label" style="font-size: -0.3rem">ABN/Tax Registration Number</label>
+      </div>
+      <div class="did-floating-label-content label-input w-full">
+        <input class="did-floating-input established" type="text" id="fname" [(ngModel)]="fname" />
+        <label class="did-floating-label" style="font-size: -0.3rem">ABN/Tax Registration Number</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="card3">
+
+  <p class="lc-header" (click)="onPress()" style="
+      font-family: 'Verdana';
+      color: #0381BA;
+      padding-left: -1rem;
+      margin-left: -2rem;">
+
+    <b>COMPANY DETAILS</b>
+
+    <i class="fa-solid" [class.fa-angle-down]="isLowerVisible" [class.fa-angle-up]="!isLowerVisible"></i>
+
+  </p>
+
+  <div [style.display]="isLowerVisible ? 'inherit' : 'none'" [style.height]="isLowerVisible ? 'fit-content' : '0'">
+
+    <div class="form-check1 form-check-inline custom-class-form" style="font-family: 'Verdana'">
+
+      <div class="did-floating-label-content label-input w-full">
+
+        <input class="did-floating-input" type="text" id="fname" [(ngModel)]="fname" />
+
+        <label class="did-floating-label" style="font-size: -0.3rem">Name</label>
+
+      </div>
+    </div> 
+  </div>
 </div> -->
-
-
-
-  <div class="card1" id="right-panel1">
-
-    <p class="lc-header" (click)="onPress()" style="
-
-        font-family: 'Verdana';
-
-        color: #0381BA;
-
-        padding-left: -1rem;
-
-        margin-left: -2rem;
-
-      ">
-
-      <b>CUSTOMER DETAILS</b>
-
-
-
-      <i class="fa-solid" [class.fa-angle-down]="isLowerVisible" [class.fa-angle-up]="!isLowerVisible"></i>
-
-    </p>
-
-    <div [style.display]="isLowerVisible ? 'inherit' : 'none'" [style.height]="isLowerVisible ? 'fit-content' : '0'">
-
-      <div class="form-check1 form-check-inline custom-class-form" style="font-family: 'Verdana'">
-
-        <div class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="text" id="fname" [(ngModel)]="fname" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">First Name</label>
-
-        </div>
-
-        <div class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="text" id="mname" [(ngModel)]="mname" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Middle Name</label>
-
-        </div>
-
-        <div class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="text" id="lname" [(ngModel)]="lname" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Last Name</label>
-
-        </div>
-
-        <div class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="date" id="dob" [(ngModel)]="dob" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Date of Birth</label>
-
-        </div>
-
-      </div>
-
-
-
-      <h6 style="font-family: 'Verdana'; color: #0381BA">
-
-        <b>Contact Details</b>
-
-      </h6>
-
-
-
-      <div class="form-check2 form-check-inline" style="font-family: 'Verdana'; margin-top: 2rem; margin-left: 0rem">
-
-        <div class="did-floating-label-content label-input w-full" style="width: 13.7rem;">
-
-          <input class="did-floating-input" type="text" id="mobile" [(ngModel)]="mobile" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Mobile</label>
-
-        </div>
-
-        <div style="margin-left: 0rem; width: 14.2rem;" class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="text" id="home" [(ngModel)]="home" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Home</label>
-
-        </div>
-
-        <div style="margin-right: 1rem;" class="did-floating-label-content label-input w-full">
-
-          <input style="width: 22rem;" class="did-floating-input" type="text" id="email" [(ngModel)]="email" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Email</label>
-
-        </div>
-
-      </div>
-
-      <div class="form-check3 form-check-inline" style="font-family: 'Verdana'; margin-left: 0rem">
-
-        <div class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="text" style="width: 185px;" id="citizen" [(ngModel)]="citizen" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Citizenship</label>
-
-        </div>
-
-        <div class="did-floating-label-content label-input w-full" style="width: 205px; margin-right: 23.1rem;">
-          <!-- <input class="did-floating-input" type="text" id="resident" [(ngModel)]="resident" /> 
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Resident Status</label>-->
-          <select class="did-floating-input" name="language" id="language">
-
-            <option value="" selected *ngFor="let class of Resident_status" [selected]="class == 'Boarding'">
-
-              {{ class }}
-
-            </option>
-
-            <label class="did-floating-label" style="font-size: -0.3rem; color: black">Resident Status</label>
-
-          </select>
-
-          <label class="did-floating-label" style="font-size: -0.3rem; margin-left: -1px;">Resident Status</label>
-
-
-        </div>
-
-      </div>
-
-
-
-      <h6 style="font-family: 'Verdana'; color: #0381BA">
-
-        <b>Address Details</b>
-
-      </h6>
-
-
-
-      <div class="form-check4 form-check-inline" style="
-
-          font-family: 'Verdana';
-
-          margin-left: 0rem;
-
-          font-family: 'Verdana';
-
-          margin-top: 2rem;
-
-        ">
-
-        <div class="did-floating-label-content label-input w-full" style="width: 16.3rem;">
-
-          <input class="did-floating-input" type="text" id="yearsataddress" [(ngModel)]="yearsataddress" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Years at Address</label>
-
-        </div>
-
-        <div style="margin-left: 0.1rem; width: 16.3rem;" class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="text" id="street" [(ngModel)]="street" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Street</label>
-
-        </div>
-
-        <div class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="text" id="city" [(ngModel)]="city" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">City</label>
-
-        </div>
-
-        <div class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="text" id="state" [(ngModel)]="state" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">State/Province/Area</label>
-
-        </div>
-
-      </div>
-
-      <div class="form-check5 form-check-inline" style="font-family: 'Verdana';">
-
-        <div class="did-floating-label-content label-input w-full" style="margin-left: -160px;">
-
-          <input class="did-floating-input" type="text" style="width: 11.3rem;" id="country" [(ngModel)]="country" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Country</label>
-
-        </div>
-
-        <div class="did-floating-label-content label-input w-full" style="margin-right: 24.8rem;">
-
-          <input class="did-floating-input" type="text" style="width: 11.3rem;" id="zipcode" [(ngModel)]="zipcode" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Zip Code</label>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="card2" id="right-panel2">
-
-    <p class="lc-header" (click)="onPress1()" style="font-family: 'Verdana'; color: #0381BA">
-
-      <b>WORK DETAILS</b>
-
-
-
-      <i class="fa-solid" style="padding-right: 1rem" [class.fa-angle-down]="isLowerVisible1"
-        [class.fa-angle-up]="!isLowerVisible1"></i>
-
-    </p>
-
-    <div [style.display]="isLowerVisible1 ? 'inherit' : 'none'" [style.height]="isLowerVisible1 ? 'fit-content' : '0'">
-
-      <div class="form-check6 form-check-inline" style="font-family: 'Verdana'; margin-top: 2rem; margin-left: 1.5rem">
-
-        <div class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="text" id="employer" [(ngModel)]="employer" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Current Employer</label>
-
-        </div>
-
-        <div class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="text" id="yearsatjob" [(ngModel)]="yearsatjob" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Years at Job</label>
-
-        </div>
-
-        <div class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="text" id="designation" [(ngModel)]="designation" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Designation</label>
-
-        </div>
-
-        <div class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="text" id="remotework" [(ngModel)]="remotework" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Remote Work</label>
-
-        </div>
-
-      </div>
-
-
-
-      <h6 style="
-
-          font-family: 'Verdana';
-
-          color: #0381BA;
-
-          padding: 2rem;
-
-          margin-top: -2rem;
-
-        ">
-
-        <b>Work Address</b>
-
-      </h6>
-
-
-
-      <div class="form-check7 form-check-inline" style="font-family: 'Verdana'; margin-left: 2rem">
-
-        <div class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="text" id="workstate" [(ngModel)]="workstreet" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">State</label>
-
-        </div>
-
-        <div class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="text" id="workcity" [(ngModel)]="workcity" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">City</label>
-
-        </div>
-
-        <div class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="text" id="workstate" [(ngModel)]="workstate" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">State</label>
-
-        </div>
-
-        <div class="did-floating-label-content label-input w-full">
-
-          <input class="did-floating-input" type="text" id="workzip" [(ngModel)]="workzip" />
-
-          <label class="did-floating-label" style="font-size: -0.3rem">Zip Code</label>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
 
 <div class="car-subs-footer">
-
   <div class="cs-footer-com">
-
     <h6 class="redtxt" (click)="goBack()"
       style="cursor:pointer; color: grey; font-weight: 700; font-family: 'Verdana';">BACK</h6>
-
   </div>
-
 
   <div class="cs-footer-right">
     <button class="btn savebtn">SAVE AS DRAFT</button>
     <button class="btn submitbtn" (click)="saveAndProceed()">SAVE & PROCEED</button>
   </div>
-
 </div>

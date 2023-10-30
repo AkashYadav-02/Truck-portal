@@ -23,7 +23,10 @@ disbursmentdetails = disbursmentdetails;
 myObserver ;
 currentUrl : any;
 techDetailsParameter : any;
+isCarCardVisible:boolean = false;
+
 package:string='Standard'
+
 public rowData$!: Observable<any[]>;
 carDetails=[
   {
