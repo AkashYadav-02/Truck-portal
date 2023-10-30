@@ -29,7 +29,7 @@
 
             <div class="car-card-details">
                 <div class="car-name" (click)="isCarCardVisible1 = !isCarCardVisible1">
-                    <p><b>W990</b></p>
+                    <p><b>{{techDetailsParameter.pramData.pramData.name}}</b></p>
                     <i class="fa-solid cardangle" [class.fa-angle-down]="isCarCardVisible" [class.fa-angle-up]="!isCarCardVisible"></i>
                 </div>
             
@@ -68,7 +68,7 @@
             
                     <p style="font-family: 'Verdana';">Monthly</p>
             
-                    <p style="font-family: 'Verdana';">5.4%</p>
+                    <p style="font-family: 'Verdana';">{{techDetailsParameter.pramData.pramData.leftcard.APR}}</p>
             
                     <p style="font-family: 'Verdana';">{{techDetailsParameter.pramData.pramData.leftcard.addonInstallment}}</p>
             

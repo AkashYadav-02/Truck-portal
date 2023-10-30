@@ -29,7 +29,7 @@
 
         <div class="car-card-detail1">
             <div class="car-name" (click)="isCarCardVisible1 = !isCarCardVisible1">
-                <p><b>W990</b></p>
+                <p><b>{{techDetailsParameter.pramData.name}}</b></p>
                 <i class="fa-solid cardangle" [class.fa-angle-down]="isCarCardVisible1" [class.fa-angle-up]="!isCarCardVisible"></i>
             </div>
             <div [style.display]="isCarCardVisible1 ? 'inherit' : 'none'"
@@ -64,7 +64,7 @@
                 <p><b>{{techDetailsParameter.tableData.financing}}</b></p>
                 <p>{{techDetailsParameter.pramData.leftcard.downpayment}}</p>
                 <p>{{techDetailsParameter.pramData.leftcard.repaymentfrequency}} </p>
-                <p>%5.24</p>
+                <p>{{techDetailsParameter.pramData.leftcard.APR}}</p>
                 <p>{{techDetailsParameter.pramData.leftcard.addonInstallment}}</p>
                 
                 <p><b>${{numberWithCommas(techDetailsParameter.pramData.leftcard.currentInstallment)}}</b></p> 
