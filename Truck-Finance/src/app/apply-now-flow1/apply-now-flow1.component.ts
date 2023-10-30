@@ -52,6 +52,7 @@ export class ApplyNowFlow1Component implements OnInit {
   citizen: string = '';
   resident: string = '';
   yearsataddress: string = '';
+
   street: string = '';
   city: string = '';
   state: string = '';
@@ -74,6 +75,7 @@ export class ApplyNowFlow1Component implements OnInit {
   display_First_Pay: number = 0
   statuss: any;
   package: string = ''
+  status : string = ''
 
   dp: any = this.leftcard.downpayment
   //  lastname: string = "Aurionpro";
@@ -216,14 +218,14 @@ export class ApplyNowFlow1Component implements OnInit {
       this.licenseClass = '1L';
       this.licenseNo = 'DM123456';
       this.licenseValidity = '01/01/2026';
-      this.fname = 'John';
-      this.abn='12345678';
+      this.fname = 'TNZ Enterprises Ltd';
+      this.abn='10005247892';
       this.est='';
       this.writeus='';
-      this.preferred='Telephone';
-      this.phone='9999888877';
-      this.fax='123-456';
-      this.gmail='xyz@gmail.com';
+      this.preferred='Email';
+      this.phone='(021) 825 234';
+      this.fax='(06) 455 4456';
+      this.gmail='TNZcustomercare@hotmail.com';
       this.lname = 'Smith';
       this.mname = 'M';
       this.dob = '1975-10-11';
@@ -232,14 +234,15 @@ export class ApplyNowFlow1Component implements OnInit {
       this.email = 'john.smith@gmail.com';
       this.citizen = 'Australia';
       this.resident = 'Permanent';
-      this.yearsataddress = '10';
-      this.street = 'Canterbury Rd'; 
+      this.yearsataddress = 'Public Company';
+      this.status = 'Registered'
+      this.street = 'TNZ Centre, 833 Collins'; 
 
       // ,  VIC 3153, Australia  U 8 796 HIGH STREET KEW EAST, VICTORIA, 3102
       this.state = 'Victoria';
-      this.city = 'Bayswater North';
+      this.city = 'Melbourne';
       this.country = 'Australia';
-      this.zipcode = '3153';
+      this.zipcode = '3008';
       this.employer = 'Ace Viticulture LTD';
       this.yearsatjob = '03';
       this.designation = 'Manager';
