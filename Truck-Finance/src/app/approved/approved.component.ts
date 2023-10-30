@@ -25,7 +25,7 @@ myObserver ;
 currentUrl : any;
 techDetailsParameter : any;
 isCarCardVisible:boolean = false;
-
+isCarCardVisible1:boolean = false;
 package:string='Standard'
 
 public rowData$!: Observable<any[]>;
