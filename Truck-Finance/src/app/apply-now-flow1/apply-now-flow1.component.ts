@@ -79,7 +79,6 @@ export class ApplyNowFlow1Component implements OnInit {
   statuss: any;
   package: string = ''
   status : string = ''
-  taxes:any;
 
   dp: any = this.leftcard.downpayment
   //  lastname: string = "Aurionpro";
@@ -121,7 +120,6 @@ export class ApplyNowFlow1Component implements OnInit {
         const navigation = this.router.getCurrentNavigation();
         if (navigation?.extras.state) {
           this.techDetailsParameter = navigation.extras.state;
-          this.taxes = Number(this.techDetailsParameter.price.replace(/,/g, '')) * 0.11;
           console.log(this.techDetailsParameter);
 
         }
