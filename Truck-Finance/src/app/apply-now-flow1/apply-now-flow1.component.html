@@ -105,7 +105,7 @@
             <p style="font-family: 'Verdana';">Repayment Frequency </p>
             <p style="font-family: 'Verdana';">APR of </p>
             <p style="font-family: 'Verdana';">Add on (installment)</p>
-            <p>Upfront Taxes</p>
+            <!-- <p>Upfront Taxes</p> -->
             <!-- <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>Your Final Installment is</b></p> -->
             <p style="font-family: 'Verdana';"><b>Your first payment is</b></p>
     
@@ -124,7 +124,7 @@
             <p style="font-family: 'Verdana';">{{leftcard.APR}}</p>
     
             <p style="font-family: 'Verdana';">{{ leftcard.addonInstallment }}</p>
-            <p style="font-family: 'Verdana';">${{numberWithCommas(taxes)}}</p>
+            <!-- <p style="font-family: 'Verdana';">${{numberWithCommas(taxes)}}</p> -->
             <!-- <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>{{techDetailsParameter.pramData.pramData.leftcard.yourfinalinstallment}}</b></p> -->
     
             <p style="font-family: 'Verdana';"><b>${{numberWithCommas(display_First_Pay)}}</b></p>
@@ -248,8 +248,7 @@
 
       <div class="did-floating-label-content label-input w-full" style="width: 16.3rem;">
 
-        <input class="did-floating-input" type="date" id="yearsataddress" [(ngModel)]="yearsataddress" />
-
+        <input class="did-floating-input" type="date" id="yearsataddress" [(ngModel)]="dob" />
         <label class="did-floating-label" style="font-size: -0.3rem">Registration Date</label>
 
       </div>
@@ -339,7 +338,7 @@
         <label class="did-floating-label" style="font-size: -0.3rem">ABN/Tax Registration Number</label>
       </div>
       <div class="did-floating-label-content label-input w-full">
-        <input class="did-floating-input established" type="date" id="fname" [(ngModel)]="est" />
+        <input class="did-floating-input established" type="date" id="fname" [(ngModel)]="dob" />
         <label class="did-floating-label" style="font-size: -0.3rem">Established</label>
       </div>
     </div>

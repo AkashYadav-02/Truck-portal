@@ -112,9 +112,9 @@ export class ApplyNowFlow1Component implements OnInit {
   }
 
   constructor(private router: Router, private fb: FormBuilder,
-    private redirectMenu: RedirectMenuService,
+    private redirectMenu: RedirectMenuService, 
   ) {
-
+    this.radio1 = "Business";
     this.myObserver = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.currentUrl = event.url;
