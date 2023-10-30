@@ -81,7 +81,12 @@
   font-size: 14px;
   font-family: "Verdana";
 }
-
+.package-detail1 {
+  margin-top: 0.1rem;
+   margin-left: 0.5rem;
+  font-size: 14px;
+  font-family: "Verdana";
+}
 #right-panel {
   margin-left: 29rem;
   margin-right: 4rem;
@@ -393,11 +398,16 @@ hr-1, hr-2 {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 10px 10px 5px 10px;
   font-family: "Verdana";
-  margin: 20px 0px;
+  margin: 20px 7px;
 }
-
+#icons{
+         margin-left: 84%;
+}
+#icon1{
+  margin-left: 82%;
+}
 .car-name{
-  display: flex;
+  
   justify-content: space-between;
 
   p{
@@ -412,7 +422,13 @@ hr-1, hr-2 {
   margin-right: 2.6rem;
   width: 18rem;
 }
-
+.car-card-detail1{
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 10px 10px 5px 10px;
+  font-family: "Verdana";
+  margin: -8px 7px;
+}
 
 .established2{
   margin-right: 2.6rem;
