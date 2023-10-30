@@ -185,11 +185,11 @@
                 <div class="radio-body">
                     <div class="leasehire form-check form-check-inline"
                         style="margin-left: -21px; margin-right: 5.8rem;">
-                        <input type="radio" name="radio1" [(ngModel)]="loanHire" value="Lease" checked>
+                        <input type="radio" name="radio1" [(ngModel)]="loanHire" value="Lease" >
                         <label class="form-check-label" for="inlineRadio1">Lease</label>
                     </div>
                     <div class="leasehire form-check form-check-inline">
-                        <input type="radio" name="radio1" [(ngModel)]="loanHire" value="HirePurchase">
+                        <input type="radio" name="radio1" [(ngModel)]="loanHire" value="HirePurchase" checked>
                         <label class="form-check-label" for="inlineRadio1">Hire Purchase</label>
                     </div>
                 </div>
@@ -296,7 +296,7 @@
                         </select>
                     </div>
                     <div class="downpayment">
-                        <p class="subhead">Lesser Rate: </p>
+                        <p class="subhead">Lessor Rate (%): </p>
                         <input type="number" placeholder="0.00" value="5.24">
                         <!-- <select name="program" id="cars" class="an-drop">
                             <option value="">5.24</option>
@@ -510,7 +510,7 @@
                     </div>
                     <div class="head2-body">
                         <label>Finance Option: </label>
-                        <label>{{loanHire}}</label>
+                        <label>Hire Purchase</label>
 
                     </div>
                     <div class="head2-body">
@@ -536,7 +536,7 @@
                     </div>
                     <div class="head2-body">
                         <label>Program APR</label>
-                        <label>7.9%</label>
+                        <label>5.24%</label>
                     </div>
                     <div class="head2-body">
                         <label>Upfront Taxes</label>
