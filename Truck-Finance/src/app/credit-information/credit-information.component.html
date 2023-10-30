@@ -25,20 +25,21 @@
                     [style.height]="isCarCardVisible ? 'fit-content' : '0'">
                     <div class="d-flex" style="justify-content: space-between;">
                         <div class="package-details">
-                            <p><b>Your chosen package:</b> </p>
-                            <p style="color: #0381BA;"><b>Your current installment is:</b></p>
+                            <p><b> Variant : Standard</b></p>
+                            <p><b>No. Of Units: 3</b> </p>
+                            <!-- <p style="color: #0381BA;"><b>Your current installment is:</b></p>
                             <p><b>Your Total Amount of Finance</b></p>
                             <p>Down Payment</p>
                             <p>Repayment Frequency </p>
                             <p>APR of</p>
                             <p>Add on (installment)</p>
                             
-                            <!-- <p><b>Your Final Installment is</b></p> -->
-                            <p><b>Your first payment is</b></p>
+                            
+                            <p><b>Your first payment is</b></p> -->
                         </div>
                         <div class="package-details">
-                            <p><b>{{package}}</b> </p>
-                            <p style="color: #0381BA;">
+                            <!-- <p><b style="text-align: left;">3</b> </p> -->
+                            <!-- <p style="color: #0381BA;">
                                 <b>{{numberWithCommas(techDetailsParameter.leftcard.currentInstallment)}}/month</b>
                             </p>
                             <p style="font-family: Verdana; font-family: Verdana;"><b>${{numberWithCommas(techDetailsParameter.price)}}</b></p>
@@ -47,8 +48,8 @@
                             <p>{{techDetailsParameter.leftcard.repaymentfrequency}} </p>
                             <p>{{techDetailsParameter.leftcard.APR}}</p>
                             <p>{{techDetailsParameter.leftcard.addonInstallment}}</p>
-                            <!-- <p ><b>{{techDetailsParameter.pramData.leftcad.yourfinalinstallment}}</b></p> -->
-                            <p><b>${{numberWithCommas(techDetailsParameter.leftcard.currentInstallment)}}</b></p>
+                          
+                            <p><b>${{numberWithCommas(techDetailsParameter.leftcard.currentInstallment)}}</b></p> -->
                         </div>
     
                     </div>
@@ -56,6 +57,52 @@
                 </div>
 
                     </div>
+
+                    <!-- second card  -->
+
+                    <div class="car-card-details">
+                        <div class="car-name" (click)="isCarCardVisible1 = !isCarCardVisible1">
+                            <!-- <p><b>{{techDetailsParameter.pramData.name}}</b></p> -->
+                            <p><b>W990</b></p>
+                            <i class="fa-solid cardangle" [class.fa-angle-down]="isCarCardVisible1" [class.fa-angle-up]="!isCarCardVisible"></i>
+                        </div>
+    
+                        <div [style.display]="isCarCardVisible1 ? 'inherit' : 'none'"
+                        [style.height]="isCarCardVisible1 ? 'fit-content' : '0'">
+                        <div class="d-flex" style="justify-content: space-between;">
+                            <div class="package-details">
+                                <p><b> Variant : Signature</b></p>
+                                <p><b>No. Of Units: 2</b> </p>
+                                <!-- <p style="color: #0381BA;"><b>Your current installment is:</b></p>
+                                <p><b>Your Total Amount of Finance</b></p>
+                                <p>Down Payment</p>
+                                <p>Repayment Frequency </p>
+                                <p>APR of</p>
+                                <p>Add on (installment)</p>
+                                
+                                
+                                <p><b>Your first payment is</b></p> -->
+                            </div>
+                            <div class="package-details">
+                                <!-- <p><b style="text-align: left;">3</b> </p> -->
+                                <!-- <p style="color: #0381BA;">
+                                    <b>{{numberWithCommas(techDetailsParameter.leftcard.currentInstallment)}}/month</b>
+                                </p>
+                                <p style="font-family: Verdana; font-family: Verdana;"><b>${{numberWithCommas(techDetailsParameter.price)}}</b></p>
+                                <p><b>{{techDetailsParameter.leftcard.financing}}</b></p>
+                                <p>{{techDetailsParameter.leftcard.downpayment}}</p>
+                                <p>{{techDetailsParameter.leftcard.repaymentfrequency}} </p>
+                                <p>{{techDetailsParameter.leftcard.APR}}</p>
+                                <p>{{techDetailsParameter.leftcard.addonInstallment}}</p>
+                              
+                                <p><b>${{numberWithCommas(techDetailsParameter.leftcard.currentInstallment)}}</b></p> -->
+                            </div>
+        
+                        </div>
+                        
+                    </div>
+    
+                        </div>
                
 
 
