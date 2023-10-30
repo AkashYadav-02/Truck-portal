@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { RedirectMenuService } from 'src/services/redirect-menu.service';
 import { NavigationEnd, Router } from '@angular/router';
+
 @Component({
   selector: 'app-approved',
   templateUrl: './approved.component.html',
@@ -23,7 +24,10 @@ disbursmentdetails = disbursmentdetails;
 myObserver ;
 currentUrl : any;
 techDetailsParameter : any;
+isCarCardVisible:boolean = false;
+
 package:string='Standard'
+
 public rowData$!: Observable<any[]>;
 carDetails=[
   {
@@ -113,13 +117,20 @@ ngOnInit() {
       this.redirectMenu.redirectTo(path);
     }
   columnDefs: ColDef[] = [
-    { field: 'Date',cellStyle: { 'font-size': '12px' } },
-    { field: 'Description',cellStyle: { 'font-size': '12px' } },
-    { field: 'EMI',cellStyle: { 'font-size': '12px' } },
-    { field: 'Principal',cellStyle: { 'font-size': '12px' } },
-    { field: 'Interest',cellStyle: { 'font-size': '12px' } },
-    { field: 'LoanAmount',cellStyle: { 'font-size': '12px' } },
-    { field: 'APR' ,cellStyle: { 'font-size': '12px' }},
+    { field: 'Iscash',cellStyle: { 'font-size': '12px' } },
+    { field: 'Flow Direction',cellStyle: { 'font-size': '12px' } },
+    { field: 'Status',cellStyle: { 'font-size': '12px' } },
+    { field: 'Allocation Status',cellStyle: { 'font-size': '12px' } },
+    { field: 'Installment',cellStyle: { 'font-size': '12px' } },
+    { field: 'Type',cellStyle: { 'font-size': '12px' } },
+    { field: 'Calc Date' ,cellStyle: { 'font-size': '12px' }},
+    { field: 'Currency' ,cellStyle: { 'font-size': '12px' }},
+    { field: 'Gross Amount' ,cellStyle: { 'font-size': '12px' }},
+    { field: 'Amount' ,cellStyle: { 'font-size': '12px' }},
+    { field: 'Bank Account' ,cellStyle: { 'font-size': '12px' }},
+    { field: 'Business Unit' ,cellStyle: { 'font-size': '12px' }},
+    { field: 'Party Name' ,cellStyle: { 'font-size': '12px' }},
+
     ]
 }
 

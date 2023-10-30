@@ -33,6 +33,23 @@
 
 }
 
+.car-card-details{
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 10px 10px 5px 10px;
+    font-family: "Verdana";
+    margin: 20px 0px;
+}
+
+.car-name{
+    display: flex;
+    justify-content: space-between;
+
+    p{
+        font-size: 14.5px;
+    }
+}
+
  
 
 .right-side{
@@ -148,7 +165,7 @@ select{
 
     text-decoration: none;
 
-    font-size: 17px;
+    font-size: 16px;
 
     border-bottom: 3px solid transparent;
 
@@ -207,7 +224,7 @@ margin-bottom: 1rem;
     font-weight: 500;
 }
 .subhead{
-    
+
 }
 .deall{
     min-width: 16rem;
