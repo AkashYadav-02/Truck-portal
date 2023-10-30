@@ -243,6 +243,7 @@ export class CarSubRedesignComponent implements OnInit {
     private renderer: Renderer2,
     private formBuilder: FormBuilder
   ) {
+  this.loanHire='HirePurchase'
     this.myObserver = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.currentUrl = event.url;
@@ -559,7 +560,7 @@ export class CarSubRedesignComponent implements OnInit {
   isUpperVisible = true;
   isLowerVisible = false;
   isMidVisible = false;
-  loanHire = 'Lease';
+  loanHire = 'Hire Purchase';
 
   onClick() {
     if (this.isUpperVisible) {
