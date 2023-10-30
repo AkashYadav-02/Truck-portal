@@ -118,6 +118,14 @@ hr-1, hr-2 {
   accent-color: #0381BA;
 }
 
+#specifyColor2{
+  accent-color: #0381BA;
+  font-size: 5px;
+  margin-bottom: 2%;
+  
+}
+
+
 .content {
   margin-left: 230px;
   margin-right: 5rem;
@@ -144,6 +152,21 @@ hr-1, hr-2 {
 .card1, .card2, .card3{
   min-height: 4rem;
   // height:   30rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  margin-right: 4rem;
+  padding-left: 2rem;
+  // padding: 1rem 1rem;
+  // padding-right: 1rem;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 11px 0 rgba(0, 0, 0, 0.08);
+  margin-left: 29.1rem;
+  width: 51.7rem;
+}
+.card4{
+  min-height: 4rem;
+  // height:   30rem;
+  padding-bottom: 2%;
+  // margin-bottom: -2%;
   border-radius: 8px;
   margin-top: 1rem;
   margin-right: 4rem;
@@ -240,6 +263,7 @@ hr-1, hr-2 {
   justify-content: space-between;
 }
 
+
 .did-floating-label {
   // color:rgb(10, 10, 10);
   font-size: 15px;
@@ -266,6 +290,18 @@ hr-1, hr-2 {
   justify-content: space-between;
   margin-left: 0rem;
   margin-top: 3rem;
+}
+.form-check3{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 0rem;
+  margin-top: 3rem;
+}
+ .form-check4{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 0rem;
+  margin-top: -0.2rem;
 }
 
 .did-floating-input{
@@ -298,8 +334,19 @@ hr-1, hr-2 {
   min-width: 8rem;
   max-width: 8rem;
 }
+.form-check-industry2{
+  margin-top:1rem;
+  min-width: 12rem;
+  // max-width: 12rem;
+  margin-bottom: 2%;
+  
+}
 
 .industry{
+  margin-right: 4rem;
+}
+.turnover{
+  margin-top:1rem;
   margin-right: 4rem;
 }
 
@@ -310,7 +357,16 @@ hr-1, hr-2 {
 .division-2{
   display: flex;
   align-items: center;
-  margin-left: 2rem;
+  margin-left: 0rem;
+  margin-bottom: 2rem;
+}
+
+
+.division-6, .division-5{
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  // margin-left: 2rem;
 }
 
 .first-row-radio, .second-row-radio{
@@ -349,4 +405,11 @@ hr-1, hr-2 {
 .established{
   margin-right: 2.6rem;
   width: 18rem;
+}
+
+
+.established2{
+  margin-right: 2.6rem;
+  width: 47rem;
+  height: 7rem;
 }

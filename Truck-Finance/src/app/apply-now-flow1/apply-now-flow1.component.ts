@@ -21,8 +21,11 @@ export class ApplyNowFlow1Component implements OnInit {
     
   }
 
-  radio2 = '';
+  radio2 = 'Individual';
   radio1 = 'Individual';
+  radio3 = '';
+  radio4 = 'Individual';
+  radio5 = 'Individual';
   isCarCardVisible :boolean =false;
   applicationId: string = '';
   lineItem: any;
@@ -33,6 +36,13 @@ export class ApplyNowFlow1Component implements OnInit {
   licenseNo: string = '';
   licenseValidity: string = '';
   fname: string = '';
+  abn:string='';
+  est:string='';
+  writeus:string='';
+  preferred:string='';
+  phone:string='';
+  fax:string='';
+  gmail:string='';
   lname: string = '';
   mname: string = '';
   dob: string = 'date';
@@ -126,6 +136,8 @@ export class ApplyNowFlow1Component implements OnInit {
   isLowerVisible = false
 
   isLowerVisible1 = false
+  isLowerVisible2 = false
+  isLowerVisible3 = false
   onPress() {
 
     if (this.isLowerVisible) {
@@ -156,6 +168,32 @@ export class ApplyNowFlow1Component implements OnInit {
     }
 
   }
+  onPress2() {
+
+    if (this.isLowerVisible2) {
+
+      this.isLowerVisible2 = false
+
+    } else {
+
+      this.isLowerVisible2 = true
+
+    }
+
+  }
+  onPress3() {
+
+    if (this.isLowerVisible3) {
+
+      this.isLowerVisible3 = false
+
+    } else {
+
+      this.isLowerVisible3 = true
+
+    }
+
+  }
 
 
   // onSubmit(){
@@ -179,6 +217,13 @@ export class ApplyNowFlow1Component implements OnInit {
       this.licenseNo = 'DM123456';
       this.licenseValidity = '01/01/2026';
       this.fname = 'John';
+      this.abn='12345678';
+      this.est='';
+      this.writeus='';
+      this.preferred='Telephone';
+      this.phone='9999888877';
+      this.fax='123-456';
+      this.gmail='xyz@gmail.com';
       this.lname = 'Smith';
       this.mname = 'M';
       this.dob = '1975-10-11';
@@ -247,6 +292,13 @@ export class ApplyNowFlow1Component implements OnInit {
     this.driversLicense = '';
     this.lastName = '';
     this.fname = '';
+    this.abn='';
+    this.est='';
+    this.writeus='';
+    this.preferred='';
+    this.phone='';
+    this.fax='';
+    this.gmail='';
     this.lname = '';
     this.mname = '';
     this.dob = '';

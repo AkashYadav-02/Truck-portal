@@ -243,44 +243,44 @@
       <div class="sector">
         <div class="first-row-radio">
           <div class="form-check-industry form-check-inline">
-            <input type="radio" id="specifyColor" name="radio1" value="Individual" [(ngModel)]="radio1" />
+            <input type="radio" id="specifyColor" name="radio2" value="Individual" [(ngModel)]="radio2" />
             <label for="specifyColor">&nbsp; Limited Company</label>
           </div>
 
           <div class="form-check-industry form-check-inline">
-            <input type="radio" id="specifyColor" name="radio1" value="Joint" />
+            <input type="radio" id="specifyColor" name="radio2" value="Joint" />
             <label for="specifyColor">&nbsp; Private Company</label>
           </div>
 
           <div class="form-check-industry form-check-inline">
-            <input type="radio" id="specifyColor" name="radio1" value="Business" />
+            <input type="radio" id="specifyColor" name="radio2" value="Business" />
             <label for="specifyColor">&nbsp; Sole Trading</label>
           </div>
 
           <div class="form-check-industry form-check-inline">
-            <input type="radio" id="specifyColor" name="radio1" value="Business" />
+            <input type="radio" id="specifyColor" name="radio2" value="Business" />
             <label for="specifyColor">&nbsp; Trust</label>
           </div>
         </div>
 
         <div class="second-row-radio">
           <div class="form-check-industry form-check-inline">
-            <input type="radio" id="specifyColor" name="radio1" value="Individual" [(ngModel)]="radio1" />
+            <input type="radio" id="specifyColor" name="radio3" value="Individual" [(ngModel)]="radio3" />
             <label for="specifyColor">&nbsp; Partnership</label>
           </div>
 
           <div class="form-check-industry form-check-inline">
-            <input type="radio" id="specifyColor" name="radio1" value="Joint" />
+            <input type="radio" id="specifyColor" name="radio3" value="Joint" />
             <label for="specifyColor">&nbsp; Government</label>
           </div>
 
           <div class="form-check-industry form-check-inline">
-            <input type="radio" id="specifyColor" name="radio1" value="Business" />
+            <input type="radio" id="specifyColor" name="radio3" value="Business" />
             <label for="specifyColor">&nbsp; Utilities</label>
           </div>
 
           <div class="form-check-industry form-check-inline">
-            <input type="radio" id="specifyColor" name="radio1" value="Business" />
+            <input type="radio" id="specifyColor" name="radio3" value="Business" />
             <label for="specifyColor">&nbsp; Other</label>
           </div>
         </div>
@@ -289,45 +289,136 @@
 
     <div class="division-3">
       <div class="did-floating-label-content label-input w-full">
-        <input class="did-floating-input abn-reg-number" type="text" id="fname" [(ngModel)]="fname" />
+        <input class="did-floating-input abn-reg-number" type="text" id="fname" [(ngModel)]="abn" />
         <label class="did-floating-label" style="font-size: -0.3rem">ABN/Tax Registration Number</label>
       </div>
       <div class="did-floating-label-content label-input w-full">
-        <input class="did-floating-input established" type="text" id="fname" [(ngModel)]="fname" />
-        <label class="did-floating-label" style="font-size: -0.3rem">ABN/Tax Registration Number</label>
+        <input class="did-floating-input established" type="date" id="fname" [(ngModel)]="est" />
+        <label class="did-floating-label" style="font-size: -0.3rem">Established</label>
+      </div>
+    </div>
+    <div class="division-4">
+      <label class="industry">Number of People Work in your Buisness</label>
+      <div class="form-check-industry form-check-inline">
+        <input type="radio" id="specifyColor" name="radio4" value="Individual" [(ngModel)]="radio4" />
+        <label for="specifyColor">&nbsp; 1</label>
+      </div>
+
+      <div class="form-check-industry form-check-inline">
+        <input type="radio" id="specifyColor" name="radio4" value="Joint" />
+        <label for="specifyColor">&nbsp; 2-10</label>
+      </div>
+      <div class="form-check-industry form-check-inline">
+        <input type="radio" id="specifyColor" name="radio4" value="Joint" />
+        <label for="specifyColor">&nbsp; 20+</label>
+      </div>
+    </div>
+    <div class="division-5">
+      <label class="turnover">Turnover</label>
+      <div class="form-check-industry2 form-check-inline">
+        <input type="radio" id="specifyColor2" name="radio5" value="Individual" [(ngModel)]="radio5" />
+        <label for="specifyColor2">&nbsp; under $2,00,000</label>
+      </div>
+
+      <div class="form-check-industry2 form-check-inline">
+        <input type="radio" id="specifyColor2" name="radio5" value="Joint" />
+        <label for="specifyColor2">&nbsp; $2,00,000-5,00,000</label>
+      </div>
+      <div class="form-check-industry2 form-check-inline">
+        <input type="radio" id="specifyColor2" name="radio5" value="Joint" />
+        <label for="specifyColor2">&nbsp; I do not wish to disclose</label>
+      </div>
+    </div>
+    <div class="division-6">
+      <div class="did-floating-label-content label-input w-full">
+        <input class="did-floating-input established2" type="text" id="fname" placeholder="write us..." [(ngModel)]="writeus" />
+        <label class="did-floating-label" style="font-size: -0.3rem">Any other information that might help us/ Trading us:</label>
       </div>
     </div>
   </div>
 </div>
 
-<!--<div class="card3">
+<div class="card3">
 
-  <p class="lc-header" (click)="onPress()" style="
+  <p class="lc-header" (click)="onPress2()" style="
       font-family: 'Verdana';
       color: #0381BA;
       padding-left: -1rem;
       margin-left: -2rem;">
 
-    <b>COMPANY DETAILS</b>
+    <b>Contact Details</b>
 
-    <i class="fa-solid" [class.fa-angle-down]="isLowerVisible" [class.fa-angle-up]="!isLowerVisible"></i>
+    <i class="fa-solid" [class.fa-angle-down]="isLowerVisible2" [class.fa-angle-up]="!isLowerVisible2"></i>
 
   </p>
 
-  <div [style.display]="isLowerVisible ? 'inherit' : 'none'" [style.height]="isLowerVisible ? 'fit-content' : '0'">
+  <div [style.display]="isLowerVisible2 ? 'inherit' : 'none'" [style.height]="isLowerVisible2 ? 'fit-content' : '0'">
 
-    <div class="form-check1 form-check-inline custom-class-form" style="font-family: 'Verdana'">
-
-      <div class="did-floating-label-content label-input w-full">
-
-        <input class="did-floating-input" type="text" id="fname" [(ngModel)]="fname" />
-
-        <label class="did-floating-label" style="font-size: -0.3rem">Name</label>
-
+    <div class="form-check3 form-check-inline custom-class-form" style="font-family: 'Verdana'">
+      <div class="did-floating-label-content label-input w-full" style="width:50%">
+        <input class="did-floating-input" type="text" id="fname" [(ngModel)]="preferred" />
+        <label class="did-floating-label" style="font-size: -0.3rem">Preferred Contact Method</label>
+      </div>
+      <div class="did-floating-label-content label-input w-full" style="width:50%">
+        <input class="did-floating-input" type="text" id="fname" [(ngModel)]="phone" />
+        <label class="did-floating-label" style="font-size: -0.3rem">Office Phone</label>
+      </div>
+    </div> 
+    <div class="form-check4 form-check-inline custom-class-form" style="font-family: 'Verdana'">
+      <div class="did-floating-label-content label-input w-full" style="width:50%">
+        <input class="did-floating-input" type="text" id="fname" [(ngModel)]="fax" />
+        <label class="did-floating-label" style="font-size: -0.3rem">Fax Number</label>
+      </div>
+      <div class="did-floating-label-content label-input w-full" style="width:50%">
+        <input class="did-floating-input" type="text" id="fname" [(ngModel)]="gmail" />
+        <label class="did-floating-label" style="font-size: -0.3rem">Email</label>
       </div>
     </div> 
   </div>
-</div> -->
+</div>
+
+<div class="card4">
+
+  <p class="lc-header" (click)="onPress3()" style="
+      font-family: 'Verdana';
+      color: #0381BA;
+      padding-left: -1rem;
+      margin-left: -2rem;">
+
+    <b>Company Address Detail</b>
+
+    <i class="fa-solid" [class.fa-angle-down]="isLowerVisible3" [class.fa-angle-up]="!isLowerVisible3"></i>
+
+  </p>
+
+  <div [style.display]="isLowerVisible3 ? 'inherit' : 'none'" [style.height]="isLowerVisible3 ? 'fit-content' : '0'">
+
+    <div class="form-check3 form-check-inline custom-class-form" style="font-family: 'Verdana'">
+      <div class="did-floating-label-content label-input w-full" style="width:50%">
+        <input class="did-floating-input" type="text" id="fname" [(ngModel)]="street" />
+        <label class="did-floating-label" style="font-size: -0.3rem">Street</label>
+      </div>
+      <div class="did-floating-label-content label-input w-full" style="width:50%">
+        <input class="did-floating-input" type="text" id="fname" [(ngModel)]="city" />
+        <label class="did-floating-label" style="font-size: -0.3rem">City</label>
+      </div>
+    </div> 
+    <div class="form-check4 form-check-inline custom-class-form" style="font-family: 'Verdana'">
+      <div class="did-floating-label-content label-input w-full" style="width:50%">
+        <input class="did-floating-input" type="text" id="fname" [(ngModel)]="state" />
+        <label class="did-floating-label" style="font-size: -0.3rem">State/Province/Area</label>
+      </div>
+      <div class="did-floating-label-content label-input w-full" style="width:50%">
+        <input class="did-floating-input" type="text" id="fname" [(ngModel)]="zipcode" />
+        <label class="did-floating-label" style="font-size: -0.3rem">Postal Code</label>
+      </div>
+    </div> 
+    <div class="did-floating-label-content label-input w-full" style="width:50%">
+      <input class="did-floating-input" type="text" id="fname" [(ngModel)]="country" />
+      <label class="did-floating-label" style="font-size: -0.3rem">Country</label>
+    </div>
+  </div>
+</div>
 
 <div class="car-subs-footer">
   <div class="cs-footer-com">
