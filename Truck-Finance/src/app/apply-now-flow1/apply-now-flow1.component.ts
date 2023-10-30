@@ -121,7 +121,7 @@ export class ApplyNowFlow1Component implements OnInit {
         const navigation = this.router.getCurrentNavigation();
         if (navigation?.extras.state) {
           this.techDetailsParameter = navigation.extras.state;
-          this.taxes = Number(this.techDetailsParameter.price.replace(/,/g, '')) * 0.11;
+          this.taxes = Number(this.techDetailsParameter.price) * 0.11;
           console.log(this.techDetailsParameter);
 
         }
