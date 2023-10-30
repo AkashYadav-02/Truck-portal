@@ -1,105 +1,64 @@
 [
 
- 
-
-	{ "Date": "2023-11-01", "Description": "Repayment","Principal": "$6,936.94","EMI":"$8,120.10","Interest":"$1,183.16","LoanAmount":"$172,784.06","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2023-12-01", "Description": "Repayment","Principal": "$6,982.60","EMI":"$8,120.10","Interest":"$1,137.50","LoanAmount":"$165,801.46","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2024-01-01", "Description": "Repayment","Principal": "$7,028.57","EMI":"$8,120.10","Interest":"$1,091.53","LoanAmount":"$158,772.89","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2024-02-01", "Description": "Repayment","Principal": "$7,074.84","EMI":"$8,120.10","Interest":"$1,045.25","LoanAmount":"$151,698.04","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2024-03-01", "Description": "Repayment","Principal": "$7,121.42","EMI":"$8,120.10","Interest":"$998.68","LoanAmount":"$144,576.62","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2024-04-01", "Description": "Repayment","Principal": "$7,168.30","EMI":"$8,120.10","Interest":"$951.80","LoanAmount":"$137,408.32","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2024-05-01", "Description": "Repayment","Principal": "$7,215.50","EMI":"$8,120.10","Interest":"$904.60","LoanAmount":"$130,192.82","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2024-06-01", "Description": "Repayment","Principal": "$7,263.00","EMI":"$8,120.10","Interest":"$857.10","LoanAmount":"$122,929.82","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2024-07-01", "Description": "Repayment","Principal": "$7,310.81 ","EMI":"$8,120.10","Interest":"$809.29","LoanAmount":"$115,619.01","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2024-08-01", "Description": "Repayment","Principal": "$ 7358.94 ","EMI":"$8,120.10","Interest":"$ 761.15","LoanAmount":"$ 108,260.07","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2024-09-01", "Description": "Repayment","Principal": "$ 7,407.39","EMI":"$8,120.10","Interest":"$712.71","LoanAmount":"$ 100852.68","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2024-10-01", "Description": "Repayment","Principal": "$ 7,456.15","EMI":"$8,120.10","Interest":"$ 663.94","LoanAmount":"$ 93396.53","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2024-11-01", "Description": "Repayment","Principal": "$ 7505.23","EMI":"$8,120.10","Interest":"$ 614.86","LoanAmount":"$ 85891.29","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2024-12-01", "Description": "Repayment","Principal": "$ 7,554.64","EMI":"$8,120.10","Interest":"$ 565.45","LoanAmount":"$ 78,336.64","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2025-01-01", "Description": "Repayment","Principal": "$ 7,604.38","EMI":"$8,120.10","Interest":"$ 515.71","LoanAmount":"$ 70,732.25","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2025-02-01", "Description": "Repayment","Principal": "$ 7,654.44","EMI":"$8,120.10","Interest":"$ 465.65","LoanAmount":"$ 63,077.81","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2025-03-01", "Description": "Repayment","Principal": "$ 7,704.83","EMI":"$8,120.10","Interest":"$ 415.26","LoanAmount":"$ 55,372.97","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2025-04-01", "Description": "Repayment","Principal": "$ 7,755.56","EMI":"$8,120.10","Interest":"$ 364.53","LoanAmount":"$ 47,617.41","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2025-05-01", "Description": "Repayment","Principal": "$ 7,806.61","EMI":"$8,120.10","Interest":"$ 313.48","LoanAmount":"$ 39,810.79","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2025-06-01", "Description": "Repayment","Principal": "$ 7,858.01","EMI":"$8,120.10","Interest":"$ 262.08","LoanAmount":"$ 31,952.78","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2025-07-01", "Description": "Repayment","Principal": "$ 7,909.74","EMI":"$8,120.10","Interest":"$ 210.35","LoanAmount":"$ 24,043.04","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2025-08-01", "Description": "Repayment","Principal": "$ 7,961.81","EMI":"$8,120.10","Interest":"$ 158.28","LoanAmount":"$ 16,081.22","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2025-09-01", "Description": "Repayment","Principal": "$ 8,014.23","EMI":"$8,120.10","Interest":"$ 105.86","LoanAmount":"$ 8,066.99","APR":"7.90%" },
- 
-  
- 
-	{ "Date": "2025-10-01", "Description": "Repayment","Principal": "$ 8,066.99","EMI":"$8,120.10","Interest":"$ 53.10","LoanAmount":"$0","APR":"7.90%" }
- 
-  
- 
-  
- 
-  
- 
- ]
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status":"Pending","Allocation Status":"Unallocated","Installment":"1","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status":"Pending","Allocation Status":"Unallocated","Installment":"2","Type":"Installment","Calc Date":"02-12-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status":"Pending","Allocation Status":"Unallocated","Installment":"3","Type":"Installment","Calc Date":"02-01-2024","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },    
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status":"Pending","Allocation Status":"Unallocated","Installment":"4","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },    
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"5","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },    
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"6","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"7","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"8","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+ 	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"9","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+ 	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"10","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"11","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"12","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"13","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"14","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"15","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" }, 
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"16","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"17","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"18","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"19","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"20","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"21","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"22","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"23","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"24","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"25","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"26","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"27","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"28","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"29","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"30","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"31","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"32","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"33","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"34","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"35","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"36","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"37","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"38","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"39","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"40","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"41","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"42","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"43","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"44","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"45","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"46","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"47","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"48","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"49","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"50","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"51","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"52","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"53","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"54","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"55","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"56","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"57","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"58","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"59","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
+	{ "Iscash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"60","Type":"Installment","Calc Date":"02-11-2023","Currency":"USD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" }
+	
+]
