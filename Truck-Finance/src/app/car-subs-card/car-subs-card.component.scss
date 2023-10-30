@@ -1,0 +1,306 @@
+.car-subs-header {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+
+    p {
+        font-family: "Verdana";
+        font-weight: bold;
+        font-size: 17px;
+        color: black;
+    }
+
+    img {
+        max-width: 1rem;
+        max-height: 1rem;
+        margin-top: 0.3rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+}
+
+.cardangle{
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.left-section{
+    margin-top: 1.4rem;
+    width: 56vw;
+    border-radius: 6px;
+    //background: rgba(245, 245, 245, 0.24);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    height: fit-content;
+}
+
+.car-images{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.stanAdv{
+    width: 4.5rem
+}
+
+.car-main-img {
+    border: none;
+}
+
+.car-main-img img {
+    width: auto;
+    max-width: 32.4rem;
+    height: 47vh;
+    flex-shrink: 0;
+    border-radius: 5px;
+    // border: none;
+}
+
+.car-etc-img-div img {
+    height: 8.8rem;
+    // width: auto;
+    max-width: 15rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.car-details h2 {
+    color: #000;
+    // text-align: center;
+    font-family: Verdana;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    /* 48px */
+}
+
+.car-details p {
+    color: #000;
+    font-family: Verdana;
+    font-size: 0.95rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 135.9%;
+    letter-spacing: 0.24px;
+}
+
+.radio-btn-group label {
+    color: #000;
+    font-family: Verdana;
+    font-size: 0.95rem;
+    font-style: normal;
+    font-weight: 560;
+    line-height: 135.9%;
+    letter-spacing: 0.22px;
+}
+
+#specifyColor {
+    border: 0px;
+    width: 1.3rem;
+    // height: 2em;
+    accent-color: #0381BA;
+}
+
+.checked-radio {
+    margin-left: 1.9rem !important;
+}
+
+.left-card {
+    //border-radius: 6px;
+    //background: rgba(245, 245, 245, 0.24);
+    //box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.22);
+}
+
+.exclamation-icon {
+    width: 1rem;
+    margin-top: 3px;
+    height: 1rem;
+}
+
+.info{
+    display: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-left: 0.6rem;
+}
+.icon:hover ~ .info{
+    display: block;
+    position: relative;
+    position: absolute;
+    margin-left: 3rem;
+    background-color: #a9ddf5;
+    // padding: 0.1rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    border-radius: 0.4rem;
+}
+
+.label-des {
+    color: #000;
+    font-family: Verdana;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 3px;
+    line-height: normal;
+}
+
+.milegae-cc img {
+    margin-left: 1rem;
+}
+
+.mileage-text1 span {
+    margin-left: 2rem;
+}
+
+.mileage-text2 span {
+    margin-left: 4.5rem;
+}
+
+.mileage-text3 span {
+    margin-left: 2.4rem !important;
+}
+
+.mileage-text3 img {
+    margin-left: 0.85rem;
+}
+
+.left-card-right-side h2 {
+    color: #000;
+    // text-align: center;
+    font-family: Verdana;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.color-div p {
+    color: #0F0F0F;
+    font-family: Verdana;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 560;
+    line-height: 24px;
+    /* 100% */
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    // background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    border: 0.2rem solid white;
+    // gap: 2;
+    // margin-left: 2rem;
+    margin-right: 10px;
+}
+
+.accessories {
+    color: #0F0F0F !important;
+    font-family: Verdana !important;
+    font-size: 1.2rem !important;
+    font-style: normal !important;
+    font-weight: 660 !important;
+    line-height: 24px !important;
+    /* 100% */
+}
+
+.accessories span {
+    color: #0F0F0F;
+    font-family: Verdana;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.speedometer {
+    margin-right: 1rem;
+    height: 2.4rem;
+    width: auto;
+}
+
+#engine {
+    margin-right: 1rem;
+    height: 2rem;
+    width: auto;
+}
+
+.colorWhite {
+    background-color: #ffffff;
+
+}
+
+.colorBlack {
+    background-color: #f8a10b !important;
+}
+
+.colorOrange{
+    background-color: #f8660b !important;
+}
+
+.colorBlue {
+    background-color: #004f8f !important;
+}
+
+.colorGrey {
+    background-color: #9f9f9f;
+}
+
+.select-variant {
+    align-items: baseline;
+}
+
+.select-variant i {
+    margin-left: 1rem;
+}
+
+.select-variant:hover {
+    cursor: pointer;
+}
+
+.select-size input {
+    display: none;
+}
+
+.option-text {
+    display: inline-block;
+    min-width: 60px;
+    height: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    line-height: 50px;
+    cursor: pointer;
+    color: #000;
+    font-family: Verdana;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border-radius: 6px;
+    border: 1px solid #000;
+}
+
+#small:checked~.option-text[for="small"],
+#medium:checked~.option-text[for="medium"],
+#large:checked~.option-text[for="large"],
+#x-large:checked~.option-text[for="x-large"],
+#xx-large:checked~.option-text[for="xx-large"],
+#xtra-large:checked~.option-text[for="xtra-large"] {
+    background: #0381BA0A;
+    color: #000000;
+    border: 1px solid #0381BA;
+}
+
+.option-text p {
+    margin-top: 0.9rem;
+}
+
+.select-var-div {
+    font-family: Verdana;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-left: -2rem;
+}

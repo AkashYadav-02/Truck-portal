@@ -20,16 +20,40 @@ declare var $: any;
 export class CarSubRedesignComponent implements OnInit {
   myObserver;
   currentUrl: any;
-  variantName:any = "Default";
-  
+  variantName: any = "Default";
+
   // currentCar:any;
-  ownership:any = "Business";
-  currentCarDetails!:any;
+
+  quantity = 1
+
+  increNum(){
+    this.quantity++;
+  }
+
+  decreNum(){
+    this.quantity--;
+  }
+
+  ownership: any = "Business";
+  currentCarDetails!: any;
   eligibleForm: FormGroup;
   techDetailsParameter: any = 0;
+  techDetailsParameterList: any = [];
   amountCalc: any;
   amm = 0;
   price = 0;
+  localData: any;
+
+  incomingData: any = [];
+  setCarData(listt: { id: number, roadprice: any, emi: any }) {
+    // console.log("before", this.incomingData);
+    // console.log(listt);
+    this.incomingData[listt.id].roadprice = listt.roadprice
+    this.incomingData[listt.id].emi = listt.emi
+    // console.log("after", this.incomingData);
+
+  }
+
 
   specificaiton: any;
 
@@ -71,12 +95,12 @@ export class CarSubRedesignComponent implements OnInit {
 
   globalEMI: number = 0;
 
-  isCarCardVisible=false;
-  expandCard(){
-    if (this.isCarCardVisible){
-      this.isCarCardVisible=false;
-    }else {
-      this.isCarCardVisible=true;
+  isCarCardVisible = true;
+  expandCard() {
+    if (this.isCarCardVisible) {
+      this.isCarCardVisible = false;
+    } else {
+      this.isCarCardVisible = true;
     }
   }
 
@@ -101,9 +125,9 @@ export class CarSubRedesignComponent implements OnInit {
         } else {
           console.log(
             'Type of else loop ======================== ' +
-              typeof this.techDetailsParameter.price +
-              ' value is ' +
-              this.techDetailsParameter.price
+            typeof this.techDetailsParameter.price +
+            ' value is ' +
+            this.techDetailsParameter.price
           );
           this.techDetailsParameter.price -= this.months_24;
           console.log('Tenure ' + this.techDetailsParameter.price);
@@ -118,9 +142,9 @@ export class CarSubRedesignComponent implements OnInit {
         } else {
           console.log(
             'Type of else loop ======================== ' +
-              typeof this.techDetailsParameter.price +
-              ' value is ' +
-              this.techDetailsParameter.price
+            typeof this.techDetailsParameter.price +
+            ' value is ' +
+            this.techDetailsParameter.price
           );
           this.techDetailsParameter.price -= this.months_36;
           console.log('Tenure ' + this.techDetailsParameter.price);
@@ -135,9 +159,9 @@ export class CarSubRedesignComponent implements OnInit {
         } else {
           console.log(
             'Type of else loop ======================== ' +
-              typeof this.techDetailsParameter.price +
-              ' value is ' +
-              this.techDetailsParameter.price
+            typeof this.techDetailsParameter.price +
+            ' value is ' +
+            this.techDetailsParameter.price
           );
           this.techDetailsParameter.price -= this.months_48;
           console.log('Tenure ' + this.techDetailsParameter.price);
@@ -152,9 +176,9 @@ export class CarSubRedesignComponent implements OnInit {
         } else {
           console.log(
             'Type of else loop ======================== ' +
-              typeof this.techDetailsParameter.price +
-              ' value is ' +
-              this.techDetailsParameter.price
+            typeof this.techDetailsParameter.price +
+            ' value is ' +
+            this.techDetailsParameter.price
           );
           this.techDetailsParameter.price -= this.months_60;
           console.log('Tenure ' + this.techDetailsParameter.price);
@@ -169,9 +193,9 @@ export class CarSubRedesignComponent implements OnInit {
         } else {
           console.log(
             'Type of else loop ======================== ' +
-              typeof this.techDetailsParameter.price +
-              ' value is ' +
-              this.techDetailsParameter.price
+            typeof this.techDetailsParameter.price +
+            ' value is ' +
+            this.techDetailsParameter.price
           );
           this.techDetailsParameter.price -= this.months_72;
           console.log('Tenure ' + this.techDetailsParameter.price);
@@ -186,9 +210,9 @@ export class CarSubRedesignComponent implements OnInit {
         } else {
           console.log(
             'Type of else loop ======================== ' +
-              typeof this.techDetailsParameter.price +
-              ' value is ' +
-              this.techDetailsParameter.price
+            typeof this.techDetailsParameter.price +
+            ' value is ' +
+            this.techDetailsParameter.price
           );
           this.techDetailsParameter.price -= this.months_84;
           console.log('Tenure ' + this.techDetailsParameter.price);
@@ -197,9 +221,12 @@ export class CarSubRedesignComponent implements OnInit {
     }
   }
 
+
   resetAddedCost() {
     this.techDetailsParameter.price = this.updatedPrice;
   }
+
+
 
   constructor(
     private redirectMenu: RedirectMenuService,
@@ -214,8 +241,25 @@ export class CarSubRedesignComponent implements OnInit {
         const navigation = this.router.getCurrentNavigation();
 
         if (navigation?.extras.state) {
-          this.techDetailsParameter = navigation.extras.state;
-          console.log(this.techDetailsParameter);
+
+
+
+          this.techDetailsParameterList = navigation.extras.state;
+          this.localData = Object.values(this.techDetailsParameterList);
+          console.log("constructor");
+          // console.log(this);
+
+
+          console.log(this.localData);
+          console.log(this.localData.length);
+          for (let i = 0; i < this.localData.length; i++) {
+            this.incomingData.push({ roadprice: 0, emi: 0 });
+          }
+
+
+
+          this.techDetailsParameter = this.techDetailsParameterList[0];
+          console.log("heyy", this.techDetailsParameter);
 
           console.log('form credit info', this.techDetailsParameter);
           this.updatedPrice = this.techDetailsParameter.price;
@@ -228,9 +272,9 @@ export class CarSubRedesignComponent implements OnInit {
           this.amm = Math.ceil(this.techDetailsParameter.price.replace(/,/g, '') * 0.35);
 
           this.storePrice = this.updatedPrice;
-          console.log('stored price', this.storePrice);
+          // console.log('stored price', this.storePrice);
 
-          console.log('tech param', this.techDetailsParameter);
+          console.log('tech param:', this.techDetailsParameter);
         }
       }
     });
@@ -242,7 +286,7 @@ export class CarSubRedesignComponent implements OnInit {
     });
   }
 
-  
+
   carDetails = [
     {
       name: 'W990',
@@ -357,15 +401,17 @@ export class CarSubRedesignComponent implements OnInit {
       },
     },
   ];
-  
+
   //this.currentCar = this.carDetails.filter((car) => { return car.name === this.techDetailsParameter.name; })
 
   ngOnInit() {
+    console.log("refresshh");
+
     const labels = document.querySelectorAll('label');
-    
-    this.currentCarDetails=this.carDetails.filter((car)=> {return car.name === this.techDetailsParameter.name});
+
+    this.currentCarDetails = this.carDetails.filter((car) => { return car.name === this.techDetailsParameter.name });
     console.log(this.currentCarDetails);
-    this.variantName=this.currentCarDetails[0].select_variant[0];
+    this.variantName = this.currentCarDetails[0].select_variant[0];
 
     labels.forEach((label) => {
       this.renderer.listen(label, 'click', () => {
@@ -387,20 +433,20 @@ export class CarSubRedesignComponent implements OnInit {
 
     this.filterDetails();
 
-    $(document).ready(function () {
-      $('#demo').vc3dEye({
-        imagePath: '../../assets/3Dimages/', // the location where you’ve put the images.
+    // $(document).ready(function () {
+    //   $('#demo').vc3dEye({
+    //     imagePath: '../../assets/3Dimages/', // the location where you’ve put the images.
 
-        totalImages: 50, // the number of images you have.
+    //     totalImages: 50, // the number of images you have.
 
-        imageExtension: 'jpg', // the extension of the images. Make sure all the images have same extension.
-      });
-    });
-    
+    //     imageExtension: 'jpg', // the extension of the images. Make sure all the images have same extension.
+    //   });
+    // });
 
-    
+
+
     // this.variantName = this.currentCarDetails[0].select_variant[this.variant];
-    
+
   }
 
   percentageValue: number = 35; // Initial percentage value
@@ -455,25 +501,25 @@ export class CarSubRedesignComponent implements OnInit {
   }
 
   tenureList = {
-    small:"24",
-    medium:"36",
-    large:"48",
-    xl:"60",
-    xxl:"72",
-    xxxl:"84"
+    small: "24",
+    medium: "36",
+    large: "48",
+    xl: "60",
+    xxl: "72",
+    xxxl: "84"
   }
 
-  
+
   eligibality() {
-    if (this.isEligible < 60 && this.isEligible>=0) {
+    if (this.isEligible < 60 && this.isEligible >= 0) {
       return 'true'
     }
-      else if (this.isEligible >= 60){
-        return 'false'
-      } else {
-        return 'none'
-      }
-    
+    else if (this.isEligible >= 60) {
+      return 'false'
+    } else {
+      return 'none'
+    }
+
   }
 
   // Function to update the percentage value when the slider changes
@@ -489,7 +535,7 @@ export class CarSubRedesignComponent implements OnInit {
       );
       this.amm = Math.ceil(
         this.techDetailsParameter.price.replace(/,/g, '') *
-          (this.percentageValue / 100)
+        (this.percentageValue / 100)
       );
     } else {
       this.amm = Math.ceil(
@@ -583,8 +629,8 @@ export class CarSubRedesignComponent implements OnInit {
     const now = new Date()
     // Income Liabilities
     this.techDetailsParameter.price = this.storePrice;
-    if(this.globalEMI==3169){
-      this.globalEMI=3244
+    if (this.globalEMI == 3169) {
+      this.globalEMI = 3244
     }
     this.techDetailsParameter.emi = this.globalEMI;
 
@@ -622,7 +668,7 @@ export class CarSubRedesignComponent implements OnInit {
       // console.log(emi.toFixed(0));
       const emi = Math.trunc(roughemi) + 1000 * this.mile;
       this.globalEMI = emi;
-      console.log('EMI is of if loop' + emi + typeof emi);
+      // console.log('EMI is of if loop' + emi + typeof emi);
       return emi;
     } else {
       let price = Price;
@@ -638,7 +684,7 @@ export class CarSubRedesignComponent implements OnInit {
         (Math.pow(1 + monthlyVerdanaestRate, numberOfMonths) - 1);
       // console.log(emi.toFixed(0));
       let emi = Math.trunc(roughemi) + 1000 * this.mile;
-      console.log('EMI is of else loop ' + emi + typeof emi);
+      // console.log('EMI is of else loop ' + emi + typeof emi);
       this.globalEMI = emi;
       return emi;
     }
@@ -666,8 +712,8 @@ export class CarSubRedesignComponent implements OnInit {
     this.variantName = this.currentCarDetails[0].select_variant[this.variant];
     // console.log(this.variantName);
     // console.log(this.currentCarDetails[0].select_variant);
-    
-    
+
+
   }
 
   selecService(num: number) {
@@ -693,17 +739,17 @@ export class CarSubRedesignComponent implements OnInit {
     this.mile = num;
   }
 
-  
+
   dashCamPrice = "$ 0";
   wifiPrice = "$ 0";
 
   addBorder() {
     let elem = document.getElementById('speedometer') as HTMLElement;
-    let check1 = document.getElementById('radio13') as HTMLInputElement ;
+    let check1 = document.getElementById('radio13') as HTMLInputElement;
 
     if (this.border1 == false) {
       // this.check1 = false;
-      
+
       elem.setAttribute(
         'style',
         'border:1px solid #0381BA;margin-right: 1rem;height: 2.6rem;width: auto;padding: 0.2rem;border-radius:0.2rem'
@@ -732,11 +778,11 @@ export class CarSubRedesignComponent implements OnInit {
 
       console.log(
         'Inside if loop of add border ' +
-          this.techDetailsParameter.price +
-          ' ' +
-          typeof this.techDetailsParameter.price +
-          ' store price ' +
-          this.storePrice
+        this.techDetailsParameter.price +
+        ' ' +
+        typeof this.techDetailsParameter.price +
+        ' store price ' +
+        this.storePrice
       );
 
       this.calculateEMI(this.techDetailsParameter.price);
@@ -765,25 +811,25 @@ export class CarSubRedesignComponent implements OnInit {
 
       console.log(
         'Inside else loop of emi ' +
-          this.techDetailsParameter.price +
-          ' store price ' +
-          typeof this.storePrice +
-          ' updated price ' +
-          this.updatedPrice +
-          ' store price ' +
-          this.storePrice
+        this.techDetailsParameter.price +
+        ' store price ' +
+        typeof this.storePrice +
+        ' updated price ' +
+        this.updatedPrice +
+        ' store price ' +
+        this.storePrice
       );
 
       this.calculateEMI(this.techDetailsParameter.price);
       // this.calculateTenureFromBorder(this.techDetailsParameter.price,"border");
     }
     // console.log(this.check1);
-    
+
   }
 
   addBorder2() {
     let elem = document.getElementById('engine') as HTMLElement;
-    let check2 = document.getElementById('radio14') as HTMLInputElement ;
+    let check2 = document.getElementById('radio14') as HTMLInputElement;
 
     if (this.border2 == false) {
       // this.check2 = true;
@@ -815,11 +861,11 @@ export class CarSubRedesignComponent implements OnInit {
 
       console.log(
         'Inside if loop of add border ' +
-          this.techDetailsParameter.price +
-          ' ' +
-          typeof this.techDetailsParameter.price +
-          ' store price ' +
-          this.storePrice
+        this.techDetailsParameter.price +
+        ' ' +
+        typeof this.techDetailsParameter.price +
+        ' store price ' +
+        this.storePrice
       );
 
       this.calculateEMI(this.techDetailsParameter.price);
@@ -849,13 +895,13 @@ export class CarSubRedesignComponent implements OnInit {
 
       console.log(
         'Inside else loop of emi ' +
-          this.techDetailsParameter.price +
-          ' store price ' +
-          typeof this.storePrice +
-          ' updated price ' +
-          this.updatedPrice +
-          ' store price ' +
-          this.storePrice
+        this.techDetailsParameter.price +
+        ' store price ' +
+        typeof this.storePrice +
+        ' updated price ' +
+        this.updatedPrice +
+        ' store price ' +
+        this.storePrice
       );
 
       this.calculateEMI(this.techDetailsParameter.price);
