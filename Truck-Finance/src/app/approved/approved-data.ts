@@ -3,7 +3,7 @@ export const accountDetails = {
     bankandbranchname: 'ABC Bank 7171' ,
     AccounName : 'John Smith',
     AccountType: 'Savings',
-    paymentMethod: 'GIRO'
+    paymentMethod: 'Direct Debit'
   };  
  
   export const disbursmentdetails = {

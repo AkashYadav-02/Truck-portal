@@ -16,7 +16,7 @@ interface UploadEvent {
 })
 export class ApplyNowPendingComponent implements OnInit{
   uploadedFiles: any[] = [];
-
+  isCarCardVisible1:boolean=false;
 
   myObserver;
   currentUrl: any;

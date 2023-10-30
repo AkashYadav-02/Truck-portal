@@ -174,12 +174,15 @@ export class CreditInformationComponent implements OnInit {
   yearly:any='';
   optcost:any='';
   netcost:any = '';
+  netcost1:any = '';
   isCarCardVisible:boolean = false;
+  isCarCardVisible1:boolean = false;
 
   calcnetcost(){
     
     
   this.netcost =  this.yearly - this.optcost;
+  this.netcost1='$'+this.netcost;
   }
   calDsr(){
    console.log("eee")
