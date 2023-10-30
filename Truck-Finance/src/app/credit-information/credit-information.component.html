@@ -2,12 +2,10 @@
      <app-navbar-after-home-page [navtheme]="'whitetheme'"></app-navbar-after-home-page>
 </div>
 <div *ngIf="showCredit">
-  
     </div> 
     <div style="margin-top: 5rem; margin-bottom: 1rem;">
         <app-stepper [firstBg]="'#0381BA'" [ani]="'third'" [secondBg]="'#B0D7E9'" [first]="'white'" [date1]="techDetailsParameter.datee"></app-stepper>
     </div>
-
     <div class="cs-cred-info-main-screen">
         <div class="cs-cred-info-left-sec">
        
@@ -20,7 +18,6 @@
                         <p><b>{{techDetailsParameter.name}}</b></p>
                         <i class="fa-solid cardangle" [class.fa-angle-down]="isCarCardVisible" [class.fa-angle-up]="!isCarCardVisible"></i>
                     </div>
-
                     <div [style.display]="isCarCardVisible ? 'inherit' : 'none'"
                     [style.height]="isCarCardVisible ? 'fit-content' : '0'">
                     <div class="d-flex" style="justify-content: space-between;">
@@ -51,11 +48,8 @@
                           
                             <p><b>${{numberWithCommas(techDetailsParameter.leftcard.currentInstallment)}}</b></p> -->
                         </div>
-    
                     </div>
-                    
                 </div>
-
                     </div>
 
                     <!-- second card  -->
@@ -264,61 +258,36 @@
     <div class="popup-box">
 
         <div class="popup-header">
-
             <button (click)="onCancel()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                     viewBox="0 0 24 24" fill="none">
-
                     <path d="M9.17004 14.8299L14.83 9.16992" stroke="white" stroke-width="1.5" stroke-linecap="round"
                         stroke-linejoin="round" />
-
                     <path d="M14.83 14.8299L9.17004 9.16992" stroke="white" stroke-width="1.5" stroke-linecap="round"
                         stroke-linejoin="round" />
-
                     <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z"
                         stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-
                 </svg></button>
-
         </div>
-
         <h1 class="text-uppercase popup-title" style="font-family: Verdana;">Success!</h1>
-
         <div class="popup-message">
-
             <p style="font-family: Verdana;">Thank you your Application ID : {{techDetailsParameter.applicationId}} has been saved and you can view it on your Dashboard/My Workspace.</p>
-
         </div>
-
         <div>
-
             <button (click)="onOk()" class="confirm-btn">OK</button>
-
         </div>
-
     </div>
-
 </div>
-
-
-
 <div *ngIf="isShowInfoMsg" class="popup-container-one" (click)="onCancel1()">
-
     <div class="popup-box">
-
         <div class="popup-header">
-
             <button (click)="onCancel1()"></button>
-
         </div>
-
         <h1 class="text-uppercase popup-title"></h1>
-
         <div class="popup-message">
             <!-- #ED5434; -->
             <p>To start income verification process, we have sent you an email to
             <p style="color: #0381BA;"> john.smith@gmail.com
             <p> containing your unique link, which is valid for 24 hours</p>
-
         </div>
 
         <div>
