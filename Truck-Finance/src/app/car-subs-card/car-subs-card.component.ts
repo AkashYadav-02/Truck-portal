@@ -40,12 +40,36 @@ export class CarSubsCardComponent implements OnInit {
   price:any;
   amm:any;
 
+  
+
  
 
-  @Output() outGoingData=new EventEmitter<{id:number, roadprice:any,emi:any}>()
+  @Output() outGoingData=new EventEmitter<{id:number, roadprice:any, emi:any, quantityy:any}>()
 
   storePrice:any;
   // techDetailsParameterList: any = [];
+  quantityy = 1
+
+  increNum(){
+    this.quantityy++;
+    this.storePrice = this.storePrice.replace(/,/g, '');
+    this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),quantityy:this.quantityy})
+    // console.log(this.storePrice);
+    
+    // this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),quantityy:this.quantityy})
+
+  }
+
+  decreNum(){
+    if (this.quantityy >1){
+      this.quantityy--;
+      this.storePrice = this.storePrice.replace(/,/g, '');
+    this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),quantityy:this.quantityy})
+    // this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),quantityy:this.quantityy})
+
+    }
+    
+  }
   amountCalc: any;
   specificaiton: any;
   isEligible: number = -1;
@@ -351,7 +375,7 @@ export class CarSubsCardComponent implements OnInit {
     this.storePrice = this.updatedPrice;
     console.log("total emi is ", this.globalEMI);
       
-    this.outGoingData.emit({id:this.compid ,roadprice:this.price,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price))})
+    this.outGoingData.emit({id:this.compid ,roadprice:this.price,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),quantityy:this.quantityy})
     
     this.currentCarDetails=this.carDetails.filter((car)=> {return car.name === this.techDetailsParameter.name});
     console.log(this.currentCarDetails);
@@ -546,7 +570,7 @@ export class CarSubsCardComponent implements OnInit {
 
   backPage() {
     // if data need to carry then this will bring price in original position
-    this.techDetailsParameter.price = this.storePrice;
+    // this.techDetailsParameter.price = this.storePrice;
     this.redirect('rm-car');
   }
 
@@ -619,7 +643,7 @@ export class CarSubsCardComponent implements OnInit {
       // console.log('EMI is of else loop ' + emi + typeof emi);
       this.globalEMI = emi;
       console.log("total emi is ", this.globalEMI);
-      this.outGoingData.emit({id:this.compid ,roadprice:this.price,emi:this.globalEMI})
+      this.outGoingData.emit({id:this.compid ,roadprice:this.price,emi:this.globalEMI,quantityy:this.quantityy})
       return emi;
     }
   }
@@ -640,7 +664,7 @@ export class CarSubsCardComponent implements OnInit {
     } else {
       this.storePrice = this.price + (num + this.service) * 10000;
     }
-    this.outGoingData.emit({id:this.compid,roadprice:this.storePrice,emi:this.globalEMI})
+    this.outGoingData.emit({id:this.compid,roadprice:this.storePrice,emi:this.globalEMI,quantityy:this.quantityy})
     this.variant = num;
     // this.techDetailsParameter.price = this.storePrice;
     console.log(this.storePrice);
@@ -665,7 +689,7 @@ export class CarSubsCardComponent implements OnInit {
       console.log('serive option else loop ' + this.service_package);
       this.storePrice = this.price + (num + this.variant) * 10000;
     }
-    this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.globalEMI})
+    this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.globalEMI,quantityy:this.quantityy})
     this.service = num;
     // this.techDetailsParameter.price = this.storePrice;
     console.log(this.storePrice);
@@ -673,7 +697,7 @@ export class CarSubsCardComponent implements OnInit {
 
   selecMile(num: number) {
     this.mile = num;
-    this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price))})
+    this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),quantityy:this.quantityy})
     console.log("total emi is ", this.showEmi(this.calculateEMI(this.techDetailsParameter.price)));
   }
 

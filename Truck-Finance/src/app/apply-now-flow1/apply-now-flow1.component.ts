@@ -13,6 +13,7 @@ import { BooleanAdvancedFilterModel } from 'ag-grid-community';
   styleUrls: ['./apply-now-flow1.component.scss']
 })
 export class ApplyNowFlow1Component implements OnInit {
+  taxes: number | undefined;
 
   numberWithCommas(x: any) {
 
@@ -111,15 +112,16 @@ export class ApplyNowFlow1Component implements OnInit {
   }
 
   constructor(private router: Router, private fb: FormBuilder,
-    private redirectMenu: RedirectMenuService,
+    private redirectMenu: RedirectMenuService, 
   ) {
-
+    this.radio1 = "Business";
     this.myObserver = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.currentUrl = event.url;
         const navigation = this.router.getCurrentNavigation();
         if (navigation?.extras.state) {
           this.techDetailsParameter = navigation.extras.state;
+          this.taxes = Number(this.techDetailsParameter.price) * 0.11;
           console.log(this.techDetailsParameter);
 
         }

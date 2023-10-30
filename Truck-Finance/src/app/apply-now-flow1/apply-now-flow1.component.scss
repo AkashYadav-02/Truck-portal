@@ -31,6 +31,8 @@
   font-family: "Verdana";
 }
 
+
+
 .step .activestep{
   background-color: #DB2423;
   color: #ffffff;
@@ -100,6 +102,8 @@
   margin-left: -10px;
   font-size: 15px;
   font-family: "Verdana";
+  min-width: 15rem;
+  max-width: 15rem;
 }
 
 hr-1, hr-2 {
@@ -434,4 +438,20 @@ hr-1, hr-2 {
   margin-right: 2.6rem;
   width: 47rem;
   height: 7rem;
+}
+
+.package-details{
+  p{
+    font-family: Verdana;
+    font-size: 13px;
+  }
+}
+
+.lc-header{
+  font-size: 16px;
+}
+
+.card11{
+  // margin-top: 10rem !important;
+  padding-top: 0px;
 }

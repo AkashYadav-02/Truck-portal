@@ -24,17 +24,8 @@ export class CarSubRedesignComponent implements OnInit {
 
   // currentCar:any;
 
-  quantity = 1
   visible1:boolean=false;
   visible2:boolean=false;
-
-  increNum(){
-    this.quantity++;
-  }
-
-  decreNum(){
-    this.quantity--;
-  }
 
   ownership: any = "Business";
   currentCarDetails!: any;
@@ -51,11 +42,12 @@ export class CarSubRedesignComponent implements OnInit {
   totalonroadprice:number = 0;
   totalemiprice:number = 0;
 
-  setCarData(listt: { id: number, roadprice: any, emi: any }) {
+  setCarData(listt: { id: number, roadprice: any, emi: any, quantityy:number}) {
     // console.log("before", this.incomingData);
     console.log("Hellll", listt);
-    this.incomingData[listt.id].roadprice = listt.roadprice
+    this.incomingData[listt.id].roadprice = listt.roadprice;
     this.incomingData[listt.id].emi = listt.emi
+    this.incomingData[listt.id].quantityy = listt.quantityy
     this.calculateTotalPrice();
     // this.incomingData.forEach((a: { roadprice: number; }) => sum += a.roadprice);
     
@@ -65,8 +57,8 @@ export class CarSubRedesignComponent implements OnInit {
     this.totalonroadprice = 0
     this.totalemiprice = 0
     for (let i=0; i<this.incomingData.length; i++){
-      this.totalonroadprice += this.incomingData[i].roadprice
-      this.totalemiprice += this.incomingData[i].emi
+      this.totalonroadprice += this.incomingData[i].roadprice * this.incomingData[i].quantityy
+      this.totalemiprice += this.incomingData[i].emi * this.incomingData[i].quantityy
     }
     
   }
@@ -271,7 +263,7 @@ export class CarSubRedesignComponent implements OnInit {
           console.log(this.localData);
           console.log(this.localData.length);
           for (let i = 0; i < this.localData.length; i++) {
-            this.incomingData.push({name:this.localData[i].name, roadprice: 0, emi: 0});
+            this.incomingData.push({name:this.localData[i].name, roadprice: 0, emi: 0, quantityy:0});
 
           }
 

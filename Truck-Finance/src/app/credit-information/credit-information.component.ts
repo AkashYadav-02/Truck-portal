@@ -47,7 +47,7 @@ export class CreditInformationComponent implements OnInit {
   leftcard = leftcard;
   currentInstallment : any;
 
-  taxes:any;
+  taxes:Number =0;
 
   DSR_ratio : number | undefined ;
 
@@ -142,7 +142,9 @@ export class CreditInformationComponent implements OnInit {
         if (navigation?.extras.state) {
 
           this.techDetailsParameter = navigation.extras.state;
-          this.taxes = Number(this.techDetailsParameter.price.replace(/,/g, '')) * 0.11;
+          console.log("Taxes");
+          
+          this.taxes = Number(this.techDetailsParameter.price) * 0.11;
           this.currentInstallment = this.techDetailsParameter.leftcard.currentInstallment;
 
           console.log('from credit comp', this.techDetailsParameter);
