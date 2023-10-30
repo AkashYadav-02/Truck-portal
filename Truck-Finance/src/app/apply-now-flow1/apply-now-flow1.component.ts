@@ -27,6 +27,9 @@ export class ApplyNowFlow1Component implements OnInit {
   radio4 = 'Individual';
   radio5 = 'Individual';
   isCarCardVisible :boolean =false;
+  isCarCardVisible1 :boolean =false;
+  
+
   applicationId: string = '';
   lineItem: any;
   leftcard = leftcard;
@@ -76,6 +79,7 @@ export class ApplyNowFlow1Component implements OnInit {
   statuss: any;
   package: string = ''
   status : string = ''
+  taxes:any;
 
   dp: any = this.leftcard.downpayment
   //  lastname: string = "Aurionpro";
@@ -117,6 +121,7 @@ export class ApplyNowFlow1Component implements OnInit {
         const navigation = this.router.getCurrentNavigation();
         if (navigation?.extras.state) {
           this.techDetailsParameter = navigation.extras.state;
+          this.taxes = Number(this.techDetailsParameter.price.replace(/,/g, '')) * 0.11;
           console.log(this.techDetailsParameter);
 
         }

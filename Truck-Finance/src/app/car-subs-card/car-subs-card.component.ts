@@ -40,6 +40,8 @@ export class CarSubsCardComponent implements OnInit {
   price:any;
   amm:any;
 
+ 
+
   @Output() outGoingData=new EventEmitter<{id:number, roadprice:any,emi:any}>()
 
   storePrice:any;
@@ -347,7 +349,9 @@ export class CarSubsCardComponent implements OnInit {
     this.amm = Math.ceil(this.techDetailsParameter.price.replace(/,/g, '') * 0.35);
   
     this.storePrice = this.updatedPrice;
-    this.outGoingData.emit({id:this.compid ,roadprice:this.price,emi:this.globalEMI})
+    console.log("total emi is ", this.globalEMI);
+      
+    this.outGoingData.emit({id:this.compid ,roadprice:this.price,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price))})
     
     this.currentCarDetails=this.carDetails.filter((car)=> {return car.name === this.techDetailsParameter.name});
     console.log(this.currentCarDetails);
@@ -614,6 +618,8 @@ export class CarSubsCardComponent implements OnInit {
       let emi = Math.trunc(roughemi) + 1000 * this.mile;
       // console.log('EMI is of else loop ' + emi + typeof emi);
       this.globalEMI = emi;
+      console.log("total emi is ", this.globalEMI);
+      this.outGoingData.emit({id:this.compid ,roadprice:this.price,emi:this.globalEMI})
       return emi;
     }
   }
@@ -667,6 +673,8 @@ export class CarSubsCardComponent implements OnInit {
 
   selecMile(num: number) {
     this.mile = num;
+    this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price))})
+    console.log("total emi is ", this.showEmi(this.calculateEMI(this.techDetailsParameter.price)));
   }
 
   
