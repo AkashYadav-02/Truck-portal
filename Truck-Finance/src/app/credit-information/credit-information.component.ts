@@ -175,6 +175,7 @@ export class CreditInformationComponent implements OnInit {
   optcost:any='';
   netcost:any = '';
   isCarCardVisible:boolean = false;
+  isCarCardVisible1:boolean = false;
 
   calcnetcost(){
     
