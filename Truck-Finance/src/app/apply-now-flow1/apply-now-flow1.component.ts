@@ -290,6 +290,7 @@ export class ApplyNowFlow1Component implements OnInit {
     this.licenseClass = '';
     this.radio2 = '';
     this.radio1 = '';
+    this.status = '';
     this.licenseNo = '';
     this.licenseValidity = '';
     this.driversLicense = '';
