@@ -28,7 +28,7 @@
                 </div>
 
             </div>
-            <div class="left-section">
+            <!-- <div class="left-section">
                 <div style="display: flex; justify-content: space-between; padding: 0px 20px;" (click)="expandCard()">
                     <div class="car-subs-header d-flex">
                         <p style="cursor: pointer;" (click)="backPage()">KENWORTH</p>
@@ -42,8 +42,7 @@
                           
                     </div>
                     <i (click)="expandCard()" class="fa-solid cardangle" [class.fa-angle-down]="isCarCardVisible" [class.fa-angle-up]="!isCarCardVisible"></i>
-                <!-- <div [style.display]="isCarCardVisible ? 'inherit' : 'none'"
-                    [style.height]="isCarCardVisible ? 'fit-content' : '0'"> -->
+
                 </div>
                 <div [style.display]="isCarCardVisible ? 'inherit' : 'none'"
                 [style.height]="isCarCardVisible ? 'fit-content' : '0'">
@@ -170,7 +169,7 @@
                     </div>
                 </div>
                 
-            </div>
+            </div> -->
 
             <div *ngFor="let tech of localData; let i = index">
                 <app-car-subs-card [compid]="i" [techDetailsParameter]="tech" (outGoingData)="setCarData($event)"></app-car-subs-card>
@@ -386,12 +385,13 @@
                 <i class="fa-solid" [class.fa-angle-down]="isMidVisible" [class.fa-angle-up]="!isMidVisible"></i>
             </p>
 
+
             <div [style.display]="isMidVisible ? 'inherit' : 'none'"
-                [style.height]="isMidVisible ? 'fit-content' : '0'">
+                [style.height]="isMidVisible ? 'fit-content' : '0'"  *ngFor="let car of incomingData">
                 <div class="qoute-fields">
                     <div class="qoute-head1">
-                        <label>YOUR ON ROAD CASH PRICE:</label>
-                        <label>$ {{numberWithCommas(price)}}</label>
+                        <label>{{car.name}} on road price:</label>
+                        <label>$ {{numberWithCommas(car.roadprice)}}</label>
                     </div>
 
                     <div class="qoute-radio-body1" style="margin-left: 0;">
@@ -426,7 +426,7 @@
 
                     <div class="qoute-head2">
                         <label>Total On-Road Price:</label>
-                        <label>$ {{numberWithCommas(storePrice)}}</label>
+                        <label>$ {{numberWithCommas(car.roadprice)}}</label>
                     </div>
                     <div class="head2-body">
                         <label>Finance Option: </label>
@@ -440,7 +440,7 @@
 
                     <div class="qoute-head2">
                         <label>Total Amount of Finance:</label>
-                        <label>$ {{numberWithCommas(storePrice)}}</label>
+                        <label>$ {{numberWithCommas(car.roadprice)}}</label>
                     </div>
 
                     <div class="head2-body">
@@ -460,7 +460,7 @@
                     </div>
                     <div class="head2-body">
                         <label>Upfront Taxes</label>
-                        <label>$ {{numberWithCommas(price * 0.11)}}</label>
+                        <label>$ {{numberWithCommas(car.roadprice * 0.11)}}</label>
                     </div>
                     <!-- <div class="head2-body">
                         <label>Applying as: </label>
@@ -468,7 +468,7 @@
                     </div> -->
                     <div class="qoute-head2">
                         <label>YOUR MONTHLY INSTALLMENT IS</label>
-                        <label>$ {{numberWithCommas(showEmi(calculateEMI(techDetailsParameter.price)))}}</label>
+                        <label>$ {{numberWithCommas(car.emi)}}</label>
                     </div>
 
 
@@ -609,16 +609,14 @@
 
         <!-- <button href="car-sub-submit" class=" roadprice">On-road price</button> -->
 
-        <h6 class="price">On Road Price: ${{numberWithCommas(storePrice)}}</h6>
+        <h6 class="price">On Road Price: ${{numberWithCommas(totalonroadprice)}}</h6>
 
     </div>
 
     <div class="cs-footer-com" style="padding-top: 5px;">
 
-        <h6 class="price" style="font-size: 15px;">Monthly Payment from:
-            ${{numberWithCommas(showEmi(calculateEMI(techDetailsParameter.price)))}}/m
-
-        </h6>
+        <!-- <h6 class="price" style="font-size: 15px;">Monthly Payment from: ${{numberWithCommas(showEmi(calculateEMI(techDetailsParameter.price)))}}/m </h6> -->
+        <h6 class="price" style="font-size: 15px;">Monthly Payment from: ${{numberWithCommas(totalemiprice)}}/m </h6>
 
         <div>
             <img src="../../assets/logos/info-circle.png" style="height:15px; margin-right: 10px; margin-left: -12px;">

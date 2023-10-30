@@ -44,14 +44,29 @@ export class CarSubRedesignComponent implements OnInit {
   price = 0;
   localData: any;
 
-  incomingData: any = [];
+  incomingData:any= [];
+
+  totalonroadprice:number = 0;
+  totalemiprice:number = 0;
+
   setCarData(listt: { id: number, roadprice: any, emi: any }) {
     // console.log("before", this.incomingData);
-    // console.log(listt);
+    console.log("Hellll", listt);
     this.incomingData[listt.id].roadprice = listt.roadprice
     this.incomingData[listt.id].emi = listt.emi
-    // console.log("after", this.incomingData);
+    this.calculateTotalPrice();
+    // this.incomingData.forEach((a: { roadprice: number; }) => sum += a.roadprice);
+    
+  }
 
+  calculateTotalPrice(){
+    this.totalonroadprice = 0
+    this.totalemiprice = 0
+    for (let i=0; i<this.incomingData.length; i++){
+      this.totalonroadprice += this.incomingData[i].roadprice
+      this.totalemiprice += this.incomingData[i].emi
+    }
+    
   }
 
 
@@ -246,19 +261,20 @@ export class CarSubRedesignComponent implements OnInit {
 
           this.techDetailsParameterList = navigation.extras.state;
           this.localData = Object.values(this.techDetailsParameterList);
+          this.techDetailsParameter = this.localData[0];
           console.log("constructor");
-          // console.log(this);
+          console.log(this.techDetailsParameter);
 
 
           console.log(this.localData);
           console.log(this.localData.length);
           for (let i = 0; i < this.localData.length; i++) {
-            this.incomingData.push({ roadprice: 0, emi: 0 });
+            this.incomingData.push({name:this.localData[i].name, roadprice: 0, emi: 0 });
           }
 
 
 
-          this.techDetailsParameter = this.techDetailsParameterList[0];
+          
           console.log("heyy", this.techDetailsParameter);
 
           console.log('form credit info', this.techDetailsParameter);
@@ -639,9 +655,9 @@ export class CarSubRedesignComponent implements OnInit {
 
       name: this.techDetailsParameter.name,
 
-      price: this.techDetailsParameter.price,
+      price: this.totalonroadprice,
 
-      emi: this.techDetailsParameter.emi,
+      emi: this.totalemiprice,
 
       option: this.service_package,
       datee: now.toLocaleString()
