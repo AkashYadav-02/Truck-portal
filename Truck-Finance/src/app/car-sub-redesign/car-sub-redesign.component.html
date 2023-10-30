@@ -28,7 +28,7 @@
                 </div>
 
             </div>
-            <div class="left-section">
+            <!-- <div class="left-section">
                 <div style="display: flex; justify-content: space-between; padding: 0px 20px;" (click)="expandCard()">
                     <div class="car-subs-header d-flex">
                         <p style="cursor: pointer;" (click)="backPage()">KENWORTH</p>
@@ -42,8 +42,7 @@
                           
                     </div>
                     <i (click)="expandCard()" class="fa-solid cardangle" [class.fa-angle-down]="isCarCardVisible" [class.fa-angle-up]="!isCarCardVisible"></i>
-                <!-- <div [style.display]="isCarCardVisible ? 'inherit' : 'none'"
-                    [style.height]="isCarCardVisible ? 'fit-content' : '0'"> -->
+
                 </div>
                 <div [style.display]="isCarCardVisible ? 'inherit' : 'none'"
                 [style.height]="isCarCardVisible ? 'fit-content' : '0'">
@@ -170,13 +169,14 @@
                     </div>
                 </div>
                 
-            </div>
+            </div> -->
 
             <div *ngFor="let tech of localData; let i = index">
-                <app-car-subs-card [compid]="i" [techDetailsParameter]="tech" (outGoingData)="setCarData($event)"></app-car-subs-card>
+                <app-car-subs-card [compid]="i" [techDetailsParameter]="tech"
+                    (outGoingData)="setCarData($event)"></app-car-subs-card>
             </div>
         </div>
-        
+
         <div class="rightcard">
             <p class="rc-header" (click)="onClick()">Subscription Type<i class="fa-solid"
                     [class.fa-angle-down]="isUpperVisible" [class.fa-angle-up]="!isUpperVisible"></i></p>
@@ -256,7 +256,7 @@
                 <div [style.display]="loanHire=='Lease'? 'none' : 'inherit'">
 
                     <div class="downpayment">
-                        <p class="subhead">Program: </p> 
+                        <p class="subhead">Program: </p>
                         <!-- <input type="text" placeholder="$0.00"> -->
                         <select name="program" id="cars" class="an-drop">
                             <option value="">Select</option>
@@ -264,7 +264,7 @@
                         </select>
                     </div>
                     <div class="downpayment">
-                        <p class="subhead">Business Unit: </p> 
+                        <p class="subhead">Business Unit: </p>
                         <!-- <input type="text" placeholder="$0.00"> -->
                         <select name="program" id="cars" class="an-drop">
                             <option value="paccar">Paccar</option>
@@ -272,7 +272,7 @@
                         </select>
                     </div>
                     <div class="downpayment">
-                        <p class="subhead">Installment Frequency: </p> 
+                        <p class="subhead">Installment Frequency: </p>
                         <!-- <input type="text" placeholder="$0.00"> -->
                         <select name="program" id="cars" class="an-drop">
                             <option value="">Monthly</option>
@@ -280,7 +280,7 @@
                         </select>
                     </div>
                     <div class="downpayment">
-                        <p class="subhead">Installment Timing: </p> 
+                        <p class="subhead">Installment Timing: </p>
                         <!-- <input type="text" placeholder="$0.00"> -->
                         <select name="program" id="cars" class="an-drop">
                             <option value="">Advance</option>
@@ -386,47 +386,111 @@
                 <i class="fa-solid" [class.fa-angle-down]="isMidVisible" [class.fa-angle-up]="!isMidVisible"></i>
             </p>
 
+
             <div [style.display]="isMidVisible ? 'inherit' : 'none'"
                 [style.height]="isMidVisible ? 'fit-content' : '0'">
                 <div class="qoute-fields">
-                    <div class="qoute-head1">
-                        <label>YOUR ON ROAD CASH PRICE:</label>
-                        <label>$ {{numberWithCommas(price)}}</label>
+
+                    <div class="qoute-card">
+                        <div class="qoute-head1" (click)="visible1 = !visible1">
+                            <label>T680 on road price:</label>
+                            <label>$ 172,784<i class="fa-solid" [class.fa-angle-down]="visible1"
+                                    [class.fa-angle-up]="!visible1" style="padding-left: 15px;"></i></label>
+                        </div>
+
+                        <div [style.display]="visible1 ? 'inherit' : 'none'"
+                            [style.height]="visible1 ? 'fit-content' : '0'">
+                            <div class="qoute-radio-body1" style="margin-left: 0;">
+                                <div class="qoute-leasehire form-checkbox form-check-inline">
+                                    <input type="checkbox" name="radio11" checked disabled>
+                                    <label class="form-check-label" for="inlineRadio1">
+                                        Signature Edition
+                                    </label>
+                                </div>
+                                <label class="qoute-num">$ 10,000</label>
+                            </div>
+                            <div class="qoute-radio-body1" style="margin-left: 0;">
+                                <div class="qoute-leasehire form-checkbox form-check-inline">
+                                    <input type="checkbox" name="radio12" checked disabled>
+                                    <label class="form-check-label" for="inlineRadio1">
+                                        <!-- {{serviceName}} --> Standard
+                                    </label>
+                                </div>
+                                <label class="qoute-num">
+                                    $ {{numberWithCommas(service * 10000)}}
+                                </label>
+                            </div>
+                            <div class="qoute-radio-body1" style="margin-left: 0;">
+                                <div class="qoute-leasehire form-checkbox form-check-inline">
+                                    <input type="checkbox" id="radio13" value="dashcam" disabled>
+                                    <label class="form-check-label" for="inlineRadio1">Dashcam</label>
+                                </div>
+                                <label class="qoute-num">300</label>
+                            </div>
+                            <div class="qoute-radio-body1" style="margin-left: 0;">
+                                <div class="qoute-leasehire form-checkbox form-check-inline">
+                                    <input type="checkbox" id="radio14" value="wifi" disabled>
+                                    <label class="form-check-label" for="inlineRadio1">
+                                        Built-in WiFi
+                                    </label>
+                                </div>
+                                <label class="qoute-num">2,400</label>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div class="qoute-radio-body1" style="margin-left: 0;">
-                        <div class="qoute-leasehire form-checkbox form-check-inline">
-                            <input type="checkbox" name="radio11" checked disabled>
-                            <label class="form-check-label" for="inlineRadio1">{{variantName}}</label>
+                    <div class="qoute-card">
+                        <div class="qoute-head1" (click)="visible2 = !visible2">
+                            <label>W990 on road price:</label>
+                            <label>$ 386,267<i class="fa-solid" [class.fa-angle-down]="visible2"
+                                    [class.fa-angle-up]="!visible2" style="padding-left: 15px;"></i></label>
                         </div>
-                        <label class="qoute-num">$ {{numberWithCommas(variant * 10000)}}</label>
-                    </div>
-                    <div class="qoute-radio-body1" style="margin-left: 0;">
-                        <div class="qoute-leasehire form-checkbox form-check-inline">
-                            <input type="checkbox" name="radio12" checked disabled>
-                            <label class="form-check-label" for="inlineRadio1">{{serviceName}}</label>
+
+                        <div [style.display]="visible2 ? 'inherit' : 'none'"
+                            [style.height]="visible2 ? 'fit-content' : '0'">
+
+
+                            <div class="qoute-radio-body1" style="margin-left: 0;">
+                                <div class="qoute-leasehire form-checkbox form-check-inline">
+                                    <input type="checkbox" name="radio11" checked disabled>
+                                    <label class="form-check-label" for="inlineRadio1">Next Generation</label>
+                                </div>
+                                <label class="qoute-num">$ 10,000</label>
+                            </div>
+                            <div class="qoute-radio-body1" style="margin-left: 0;">
+                                <div class="qoute-leasehire form-checkbox form-check-inline">
+                                    <input type="checkbox" name="radio12" checked disabled>
+                                    <label class="form-check-label" for="inlineRadio1">{{serviceName}}</label>
+                                </div>
+                                <label class="qoute-num">$ {{numberWithCommas(service * 10000)}}</label>
+                            </div>
+                            <div class="qoute-radio-body1" style="margin-left: 0;">
+                                <div class="qoute-leasehire form-checkbox form-check-inline">
+                                    <input type="checkbox" id="radio13" value="dashcam" disabled>
+                                    <label class="form-check-label" for="inlineRadio1">Dashcam</label>
+                                </div>
+                                <label class="qoute-num">{{dashCamPrice}}</label>
+                            </div>
+                            <div class="qoute-radio-body1" style="margin-left: 0;">
+                                <div class="qoute-leasehire form-checkbox form-check-inline">
+                                    <input type="checkbox" id="radio14" value="wifi" disabled>
+                                    <label class="form-check-label" for="inlineRadio1">Built-in WiFi</label>
+                                </div>
+                                <label class="qoute-num">{{wifiPrice}}</label>
+                            </div>
                         </div>
-                        <label class="qoute-num">$ {{numberWithCommas(service * 10000)}}</label>
                     </div>
-                    <div class="qoute-radio-body1" style="margin-left: 0;">
-                        <div class="qoute-leasehire form-checkbox form-check-inline">
-                            <input type="checkbox" id="radio13" value="dashcam" disabled>
-                            <label class="form-check-label" for="inlineRadio1">Dashcam</label>
-                        </div>
-                        <label class="qoute-num">{{dashCamPrice}}</label>
-                    </div>
-                    <div class="qoute-radio-body1" style="margin-left: 0;">
-                        <div class="qoute-leasehire form-checkbox form-check-inline">
-                            <input type="checkbox" id="radio14" value="wifi" disabled>
-                            <label class="form-check-label" for="inlineRadio1">Built-in WiFi</label>
-                        </div>
-                        <label class="qoute-num">{{wifiPrice}}</label>
-                    </div>
+
+
+
+
+
 
 
                     <div class="qoute-head2">
                         <label>Total On-Road Price:</label>
-                        <label>$ {{numberWithCommas(storePrice)}}</label>
+                        <label>$ {{numberWithCommas(totalonroadprice)}}</label>
                     </div>
                     <div class="head2-body">
                         <label>Finance Option: </label>
@@ -440,7 +504,7 @@
 
                     <div class="qoute-head2">
                         <label>Total Amount of Finance:</label>
-                        <label>$ {{numberWithCommas(storePrice)}}</label>
+                        <label>$ {{numberWithCommas(totalonroadprice)}}</label>
                     </div>
 
                     <div class="head2-body">
@@ -460,7 +524,7 @@
                     </div>
                     <div class="head2-body">
                         <label>Upfront Taxes</label>
-                        <label>$ {{numberWithCommas(price * 0.11)}}</label>
+                        <label>$ {{numberWithCommas(totalonroadprice * 0.11)}}</label>
                     </div>
                     <!-- <div class="head2-body">
                         <label>Applying as: </label>
@@ -468,7 +532,7 @@
                     </div> -->
                     <div class="qoute-head2">
                         <label>YOUR MONTHLY INSTALLMENT IS</label>
-                        <label>$ {{numberWithCommas(showEmi(calculateEMI(techDetailsParameter.price)))}}</label>
+                        <label>$ {{numberWithCommas(totalemiprice)}}</label>
                     </div>
 
 
@@ -542,7 +606,8 @@
                     </div>
                     <div *ngIf="eligibality() == 'false'">
                         <h5 style="font-family:Verdana  ;font-weight: 800;">RESULT : <span class="text"
-                                style="color: rgb(232, 8, 8);  font-family:Verdana  ;font-weight: 600;"><b>Please Add an
+                                style="color: rgb(232, 8, 8);  font-family:Verdana  ;font-weight: 600;"><b>Please
+                                    Add an
                                     Additional Income Source</b></span>
 
                         </h5>
@@ -609,15 +674,14 @@
 
         <!-- <button href="car-sub-submit" class=" roadprice">On-road price</button> -->
 
-        <h6 class="price">On Road Price: ${{numberWithCommas(storePrice)}}</h6>
+        <h6 class="price">On Road Price: ${{numberWithCommas(totalonroadprice)}}</h6>
 
     </div>
 
     <div class="cs-footer-com" style="padding-top: 5px;">
 
-        <h6 class="price" style="font-size: 15px;">Monthly Payment from:
-            ${{numberWithCommas(showEmi(calculateEMI(techDetailsParameter.price)))}}/m
-
+        <!-- <h6 class="price" style="font-size: 15px;">Monthly Payment from: ${{numberWithCommas(showEmi(calculateEMI(techDetailsParameter.price)))}}/m </h6> -->
+        <h6 class="price" style="font-size: 15px;">Monthly Payment from: ${{numberWithCommas(totalemiprice)}}/m
         </h6>
 
         <div>

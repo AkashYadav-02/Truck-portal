@@ -30,14 +30,14 @@
 
                     <div class="d-flex radio-btn-group mt-3">
                         <label class="mt-auto mb-auto stanAdv" for="">Standard</label>
-                        <input class="ms-4 checked-radio" type="radio" name="warranty" id="specifyColor"
+                        <input class="ms-4 checked-radio" type="radio" name="warranty{{compid}}" id="specifyColor"
                             checked="checked" (change)="selecService(0)" value="Standard" [(ngModel)]="serviceName">
                         <p class="mt-auto mb-auto ms-3">3 year warranty with free service</p>
                     </div>
 
                     <div class="d-flex radio-btn-group mt-3">
                         <label class="mt-auto mb-auto stanAdv" for="">Advanced</label>
-                        <input class="ms-4 checked-radio" type="radio" name="warranty" id="specifyColor"
+                        <input class="ms-4 checked-radio" type="radio" name="warranty{{compid}}" id="specifyColor"
                             (change)="selecService(1)" value="Advanced" [(ngModel)]="serviceName">
                         <p class="mt-auto mb-auto ms-3">5 year warranty with RSA</p>
                     </div>
@@ -45,7 +45,7 @@
                     <h2 class="mt-4">Mileage Package</h2>
                     <div>
                         <div class="d-flex radio-btn-group mt-3">
-                            <input class=" mileage-radio" type="radio" name="Mileage" id="specifyColor"
+                            <input class=" mileage-radio" type="radio" name="Mileage{{compid}}" id="specifyColor"
                                 checked="checked" (change)="selecMile(0)">
                             <label class="mt-auto mb-auto mr-5 ms-3 mileage-text1 milegae-cc d-flex" for="">Standard
                                 <span class="label-des">10,000 KM/Year</span>
@@ -57,7 +57,7 @@
                         </div>
 
                         <div class="d-flex radio-btn-group mt-3">
-                            <input class=" mileage-radio" type="radio" name="Mileage" id="specifyColor"
+                            <input class=" mileage-radio" type="radio" name="Mileage{{compid}}" id="specifyColor"
                                 (change)="selecMile(1)">
 
                             <label class="mt-auto mb-auto mr-5 ms-3 mileage-text2 milegae-cc d-flex" for="">High
@@ -71,7 +71,7 @@
                         </div>
                         <div class="d-flex radio-btn-group mt-3">
 
-                            <input class=" mileage-radio" type="radio" name="Mileage" id="specifyColor"
+                            <input class=" mileage-radio" type="radio" name="Mileage{{compid}}" id="specifyColor"
                                 (change)="selecMile(2)">
                             <label class="mt-auto mb-auto mr-5 ms-3 mileage-text3 milegae-cc d-flex" for="">Ultimate
                                 <span class="label-des">25,000 KM/Year</span>
@@ -97,7 +97,7 @@
                         <div *ngIf="techDetailsParameter.name==car.name">
                             <div class="d-flex radio-btn-group mt-2"
                                 *ngFor="let vari of car.select_variant;let idx=index">
-                                <input class="ms-4 checked-radio" type="radio" name="var" value={{idx}}
+                                <input class="ms-4 checked-radio" type="radio" name="var{{compid}}" value={{idx}}
                                     id="specifyColor" [checked]="(idx === 0)" (change)="selecVar(idx)">
                                 <p class="mt-auto mb-auto ms-3">{{vari}}</p>
                             </div>
