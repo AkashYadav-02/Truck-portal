@@ -113,7 +113,7 @@
             <div class="an-body approval mb-4" style="align-items: center;">
                 <input type="radio" name="appcondition" [(ngModel)]="selectedApproval" value="creditCard"
                     (change)="changeApproval('creditCard')">
-                <label>Credit Card Current Bill Copy:</label>
+                <label>Financial Statement:</label>
                 <span [class.comp]="cardStatus == 'Completed'">{{cardStatus}}</span>
                 <input type="text" class="an-drop" placeholder="Notes" value={{cardnote}}>
                 <i class="fa-solid fa-file-circle-check"
