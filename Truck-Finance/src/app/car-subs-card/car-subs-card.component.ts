@@ -40,6 +40,8 @@ export class CarSubsCardComponent implements OnInit {
   price:any;
   amm:any;
 
+ 
+
   @Output() outGoingData=new EventEmitter<{id:number, roadprice:any,emi:any}>()
 
   storePrice:any;

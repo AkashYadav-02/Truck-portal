@@ -25,6 +25,8 @@ export class CarSubRedesignComponent implements OnInit {
   // currentCar:any;
 
   quantity = 1
+  visible1:boolean=false;
+  visible2:boolean=false;
 
   increNum(){
     this.quantity++;
@@ -269,7 +271,8 @@ export class CarSubRedesignComponent implements OnInit {
           console.log(this.localData);
           console.log(this.localData.length);
           for (let i = 0; i < this.localData.length; i++) {
-            this.incomingData.push({name:this.localData[i].name, roadprice: 0, emi: 0 });
+            this.incomingData.push({name:this.localData[i].name, roadprice: 0, emi: 0});
+
           }
 
 
