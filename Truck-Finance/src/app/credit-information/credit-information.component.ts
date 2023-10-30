@@ -47,6 +47,8 @@ export class CreditInformationComponent implements OnInit {
   leftcard = leftcard;
   currentInstallment : any;
 
+  taxes:any;
+
   DSR_ratio : number | undefined ;
 
   uploadedFiles: any[] = [];
@@ -140,6 +142,7 @@ export class CreditInformationComponent implements OnInit {
         if (navigation?.extras.state) {
 
           this.techDetailsParameter = navigation.extras.state;
+          this.taxes = Number(this.techDetailsParameter.price.replace(/,/g, '')) * 0.11;
           this.currentInstallment = this.techDetailsParameter.leftcard.currentInstallment;
 
           console.log('from credit comp', this.techDetailsParameter);
@@ -164,11 +167,14 @@ export class CreditInformationComponent implements OnInit {
 
     }
 
+    
+
   }
 
   yearly:any='';
   optcost:any='';
   netcost:any = '';
+  isCarCardVisible:boolean = false;
 
   calcnetcost(){
     

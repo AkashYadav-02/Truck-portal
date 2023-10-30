@@ -202,25 +202,22 @@ export class RmCarCollecComponent {
   buyNow(num: number, event: Event) {
    
     this.isChecked[num] = !this.isChecked[num];
-    this.data = this.carDetails[num];
+    // this.data = this.carDetails[num];
 
     if (this.isChecked[num]) {
-  
       this.carList.push(this.carDetails[num]);
-    
       this.cartCount++;
     } else {
-     
       const index = this.carList.findIndex((item) => item === this.carDetails[num]);
       if (index !== -1) {
         this.carList.splice(index, 1);
-        
         this.cartCount--;
       }
     }
     console.log(this.carList)
-
+    this.data = this.carList;
   }
+  
 redirecttocarsubs(){
   this.redirectWithData("car-sub-redesign",this.data)
 }
@@ -233,12 +230,11 @@ redirecttocarsubs(){
       }
       return false;
   }
- 
- 
   
   redirect(path : string){
     this.redirectMenu.redirectTo(path);
   }
+
   redirectWithData(path : string, data : any){
     this.redirectMenu.redirectWithdata(path,data);
   }

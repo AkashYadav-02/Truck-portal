@@ -33,6 +33,17 @@
     margin-bottom: 0.5rem;
 }
 
+.topdrop{
+    label{
+        font-family: Verdana;
+        font-size: 14px;
+    }
+
+    select{
+        width: 16rem;
+    }
+}
+
 .left-section{
     margin-top: 1.4rem;
     width: 56vw;
@@ -193,7 +204,7 @@
     margin-top: 15px;
 }
 
-.fields input, .downpayment input{
+.fields input, .downpayment input, .downpayment select{
     height: 1.75rem;
     margin-top: 10px;
     padding: 0 10px;
@@ -216,13 +227,80 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-bottom: -10px;
+
+    .subhead{
+        font-size: 13px;
+    }
+}
+input,
+textarea {
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+  margin: 0;
+  outline: none;
+  padding: 10px;
 }
 
-.downpayment input{
-    font-size: 13px;
-    width: 60%;
+input[type="button"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.input-group-plus {
+  clear: both;
+  margin: 0px 0;
+  position: relative;
+  margin-left: 12rem;
+//   width: -rem;
+}
+
+.input-group input[type='button'] {
+  background-color: #eeeeee;
+  min-width: 38px;
+  width: auto;
+  transition: all 300ms ease;
+}
+
+.input-group .button-minus,
+.input-group .button-plus {
+  font-weight: bold;
+  height: 38px;
+  padding: 0;
+  width: 38px;
+  position: relative;
+}
+
+.input-group .quantity-field {
+  position: relative;
+  height: 38px;
+  left: -6px;
+  text-align: center;
+  width: 62px;
+  display: inline-block;
+  font-size: 13px;
+  margin: 0 0 5px;
+  resize: vertical;
+}
+
+.button-plus {
+  left: -13px;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+}
+
+.downpayment input, .downpayment select{
+    font-size: 13px;
+    background-color: rgb(245, 243, 243);
+    width: 50%;
 }
 
 .numbers {
