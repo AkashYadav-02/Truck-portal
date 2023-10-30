@@ -11,8 +11,25 @@
 <div class="car-subs">
     <div class="bodyclass">
         <div>
+            <div class="d-flex" style="gap:1rem; margin-top: 24px;">
+                <div class="topdrop">
+                    <label><b>Asset Type: </b></label>
+                    <select name="cars" id="cars" class="an-drop">
+                        <option value="">Trucks</option>
+                        <option value="saab">Cars</option>
+                    </select>
+                </div>
+                <div class="topdrop">
+                    <label><b>Asset Deal Type: </b></label>
+                    <select name="cars" id="cars" class="an-drop">
+                        <option value="">New</option>
+                        <option value="saab">Old</option>
+                    </select>
+                </div>
+
+            </div>
             <div class="left-section">
-                <div style="display: flex; justify-content: space-between; padding: 0px 20px;" >
+                <div style="display: flex; justify-content: space-between; padding: 0px 20px;" (click)="expandCard()">
                     <div class="car-subs-header d-flex">
                         <p style="cursor: pointer;" (click)="backPage()">KENWORTH</p>
                         <img src="../../assets/logos/Vector.png">
@@ -158,7 +175,6 @@
             <div *ngFor="let tech of localData; let i = index">
                 <app-car-subs-card [compid]="i" [techDetailsParameter]="tech" (outGoingData)="setCarData($event)"></app-car-subs-card>
             </div>
-            
         </div>
         
         <div class="rightcard">
@@ -479,7 +495,7 @@
 
                         <div class="input-group d-flex">
 
-                            <p>Yearly Income : </p>
+                            <p>Annual Income : </p>
                             <span class="input-group-text" id="basic-addon1">$</span>
                             <input type="text" formControlName="Income" placeholder="0.00">
 
@@ -487,14 +503,14 @@
 
                         <div class="input-group d-flex">
 
-                            <p>Yearly Expenses : </p>
+                            <p>Annual Expenses : </p>
                             <span class="input-group-text" id="basic-addon1">$</span>
                             <input type="text" formControlName="Expense" placeholder="0.00">
 
                         </div>
 
                         <div class="input-group d-flex">
-                            <p>Yearly Liabilities : </p>
+                            <p>Annual Liabilities : </p>
                             <span class="input-group-text" id="basic-addon1">$</span>
                             <input type="text" formControlName="Liabilities" placeholder="0.00">
                         </div>

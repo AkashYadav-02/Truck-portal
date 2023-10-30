@@ -47,7 +47,7 @@ export class CreditInformationComponent implements OnInit {
   leftcard = leftcard;
   currentInstallment : any;
 
-  DSR_ratio : number = 0;
+  DSR_ratio : number | undefined ;
 
   uploadedFiles: any[] = [];
 
@@ -58,8 +58,16 @@ export class CreditInformationComponent implements OnInit {
   isShowInfoMsg: boolean = false;
 
   text: any;
-
+  asset:any;
+  liabilities:any;
+  
+  expense:any;
+  debt:any;
+   
+  dsr:any;
+  
   text1: any = 'chooseOption';
+
 
   txt_full_arr: { dropdownVal: string; cost: number }[] = [];
 
@@ -158,6 +166,33 @@ export class CreditInformationComponent implements OnInit {
 
   }
 
+  yearly:any='';
+  optcost:any='';
+  netcost:any = '';
+
+  calcnetcost(){
+    
+    
+  this.netcost =  this.yearly - this.optcost;
+  }
+  calDsr(){
+   console.log("eee")
+
+     this.DSR_ratio= this.netcost/this.debt;
+     console.log(this.netcost);
+     console.log(this.debt);
+     
+     this.dsr=(Math.round(this.DSR_ratio * 100) / 100).toFixed(2);
+
+     
+
+
+    
+     
+  }
+  
+  
+
   onSubmit() {
 
     this.showCredit = false;
@@ -198,17 +233,6 @@ export class CreditInformationComponent implements OnInit {
 
   }
 
-  calculate(){
-    // let expense =  this.creditInfoForm.controls['Expense'].value;
-    let expense =  this.sum2;
-    // let income =  this.creditInfoForm.controls['Income'].value;
-    let income = this.sum1;
-    // let liabilities = this.creditInfoForm.controls['Liabilities'].value;
-    let liabilities = this.sum3;
-    let calculation = (parseInt(liabilities.toString()) + parseInt(this.currentInstallment) + parseInt(expense.toString())) * 100 / parseInt(income.toString());
-    console.log("calucalted ans is ",calculation);
-    this.DSR_ratio = parseInt(calculation.toString());
-  }
 
   redirectToApplyNow() {
 
@@ -249,8 +273,14 @@ export class CreditInformationComponent implements OnInit {
     this.redirect.redirectWithdata('work-space', this.techDetailsParameter);
 
   }
+  changevalue(){
 
- 
+    this.expense=this.yearly-this.optcost;
+    
+      
+  }
+
+
 
   add(txt: any, txt1: any, module: any) {
 
@@ -266,7 +296,7 @@ export class CreditInformationComponent implements OnInit {
           this.text = '$ ' + txt;
           this.txt_full_arr1.push({ dropdownVal: ` ${txt1}`, cost: this.text });
           this.sum1 += Number(txt);
-        this.calculate();
+       
           break;
 
         case 'expenseAdd':
@@ -276,7 +306,7 @@ export class CreditInformationComponent implements OnInit {
             this.txt_full_arr2.push({ dropdownVal: ` ${txt1}`, cost: this.text });
 
             this.sum2 += Number(txt);
-            this.calculate();
+         
           break;
 
         case 'liabilityAdd':
@@ -286,7 +316,7 @@ export class CreditInformationComponent implements OnInit {
             this.txt_full_arr3.push({ dropdownVal: ` ${txt1}`, cost: this.text });
 
             this.sum3 += Number(txt);
-            this.calculate();
+          
       }
 
     }

@@ -6,6 +6,7 @@ import { leftcard } from '../carddetails';
 
 import { Router, NavigationEnd } from '@angular/router';
 import { RedirectMenuService } from 'src/services/redirect-menu.service';
+import { BooleanAdvancedFilterModel } from 'ag-grid-community';
 @Component({
   selector: 'app-apply-now-flow1',
   templateUrl: './apply-now-flow1.component.html',
@@ -22,7 +23,7 @@ export class ApplyNowFlow1Component implements OnInit {
 
   radio2 = '';
   radio1 = 'Individual';
-
+  isCarCardVisible :boolean =false;
   applicationId: string = '';
   lineItem: any;
   leftcard = leftcard;
