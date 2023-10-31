@@ -40,6 +40,8 @@ export class CarSubsCardComponent implements OnInit {
   price:any;
   amm:any;
 
+  @Input() ocrVisible:boolean=false;
+
   
 
  
