@@ -27,7 +27,7 @@
         </div>
         <div class="left-card my-3 py-3 px-2 d-flex" style="gap: 50px;">
             <div>
-                 <div class="car-details py-2 px-2">
+                 <div class="car-details px-2">
                     <h2>{{techDetailsParameter.name}}</h2>
                     <p class="mb-4 mt-3">Engine Capacity {{specificaiton.engine_capacity}} ·
                         {{specificaiton.Fuel_Type}} · {{specificaiton.transmmission_type}} </p>
@@ -52,39 +52,66 @@
                         <div class="d-flex radio-btn-group mt-3">
                             <input class=" mileage-radio" type="radio" name="Mileage{{compid}}" id="specifyColor"
                                 checked="checked" (change)="selecMile(0)">
-                            <label class="mt-auto mb-auto mr-5 ms-3 mileage-text1 milegae-cc d-flex" for="">Standard
-                                <span class="label-des">10,000 KM/Year</span>
+                            <label class="mt-auto mb-auto mr-5 ms-3 mileage-text milegae-cc d-flex" for="">Standard
+                                
+                            </label>
+                            <span class="label-des">10,000 KM/Year</span>
                                 <div class="d-flex">
                                     <img class="exclamation-icon icon" src="../../assets/info-circle.png" alt="">
                                     <div class="info">Charged at $0.20 for every additional KMs</div>
                                 </div>
-                            </label>
                         </div>
 
                         <div class="d-flex radio-btn-group mt-3">
                             <input class=" mileage-radio" type="radio" name="Mileage{{compid}}" id="specifyColor"
                                 (change)="selecMile(1)">
 
-                            <label class="mt-auto mb-auto mr-5 ms-3 mileage-text2 milegae-cc d-flex" for="">High
-                                <span class="label-des" id="label-1">15,000 KM/Year
-                                </span>
-                                <div class="d-flex">
-                                    <img class="exclamation-icon icon" src="../../assets/info-circle.png" alt="">
-                                    <div class="info">Charged at $0.35 for every additional KMs</div>
-                                </div>
+                            <label class="mt-auto mb-auto mr-5 ms-3 mileage-text milegae-cc d-flex" for="">High
+                                
                             </label>
+                            <span class="label-des" id="label-1">15,000 KM/Year
+                            </span>
+                            <div class="d-flex">
+                                <img class="exclamation-icon icon" src="../../assets/info-circle.png" alt="">
+                                <div class="info">Charged at $0.35 for every additional KMs</div>
+                            </div>
                         </div>
                         <div class="d-flex radio-btn-group mt-3">
 
                             <input class=" mileage-radio" type="radio" name="Mileage{{compid}}" id="specifyColor"
                                 (change)="selecMile(2)">
-                            <label class="mt-auto mb-auto mr-5 ms-3 mileage-text3 milegae-cc d-flex" for="">Ultimate
-                                <span class="label-des">25,000 KM/Year</span>
+                            <label class="mt-auto mb-auto mr-5 ms-3 mileage-text milegae-cc d-flex" for="">Ultimate
+                                
+                            </label>
+                            <span class="label-des">25,000 KM/Year</span>
                                 <div class="d-flex">
                                     <img class="exclamation-icon icon" src="../../assets/info-circle.png" alt="">
                                     <div class="info">Charged at $0.05 for every additional KMs</div>
                                 </div>
-                            </label>
+                        </div>
+                    </div>
+
+                    <h2 class="mt-4">OCR Details</h2>
+                    <div>
+                        <div class="d-flex radio-btn-group mt-3">
+                            <label class="mt-auto mb-auto OCR-cc d-flex" for="">OCR (exclusive):</label>
+                            <input type="text" class="ocr-input">
+                        </div>
+                        <div class="d-flex radio-btn-group mt-3">
+                            <label class="mt-auto mb-auto OCR-cc d-flex" for="">Tax:</label>
+                            <label class="ocr-input">Hell</label>
+                        </div>
+                        <div class="d-flex radio-btn-group mt-3">
+                            <label class="mt-auto mb-auto OCR-cc d-flex" for="">Term:</label>
+                            <select class="ocr-input">
+                                <option value="">12</option>
+                                <option value="">24</option>
+                                <option value="">36</option>
+                                <option value="">48</option>
+                                <option value="">60</option>
+                                <option value="">72</option>
+                                <option value="">84</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -92,9 +119,9 @@
 
 
 
-            <div class="left-card-right-side ms-5">
+            <div class="left-card-right-side ms-5 ">
 
-                <div class="mt-2 d-flex select-variant">
+                <div class="mt-1 d-flex select-variant">
                     <h2>Select Variant</h2>
                 </div>
                 <div class="select-var-div">
@@ -135,8 +162,49 @@
                         </div>
                     </div>
                 </div>
-                <h6>On Road: {{numberWithCommas(storePrice)}}</h6>
+                <div>
+                    <h2 class="mt-4 accessories">Tenure <span>(Months)</span></h2>
+                    <label style="font-size: 13px; color: grey;">Select Preferred
+                        Tenure</label>
+                    <div class="numbers select-size">
+                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio" name="s-size{{compid}}" id="small{{compid}}"
+                            value="small" [(ngModel)]="selectedRadio" [ngClass]="'checkedd'" />
+                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio" name="s-size{{compid}}" id="medium{{compid}}"
+                            value="medium" [(ngModel)]="selectedRadio" />
+                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio" name="s-size{{compid}}" id="large{{compid}}"
+                            value="large" [(ngModel)]="selectedRadio" />
+                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio" name="s-size{{compid}}" id="x-large{{compid}}"
+                            value="xl" [(ngModel)]="selectedRadio" />
+                        <input (click)="calculateTenure(selectedRadio)" class="numbtn"  type="radio" name="s-size{{compid}}" id="xx-large{{compid}}"
+                            value="xxl" [(ngModel)]="selectedRadio" />
+                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio" name="s-size{{compid}}" id="xtra-large{{compid}}"
+                            value="xxxl" [(ngModel)]="selectedRadio" />
+                        <label for="small{{compid}}" class="option-text"  [class.activeTen]="selectedRadio == 'small'">
+                            <p>24</p>
+                        </label>
+                        <label for="medium{{compid}}" class="option-text" [class.activeTen]="selectedRadio == 'medium'">
+                            <p>36</p>
+                        </label>
+                        <label for="large{{compid}}" class="option-text" [class.activeTen]="selectedRadio == 'large'">
+                            <p>48</p>
+                        </label>
+                        <label for="x-large{{compid}}" class="option-text" [class.activeTen]="selectedRadio == 'xl'">
+                            <p>60</p>
+                        </label>
+                        <label for="xx-large{{compid}}" class="option-text" [class.activeTen]="selectedRadio == 'xxl'">
+                            <p>72</p>
+                        </label>
+                        <label for="xtra-large{{compid}}" class="option-text" [class.activeTen]="selectedRadio == 'xxxl'">
+                            <p>84</p>
+                        </label>
+    
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h6>On Road: {{numberWithCommas(storePrice)}}</h6>
                 <h6>EMI: {{numberWithCommas(showEmi(calculateEMI(techDetailsParameter.price)))}}</h6>
+                </div>
+                
             </div>
         </div>
     </div>

@@ -113,127 +113,127 @@ export class CarSubRedesignComponent implements OnInit {
     }
   }
 
-  showEmi(input: number) {
-    if (input == 3169) {
-      this.techDetailsParameter.emi = 3244;
-      return 3244;
-    }
-    return input
-  }
+  // showEmi(input: number) {
+  //   if (input == 3169) {
+  //     this.techDetailsParameter.emi = 3244;
+  //     return 3244;
+  //   }
+  //   return input
+  // }
 
-  calculateTenure(option: string) {
-    this.resetAddedCost();
+  // calculateTenure(option: string) {
+  //   this.resetAddedCost();
 
-    switch (option) {
-      case 'small':
-        if (typeof this.techDetailsParameter.price === 'string') {
-          this.techDetailsParameter.price =
-            this.techDetailsParameter.price.replace(/,/g, '');
-          this.techDetailsParameter.price -= this.months_24;
-          console.log('Tenure ' + this.techDetailsParameter.price);
-        } else {
-          console.log(
-            'Type of else loop ======================== ' +
-            typeof this.techDetailsParameter.price +
-            ' value is ' +
-            this.techDetailsParameter.price
-          );
-          this.techDetailsParameter.price -= this.months_24;
-          console.log('Tenure ' + this.techDetailsParameter.price);
-        }
-        break;
-      case 'medium':
-        if (typeof this.techDetailsParameter.price === 'string') {
-          this.techDetailsParameter.price =
-            this.techDetailsParameter.price.replace(/,/g, '');
-          this.techDetailsParameter.price -= this.months_36;
-          console.log('Tenure ' + this.techDetailsParameter.price);
-        } else {
-          console.log(
-            'Type of else loop ======================== ' +
-            typeof this.techDetailsParameter.price +
-            ' value is ' +
-            this.techDetailsParameter.price
-          );
-          this.techDetailsParameter.price -= this.months_36;
-          console.log('Tenure ' + this.techDetailsParameter.price);
-        }
-        break;
-      case 'large':
-        if (typeof this.techDetailsParameter.price === 'string') {
-          this.techDetailsParameter.price =
-            this.techDetailsParameter.price.replace(/,/g, '');
-          this.techDetailsParameter.price -= this.months_48;
-          console.log('Tenure ' + this.techDetailsParameter.price);
-        } else {
-          console.log(
-            'Type of else loop ======================== ' +
-            typeof this.techDetailsParameter.price +
-            ' value is ' +
-            this.techDetailsParameter.price
-          );
-          this.techDetailsParameter.price -= this.months_48;
-          console.log('Tenure ' + this.techDetailsParameter.price);
-        }
-        break;
-      case 'xl':
-        if (typeof this.techDetailsParameter.price === 'string') {
-          this.techDetailsParameter.price =
-            this.techDetailsParameter.price.replace(/,/g, '');
-          this.techDetailsParameter.price -= this.months_60;
-          console.log('Tenure ' + this.techDetailsParameter.price);
-        } else {
-          console.log(
-            'Type of else loop ======================== ' +
-            typeof this.techDetailsParameter.price +
-            ' value is ' +
-            this.techDetailsParameter.price
-          );
-          this.techDetailsParameter.price -= this.months_60;
-          console.log('Tenure ' + this.techDetailsParameter.price);
-        }
-        break;
-      case 'xxl':
-        if (typeof this.techDetailsParameter.price === 'string') {
-          this.techDetailsParameter.price =
-            this.techDetailsParameter.price.replace(/,/g, '');
-          this.techDetailsParameter.price -= this.months_72;
-          console.log('Tenure ' + this.techDetailsParameter.price);
-        } else {
-          console.log(
-            'Type of else loop ======================== ' +
-            typeof this.techDetailsParameter.price +
-            ' value is ' +
-            this.techDetailsParameter.price
-          );
-          this.techDetailsParameter.price -= this.months_72;
-          console.log('Tenure ' + this.techDetailsParameter.price);
-        }
-        break;
-      case 'xxxl':
-        if (typeof this.techDetailsParameter.price === 'string') {
-          this.techDetailsParameter.price =
-            this.techDetailsParameter.price.replace(/,/g, '');
-          this.techDetailsParameter.price -= this.months_84;
-          console.log('Tenure ' + this.techDetailsParameter.price);
-        } else {
-          console.log(
-            'Type of else loop ======================== ' +
-            typeof this.techDetailsParameter.price +
-            ' value is ' +
-            this.techDetailsParameter.price
-          );
-          this.techDetailsParameter.price -= this.months_84;
-          console.log('Tenure ' + this.techDetailsParameter.price);
-        }
-        break;
-    }
-  }
+  //   switch (option) {
+  //     case 'small':
+  //       if (typeof this.techDetailsParameter.price === 'string') {
+  //         this.techDetailsParameter.price =
+  //           this.techDetailsParameter.price.replace(/,/g, '');
+  //         this.techDetailsParameter.price -= this.months_24;
+  //         console.log('Tenure ' + this.techDetailsParameter.price);
+  //       } else {
+  //         console.log(
+  //           'Type of else loop ======================== ' +
+  //           typeof this.techDetailsParameter.price +
+  //           ' value is ' +
+  //           this.techDetailsParameter.price
+  //         );
+  //         this.techDetailsParameter.price -= this.months_24;
+  //         console.log('Tenure ' + this.techDetailsParameter.price);
+  //       }
+  //       break;
+  //     case 'medium':
+  //       if (typeof this.techDetailsParameter.price === 'string') {
+  //         this.techDetailsParameter.price =
+  //           this.techDetailsParameter.price.replace(/,/g, '');
+  //         this.techDetailsParameter.price -= this.months_36;
+  //         console.log('Tenure ' + this.techDetailsParameter.price);
+  //       } else {
+  //         console.log(
+  //           'Type of else loop ======================== ' +
+  //           typeof this.techDetailsParameter.price +
+  //           ' value is ' +
+  //           this.techDetailsParameter.price
+  //         );
+  //         this.techDetailsParameter.price -= this.months_36;
+  //         console.log('Tenure ' + this.techDetailsParameter.price);
+  //       }
+  //       break;
+  //     case 'large':
+  //       if (typeof this.techDetailsParameter.price === 'string') {
+  //         this.techDetailsParameter.price =
+  //           this.techDetailsParameter.price.replace(/,/g, '');
+  //         this.techDetailsParameter.price -= this.months_48;
+  //         console.log('Tenure ' + this.techDetailsParameter.price);
+  //       } else {
+  //         console.log(
+  //           'Type of else loop ======================== ' +
+  //           typeof this.techDetailsParameter.price +
+  //           ' value is ' +
+  //           this.techDetailsParameter.price
+  //         );
+  //         this.techDetailsParameter.price -= this.months_48;
+  //         console.log('Tenure ' + this.techDetailsParameter.price);
+  //       }
+  //       break;
+  //     case 'xl':
+  //       if (typeof this.techDetailsParameter.price === 'string') {
+  //         this.techDetailsParameter.price =
+  //           this.techDetailsParameter.price.replace(/,/g, '');
+  //         this.techDetailsParameter.price -= this.months_60;
+  //         console.log('Tenure ' + this.techDetailsParameter.price);
+  //       } else {
+  //         console.log(
+  //           'Type of else loop ======================== ' +
+  //           typeof this.techDetailsParameter.price +
+  //           ' value is ' +
+  //           this.techDetailsParameter.price
+  //         );
+  //         this.techDetailsParameter.price -= this.months_60;
+  //         console.log('Tenure ' + this.techDetailsParameter.price);
+  //       }
+  //       break;
+  //     case 'xxl':
+  //       if (typeof this.techDetailsParameter.price === 'string') {
+  //         this.techDetailsParameter.price =
+  //           this.techDetailsParameter.price.replace(/,/g, '');
+  //         this.techDetailsParameter.price -= this.months_72;
+  //         console.log('Tenure ' + this.techDetailsParameter.price);
+  //       } else {
+  //         console.log(
+  //           'Type of else loop ======================== ' +
+  //           typeof this.techDetailsParameter.price +
+  //           ' value is ' +
+  //           this.techDetailsParameter.price
+  //         );
+  //         this.techDetailsParameter.price -= this.months_72;
+  //         console.log('Tenure ' + this.techDetailsParameter.price);
+  //       }
+  //       break;
+  //     case 'xxxl':
+  //       if (typeof this.techDetailsParameter.price === 'string') {
+  //         this.techDetailsParameter.price =
+  //           this.techDetailsParameter.price.replace(/,/g, '');
+  //         this.techDetailsParameter.price -= this.months_84;
+  //         console.log('Tenure ' + this.techDetailsParameter.price);
+  //       } else {
+  //         console.log(
+  //           'Type of else loop ======================== ' +
+  //           typeof this.techDetailsParameter.price +
+  //           ' value is ' +
+  //           this.techDetailsParameter.price
+  //         );
+  //         this.techDetailsParameter.price -= this.months_84;
+  //         console.log('Tenure ' + this.techDetailsParameter.price);
+  //       }
+  //       break;
+  //   }
+  // }
 
 
-  resetAddedCost() {
-    this.techDetailsParameter.price = this.updatedPrice;
-  }
+  // resetAddedCost() {
+  //   this.techDetailsParameter.price = this.updatedPrice;
+  // }
 
 
 
@@ -512,14 +512,14 @@ export class CarSubRedesignComponent implements OnInit {
     console.log('Result:', this.isEligible);
   }
 
-  tenureList = {
-    small: "24",
-    medium: "36",
-    large: "48",
-    xl: "60",
-    xxl: "72",
-    xxxl: "84"
-  }
+  // tenureList = {
+  //   small: "24",
+  //   medium: "36",
+  //   large: "48",
+  //   xl: "60",
+  //   xxl: "72",
+  //   xxxl: "84"
+  // }
 
 
   eligibality() {
@@ -664,43 +664,43 @@ export class CarSubRedesignComponent implements OnInit {
     this.redirectMenu.redirectWithdata('apply-now-flow-1', data);
   }
 
-  calculateEMI(Price: string) {
-    if (typeof Price === 'string') {
-      let price = Price.replace(/,/g, '');
-      let totalCarPrice: number = parseFloat(price);
-      let annualVerdanaestRate: number = 7;
-      let tenureInYears: number = 2;
-      const monthlyVerdanaestRate = annualVerdanaestRate / 12 / 100;
-      const numberOfMonths = tenureInYears * 12;
-      const roughemi =
-        (totalCarPrice *
-          monthlyVerdanaestRate *
-          Math.pow(1 + monthlyVerdanaestRate, numberOfMonths)) /
-        (Math.pow(1 + monthlyVerdanaestRate, numberOfMonths) - 1);
-      // console.log(emi.toFixed(0));
-      const emi = Math.trunc(roughemi) + 1000 * this.mile;
-      this.globalEMI = emi;
-      // console.log('EMI is of if loop' + emi + typeof emi);
-      return emi;
-    } else {
-      let price = Price;
-      let totalCarPrice: number = parseFloat(price);
-      let annualVerdanaestRate: number = 7;
-      let tenureInYears: number = 2;
-      const monthlyVerdanaestRate = annualVerdanaestRate / 12 / 100;
-      const numberOfMonths = tenureInYears * 12;
-      const roughemi =
-        (totalCarPrice *
-          monthlyVerdanaestRate *
-          Math.pow(1 + monthlyVerdanaestRate, numberOfMonths)) /
-        (Math.pow(1 + monthlyVerdanaestRate, numberOfMonths) - 1);
-      // console.log(emi.toFixed(0));
-      let emi = Math.trunc(roughemi) + 1000 * this.mile;
-      // console.log('EMI is of else loop ' + emi + typeof emi);
-      this.globalEMI = emi;
-      return emi;
-    }
-  }
+  // calculateEMI(Price: string) {
+  //   if (typeof Price === 'string') {
+  //     let price = Price.replace(/,/g, '');
+  //     let totalCarPrice: number = parseFloat(price);
+  //     let annualVerdanaestRate: number = 7;
+  //     let tenureInYears: number = 2;
+  //     const monthlyVerdanaestRate = annualVerdanaestRate / 12 / 100;
+  //     const numberOfMonths = tenureInYears * 12;
+  //     const roughemi =
+  //       (totalCarPrice *
+  //         monthlyVerdanaestRate *
+  //         Math.pow(1 + monthlyVerdanaestRate, numberOfMonths)) /
+  //       (Math.pow(1 + monthlyVerdanaestRate, numberOfMonths) - 1);
+  //     // console.log(emi.toFixed(0));
+  //     const emi = Math.trunc(roughemi) + 1000 * this.mile;
+  //     this.globalEMI = emi;
+  //     // console.log('EMI is of if loop' + emi + typeof emi);
+  //     return emi;
+  //   } else {
+  //     let price = Price;
+  //     let totalCarPrice: number = parseFloat(price);
+  //     let annualVerdanaestRate: number = 7;
+  //     let tenureInYears: number = 2;
+  //     const monthlyVerdanaestRate = annualVerdanaestRate / 12 / 100;
+  //     const numberOfMonths = tenureInYears * 12;
+  //     const roughemi =
+  //       (totalCarPrice *
+  //         monthlyVerdanaestRate *
+  //         Math.pow(1 + monthlyVerdanaestRate, numberOfMonths)) /
+  //       (Math.pow(1 + monthlyVerdanaestRate, numberOfMonths) - 1);
+  //     // console.log(emi.toFixed(0));
+  //     let emi = Math.trunc(roughemi) + 1000 * this.mile;
+  //     // console.log('EMI is of else loop ' + emi + typeof emi);
+  //     this.globalEMI = emi;
+  //     return emi;
+  //   }
+  // }
 
   variant = 0;
   // this.variantName = this.currentCarDetails[0].select_variant[this.variant];
@@ -755,171 +755,171 @@ export class CarSubRedesignComponent implements OnInit {
   dashCamPrice = "$ 0";
   wifiPrice = "$ 0";
 
-  addBorder() {
-    let elem = document.getElementById('speedometer') as HTMLElement;
-    let check1 = document.getElementById('radio13') as HTMLInputElement;
+  // addBorder() {
+  //   let elem = document.getElementById('speedometer') as HTMLElement;
+  //   let check1 = document.getElementById('radio13') as HTMLInputElement;
 
-    if (this.border1 == false) {
-      // this.check1 = false;
+  //   if (this.border1 == false) {
+  //     // this.check1 = false;
 
-      elem.setAttribute(
-        'style',
-        'border:1px solid #0381BA;margin-right: 1rem;height: 2.6rem;width: auto;padding: 0.2rem;border-radius:0.2rem'
-      );
+  //     elem.setAttribute(
+  //       'style',
+  //       'border:1px solid #0381BA;margin-right: 1rem;height: 2.6rem;width: auto;padding: 0.2rem;border-radius:0.2rem'
+  //     );
 
-      this.border1 = true;
-      check1.checked = true;
-      this.dashCamPrice = "$ 300";
+  //     this.border1 = true;
+  //     check1.checked = true;
+  //     this.dashCamPrice = "$ 300";
 
-      let myPrice = this.techDetailsParameter.price;
+  //     let myPrice = this.techDetailsParameter.price;
 
-      if (typeof this.storePrice == 'string') {
-        this.storePrice = this.storePrice.replace(/,/g, '');
-        this.updatedPrice = parseInt(this.storePrice) + 300;
-      } else {
-        this.updatedPrice = this.storePrice + 300;
-      }
+  //     if (typeof this.storePrice == 'string') {
+  //       this.storePrice = this.storePrice.replace(/,/g, '');
+  //       this.updatedPrice = parseInt(this.storePrice) + 300;
+  //     } else {
+  //       this.updatedPrice = this.storePrice + 300;
+  //     }
 
-      console.log('before ' + myPrice);
+  //     console.log('before ' + myPrice);
 
-      console.log('paseint ' + parseInt(myPrice));
+  //     console.log('paseint ' + parseInt(myPrice));
 
-      // this.updatedPrice = parseInt(myPrice) + 300;
+  //     // this.updatedPrice = parseInt(myPrice) + 300;
 
-      this.storePrice = this.updatedPrice;
+  //     this.storePrice = this.updatedPrice;
 
-      console.log(
-        'Inside if loop of add border ' +
-        this.techDetailsParameter.price +
-        ' ' +
-        typeof this.techDetailsParameter.price +
-        ' store price ' +
-        this.storePrice
-      );
+  //     console.log(
+  //       'Inside if loop of add border ' +
+  //       this.techDetailsParameter.price +
+  //       ' ' +
+  //       typeof this.techDetailsParameter.price +
+  //       ' store price ' +
+  //       this.storePrice
+  //     );
 
-      this.calculateEMI(this.techDetailsParameter.price);
-      // this.calculateTenureFromBorder(this.techDetailsParameter.price,"border");
-    } else {
-      elem.setAttribute('style', 'border:none');
+  //     this.calculateEMI(this.techDetailsParameter.price);
+  //     // this.calculateTenureFromBorder(this.techDetailsParameter.price,"border");
+  //   } else {
+  //     elem.setAttribute('style', 'border:none');
 
-      this.border1 = false;
-      check1.checked = false;
-      this.dashCamPrice = "$ 0";
+  //     this.border1 = false;
+  //     check1.checked = false;
+  //     this.dashCamPrice = "$ 0";
 
-      let myPrice = this.techDetailsParameter.price;
-      if (typeof this.storePrice == 'string') {
-        this.storePrice = this.storePrice.replace(/,/g, '');
-        this.updatedPrice = parseInt(this.storePrice) - 300;
-      } else {
-        this.updatedPrice = this.storePrice - 300;
-      }
-      // myPrice = myPrice.replace(/,/g, '');
+  //     let myPrice = this.techDetailsParameter.price;
+  //     if (typeof this.storePrice == 'string') {
+  //       this.storePrice = this.storePrice.replace(/,/g, '');
+  //       this.updatedPrice = parseInt(this.storePrice) - 300;
+  //     } else {
+  //       this.updatedPrice = this.storePrice - 300;
+  //     }
+  //     // myPrice = myPrice.replace(/,/g, '');
 
-      console.log('before ' + myPrice);
+  //     console.log('before ' + myPrice);
 
-      console.log('paseint ' + parseInt(myPrice));
+  //     console.log('paseint ' + parseInt(myPrice));
 
-      this.storePrice = this.updatedPrice;
+  //     this.storePrice = this.updatedPrice;
 
-      console.log(
-        'Inside else loop of emi ' +
-        this.techDetailsParameter.price +
-        ' store price ' +
-        typeof this.storePrice +
-        ' updated price ' +
-        this.updatedPrice +
-        ' store price ' +
-        this.storePrice
-      );
+  //     console.log(
+  //       'Inside else loop of emi ' +
+  //       this.techDetailsParameter.price +
+  //       ' store price ' +
+  //       typeof this.storePrice +
+  //       ' updated price ' +
+  //       this.updatedPrice +
+  //       ' store price ' +
+  //       this.storePrice
+  //     );
 
-      this.calculateEMI(this.techDetailsParameter.price);
-      // this.calculateTenureFromBorder(this.techDetailsParameter.price,"border");
-    }
-    // console.log(this.check1);
+  //     this.calculateEMI(this.techDetailsParameter.price);
+  //     // this.calculateTenureFromBorder(this.techDetailsParameter.price,"border");
+  //   }
+  //   // console.log(this.check1);
 
-  }
+  // }
 
-  addBorder2() {
-    let elem = document.getElementById('engine') as HTMLElement;
-    let check2 = document.getElementById('radio14') as HTMLInputElement;
+  // addBorder2() {
+  //   let elem = document.getElementById('engine') as HTMLElement;
+  //   let check2 = document.getElementById('radio14') as HTMLInputElement;
 
-    if (this.border2 == false) {
-      // this.check2 = true;
-      elem.setAttribute(
-        'style',
-        'border:1px solid #0381BA;margin-right: 1rem;height: 2.5rem;width: auto;padding: 0.3rem;border-radius:0.2rem'
-      );
+  //   if (this.border2 == false) {
+  //     // this.check2 = true;
+  //     elem.setAttribute(
+  //       'style',
+  //       'border:1px solid #0381BA;margin-right: 1rem;height: 2.5rem;width: auto;padding: 0.3rem;border-radius:0.2rem'
+  //     );
 
-      this.border2 = true;
-      check2.checked = true;
-      this.wifiPrice = "$ 2400";
+  //     this.border2 = true;
+  //     check2.checked = true;
+  //     this.wifiPrice = "$ 2400";
 
-      let myPrice = this.techDetailsParameter.price;
+  //     let myPrice = this.techDetailsParameter.price;
 
-      if (typeof this.storePrice == 'string') {
-        this.storePrice = this.storePrice.replace(/,/g, '');
-        this.updatedPrice = parseInt(this.storePrice) + 2400;
-      } else {
-        this.updatedPrice = this.storePrice + 2400;
-      }
+  //     if (typeof this.storePrice == 'string') {
+  //       this.storePrice = this.storePrice.replace(/,/g, '');
+  //       this.updatedPrice = parseInt(this.storePrice) + 2400;
+  //     } else {
+  //       this.updatedPrice = this.storePrice + 2400;
+  //     }
 
-      console.log('before ' + myPrice);
+  //     console.log('before ' + myPrice);
 
-      console.log('paseint ' + parseInt(myPrice));
+  //     console.log('paseint ' + parseInt(myPrice));
 
-      // this.updatedPrice = parseInt(myPrice) + 300;
+  //     // this.updatedPrice = parseInt(myPrice) + 300;
 
-      this.storePrice = this.updatedPrice;
+  //     this.storePrice = this.updatedPrice;
 
-      console.log(
-        'Inside if loop of add border ' +
-        this.techDetailsParameter.price +
-        ' ' +
-        typeof this.techDetailsParameter.price +
-        ' store price ' +
-        this.storePrice
-      );
+  //     console.log(
+  //       'Inside if loop of add border ' +
+  //       this.techDetailsParameter.price +
+  //       ' ' +
+  //       typeof this.techDetailsParameter.price +
+  //       ' store price ' +
+  //       this.storePrice
+  //     );
 
-      this.calculateEMI(this.techDetailsParameter.price);
-      // this.calculateTenureFromBorder(this.techDetailsParameter.price,"border");
-    } else {
-      elem.setAttribute('style', 'border:none');
-      // this.check2 = false;
+  //     this.calculateEMI(this.techDetailsParameter.price);
+  //     // this.calculateTenureFromBorder(this.techDetailsParameter.price,"border");
+  //   } else {
+  //     elem.setAttribute('style', 'border:none');
+  //     // this.check2 = false;
 
-      this.border2 = false;
-      check2.checked = false;
-      this.wifiPrice = "$ 0";
+  //     this.border2 = false;
+  //     check2.checked = false;
+  //     this.wifiPrice = "$ 0";
 
-      let myPrice = this.techDetailsParameter.price;
-      if (typeof this.storePrice == 'string') {
-        this.storePrice = this.storePrice.replace(/,/g, '');
-        this.updatedPrice = parseInt(this.storePrice) - 2400;
-      } else {
-        this.updatedPrice = this.storePrice - 2400;
-      }
-      // myPrice = myPrice.replace(/,/g, '');
+  //     let myPrice = this.techDetailsParameter.price;
+  //     if (typeof this.storePrice == 'string') {
+  //       this.storePrice = this.storePrice.replace(/,/g, '');
+  //       this.updatedPrice = parseInt(this.storePrice) - 2400;
+  //     } else {
+  //       this.updatedPrice = this.storePrice - 2400;
+  //     }
+  //     // myPrice = myPrice.replace(/,/g, '');
 
-      console.log('before ' + myPrice);
+  //     console.log('before ' + myPrice);
 
-      console.log('paseint ' + parseInt(myPrice));
+  //     console.log('paseint ' + parseInt(myPrice));
 
-      this.storePrice = this.updatedPrice;
+  //     this.storePrice = this.updatedPrice;
 
-      console.log(
-        'Inside else loop of emi ' +
-        this.techDetailsParameter.price +
-        ' store price ' +
-        typeof this.storePrice +
-        ' updated price ' +
-        this.updatedPrice +
-        ' store price ' +
-        this.storePrice
-      );
+  //     console.log(
+  //       'Inside else loop of emi ' +
+  //       this.techDetailsParameter.price +
+  //       ' store price ' +
+  //       typeof this.storePrice +
+  //       ' updated price ' +
+  //       this.updatedPrice +
+  //       ' store price ' +
+  //       this.storePrice
+  //     );
 
-      this.calculateEMI(this.techDetailsParameter.price);
-      // this.calculateTenureFromBorder(this.techDetailsParameter.price,"border");
-    }
-  }
+  //     this.calculateEMI(this.techDetailsParameter.price);
+  //     // this.calculateTenureFromBorder(this.techDetailsParameter.price,"border");
+  //   }
+  // }
 
   numberWithCommas(x: any) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');

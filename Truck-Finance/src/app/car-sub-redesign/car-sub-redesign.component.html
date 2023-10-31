@@ -173,7 +173,7 @@
 
             <div *ngFor="let tech of localData; let i = index">
                 <app-car-subs-card [compid]="i" [techDetailsParameter]="tech"
-                    (outGoingData)="setCarData($event)"></app-car-subs-card>
+                    (outGoingData)="setCarData($event)" [ocrVisible]="true"></app-car-subs-card>
             </div>
         </div>
 
@@ -194,7 +194,7 @@
                     </div>
                 </div>
 
-                <p class='subhead'>Tenure <span class="text-secondary">(Months)</span></p>
+                <!-- <p class='subhead'>Tenure <span class="text-secondary">(Months)</span></p>
                 <p style="font-weight: bold; font-size: 13px; color: grey; margin-top: -15px;">Select Preferred
                     Tenure</p>
                 <div class="numbers select-size">
@@ -229,7 +229,7 @@
                         <p>84</p>
                     </label>
 
-                </div>
+                </div> -->
 
 
 
@@ -396,8 +396,8 @@
                     <div class="qoute-card">
                         
                         <div class="qoute-head1" (click)="visible1 = !visible1">
-                            <label>T680 on road price:</label>
-                            <label>$ 172,784<i class="fa-solid" [class.fa-angle-down]="!visible1"
+                            <label>{{localData[0].name}} on road price:</label>
+                            <label>$ {{numberWithCommas(incomingData[0].roadprice)}}<i class="fa-solid" [class.fa-angle-down]="!visible1"
                                     [class.fa-angle-up]="visible1" style="padding-left: 15px;"></i></label>
                         </div>
 
@@ -408,7 +408,7 @@
                                 <p style="font-family: Verdana; font-size: 13px; font-weight: bold; color: grey; margin-right: 20px; margin: 8px 0px 0px 0px;">Total Number of Quantity:</p>
                                 </div>
                                 <div>
-                                    <p style="font-family: Verdana; font-size: 13px; font-weight: bold; color: grey; margin: 8px 0px 0px 0px;">3</p>
+                                    <p style="font-family: Verdana; font-size: 13px; font-weight: bold; color: grey; margin: 8px 0px 0px 0px;">{{incomingData[0].quantityy}}</p>
                                 </div>
                             </div>
                             <div class="qoute-radio-body1" style="margin-left: 0;">
@@ -433,6 +433,50 @@
                             </div>
                             <div class="qoute-radio-body1" style="margin-left: 0;">
                                 <div class="qoute-leasehire form-checkbox form-check-inline">
+                                    <input type="checkbox" name="radio12" checked disabled>
+                                    <label class="form-check-label" for="inlineRadio1">
+                                        <!-- {{serviceName}} --> Tenure
+                                    </label>
+                                </div>
+                                <label class="qoute-num">
+                                    24
+                                </label>
+                            </div>
+                            <div class="qoute-radio-body1" style="margin-left: 0;">
+                                <div class="qoute-leasehire form-checkbox form-check-inline">
+                                    <input type="checkbox" name="radio12" checked disabled>
+                                    <label class="form-check-label" for="inlineRadio1">
+                                        <!-- {{serviceName}} --> OCR (Exclusive)
+                                    </label>
+                                </div>
+                                <label class="qoute-num">
+                                    $ 8,173.90
+                                </label>
+                            </div>
+                            <div class="qoute-radio-body1" style="margin-left: 0;">
+                                <div class="qoute-leasehire form-checkbox form-check-inline">
+                                    <input type="checkbox" name="radio12" checked disabled>
+                                    <label class="form-check-label" for="inlineRadio1">
+                                        <!-- {{serviceName}} --> Tax
+                                    </label>
+                                </div>
+                                <label class="qoute-num">
+                                    $ 817.39
+                                </label>
+                            </div>
+                            <div class="qoute-radio-body1" style="margin-left: 0;">
+                                <div class="qoute-leasehire form-checkbox form-check-inline">
+                                    <input type="checkbox" name="radio12" checked disabled>
+                                    <label class="form-check-label" for="inlineRadio1">
+                                        <!-- {{serviceName}} --> Term
+                                    </label>
+                                </div>
+                                <label class="qoute-num">
+                                    24
+                                </label>
+                            </div>
+                            <div class="qoute-radio-body1" style="margin-left: 0;">
+                                <div class="qoute-leasehire form-checkbox form-check-inline">
                                     <input type="checkbox" id="radio13" value="dashcam" disabled>
                                     <label class="form-check-label" for="inlineRadio1">Dashcam</label>
                                 </div>
@@ -447,14 +491,18 @@
                                 </div>
                                 <label class="qoute-num">2,400</label>
                             </div>
+                            <div class="qoute-head2">
+                                <label>Total On-Road Price:</label>
+                                <label>$ {{numberWithCommas(incomingData[0].roadprice * this.incomingData[0].quantityy)}}</label>
+                            </div>
                         </div>
 
                     </div>
 
                     <div class="qoute-card">
                         <div class="qoute-head1" (click)="visible2 = !visible2">
-                            <label>W990 on road price:</label>
-                            <label>$ 386,267<i class="fa-solid" [class.fa-angle-down]="!visible2"
+                            <label>{{localData[1].name}}  on road price:</label>
+                            <label>$ {{numberWithCommas(incomingData[1].roadprice)}}<i class="fa-solid" [class.fa-angle-down]="!visible2"
                                     [class.fa-angle-up]="visible2" style="padding-left: 15px;"></i></label>
                         </div>
 
@@ -465,7 +513,7 @@
                                 <p style="font-family: Verdana; font-size: 13px; font-weight: bold; color: grey; margin-right: 20px; margin: 8px 0px 0px 0px;">Total Number of Quantity:</p>
                                 </div>
                                 <div>
-                                    <p style="font-family: Verdana; font-size: 13px; font-weight: bold; color: grey; margin: 8px 0px 0px 0px;">2</p>
+                                    <p style="font-family: Verdana; font-size: 13px; font-weight: bold; color: grey; margin: 8px 0px 0px 0px;">{{incomingData[1].quantityy}}</p>
                                 </div>
                             </div>
 
@@ -485,6 +533,17 @@
                             </div>
                             <div class="qoute-radio-body1" style="margin-left: 0;">
                                 <div class="qoute-leasehire form-checkbox form-check-inline">
+                                    <input type="checkbox" name="radio12" checked disabled>
+                                    <label class="form-check-label" for="inlineRadio1">
+                                        <!-- {{serviceName}} --> Tenure
+                                    </label>
+                                </div>
+                                <label class="qoute-num">
+                                    48
+                                </label>
+                            </div>
+                            <div class="qoute-radio-body1" style="margin-left: 0;">
+                                <div class="qoute-leasehire form-checkbox form-check-inline">
                                     <input type="checkbox" id="radio13" value="dashcam" disabled>
                                     <label class="form-check-label" for="inlineRadio1">Dashcam</label>
                                 </div>
@@ -497,19 +556,13 @@
                                 </div>
                                 <label class="qoute-num">{{wifiPrice}}</label>
                             </div>
+                            <div class="qoute-head2">
+                                <label>Total On-Road Price:</label>
+                                <label>$ {{numberWithCommas(incomingData[1].roadprice * incomingData[1].quantityy)}}</label>
+                            </div>
                         </div>
                     </div>
 
-
-
-
-
-
-
-                    <div class="qoute-head2">
-                        <label>Total On-Road Price:</label>
-                        <label>$ {{numberWithCommas(totalonroadprice)}}</label>
-                    </div>
                     <div class="head2-body">
                         <label>Finance Option: </label>
                         <label>Hire Purchase</label>
@@ -529,12 +582,11 @@
                         <label>Default Repayment Frequency</label>
                         <label>Monthly</label>
                     </div>
-                    <div *ngFor="let ten of tenureList | keyvalue">
-                        <div class="head2-body" *ngIf="ten.key==selectedRadio">
+                    <div>
+                        <div class="head2-body">
                             <label>Program Default Tenure</label>
-                            <label> {{ten.value}} Months</label>
+                            <label> Months</label>
                         </div>
-
                     </div>
                     <div class="head2-body">
                         <label>Program APR</label>
