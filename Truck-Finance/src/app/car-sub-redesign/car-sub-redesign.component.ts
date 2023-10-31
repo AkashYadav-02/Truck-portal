@@ -1,6 +1,7 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 
 import { Router, NavigationEnd } from '@angular/router';
+import {ElementRef } from '@angular/core';
 
 import { flatMap, partition } from 'rxjs';
 
@@ -273,8 +274,11 @@ export class CarSubRedesignComponent implements OnInit {
     private redirectMenu: RedirectMenuService,
     private router: Router,
     private renderer: Renderer2,
-    private formBuilder: FormBuilder
-  ) {
+    private formBuilder: FormBuilder,
+    private el: ElementRef
+  )
+
+   {
   this.loanHire='HirePurchase'
     this.myObserver = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -506,7 +510,15 @@ export class CarSubRedesignComponent implements OnInit {
       }
     }
   }
-
+  downloadPDF(): void {
+    const link = this.renderer.createElement('a');
+    link.href = '../../assets/blank.pdf';
+    link.download = 'HP_QuoteID_12345';
+    this.renderer.appendChild(this.el.nativeElement, link);
+    link.click();
+    this.renderer.removeChild(this.el.nativeElement, link);
+  }
+  
   checkNow() {
     console.log('fomr is ', this.eligibleForm);
     this.eligibleForm.controls['Expense'].value;

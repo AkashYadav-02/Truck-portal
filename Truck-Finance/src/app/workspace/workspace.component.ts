@@ -224,7 +224,7 @@ export class WorkspaceComponent {
     let data = {
       appID: ipData.applicationId,
       customerName: "John Smith",
-      carSelection: ipData.name,
+      carSelection: "T680,W990",
       financing: '$' + this.numberWithCommas(ipData.price),
       status: "Pending"
     }

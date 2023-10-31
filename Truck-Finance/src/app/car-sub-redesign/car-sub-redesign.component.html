@@ -385,11 +385,14 @@
             </div>
 
             <hr>
-            <p class="rc-header" (click)="onTap()">Quote Summary
+            <p class="rc-header" >Quote Summary
+                <!-- <i class="bi bi-download"></i> -->
                 
-                <i class="fa-solid" [class.fa-angle-down]="!isMidVisible" [class.fa-angle-up]="isMidVisible"></i>
-            
-                
+                <i class="fa-solid" (click)="onTap()" [class.fa-angle-down]="!isMidVisible" [class.fa-angle-up]="isMidVisible"></i>
+                <i (click)="downloadPDF()"  class="fa-solid fa-download"></i>
+                    <!-- <img  class="downloadbtn" src"../../assets/icons8-email-24.png" alt="Download PDF"> -->
+                <i class="fa-solid fa-envelope"></i>
+                <i class="fa-solid fa-print"></i>
             </p>
 
 

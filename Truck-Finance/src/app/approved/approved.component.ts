@@ -117,7 +117,7 @@ ngOnInit() {
       this.redirectMenu.redirectTo(path);
     }
   columnDefs: ColDef[] = [
-    { field: 'Iscash',cellStyle: { 'font-size': '12px' } },
+    { field: 'Is Cash',cellStyle: { 'font-size': '12px' } },
     { field: 'Flow Direction',cellStyle: { 'font-size': '12px' } },
     { field: 'Status',cellStyle: { 'font-size': '12px' } },
     { field: 'Allocation Status',cellStyle: { 'font-size': '12px' } },
