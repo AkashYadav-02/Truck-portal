@@ -22,7 +22,7 @@ export class RmCarCollecComponent {
 
       price: "231,595",
 
-      imgUrl: "../../assets/Truck5.png",
+      imgUrl: "../../assets/trailer.png",
 
       speed: 'MX-13',
 

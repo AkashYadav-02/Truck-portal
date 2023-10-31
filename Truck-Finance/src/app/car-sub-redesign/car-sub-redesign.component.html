@@ -403,10 +403,12 @@
             </div>
 
             <hr>
-
             <p class="rc-header" (click)="onTap()">Quote Summary
+                
                 <i class="fa-solid" [class.fa-angle-down]="!isMidVisible" [class.fa-angle-up]="isMidVisible"></i>
+            <button>Download</button>
             </p>
+
 
 
             <div [style.display]="isMidVisible ? 'inherit' : 'none'"
