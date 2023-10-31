@@ -13,6 +13,7 @@ import { BooleanAdvancedFilterModel } from 'ag-grid-community';
   styleUrls: ['./apply-now-flow1.component.scss']
 })
 export class ApplyNowFlow1Component implements OnInit {
+  taxes: number | undefined;
 
   numberWithCommas(x: any) {
 
@@ -79,7 +80,6 @@ export class ApplyNowFlow1Component implements OnInit {
   statuss: any;
   package: string = ''
   status : string = ''
-  taxes:any;
 
   dp: any = this.leftcard.downpayment
   //  lastname: string = "Aurionpro";

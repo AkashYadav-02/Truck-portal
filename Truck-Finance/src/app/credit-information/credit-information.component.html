@@ -164,23 +164,23 @@
                             <input type="number" [ngModel]="liabilities"  class="AssetInput" placeholder="$">
                            </div>
                            <div class="asset">
-                            <h6 class="sub-header-three"> Yearly Operating Income  :</h6>
+                            <h6 class="sub-header-three"> Annual Operating Income  :</h6>
                             <input type="number" [(ngModel)]="yearly" class="AssetInput" placeholder="$">
                            </div>
                     </div>
                     <div>
                         <div class="asset">
-                            <h6 class="sub-header-two">  Yearly Operating Expenses:</h6>
+                            <h6 class="sub-header-two">  Annual Operating Expenses:</h6>
                             <input type="number" [(ngModel)]="optcost"  class="AssetInput" placeholder="$" (blur)="calcnetcost()" >
                             
                            </div>
                            <div class="asset">
-                            <h6 class="sub-header-two"> Yearly Net Operating Income:</h6>
+                            <h6 class="sub-header-two"> Annual Net Operating Income:</h6>
                             <label      id="lbl" class="AssetInput"   placeholder="$" > {{netcost1}}</label>
                             <!-- <input type="number"   #id  class="AssetInput"  placeholder="$" {{netcost}} > -->
                            </div>
                            <div class="asset">
-                            <h6 class="sub-header-two"> Total debt Service Cost:</h6>
+                            <h6 class="sub-header-two"> Total Debt Service Cost:</h6>
                             <input type="number" [(ngModel)]="debt"  class="AssetInput"  placeholder="$" (blur)="calDsr()">
                            </div>
                     </div>
