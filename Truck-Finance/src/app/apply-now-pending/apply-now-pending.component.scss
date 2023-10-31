@@ -17,14 +17,14 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 10px 10px 5px 10px;
     font-family: "Verdana";
-    margin: 20px 0px;
+    margin: 20px 7px;
 }
-.car-card-detail1{
+.car-card-details1{
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 10px 10px 5px 10px;
     font-family: "Verdana";
-    margin: 8px 0px;
+    margin: -8px 7px;
 }
 
 .car-name{
@@ -94,8 +94,9 @@ select {
 }
 
 .package-details {
+    margin-top: 2rem;
     font-family: "Verdana";
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
 }
 
