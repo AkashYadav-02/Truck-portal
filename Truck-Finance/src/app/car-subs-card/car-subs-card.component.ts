@@ -274,7 +274,7 @@ export class CarSubsCardComponent implements OnInit {
   
   carDetails = [
     {
-      name: 'W990',
+      name: 'Trailer',
       engine_capacity: '2.8L/213',
       transmmission_type: 'Manual',
       Fuel_Type: 'Petrol',
