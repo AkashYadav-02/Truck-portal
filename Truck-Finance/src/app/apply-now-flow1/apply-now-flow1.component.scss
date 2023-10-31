@@ -419,9 +419,10 @@ hr-1, hr-2 {
          margin-left: 82%;
 }
 #icon1{
-  margin-left: 82%;
+  // margin-left: 82%;
 }
 .car-name{
+  display: flex;
   
   justify-content: space-between;
 
