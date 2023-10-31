@@ -20,7 +20,7 @@ export class RmCarCollecComponent {
     {
       name:"Trailer-W990",
 
-      price: "366,267",
+      price: "231,595",
 
       imgUrl: "../../assets/trailer.png",
 
@@ -40,7 +40,7 @@ export class RmCarCollecComponent {
 
       name:"T680",
 
-      price: "172,784",
+      price: "190,233",
 
       imgUrl: "../../assets/Truck2.png",
 

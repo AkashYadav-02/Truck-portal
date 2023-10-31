@@ -70,7 +70,7 @@ export class CarSubRedesignComponent implements OnInit {
 
   EMI: any;
 
-  downpayment1:any;
+  downpayment1:any = '';
   colorList: string[] = [];
 
   maxDownPayment?: number;
@@ -927,8 +927,13 @@ export class CarSubRedesignComponent implements OnInit {
   }
 
   downpay() {
-    let value= '$'+this.downpayment1?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    if (this.downpayment1){
+      let value= '$'+this.downpayment1?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     return value;
+
+    }
+    return '$0'
+    
   }
 
   onClickMenu(){
