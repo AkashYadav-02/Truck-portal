@@ -31,26 +31,43 @@
   font-family: "Verdana";
 }
 
-
+.left-card{
+  display: flex;
+  // gap:1rem;
+  justify-content: space-between;
+  margin: 0rem 4rem;
+}
 
 .step .activestep{
   background-color: #DB2423;
   color: #ffffff;
 }
 
-.card {
+.cardd {
   height: 40rem;
   width: 24rem;
-  margin-left: 4rem;
-  margin-right: 4rem;
+  margin-bottom: 5rem;
+  // margin-left: 4rem;
+  // margin-right: 4rem;
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 11px 0 rgba(0, 0, 0, 0.08);
 }
 .card11{
   height: 40rem;
   width: 24rem;
-  margin-left: 4rem;
-  margin-right: 4rem;
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 11px 0 rgba(0, 0, 0, 0.08);
+}
+
+.card11{
+  // margin-top: 10rem !important;
+  padding-top: 10px;
+}
+
+#right-panel {
+  // margin-left: 29rem;
+  // margin-top: -5rem;
+  // margin-right: 4rem;
+  width: 51.8rem;
+  height: 13.5rem;
 }
 .truck-info-1 {
   font-size: 5rem;
@@ -78,7 +95,7 @@
 }
 
 .package-details {
-  margin-top: 0.7rem;
+  margin-top: 0.3rem;
   margin-left: 0.5rem;
   font-size: 14px;
   font-family: "Verdana";
@@ -89,13 +106,7 @@
   font-size: 14px;
   font-family: "Verdana";
 }
-#right-panel {
-  margin-left: 29rem;
-  margin-right: 4rem;
-  margin-top: -40rem;
-  width: 51.8rem;
-  height: 11.5rem;
-}
+
 
 .text-label {
   margin-top: 1px;
@@ -169,27 +180,27 @@ hr-1, hr-2 {
   // height:   30rem;
   border-radius: 8px;
   margin-top: 1rem;
-  margin-right: 4rem;
+  // margin-right: 4rem;
   padding-left: 2rem;
   // padding: 1rem 1rem;
   // padding-right: 1rem;
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 11px 0 rgba(0, 0, 0, 0.08);
-  margin-left: 29.1rem;
+  // margin-left: 29.1rem;
   width: 51.7rem;
 }
 .card4{
   min-height: 4rem;
   // height:   30rem;
   padding-bottom: 2%;
-  //margin-bottom: 29rem;
+  margin-bottom: 5rem;
   border-radius: 8px;
   margin-top: 1rem;
-  margin-right: 4rem;
+  // margin-right: 4rem;
   padding-left: 2rem;
   // padding: 1rem 1rem;
   // padding-right: 1rem;
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 11px 0 rgba(0, 0, 0, 0.08);
-  margin-left: 29.1rem;
+  // margin-left: 29.1rem;
   width: 51.7rem;
 }
 
@@ -431,7 +442,7 @@ hr-1, hr-2 {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 10px 10px 5px 10px;
   font-family: "Verdana";
-  margin: -8px 7px;
+  margin: 15px 7px;
 }
 
 .established2{
@@ -451,7 +462,5 @@ hr-1, hr-2 {
   font-size: 16px;
 }
 
-.card11{
-  // margin-top: 10rem !important;
-  padding-top: 0px;
-}
+
+
