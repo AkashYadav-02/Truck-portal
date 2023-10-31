@@ -372,6 +372,22 @@
             <label class="did-floating-label" style="font-size: -0.3rem">Email</label>
           </div>
         </div>
+        <!-- <div class="form-check5 form-check-inline custom-class-form" style="font-family: 'Verdana'">
+          <div class="did-floating-label-content label-input w-full" style="width:50%">
+            <input class="did-floating-input" type="text" id="fname" [(ngModel)]="street1" />
+            <label class="did-floating-label" style="font-size: -0.3rem">Street</label>
+          </div>
+          <div class="did-floating-label-content label-input w-full" style="width:50%">
+            <input class="did-floating-input" type="text" id="fname" [(ngModel)]="mailing" />
+            <label class="did-floating-label" style="font-size: -0.3rem">Mailing</label>
+          </div>
+        </div>
+        <div class="form-check6 form-check-inline custom-class-form" style="font-family: 'Verdana'">
+          <div class="did-floating-label-content label-input w-full" style="width:50%">
+            <input class="did-floating-input" type="text" id="fname" [(ngModel)]="alternate" />
+            <label class="did-floating-label" style="font-size: -0.3rem">Alternate</label>
+          </div>
+        </div> -->
       </div>
     </div>
 
@@ -391,7 +407,13 @@
 
       <div [style.display]="isLowerVisible3 ? 'inherit' : 'none'"
         [style.height]="isLowerVisible3 ? 'fit-content' : '0'">
-
+        <select class="selected" [(ngModel)]="selectedValue"(change)="getSelected(selectedValue)">
+          
+          <option value="option1">Mailing</option>
+          <option value="option2">Street</option>
+          <option value="option3">Alternate</option>
+        </select>
+        <div *ngIf="selectedValue == 'option2'">
         <div class="form-check3 form-check-inline custom-class-form" style="font-family: 'Verdana'">
           <div class="did-floating-label-content label-input w-full" style="width:50%">
             <input class="did-floating-input" type="text" id="fname" [(ngModel)]="street" />
@@ -417,6 +439,7 @@
           <label class="did-floating-label" style="font-size: -0.3rem">Country</label>
         </div>
       </div>
+    </div>
     </div>
   </div>
 
