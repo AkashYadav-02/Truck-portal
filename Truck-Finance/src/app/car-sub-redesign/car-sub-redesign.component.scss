@@ -666,7 +666,17 @@ datalist option {
     // gap: 2;
     // margin-left: 2rem;
 }
-
+.downloadbtn{
+    height: 1.5rem;
+    // justify-content: end;
+    margin-left: 11rem;
+}
+.emailbtn{
+    height: 1.4rem;
+    // justify-content: end;
+    margin-left: 19rem;
+    // margin-top: -1rem;
+}
 .accessories {
     color: #0F0F0F !important;
     font-family: Verdana !important;
@@ -751,6 +761,17 @@ datalist option {
     line-height: normal;
     border-radius: 6px;
     border: 1px solid #000;
+}
+.fa-envelope{
+    margin-right: 1rem;
+}
+.fa-download{
+    margin-right: 1rem;
+
+}
+.fa-print{
+    margin-right: 1rem;
+
 }
 
 #small:checked~.option-text[for="small"],

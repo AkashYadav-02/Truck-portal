@@ -1,6 +1,7 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 
 import { Router, NavigationEnd } from '@angular/router';
+import {ElementRef } from '@angular/core';
 
 import { flatMap, partition } from 'rxjs';
 
@@ -26,7 +27,7 @@ export class CarSubRedesignComponent implements OnInit {
 
   visible1:boolean=false;
   visible2:boolean=false;
-
+  // selectedProgram: string ='';
   ownership: any = "Business";
   currentCarDetails!: any;
   eligibleForm: FormGroup;
@@ -62,10 +63,41 @@ export class CarSubRedesignComponent implements OnInit {
     }
     
   }
+  Paccar :string =''
+  Monthly :string =''
+  Advance :string =''
+  AUD :string =''
+  lessor : string =''
 
-
+  datapopulate(event: Event): void {
+    const selectedValue = (event.target as HTMLSelectElement).value;
+  
+    // Use the selectedValue to populate other fields or properties
+    if (selectedValue === 'Term') {
+      this.Paccar = 'Paccar';
+      this.Monthly = 'Monthly';
+      this.Advance = 'Advance';
+      this.AUD = 'AUD ($)';
+      this.lessor = '5.24'
+    } else if (selectedValue === '12 Months') {
+      this.Paccar = 'Paccar';
+      this.Monthly = 'Monthly';
+      this.Advance = 'Advance';
+      this.AUD = 'AUD ($)';
+      this.lessor = '5.24'
+    } 
+    else if (selectedValue === 'Select'){
+      this.Paccar = '';
+      this.Monthly = '';
+      this.Advance = '';
+      this.AUD = '';
+      this.lessor = ''
+    }
+  }
+  
+  
+  
   specificaiton: any;
-
   isEligible: number = -1;
 
   EMI: any;
@@ -242,8 +274,11 @@ export class CarSubRedesignComponent implements OnInit {
     private redirectMenu: RedirectMenuService,
     private router: Router,
     private renderer: Renderer2,
-    private formBuilder: FormBuilder
-  ) {
+    private formBuilder: FormBuilder,
+    private el: ElementRef
+  )
+
+   {
   this.loanHire='HirePurchase'
     this.myObserver = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
@@ -418,7 +453,15 @@ export class CarSubRedesignComponent implements OnInit {
       }
     }
   }
-
+  downloadPDF(): void {
+    const link = this.renderer.createElement('a');
+    link.href = '../../assets/blank.pdf';
+    link.download = 'HP_QuoteID_12345';
+    this.renderer.appendChild(this.el.nativeElement, link);
+    link.click();
+    this.renderer.removeChild(this.el.nativeElement, link);
+  }
+  
   checkNow() {
     console.log('fomr is ', this.eligibleForm);
     this.eligibleForm.controls['Expense'].value;

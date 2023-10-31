@@ -179,7 +179,7 @@
 
         <div class="rightcard">
             <p class="rc-header" (click)="onClick()">Subscription Type<i class="fa-solid"
-                    [class.fa-angle-down]="!isUpperVisible" [class.fa-angle-up]="isUpperVisible"></i></p>
+        [class.fa-angle-down]="!isUpperVisible" [class.fa-angle-up]="isUpperVisible"></i></p>
             <div [style.display]="isUpperVisible ? 'inherit' : 'none'"
                 [style.height]="isUpperVisible ? 'fit-content' : '0'">
                 <div class="radio-body">
@@ -254,57 +254,51 @@
                     
                 </div>
 
+            
+
                 <div [style.display]="loanHire=='Lease'? 'none' : 'inherit'">
 
                     <div class="downpayment">
                         <p class="subhead">Program: </p>
-                        <!-- <input type="text" placeholder="$0.00"> -->
-                        <select name="program" id="cars" class="an-drop">
-                            <option value="">Hire Purchase ORC Over Term</option>
-                            <option value="">Hire Purchase ORC Over 12 Months</option>
-
+                        <select name="program" id="cars" class="an-drop" (change)="datapopulate($event)"  >
+                            <option value="Select">Select</option>
+                            <option value="Term" >Hire Purchase ORC Over Term</option>
+                            <option value="12 Months">Hire Purchase ORC Over 12 Months</option>
                            
                         </select>
                     </div>
                     <div class="downpayment">
                         <p class="subhead">Business Unit: </p>
-                        <!-- <input type="text" placeholder="$0.00"> -->
                         <select name="program" id="cars" class="an-drop">
-                            <option value="paccar">Paccar</option>
+                            <option value="paccar">{{Paccar}}</option>
                            
                         </select>
                     </div>
                     <div class="downpayment">
                         <p class="subhead">Installment Frequency: </p>
-                        <!-- <input type="text" placeholder="$0.00"> -->
+                        
                         <select name="program" id="cars" class="an-drop">
-                            <option value="">Monthly</option>
+                            <option value="">{{Monthly}}</option>
                             <option value="saab">Anually</option>
                         </select>
                     </div>
-                    <div class="downpayment">
+                    <div class="downpayment">   
                         <p class="subhead">Installment Timing: </p>
-                        <!-- <input type="text" placeholder="$0.00"> -->
+                        
                         <select name="program" id="cars" class="an-drop">
-                            <option value="">Advance</option>
-                            <!-- <option value="saab">Unknown</option> -->
+                            <option value="">{{Advance}}</option>
                         </select>
                     </div>
                     <div class="downpayment">
                         <p class="subhead">Currency: </p>
-                        <!-- <input type="text" placeholder="$0.00"> -->
                         <select name="program" id="cars" class="an-drop">
-                            <option value="">AUD ($)</option>
-                            <!-- <option value="saab">Unknown</option> -->
+                            <option value="">{{AUD}}</option>
                         </select>
                     </div>
                     <div class="downpayment">
                         <p class="subhead">Lessor Rate (%): </p>
-                        <input type="number" placeholder="0.00" value="5.24">
-                        <!-- <select name="program" id="cars" class="an-drop">
-                            <option value="">5.24</option>
-                            <option value="saab">Unknown</option>
-                        </select> -->
+                        <input type="number" placeholder="0.0" [(ngModel)]="lessor">
+                       
                     </div>
                     <div class="downpayment d-flex" style="justify-content: space-between;">
                         <p class="subhead">Balloon Payment: </p>
@@ -313,24 +307,12 @@
                             <input type="text" [(ngModel)]="downpayment1" placeholder="0.00">
 
                         </div>
-                        <!-- <div class="input-group ballon d-flex">
-                            <span class="input-group-text" id="basic-">$</span>
-                            <input type="text"  id="dwn"  [(ngModel)]="downpayment1" placeholder="0.00">
-
-                        </div> -->
-
-                        
-                        <!-- <select name="program" id="cars" class="an-drop">
-                            <option value="">5.24</option>
-                            <option value="saab">Unknown</option>
-                        </select> -->
+                       
                     </div>
 
 
 
-                    <!-- <p style="font-size: 11px; margin-top: -6px; font-weight: bold; color:grey">Maximum amount should be: $ {{maxDownPayment}}</p> -->
-
-               
+                   
 
 
 
@@ -401,13 +383,16 @@
                 </div>
 
             </div>
-
+        </div>
             <hr>
-            <p class="rc-header" (click)="onTap()">Quote Summary
+            <p class="rc-header" >Quote Summary
+                <!-- <i class="bi bi-download"></i> -->
                 
-                <i class="fa-solid" [class.fa-angle-down]="!isMidVisible" [class.fa-angle-up]="isMidVisible"></i>
-            
-                
+                <i class="fa-solid" (click)="onTap()" [class.fa-angle-down]="!isMidVisible" [class.fa-angle-up]="isMidVisible"></i>
+                <i (click)="downloadPDF()"  class="fa-solid fa-download"></i>
+                    <!-- <img  class="downloadbtn" src"../../assets/icons8-email-24.png" alt="Download PDF"> -->
+                <i class="fa-solid fa-envelope"></i>
+                <i class="fa-solid fa-print"></i>
             </p>
 
 
@@ -778,7 +763,7 @@
 
 
 
-        </div>
+        
     </div>
 
 </div>
