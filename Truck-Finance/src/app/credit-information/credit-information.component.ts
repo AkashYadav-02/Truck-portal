@@ -185,6 +185,9 @@ export class CreditInformationComponent implements OnInit {
     
   this.netcost =  this.yearly - this.optcost;
   this.netcost1='$'+this.netcost;
+
+  console.log("netcost "+this.yearly);
+  
   }
   calDsr(){
    console.log("eee")

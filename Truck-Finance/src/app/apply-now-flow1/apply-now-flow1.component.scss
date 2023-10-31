@@ -323,7 +323,7 @@ hr-1, hr-2 {
   margin-left: 0rem;
   margin-top: 3rem;
 }
- .form-check4{
+ .form-check4, .form-check5, .form-check6{
   display: flex;
   justify-content: space-between;
   margin-left: 0rem;
@@ -464,4 +464,10 @@ hr-1, hr-2 {
 }
 
 
+.selected{
+  width: 20%;
+  height:15%;
+  font-size:1.1rem;
+  //margin-left:-1rem;
+}
 
