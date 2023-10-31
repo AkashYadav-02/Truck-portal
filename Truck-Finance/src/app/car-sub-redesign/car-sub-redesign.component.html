@@ -306,10 +306,20 @@
                             <option value="saab">Unknown</option>
                         </select> -->
                     </div>
-                    <div class="downpayment">
+                    <div class="downpayment d-flex" style="justify-content: space-between;">
                         <p class="subhead">Balloon Payment: </p>
-                        <span class="input-group-text" id="basic-">$</span>
-                        <input type="text"  id="dwn"  [(ngModel)]="downpayment1" placeholder="0.00">
+                        <div class="input-group ballon d-flex">
+                            <span class="input-group-text" id="basic-addon1">$</span>
+                            <input type="text" [(ngModel)]="downpayment1" placeholder="0.00">
+
+                        </div>
+                        <!-- <div class="input-group ballon d-flex">
+                            <span class="input-group-text" id="basic-">$</span>
+                            <input type="text"  id="dwn"  [(ngModel)]="downpayment1" placeholder="0.00">
+
+                        </div> -->
+
+                        
                         <!-- <select name="program" id="cars" class="an-drop">
                             <option value="">5.24</option>
                             <option value="saab">Unknown</option>
@@ -471,7 +481,7 @@
                                     </label>
                                 </div>
                                 <label class="qoute-num">
-                                    $ 817.39
+                                    $ {{numberWithCommas(incomingData[0].roadprice * 0.10)}}
                                 </label>
                             </div>
                             <div class="qoute-radio-body1" style="margin-left: 0;">
@@ -554,6 +564,17 @@
                             </div>
                             <div class="qoute-radio-body1" style="margin-left: 0;">
                                 <div class="qoute-leasehire form-checkbox form-check-inline">
+                                    <input type="checkbox" name="radio12" checked disabled>
+                                    <label class="form-check-label" for="inlineRadio1">
+                                        <!-- {{serviceName}} --> Tax
+                                    </label>
+                                </div>
+                                <label class="qoute-num">
+                                    $ {{numberWithCommas(incomingData[1].roadprice * 0.10)}}
+                                </label>
+                            </div>
+                            <div class="qoute-radio-body1" style="margin-left: 0;">
+                                <div class="qoute-leasehire form-checkbox form-check-inline">
                                     <input type="checkbox" id="radio13" value="dashcam" disabled>
                                     <label class="form-check-label" for="inlineRadio1">Dashcam</label>
                                 </div>
@@ -585,7 +606,7 @@
 
                     <div class="qoute-head2">
                         <label>Total Amount of Finance:</label>
-                        <label>{{numberWithCommas(totalonroadprice)}}</label>
+                        <label>$ {{numberWithCommas(totalonroadprice - downpayment1)}}</label>
                     </div>
 
                     <div class="head2-body">
