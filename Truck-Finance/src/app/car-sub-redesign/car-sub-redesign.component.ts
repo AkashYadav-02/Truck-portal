@@ -26,7 +26,7 @@ export class CarSubRedesignComponent implements OnInit {
 
   visible1:boolean=false;
   visible2:boolean=false;
-
+  // selectedProgram: string ='';
   ownership: any = "Business";
   currentCarDetails!: any;
   eligibleForm: FormGroup;
@@ -62,10 +62,41 @@ export class CarSubRedesignComponent implements OnInit {
     }
     
   }
+  Paccar :string =''
+  Monthly :string =''
+  Advance :string =''
+  AUD :string =''
+  lessor : string =''
 
-
+  datapopulate(event: Event): void {
+    const selectedValue = (event.target as HTMLSelectElement).value;
+  
+    // Use the selectedValue to populate other fields or properties
+    if (selectedValue === 'Term') {
+      this.Paccar = 'Paccar';
+      this.Monthly = 'Monthly';
+      this.Advance = 'Advance';
+      this.AUD = 'AUD ($)';
+      this.lessor = '5.24'
+    } else if (selectedValue === '12 Months') {
+      this.Paccar = 'Paccar';
+      this.Monthly = 'Monthly';
+      this.Advance = 'Advance';
+      this.AUD = 'AUD ($)';
+      this.lessor = '5.24'
+    } 
+    else if (selectedValue === 'Select'){
+      this.Paccar = '';
+      this.Monthly = '';
+      this.Advance = '';
+      this.AUD = '';
+      this.lessor = ''
+    }
+  }
+  
+  
+  
   specificaiton: any;
-
   isEligible: number = -1;
 
   EMI: any;
