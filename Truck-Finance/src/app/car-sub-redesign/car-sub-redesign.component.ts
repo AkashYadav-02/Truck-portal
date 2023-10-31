@@ -301,7 +301,7 @@ export class CarSubRedesignComponent implements OnInit {
 
   carDetails = [
     {
-      name: 'W990',
+      name: 'Trailer',
       engine_capacity: '2.8L/213',
       transmmission_type: 'Manual',
       Fuel_Type: 'Petrol',
@@ -312,7 +312,7 @@ export class CarSubRedesignComponent implements OnInit {
         grey: 'Grey',
       },
       emi: '811',
-      select_variant: ['T680', 'Next Generation', 'Signature Edition'],
+      select_variant: ['Trailer', 'Next Generation', 'Signature Edition'],
     },
     {
       name: 'T680',

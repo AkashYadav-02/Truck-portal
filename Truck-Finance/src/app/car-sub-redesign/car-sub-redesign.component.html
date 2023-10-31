@@ -15,15 +15,15 @@
                 <div class="topdrop">
                     <label><b>Asset Type: </b></label>
                     <select name="cars" id="cars" class="an-drop">
-                        <option value="">Trucks</option>
-                        <option value="saab">Cars</option> 
+                        <option value="">Trucks & Trailers</option>
+                         
                     </select>
                 </div>
                 <div class="topdrop">
                     <label><b>Asset Deal Type: </b></label>
                     <select name="cars" id="cars" class="an-drop">
                         <option value="">New</option>
-                        <option value="saab">Old</option>
+                        <option value="saab">Used</option>
                     </select>
                 </div>
 
@@ -179,7 +179,7 @@
 
         <div class="rightcard">
             <p class="rc-header" (click)="onClick()">Subscription Type<i class="fa-solid"
-                    [class.fa-angle-down]="isUpperVisible" [class.fa-angle-up]="!isUpperVisible"></i></p>
+                    [class.fa-angle-down]="!isUpperVisible" [class.fa-angle-up]="isUpperVisible"></i></p>
             <div [style.display]="isUpperVisible ? 'inherit' : 'none'"
                 [style.height]="isUpperVisible ? 'fit-content' : '0'">
                 <div class="radio-body">
@@ -259,7 +259,9 @@
                         <p class="subhead">Program: </p>
                         <!-- <input type="text" placeholder="$0.00"> -->
                         <select name="program" id="cars" class="an-drop">
-                            <option value="">28 Hire Purchase</option>
+                            <option value="">Hire Purchase ORC Over Term</option>
+                            <option value="">Hire Purchase ORC Over 12 months</option>
+
                            
                         </select>
                     </div>
@@ -291,7 +293,7 @@
                         <p class="subhead">Currency: </p>
                         <!-- <input type="text" placeholder="$0.00"> -->
                         <select name="program" id="cars" class="an-drop">
-                            <option value="">USD ($)</option>
+                            <option value="">AUD ($)</option>
                             <!-- <option value="saab">Unknown</option> -->
                         </select>
                     </div>
@@ -383,7 +385,7 @@
             <hr>
 
             <p class="rc-header" (click)="onTap()">Quote Summary
-                <i class="fa-solid" [class.fa-angle-down]="isMidVisible" [class.fa-angle-up]="!isMidVisible"></i>
+                <i class="fa-solid" [class.fa-angle-down]="!isMidVisible" [class.fa-angle-up]="isMidVisible"></i>
             </p>
 
 
@@ -395,8 +397,8 @@
                         
                         <div class="qoute-head1" (click)="visible1 = !visible1">
                             <label>T680 on road price:</label>
-                            <label>$ 172,784<i class="fa-solid" [class.fa-angle-down]="visible1"
-                                    [class.fa-angle-up]="!visible1" style="padding-left: 15px;"></i></label>
+                            <label>$ 172,784<i class="fa-solid" [class.fa-angle-down]="!visible1"
+                                    [class.fa-angle-up]="visible1" style="padding-left: 15px;"></i></label>
                         </div>
 
                         <div [style.display]="visible1 ? 'inherit' : 'none'"
@@ -452,8 +454,8 @@
                     <div class="qoute-card">
                         <div class="qoute-head1" (click)="visible2 = !visible2">
                             <label>W990 on road price:</label>
-                            <label>$ 386,267<i class="fa-solid" [class.fa-angle-down]="visible2"
-                                    [class.fa-angle-up]="!visible2" style="padding-left: 15px;"></i></label>
+                            <label>$ 386,267<i class="fa-solid" [class.fa-angle-down]="!visible2"
+                                    [class.fa-angle-up]="visible2" style="padding-left: 15px;"></i></label>
                         </div>
 
                         <div [style.display]="visible2 ? 'inherit' : 'none'"
@@ -562,7 +564,7 @@
 
             <p class="rc-header" (click)="onPress()">Eligibility
 
-                <i class="fa-solid" [class.fa-angle-down]="isLowerVisible" [class.fa-angle-up]="!isLowerVisible"></i>
+                <i class="fa-solid" [class.fa-angle-down]="!isLowerVisible" [class.fa-angle-up]="isLowerVisible"></i>
 
             </p>
             <form [formGroup]="eligibleForm">

@@ -10,7 +10,7 @@
             <input type="number" step="1" max="" [value]="quantityy" name="quantity" class="quantity-field">
             <input type="button" value="+" class="button-plus" data-field="quantity" (click)="increNum()">
           </div>
-        <i class="fa-solid cardangle" [class.fa-angle-down]="isCarCardVisible" [class.fa-angle-up]="!isCarCardVisible" (click)="expandCard()"></i>
+        <i class="fa-solid cardangle" [class.fa-angle-down]="!isCarCardVisible" [class.fa-angle-up]="isCarCardVisible" (click)="expandCard()"></i>
     <!-- <div [style.display]="isCarCardVisible ? 'inherit' : 'none'"
         [style.height]="isCarCardVisible ? 'fit-content' : '0'"> -->
     </div>
