@@ -18,7 +18,7 @@ export class RmCarCollecComponent {
      ) {}
   carDetails=[
     {
-      name:"Trailer",
+      name:"W990",
 
       price: "231,595",
 

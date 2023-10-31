@@ -302,7 +302,7 @@ export class CarSubRedesignComponent implements OnInit {
 
   carDetails = [
     {
-      name: 'Trailer',
+      name: 'W990',
       engine_capacity: '2.8L/213',
       transmmission_type: 'Manual',
       Fuel_Type: 'Petrol',
@@ -312,8 +312,9 @@ export class CarSubRedesignComponent implements OnInit {
         blue: 'Blue',
         grey: 'Grey',
       },
+      category: 'Trailer',
       emi: '811',
-      select_variant: ['Trailer', 'Next Generation', 'Signature Edition'],
+      select_variant: ['W990', 'Next Generation', 'Signature Edition'],
     },
     {
       name: 'T680',
@@ -325,6 +326,7 @@ export class CarSubRedesignComponent implements OnInit {
         black: 'Black',
         grey: 'Grey',
       },
+      category: 'Truck',
       emi: '2,778',
       select_variant: ['Next Generation', 'Signature Edition'],
     },
@@ -338,44 +340,9 @@ export class CarSubRedesignComponent implements OnInit {
         black: 'Blue',
         blue: 'Grey',
       },
+      category: 'Trailer',
       emi: '1,400',
       select_variant: ['T680', 'Next Generation', 'Signature Edition'],
-    },
-    {
-      name: '2023 Toyota Vellfire ',
-      engine_capacity: '3.5L/213',
-      transmmission_type: 'Manual',
-      Fuel_Type: 'Diesel',
-      color_options: {
-        white: 'White',
-        black: 'Black',
-        blue: 'Blue',
-        grey: 'Grey',
-      },
-    },
-    {
-      name: '2023 Toyota Urban Cruiser ',
-      engine_capacity: '3.5L/213',
-      transmmission_type: 'Manual',
-      Fuel_Type: 'Diesel',
-      color_options: {
-        white: 'White',
-        black: 'Black',
-        blue: 'Blue',
-        grey: 'Grey',
-      },
-    },
-    {
-      name: 'Toyota Camry',
-      engine_capacity: '3.5L/213',
-      transmmission_type: 'Manual',
-      Fuel_Type: 'Diesel',
-      color_options: {
-        white: 'White',
-        black: 'Black',
-        blue: 'Blue',
-        grey: 'Grey',
-      },
     },
     // {
     //   name: '2023 Toyota Glanza',
@@ -401,18 +368,7 @@ export class CarSubRedesignComponent implements OnInit {
     //     grey: 'Grey',
     //   },
     // },
-    {
-      name: '2023 Toyota Innova Crysta',
-      engine_capacity: '3.5L/213',
-      transmmission_type: 'Manual',
-      Fuel_Type: 'Diesel',
-      color_options: {
-        white: 'White',
-        black: 'Black',
-        blue: 'Blue',
-        grey: 'Grey',
-      },
-    },
+    
   ];
 
   //this.currentCar = this.carDetails.filter((car) => { return car.name === this.techDetailsParameter.name; })
