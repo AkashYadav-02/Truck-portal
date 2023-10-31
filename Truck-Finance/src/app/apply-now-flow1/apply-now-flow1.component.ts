@@ -47,6 +47,9 @@ export class ApplyNowFlow1Component implements OnInit {
   phone:string='';
   fax:string='';
   gmail:string='';
+  street1:string='';
+  mailing:string='';
+  alternate:string='';
   lname: string = '';
   mname: string = '';
   dob: string = 'date';
@@ -220,6 +223,7 @@ export class ApplyNowFlow1Component implements OnInit {
 
     // Check if the event is a button click
     if (event.type === 'click' && button instanceof HTMLButtonElement) {
+
       this.licenseClass = '1L';
       this.licenseNo = 'DM123456';
       this.licenseValidity = '01/01/2026';
@@ -231,6 +235,9 @@ export class ApplyNowFlow1Component implements OnInit {
       this.phone='(021) 825 234';
       this.fax='(06) 455 4456';
       this.gmail='TNZcustomercare@hotmail.com';
+      this.street1='Level1, 72 Archer Street';
+      this.mailing='Level1, 72 Archer Street';
+      this.alternate='Level1, 72 Archer Street';
       this.lname = 'Smith';
       this.mname = 'M';
       this.dob = '1975-10-11';
@@ -256,6 +263,11 @@ export class ApplyNowFlow1Component implements OnInit {
       this.workcity = 'Kew East';
       this.workstate = 'Victoria';
       this.workzip = '3102';
+
+      this.onPress();
+      this.onPress1();
+      this.onPress2();
+      this.onPress3();
     }
   }
 
@@ -308,6 +320,9 @@ export class ApplyNowFlow1Component implements OnInit {
     this.phone='';
     this.fax='';
     this.gmail='';
+    this.street1='';
+    this.mailing='';
+    this.alternate='';
     this.lname = '';
     this.mname = '';
     this.dob = '';
@@ -331,6 +346,14 @@ export class ApplyNowFlow1Component implements OnInit {
     this.workstate = '';
     this.workzip = '';
     this.statuss = 'false';
+  }
+  selectedValue: string = 'option1';
+
+  getSelected(data:any){
+    console.log('data',data);
+    
+    
+
   }
 }
 
