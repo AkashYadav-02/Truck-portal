@@ -251,6 +251,7 @@
                         <input type="radio" name="radio2" value="Business" class="radiobtn" [(ngModel)]="ownership">
                         <label class="form-check-label" for="inlineRadio2">Business</label>
                     </div>
+                    
                 </div>
 
                 <div [style.display]="loanHire=='Lease'? 'none' : 'inherit'">
@@ -300,6 +301,15 @@
                     <div class="downpayment">
                         <p class="subhead">Lessor Rate (%): </p>
                         <input type="number" placeholder="0.00" value="5.24">
+                        <!-- <select name="program" id="cars" class="an-drop">
+                            <option value="">5.24</option>
+                            <option value="saab">Unknown</option>
+                        </select> -->
+                    </div>
+                    <div class="downpayment">
+                        <p class="subhead">Balloon Payment: </p>
+                        <span class="input-group-text" id="basic-">$</span>
+                        <input type="text"  id="dwn"  [(ngModel)]="downpayment1" placeholder="0.00">
                         <!-- <select name="program" id="cars" class="an-drop">
                             <option value="">5.24</option>
                             <option value="saab">Unknown</option>
@@ -517,12 +527,12 @@
                     </div>
                     <div class="head2-body">
                         <label>Program Downpayment/RV</label>
-                        <label>$0000</label>
+                        <label>{{downpay()}}</label>
                     </div>
 
                     <div class="qoute-head2">
                         <label>Total Amount of Finance:</label>
-                        <label>$ {{numberWithCommas(totalonroadprice)}}</label>
+                        <label>{{numberWithCommas(totalonroadprice)}}</label>
                     </div>
 
                     <div class="head2-body">

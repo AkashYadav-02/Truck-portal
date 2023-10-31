@@ -70,6 +70,7 @@ export class CarSubRedesignComponent implements OnInit {
 
   EMI: any;
 
+  downpayment1:any;
   colorList: string[] = [];
 
   maxDownPayment?: number;
@@ -923,6 +924,11 @@ export class CarSubRedesignComponent implements OnInit {
 
   numberWithCommas(x: any) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  downpay() {
+    let value= '$'+this.downpayment1?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return value;
   }
 
   onClickMenu(){
