@@ -252,29 +252,18 @@ export class CarSubRedesignComponent implements OnInit {
         const navigation = this.router.getCurrentNavigation();
 
         if (navigation?.extras.state) {
-
-
-
           this.techDetailsParameterList = navigation.extras.state;
           this.localData = Object.values(this.techDetailsParameterList);
           this.techDetailsParameter = this.localData[0];
-          console.log("constructor");
-          console.log(this.techDetailsParameter);
-
-
-          console.log(this.localData);
-          console.log(this.localData.length);
+          // console.log("constructor");
+          // console.log("Tech-Param: ",this.techDetailsParameter);
+          // console.log("List: ", this.techDetailsParameterList);
+          // console.log("Local Data: ", this.localData);
+          // console.log("Incoming Data: ", this.localData);
           for (let i = 0; i < this.localData.length; i++) {
             this.incomingData.push({name:this.localData[i].name, roadprice: 0, emi: 0, quantityy:0});
-
           }
 
-
-
-          
-          console.log("heyy", this.techDetailsParameter);
-
-          console.log('form credit info', this.techDetailsParameter);
           this.updatedPrice = this.techDetailsParameter.price;
           this.price = Number(
             this.techDetailsParameter.price.replace(/,/g, '')
@@ -285,9 +274,7 @@ export class CarSubRedesignComponent implements OnInit {
           this.amm = Math.ceil(this.techDetailsParameter.price.replace(/,/g, '') * 0.35);
 
           this.storePrice = this.updatedPrice;
-          // console.log('stored price', this.storePrice);
-
-          console.log('tech param:', this.techDetailsParameter);
+          // console.log('stored price', this.storePrice);\
         }
       }
     });
@@ -604,14 +591,12 @@ export class CarSubRedesignComponent implements OnInit {
     this.techDetailsParameter.emi = this.globalEMI;
 
     let data = {
+      truckList: this.localData,
+      detailsList: this.incomingData,
       image: this.techDetailsParameter.imgUrl,
-
       name: this.techDetailsParameter.name,
-
       price: this.totalonroadprice,
-
       emi: this.totalemiprice,
-
       option: this.service_package,
       datee: now.toLocaleString()
     };

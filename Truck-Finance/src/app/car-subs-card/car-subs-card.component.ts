@@ -286,9 +286,9 @@ export class CarSubsCardComponent implements OnInit {
         blue: 'Blue',
         grey: 'Grey',
       },
-      category:'Trailer',
+      category:'Trailers',
       emi: '811',
-      select_variant: ['W990', 'Next Generation', 'Signature Edition'],
+      select_variant: ['Standard', 'Next Generation', 'Signature Edition'],
     },
     {
       name: 'T680',
@@ -300,9 +300,9 @@ export class CarSubsCardComponent implements OnInit {
         black: 'Black',
         grey: 'Grey',
       },
-      category:'Truck',
+      category:'Trucks',
       emi: '2,778',
-      select_variant: ['Next Generation', 'Signature Edition'],
+      select_variant: [ 'Signature Edition', 'Next Generation'],
     },
     {
       name: 'T880',
@@ -314,7 +314,7 @@ export class CarSubsCardComponent implements OnInit {
         black: 'Blue',
         blue: 'Grey',
       },
-      category:'Trailer',
+      category:'Trailers',
       emi: '1,400',
       select_variant: ['T680', 'Next Generation', 'Signature Edition'],
     }

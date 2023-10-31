@@ -1,33 +1,44 @@
 <div class="left-section">
-    <div style="display: flex; justify-content: space-between; padding: 0px 20px;">
-        <div class="car-subs-header d-flex" (click)="expandCard()">
-            <p style="cursor: pointer;" (click)="backPage()">KENWORTH</p>
-            <img src="../../assets/logos/Vector.png">
-            <p>{{techDetailsParameter.name.toUpperCase()}}</p>
+    <div style="display: flex; justify-content: space-between; padding: 0px 20px; margin-bottom: -1rem;">
+        <div class="d-flex" style="gap:20px;">
+            <div class="car-profile-pic">
+                <img src={{techDetailsParameter.imgUrl}}>
+            </div>
+            <div class="car-subs-header d-flex" (click)="expandCard()">
+                <p style="cursor: pointer;" (click)="backPage()">{{currentCarDetails[0].category}}</p>
+                <img src="../../assets/logos/Vector.png">
+                <p>{{techDetailsParameter.name.toUpperCase()}}</p>
+            </div>
         </div>
-        <div class="input-group-plus">
-            <input type="button" value="-" class="button-minus" data-field="quantity" (click)="decreNum()">
-            <input type="number" step="1" max="" [value]="quantityy" name="quantity" class="quantity-field">
-            <input type="button" value="+" class="button-plus" data-field="quantity" (click)="increNum()">
-          </div>
-        <i class="fa-solid cardangle" [class.fa-angle-down]="!isCarCardVisible" [class.fa-angle-up]="isCarCardVisible" (click)="expandCard()"></i>
-    <!-- <div [style.display]="isCarCardVisible ? 'inherit' : 'none'"
+
+        <div class="d-flex">
+            <div class="input-group-plus">
+                <input type="button" value="-" class="button-minus" data-field="quantity" (click)="decreNum()">
+                <input type="number" step="1" max="" [value]="quantityy" name="quantity" class="quantity-field">
+                <input type="button" value="+" class="button-plus" data-field="quantity" (click)="increNum()">
+            </div>
+            <i class="fa-solid cardangle" [class.fa-angle-down]="!isCarCardVisible"
+                [class.fa-angle-up]="isCarCardVisible" (click)="expandCard()" style="margin-left: 50px;"></i>
+        </div>
+
+        <!-- <div [style.display]="isCarCardVisible ? 'inherit' : 'none'"
         [style.height]="isCarCardVisible ? 'fit-content' : '0'"> -->
     </div>
+    <hr>
     <div [style.display]="isCarCardVisible ? 'inherit' : 'none'"
-    [style.height]="isCarCardVisible ? 'fit-content' : '0'">
+        [style.height]="isCarCardVisible ? 'fit-content' : '0'">
         <div class="car-images">
             <div class="car-main-img">
                 <img src="{{techDetailsParameter.imgUrl}}" alt="car-img">
             </div>
             <div class="car-etc-img-div">
-                <img src="../../assets/truck-interior1.png" alt="...">
+                <img src="../../assets/truck-interior1.png" class="mb-2" alt="...">
                 <img src="../../assets/truck-interior2.png" alt="...">
             </div>
         </div>
         <div class="left-card my-3 py-3 px-2 d-flex" style="gap: 50px;">
             <div>
-                 <div class="car-details px-2">
+                <div class="car-details px-2">
                     <h2>{{techDetailsParameter.name}}</h2>
                     <p class="mb-4 mt-3">Engine Capacity {{specificaiton.engine_capacity}} ·
                         {{specificaiton.Fuel_Type}} · {{specificaiton.transmmission_type}} </p>
@@ -53,13 +64,13 @@
                             <input class=" mileage-radio" type="radio" name="Mileage{{compid}}" id="specifyColor"
                                 checked="checked" (change)="selecMile(0)">
                             <label class="mt-auto mb-auto mr-5 ms-3 mileage-text milegae-cc d-flex" for="">Standard
-                                
+
                             </label>
                             <span class="label-des">10,000 KM/Year</span>
-                                <div class="d-flex">
-                                    <img class="exclamation-icon icon" src="../../assets/info-circle.png" alt="">
-                                    <div class="info">Charged at $0.20 for every additional KMs</div>
-                                </div>
+                            <div class="d-flex">
+                                <img class="exclamation-icon icon" src="../../assets/info-circle.png" alt="">
+                                <div class="info">Charged at $0.20 for every additional KMs</div>
+                            </div>
                         </div>
 
                         <div class="d-flex radio-btn-group mt-3">
@@ -67,7 +78,7 @@
                                 (change)="selecMile(1)">
 
                             <label class="mt-auto mb-auto mr-5 ms-3 mileage-text milegae-cc d-flex" for="">High
-                                
+
                             </label>
                             <span class="label-des" id="label-1">15,000 KM/Year
                             </span>
@@ -81,39 +92,42 @@
                             <input class=" mileage-radio" type="radio" name="Mileage{{compid}}" id="specifyColor"
                                 (change)="selecMile(2)">
                             <label class="mt-auto mb-auto mr-5 ms-3 mileage-text milegae-cc d-flex" for="">Ultimate
-                                
+
                             </label>
                             <span class="label-des">25,000 KM/Year</span>
-                                <div class="d-flex">
-                                    <img class="exclamation-icon icon" src="../../assets/info-circle.png" alt="">
-                                    <div class="info">Charged at $0.05 for every additional KMs</div>
-                                </div>
+                            <div class="d-flex">
+                                <img class="exclamation-icon icon" src="../../assets/info-circle.png" alt="">
+                                <div class="info">Charged at $0.05 for every additional KMs</div>
+                            </div>
                         </div>
                     </div>
 
-                    <h2 class="mt-4">OCR Details</h2>
-                    <div>
-                        <div class="d-flex radio-btn-group mt-3">
-                            <label class="mt-auto mb-auto OCR-cc d-flex" for="">OCR (exclusive):</label>
-                            <input type="text" class="ocr-input">
+                    <div *ngIf="currentCarDetails[0].category == 'Trucks'">
+                        <h2 class="mt-4">OCR Details</h2>
+                        <div>
+                            <div class="d-flex radio-btn-group mt-3">
+                                <label class="mt-auto mb-auto OCR-cc d-flex" for="">ORC (exclusive):</label>
+                                <input type="text" class="ocr-input">
+                            </div>
+                            <div class="d-flex radio-btn-group mt-3">
+                                <label class="mt-auto mb-auto OCR-cc d-flex" for="">Tax (ORC):</label>
+                                <label class="ocr-input">$ 817.39</label>
+                            </div>
+                            <div class="d-flex radio-btn-group mt-3">
+                                <label class="mt-auto mb-auto OCR-cc d-flex" for="">Term:</label>
+                                <select class="ocr-input">
+                                    <option value="">12</option>
+                                    <option value="">24</option>
+                                    <option value="">36</option>
+                                    <option value="">48</option>
+                                    <option value="">60</option>
+                                    <option value="">72</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="d-flex radio-btn-group mt-3">
-                            <label class="mt-auto mb-auto OCR-cc d-flex" for="">Tax:</label>
-                            <label class="ocr-input">Hell</label>
-                        </div>
-                        <div class="d-flex radio-btn-group mt-3">
-                            <label class="mt-auto mb-auto OCR-cc d-flex" for="">Term:</label>
-                            <select class="ocr-input">
-                                <option value="">12</option>
-                                <option value="">24</option>
-                                <option value="">36</option>
-                                <option value="">48</option>
-                                <option value="">60</option>
-                                <option value="">72</option>
-                                <option value="">84</option>
-                            </select>
-                        </div>
+
                     </div>
+
                 </div>
             </div>
 
@@ -157,7 +171,8 @@
                             <div class="info">Dashcam</div>
                         </div>
                         <div>
-                            <img (click)="addBorder2()" class="iconss" id="engine" src="../../assets/logos/built-in-wifi.jpg">
+                            <img (click)="addBorder2()" class="iconss" id="engine"
+                                src="../../assets/logos/built-in-wifi.jpg">
                             <div class="info">Built-in WiFi</div>
                         </div>
                     </div>
@@ -167,19 +182,21 @@
                     <label style="font-size: 13px; color: grey;">Select Preferred
                         Tenure</label>
                     <div class="numbers select-size">
-                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio" name="s-size{{compid}}" id="small{{compid}}"
-                            value="small" [(ngModel)]="selectedRadio" [ngClass]="'checkedd'" />
-                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio" name="s-size{{compid}}" id="medium{{compid}}"
-                            value="medium" [(ngModel)]="selectedRadio" />
-                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio" name="s-size{{compid}}" id="large{{compid}}"
-                            value="large" [(ngModel)]="selectedRadio" />
-                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio" name="s-size{{compid}}" id="x-large{{compid}}"
-                            value="xl" [(ngModel)]="selectedRadio" />
-                        <input (click)="calculateTenure(selectedRadio)" class="numbtn"  type="radio" name="s-size{{compid}}" id="xx-large{{compid}}"
-                            value="xxl" [(ngModel)]="selectedRadio" />
-                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio" name="s-size{{compid}}" id="xtra-large{{compid}}"
-                            value="xxxl" [(ngModel)]="selectedRadio" />
-                        <label for="small{{compid}}" class="option-text"  [class.activeTen]="selectedRadio == 'small'">
+                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio"
+                            name="s-size{{compid}}" id="small{{compid}}" value="small" [(ngModel)]="selectedRadio"
+                            [ngClass]="'checkedd'" />
+                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio"
+                            name="s-size{{compid}}" id="medium{{compid}}" value="medium" [(ngModel)]="selectedRadio" />
+                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio"
+                            name="s-size{{compid}}" id="large{{compid}}" value="large" [(ngModel)]="selectedRadio" />
+                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio"
+                            name="s-size{{compid}}" id="x-large{{compid}}" value="xl" [(ngModel)]="selectedRadio" />
+                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio"
+                            name="s-size{{compid}}" id="xx-large{{compid}}" value="xxl" [(ngModel)]="selectedRadio" />
+                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio"
+                            name="s-size{{compid}}" id="xtra-large{{compid}}" value="xxxl"
+                            [(ngModel)]="selectedRadio" />
+                        <label for="small{{compid}}" class="option-text" [class.activeTen]="selectedRadio == 'small'">
                             <p>24</p>
                         </label>
                         <label for="medium{{compid}}" class="option-text" [class.activeTen]="selectedRadio == 'medium'">
@@ -194,19 +211,20 @@
                         <label for="xx-large{{compid}}" class="option-text" [class.activeTen]="selectedRadio == 'xxl'">
                             <p>72</p>
                         </label>
-                        <label for="xtra-large{{compid}}" class="option-text" [class.activeTen]="selectedRadio == 'xxxl'">
+                        <label for="xtra-large{{compid}}" class="option-text"
+                            [class.activeTen]="selectedRadio == 'xxxl'">
                             <p>84</p>
                         </label>
-    
+
                     </div>
                 </div>
                 <div class="mt-4">
                     <h6>On Road: {{numberWithCommas(storePrice)}}</h6>
-                <h6>EMI: {{numberWithCommas(showEmi(calculateEMI(techDetailsParameter.price)))}}</h6>
+                    <h6>EMI: {{numberWithCommas(showEmi(calculateEMI(techDetailsParameter.price)))}}</h6>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
 </div>

@@ -158,7 +158,6 @@ export class WorkspaceComponent {
         transferData = {
           tableData: data.data,
           pramData: {
-
             "image": "../../assets/Truck3.png",
             "name": "T880",
             "price": "3,67,840,",
@@ -171,7 +170,10 @@ export class WorkspaceComponent {
               "addonInstallment": "$0",
               "yourfinalinstallment": "$1,420",
               "yourfirstpayment": "$14,420"
-            }
+            },
+            truckList: this.techDetailsParameter.truckList,
+            detailsList: this.techDetailsParameter.detailsList
+            
           },
           "comp": "credit"
         }
@@ -192,16 +194,19 @@ export class WorkspaceComponent {
               "addonInstallment": "$0",
               "yourfinalinstallment": "$1,420",
               "yourfirstpayment": "$14,420"
-            }
+            },
+            truckList: this.techDetailsParameter.truckList,
+            detailsList: this.techDetailsParameter.detailsList
           },
           "comp": "credit"
         }
 
       } else {
-        transferData = {};
         transferData = {
           tableData: data.data,
-          pramData: this.techDetailsParameter
+          pramData: this.techDetailsParameter,
+          truckList: this.techDetailsParameter.truckList,
+          detailsList: this.techDetailsParameter.detailsList
         }
       }
       console.log("helloooooo", data.data.status);

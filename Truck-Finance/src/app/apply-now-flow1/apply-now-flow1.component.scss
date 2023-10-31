@@ -10,6 +10,25 @@
   margin-right: 4rem;
 }
 
+.car-profile-pic {
+  // margin-top: 0.5rem;
+  background-color: #f8a10b;
+  height: 2.5rem;
+  width: 3.2rem;
+  border-radius: 5px;
+
+  img {
+      width:100%;
+      height:100%;
+      border-radius: 5px;
+  }
+}
+
+.cardangle {
+  margin-top: 1rem;
+  // margin-bottom: 0.5rem;
+}
+
 .stepper-label {
   display: flex;
   justify-content: space-between;
