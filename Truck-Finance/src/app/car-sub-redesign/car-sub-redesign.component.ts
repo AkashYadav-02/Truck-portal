@@ -52,17 +52,6 @@ export class CarSubRedesignComponent implements OnInit {
   totalonroadprice: number = 0;
   totalemiprice: number = 0;
 
-  setCarData(listt: { id: number, roadprice: any, emi: any, quantityy: number }) {
-    // console.log("before", this.incomingData);
-    console.log("Hellll", listt);
-    this.incomingData[listt.id].roadprice = listt.roadprice;
-    this.incomingData[listt.id].emi = listt.emi
-    this.incomingData[listt.id].quantityy = listt.quantityy
-    this.calculateTotalPrice();
-    // this.incomingData.forEach((a: { roadprice: number; }) => sum += a.roadprice);
-
-  }
-
   calculateTotalPrice() {
     this.totalonroadprice = 0
     this.totalemiprice = 0
@@ -70,8 +59,38 @@ export class CarSubRedesignComponent implements OnInit {
       this.totalonroadprice += this.incomingData[i].roadprice * this.incomingData[i].quantityy
       this.totalemiprice += this.incomingData[i].emi * this.incomingData[i].quantityy
     }
+    console.log("totalonroadprice, ", this.totalonroadprice);
+  }
+
+  setCarData(listt: { id: number, roadprice: any, emi: any, quantityy: number, variant:[any, any], service:[any, any], tenure:any }) {
+    // console.log("before", this.incomingData);
+    console.log("Listt", listt);
+    if (typeof listt.roadprice == 'string'){
+      this.incomingData[listt.id].roadprice = Number(listt.roadprice.replace(/,/g, ''));
+    }else{
+      this.incomingData[listt.id].roadprice = listt.roadprice;
+    }
+    
+    this.incomingData[listt.id].emi = listt.emi
+    this.incomingData[listt.id].quantityy = listt.quantityy
+    this.incomingData[listt.id].variant = listt.variant
+    this.incomingData[listt.id].service = listt.service
+    this.incomingData[listt.id].tenure = listt.tenure
+    this.calculateTotalPrice();
+    console.log("Listt", this.incomingData);
+    // this.incomingData.forEach((a: { roadprice: number; }) => sum += a.roadprice);
 
   }
+
+  // this.outGoingData.emit({id:this.compid, 
+  //   roadprice:this.storePrice,
+  //   emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),
+  //   quantityy:this.quantityy, 
+  //   variant:[this.variantName, this.variant * 10000], 
+  //     service:[this.serviceName, this.service * 10000], 
+  //     tenure:this.selectedRadio})
+
+  
   Paccar: string = ''
   Monthly: string = ''
   Advance: string = ''
@@ -373,7 +392,7 @@ export class CarSubRedesignComponent implements OnInit {
             console.log("Local Data: ", this.localData);
             // console.log("Incoming Data: ", this.localData);
             for (let i = 0; i < this.localData.length; i++) {
-              this.incomingData.push({ name: this.localData[i].name, roadprice: 0, emi: 0, quantityy: 0 });
+              this.incomingData.push({ name: this.localData[i].name, roadprice: 0, emi: 0, quantityy: 0, variant:['',0],  service:['',0], tenure:0});
             }
 
             this.updatedPrice = this.techDetailsParameter.price;

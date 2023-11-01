@@ -192,37 +192,37 @@
                     <label style="font-size: 13px; color: grey;">Select Preferred
                         Tenure</label>
                     <div class="numbers select-size">
-                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio"
-                            name="s-size{{compid}}" id="small{{compid}}" value="small" [(ngModel)]="selectedRadio"
+                        <input (click)="calculateTenure('small')" class="numbtn" type="radio"
+                            name="s-size{{compid}}" id="small{{compid}}" value="24" [(ngModel)]="selectedRadio"
                             [ngClass]="'checkedd'" />
-                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio"
-                            name="s-size{{compid}}" id="medium{{compid}}" value="medium" [(ngModel)]="selectedRadio" />
-                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio"
-                            name="s-size{{compid}}" id="large{{compid}}" value="large" [(ngModel)]="selectedRadio" />
-                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio"
-                            name="s-size{{compid}}" id="x-large{{compid}}" value="xl" [(ngModel)]="selectedRadio" />
-                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio"
-                            name="s-size{{compid}}" id="xx-large{{compid}}" value="xxl" [(ngModel)]="selectedRadio" />
-                        <input (click)="calculateTenure(selectedRadio)" class="numbtn" type="radio"
-                            name="s-size{{compid}}" id="xtra-large{{compid}}" value="xxxl"
+                        <input (click)="calculateTenure('medium')" class="numbtn" type="radio"
+                            name="s-size{{compid}}" id="medium{{compid}}" value="36" [(ngModel)]="selectedRadio" />
+                        <input (click)="calculateTenure('large')" class="numbtn" type="radio"
+                            name="s-size{{compid}}" id="large{{compid}}" value="48" [(ngModel)]="selectedRadio" />
+                        <input (click)="calculateTenure('xl')" class="numbtn" type="radio"
+                            name="s-size{{compid}}" id="x-large{{compid}}" value="60" [(ngModel)]="selectedRadio" />
+                        <input (click)="calculateTenure('xxl')" class="numbtn" type="radio"
+                            name="s-size{{compid}}" id="xx-large{{compid}}" value="72" [(ngModel)]="selectedRadio" />
+                        <input (click)="calculateTenure('xxxl')" class="numbtn" type="radio"
+                            name="s-size{{compid}}" id="xtra-large{{compid}}" value="84"
                             [(ngModel)]="selectedRadio" />
-                        <label for="small{{compid}}" class="option-text" [class.activeTen]="selectedRadio == 'small'">
+                        <label for="small{{compid}}" class="option-text" [class.activeTen]="selectedRadio == '24'">
                             <p>24</p>
                         </label>
-                        <label for="medium{{compid}}" class="option-text" [class.activeTen]="selectedRadio == 'medium'">
+                        <label for="medium{{compid}}" class="option-text" [class.activeTen]="selectedRadio == '36'">
                             <p>36</p>
                         </label>
-                        <label for="large{{compid}}" class="option-text" [class.activeTen]="selectedRadio == 'large'">
+                        <label for="large{{compid}}" class="option-text" [class.activeTen]="selectedRadio == '48'">
                             <p>48</p>
                         </label>
-                        <label for="x-large{{compid}}" class="option-text" [class.activeTen]="selectedRadio == 'xl'">
+                        <label for="x-large{{compid}}" class="option-text" [class.activeTen]="selectedRadio == '60'">
                             <p>60</p>
                         </label>
-                        <label for="xx-large{{compid}}" class="option-text" [class.activeTen]="selectedRadio == 'xxl'">
+                        <label for="xx-large{{compid}}" class="option-text" [class.activeTen]="selectedRadio == '72'">
                             <p>72</p>
                         </label>
                         <label for="xtra-large{{compid}}" class="option-text"
-                            [class.activeTen]="selectedRadio == 'xxxl'">
+                            [class.activeTen]="selectedRadio == '84'">
                             <p>84</p>
                         </label>
 
