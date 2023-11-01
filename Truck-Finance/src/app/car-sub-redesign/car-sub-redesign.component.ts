@@ -1014,10 +1014,6 @@ export class CarSubRedesignComponent implements OnInit {
     { Name: 'PPSR Search Fee', Amount: '160.00', Date: '23/10/2023', Timing:"Start"},
     { Name: 'Stamp Duty', Amount: '-21,743', Date: '23/10/2023', Timing:"Start"},
     { Name: 'Documentation Fee', Amount: '360', Date: '23/10/2023', Timing:"Start"},
-
-
-
-
   ];
 
 columnDefs: ColDef[] = [
