@@ -68,9 +68,9 @@ export class CarSubRedesignComponent implements OnInit {
     this.totalonroadprice = 0
     this.totalemiprice = 0
     for (let i = 0; i < this.incomingData.length; i++) {
-      this.totalonroadprice += (this.incomingData[i].roadprice * this.incomingData[i].quantityy)
+      this.totalonroadprice += (this.incomingData[i].roadprice + ((this.ORC +0.6) /2)  ) * this.incomingData[i].quantityy
       this.totalemiprice += this.incomingData[i].emi    
-    }
+    } 
 
   }
   Paccar: string = ''

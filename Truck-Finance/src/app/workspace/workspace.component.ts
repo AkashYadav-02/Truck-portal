@@ -230,7 +230,7 @@ export class WorkspaceComponent {
       appID: ipData.applicationId,
       customerName: "John Smith",
       carSelection: "T680,W990",
-      financing: '$' + this.numberWithCommas(ipData.price),
+      financing: '$' + this.numberWithCommas(ipData.price)+ '0',
       status: "Pending"
     }
 
