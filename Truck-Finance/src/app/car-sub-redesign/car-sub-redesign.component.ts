@@ -7,6 +7,9 @@ import { Router, NavigationEnd } from '@angular/router';
 import {ElementRef } from '@angular/core';
 
 import { flatMap, partition } from 'rxjs';
+import { GridOptions, ColDef } from 'ag-grid-community';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 import { RedirectMenuService } from 'src/services/redirect-menu.service';
 
@@ -26,10 +29,13 @@ export class CarSubRedesignComponent implements OnInit {
   currentUrl: any;
   variantName: any = "Default";
 
+  
+
   // currentCar:any;
 
   visible1:boolean=false;
   visible2:boolean=false;
+  visible3:boolean=false;
   // selectedProgram: string ='';
   ownership: any = "Business";
   currentCarDetails!: any;
@@ -102,44 +108,29 @@ export class CarSubRedesignComponent implements OnInit {
   
   specificaiton: any;
   isEligible: number = -1;
-
   EMI: any;
-
   downpayment1:any = '';
   colorList: string[] = [];
-
   maxDownPayment?: number;
-
   selectedRadio: string = 'large';
 
   months_24: number = 1000; //3244
-
   months_36: number = 1500; //2246
-
   months_48: number = 2000; //1,750
-
   months_60: number = 2500; //1,452   on 5 % buyback change increase emi by 1k
-
   months_72: number = 3000; //1,255
-
   months_84: number = 3500; //1,115
-
   tenureAdjusted: boolean = false;
 
   border1: Boolean = false;
-
   border2: Boolean = false;
-
   updatedPrice: any;
-
   storePrice: any;
-
   service_package: number = 0;
 
   // selectedColor: string = '45473D';
 
   globalEMI: number = 0;
-
   isCarCardVisible = true;
   expandCard() {
     if (this.isCarCardVisible) {
@@ -360,7 +351,8 @@ export class CarSubRedesignComponent implements OnInit {
     private router: Router,
     private renderer: Renderer2,
     private formBuilder: FormBuilder,
-    private el: ElementRef
+    private el: ElementRef,
+    private http: HttpClient
   )
 
    {
@@ -508,6 +500,8 @@ export class CarSubRedesignComponent implements OnInit {
     });
 
     this.filterDetails();
+    // this.rowData$ = this.http.get<any[]>('../../assets/JSONfiles/approved-data.json');
+    
 
     // $(document).ready(function () {
     //   $('#demo').vc3dEye({
@@ -1007,7 +1001,34 @@ export class CarSubRedesignComponent implements OnInit {
     
   }
 
-  onClickMenu(){
-    
-  }
+  defaultColDef = {
+    sortable: true,
+    width: 100
+  };
+
+  rowData =[
+    { Name: 'Toyota', Amount: 'Celica', Date: 35000, Timing:"10:30am"},
+    { Name: 'Ford', Amount: 'Mondeo', Date: 32000, Timing:"10:30am"},
+    { Name: 'Porsche', Amount: 'Boxster', Date: 72000,  Timing:"10:30am"}
+];
+
+columnDefs: ColDef[] = [
+  { field: 'Name'},
+  { field: 'Amount', editable: true },
+  { field: 'Date' },
+  { field: 'Timing' }
+];
+
+
+gridOptions = {
+  defaultColDef: {
+    sortable: true,
+    filter: true,
+    // floatingFilter: true,
+    width: 93,
+    maxWidth: 93,
+    cellStyle: { 'font-family': 'Verdana', 'font-size': '12px', 'padding':'0px 10px'}
+  },
+  headerHeight: 25
+};
 }
