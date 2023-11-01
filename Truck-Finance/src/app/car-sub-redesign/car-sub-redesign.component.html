@@ -7,11 +7,11 @@
 <!-- <div style="width: 100%; margin-top: -4.5rem; ">
     <app-stepper [firstBg]="'#DB2423'" [first]="'white'"></app-stepper>
 </div> -->
+<div *ngIf="!display">
+    <h5 style="margin: 5rem;">No Items in Cart</h5>
+</div>
 
-<!-- <div *ngIf="localData.length == 0" >
-    <h4 style="margin:1rem">No Items in the Cart</h4>
-</div> -->
-<div *ngIf="localData.length != 0">
+<div *ngIf="display">
     <div class="car-subs">
         <div class="bodyclass">
             <div>
