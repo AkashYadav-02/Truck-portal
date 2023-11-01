@@ -286,10 +286,12 @@
                         </div>
                         <div class="qoute-card mt-3">
     
-                            <div class="qoute-head1" (click)="visible3 = !visible3">
-                                <label>Finance & Savings</label>
-                                <i class="fa-solid" [class.fa-angle-down]="!visible3" [class.fa-angle-up]="visible3"
-                                    style="padding-left: 15px; margin-top: 0.8rem;"></i>
+                            <div class="qoute-head1 mt-1" (click)="visible3 = !visible3">
+                                <label>Fees & Charges</label>
+                                <label>$ 20,667.00 <i class="fa-solid"
+                                    [class.fa-angle-down]="!visible3" [class.fa-angle-up]="visible3"
+                                    style="padding-left: 15px;"></i></label>
+
                             </div>
     
                             <div [style.display]="visible3 ? 'inherit' : 'none'"
@@ -468,7 +470,7 @@
                                         </label>
                                     </div>
                                     <label class="qoute-num">
-                                        $ 8,173.90
+                                        $ {{ORC}}
                                     </label>
                                 </div>
                                 <div class="qoute-radio-body1" style="margin-left: 0;">
@@ -521,7 +523,7 @@
                         <div class="qoute-card" *ngIf="localData[1]">
                             <div class="qoute-head1" (click)="visible2 = !visible2">
                                 <label>{{localData[1].name}} on road price:</label>
-                                <label>$ {{numberWithCommas(incomingData[1].roadprice)}}<i class="fa-solid"
+                                <label>$ {{numberWithCommas(incomingData[1].roadprice )}}<i class="fa-solid"
                                         [class.fa-angle-down]="!visible2" [class.fa-angle-up]="visible2"
                                         style="padding-left: 15px;"></i></label>
                             </div>
@@ -619,12 +621,12 @@
                             <label>Default Repayment Frequency</label>
                             <label>Monthly</label>
                         </div>
-                        <div>
+                        <!-- <div>
                             <div class="head2-body">
                                 <label>Program Default Tenure</label>
                                 <label> Months</label>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="head2-body">
                             <label>Program APR</label>
                             <label>5.24%</label>
@@ -785,14 +787,14 @@
     
             <!-- <button href="car-sub-submit" class=" roadprice">On-road price</button> -->
     
-            <h6 class="price">On Road Price: ${{numberWithCommas(totalonroadprice)}}</h6>
+            <h6 class="price">On Road Price: ${{numberWithCommas(totalonroadprice)}}0</h6>
     
         </div>
     
         <div class="cs-footer-com" style="padding-top: 5px;">
     
             <!-- <h6 class="price" style="font-size: 15px;">Monthly Payment from: ${{numberWithCommas(showEmi(calculateEMI(techDetailsParameter.price)))}}/m </h6> -->
-            <h6 class="price" style="font-size: 15px;">Monthly Payment from: ${{numberWithCommas(totalemiprice)}}/m
+            <h6 class="price" style="font-size: 15px;">Monthly Payment from: ${{numberWithCommas(totalemiprice)}}.96/m
             </h6>
     
             <div>

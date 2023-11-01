@@ -52,15 +52,7 @@ export class CarSubRedesignComponent implements OnInit {
   totalonroadprice: number = 0;
   totalemiprice: number = 0;
 
-  calculateTotalPrice() {
-    this.totalonroadprice = 0
-    this.totalemiprice = 0
-    for (let i = 0; i < this.incomingData.length; i++) {
-      this.totalonroadprice += this.incomingData[i].roadprice * this.incomingData[i].quantityy
-      this.totalemiprice += this.incomingData[i].emi * this.incomingData[i].quantityy
-    }
-    console.log("totalonroadprice, ", this.totalonroadprice);
-  }
+  
 
   setCarData(listt: { id: number, roadprice: any, emi: any, quantityy: number, variant:[any, any], service:[any, any], tenure:any }) {
     // console.log("before", this.incomingData);
@@ -81,16 +73,19 @@ export class CarSubRedesignComponent implements OnInit {
     // this.incomingData.forEach((a: { roadprice: number; }) => sum += a.roadprice);
 
   }
+  ORC :number = 8173.90;
 
-  // this.outGoingData.emit({id:this.compid, 
-  //   roadprice:this.storePrice,
-  //   emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),
-  //   quantityy:this.quantityy, 
-  //   variant:[this.variantName, this.variant * 10000], 
-  //     service:[this.serviceName, this.service * 10000], 
-  //     tenure:this.selectedRadio})
+  calculateTotalPrice() {
+    this.totalonroadprice = 0
+    this.totalemiprice = 0
+    for (let i = 0; i < this.incomingData.length; i++) {
+      this.totalonroadprice += (this.incomingData[i].roadprice + ((this.ORC +0.6) /2)  ) * this.incomingData[i].quantityy
+      this.totalemiprice += ((this.incomingData[i].emi-2091)/2) * this.incomingData[i].quantityy
+      console.log(this.totalemiprice);
+      
+    } 
 
-  
+  }
   Paccar: string = ''
   Monthly: string = ''
   Advance: string = ''
@@ -731,11 +726,10 @@ export class CarSubRedesignComponent implements OnInit {
     const now = new Date()
     // Income Liabilities
     this.techDetailsParameter.price = this.storePrice;
-    if (this.globalEMI == 3169) {
-      this.globalEMI = 3244
+    if (this.globalEMI == 18,886) {
+      this.globalEMI = 7351.96
     }
     this.techDetailsParameter.emi = this.globalEMI;
-
     let data = {
       truckList: this.localData,
       detailsList: this.incomingData,
@@ -1042,7 +1036,7 @@ export class CarSubRedesignComponent implements OnInit {
     { field: 'Name', maxWidth: 115, width: 115, editable: true },
     { field: 'Amount', maxWidth: 80, width: 80, editable: true },
     { field: 'Date', maxWidth: 100, width: 100, editable: true },
-    { field: 'Timing' }
+    { field: 'Timing',editable: true }
   ];
 
 

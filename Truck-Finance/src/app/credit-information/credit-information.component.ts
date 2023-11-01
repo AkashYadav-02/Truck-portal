@@ -39,7 +39,7 @@ export class CreditInformationComponent implements OnInit {
   myObserver;
 
   currentUrl: any;
-
+  ORC: number = 8173.90;
   techDetailsParameter: any;
 
   creditScreenData: any;
