@@ -37,7 +37,7 @@
                 <p><b>Your Chosen Package:</b></p>
                 <p style="color: #0381BA;"><b>Your current installment is:</b></p>
                 <p><b>Your Total Amount of Finance</b></p>
-                <p>Down Payment</p>
+                <p>Balloon Payment</p>
                 <p>Fees & Charges</p>
                 <p>Repayment Frequency </p>
                 <p>APR of</p>
@@ -49,7 +49,7 @@
                 
                <p><b>{{package}}</b> </p>
                 <p style="color: #0381BA;">
-                    <b>{{numberWithCommas(techDetailsParameter.pramData.leftcard.currentInstallment)}}/month</b>
+                    <b>${{numberWithCommas(techDetailsParameter.pramData.leftcard.currentInstallment)}}/month</b>
                 </p>
                 <p><b>{{(techDetailsParameter.tableData.financing)}}</b></p>
                 <p>{{techDetailsParameter.pramData.leftcard.downpayment}}</p>
