@@ -888,11 +888,13 @@ datalist option {
     align-items: center;
     display: flex;
     justify-content: space-between;
+    
     margin-bottom: 5px;
 
     label{
         font-size: 15px;
         font-family: Verdana;
+        cursor: pointer;
         font-weight: 600;
     }
 }
@@ -1016,5 +1018,10 @@ datalist option {
     margin-right: 15px;
     background-color: #B7C301; //#ffffff;
     width: 8rem;
+}
+
+:host ::ng-deep .ag-header-cell{
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
