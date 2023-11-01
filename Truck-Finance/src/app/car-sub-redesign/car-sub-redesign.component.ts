@@ -66,11 +66,10 @@ export class CarSubRedesignComponent implements OnInit {
 
   calculateTotalPrice() {
     this.totalonroadprice = 0
-    this.totalemiprice = 7351.96
+    this.totalemiprice = 0
     for (let i = 0; i < this.incomingData.length; i++) {
       this.totalonroadprice += (this.incomingData[i].roadprice * this.incomingData[i].quantityy)
-      // this.totalemiprice += this.incomingData[i].emi * this.incomingData[i].quantityy
-    
+      this.totalemiprice += this.incomingData[i].emi    
     }
 
   }
@@ -714,11 +713,10 @@ export class CarSubRedesignComponent implements OnInit {
     const now = new Date()
     // Income Liabilities
     this.techDetailsParameter.price = this.storePrice;
-    if (this.globalEMI == 3169) {
-      this.globalEMI = 3244
+    if (this.globalEMI == 18,886) {
+      this.globalEMI = 7351.96
     }
     this.techDetailsParameter.emi = this.globalEMI;
-
     let data = {
       truckList: this.localData,
       detailsList: this.incomingData,

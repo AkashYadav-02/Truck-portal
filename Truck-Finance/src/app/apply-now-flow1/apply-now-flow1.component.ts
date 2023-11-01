@@ -59,7 +59,7 @@ export class ApplyNowFlow1Component implements OnInit {
   citizen: string = '';
   resident: string = '';
   yearsataddress: string = '';
-
+  ORC: number = 8173.90;
   street: string = '';
   city: string = '';
   state: string = '';

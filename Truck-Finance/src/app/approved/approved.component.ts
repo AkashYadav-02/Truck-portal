@@ -27,6 +27,7 @@ export class ApprovedComponent {
   // isCarCardVisible:boolean = false;
   isCarCardVisible1: boolean = false;
   package: string = 'Standard'
+  // ORC : number = 1972.09;
 
   public rowData$!: Observable<any[]>;
 
