@@ -18,6 +18,11 @@
     }
 }
 
+.scrollable-drop{
+    max-height: 200px; /* Set your desired height */
+    overflow-y: auto;
+}
+
 .car-profile-pic {
     margin-top: 0.5rem;
     background-color: #f8a10b;
