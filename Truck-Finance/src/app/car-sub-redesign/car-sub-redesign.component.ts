@@ -222,7 +222,7 @@ export class CarSubRedesignComponent implements OnInit {
 
   private saveAsExcelFile(buffer: any, fileName: string): void {
     const data: Blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-    saveAs(data, fileName + '_export_' + new Date().getTime() + '.xlsx');
+    saveAs(data, fileName + 'Repayment Schedule' + new Date().getTime() + '.xlsx');
   }
 
   // showEmi(input: number) {
