@@ -166,7 +166,7 @@
                 <div class="color-div">
                     <p class="mt-4">Color</p>
                     <div style="display: flex;">
-                        <div *ngFor="let item of colorList">
+                        <div *ngFor="let item of currentCarDetails[0].color_options">
                             <button class="dot redbtn color{{item}}" style="outline: solid 2px #a38c8c;"
                                 (click)="outline($event)"></button>
                         </div>
