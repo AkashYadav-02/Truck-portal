@@ -1007,15 +1007,23 @@ export class CarSubRedesignComponent implements OnInit {
   };
 
   rowData =[
-    { Name: 'Toyota', Amount: 'Celica', Date: 35000, Timing:"10:30am"},
-    { Name: 'Ford', Amount: 'Mondeo', Date: 32000, Timing:"10:30am"},
-    { Name: 'Porsche', Amount: 'Boxster', Date: 72000,  Timing:"10:30am"}
-];
+    { Name: 'Commission', Amount: '-300.00', Date:'23/10/2023', Timing:"Start"},
+    { Name: 'Documentation Fee', Amount: '-360.00', Date: '23/10/2023', Timing:"Date"},
+    { Name: 'GST Pay Back', Amount: '42,182.86', Date: '23/01/2024',  Timing:"Date"},
+    { Name: 'PPSR Fee', Amount: '8.00', Date: '23/10/2023', Timing:"Start"},
+    { Name: 'PPSR Search Fee', Amount: '160.00', Date: '23/10/2023', Timing:"Start"},
+    { Name: 'Stamp Duty', Amount: '-21,743', Date: '23/10/2023', Timing:"Start"},
+    { Name: 'Documentation Fee', Amount: '360', Date: '23/10/2023', Timing:"Start"},
+
+
+
+
+  ];
 
 columnDefs: ColDef[] = [
-  { field: 'Name'},
-  { field: 'Amount', editable: true },
-  { field: 'Date' },
+  { field: 'Name',maxWidth: 115, width:115, editable: true },
+  { field: 'Amount',maxWidth: 80,width:80, editable: true },
+  { field: 'Date',maxWidth: 100, width:100, editable: true  },
   { field: 'Timing' }
 ];
 
