@@ -69,7 +69,9 @@ export class CarSubRedesignComponent implements OnInit {
     this.totalemiprice = 0
     for (let i = 0; i < this.incomingData.length; i++) {
       this.totalonroadprice += (this.incomingData[i].roadprice + ((this.ORC +0.6) /2)  ) * this.incomingData[i].quantityy
-      this.totalemiprice += this.incomingData[i].emi    
+      this.totalemiprice += ((this.incomingData[i].emi-2091)/2) * this.incomingData[i].quantityy
+      console.log(this.totalemiprice);
+      
     } 
 
   }
