@@ -52,14 +52,25 @@ export class CarSubRedesignComponent implements OnInit {
   totalonroadprice: number = 0;
   totalemiprice: number = 0;
 
-  setCarData(listt: { id: number, roadprice: any, emi: any, quantityy: number }) {
+  
+
+  setCarData(listt: { id: number, roadprice: any, emi: any, quantityy: number, variant:[any, any], service:[any, any], tenure:any }) {
     // console.log("before", this.incomingData);
-    console.log("Hellll", listt);
-    this.incomingData[listt.id].roadprice = listt.roadprice;
+    console.log("Listt", listt);
+    if (typeof listt.roadprice == 'string'){
+      this.incomingData[listt.id].roadprice = Number(listt.roadprice.replace(/,/g, ''));
+    }else{
+      this.incomingData[listt.id].roadprice = listt.roadprice;
+    }
+    
     this.incomingData[listt.id].emi = listt.emi
     this.incomingData[listt.id].quantityy = listt.quantityy
+    this.incomingData[listt.id].variant = listt.variant
+    this.incomingData[listt.id].service = listt.service
+    this.incomingData[listt.id].tenure = listt.tenure
     this.calculateTotalPrice();
-    // this.incomingData.forEach((a: { roadprice: number; }) => sum += a.roadprice);//
+    console.log("Listt", this.incomingData);
+    // this.incomingData.forEach((a: { roadprice: number; }) => sum += a.roadprice);
 
   }
   ORC :number = 8173.90;
@@ -376,7 +387,7 @@ export class CarSubRedesignComponent implements OnInit {
             console.log("Local Data: ", this.localData);
             // console.log("Incoming Data: ", this.localData);
             for (let i = 0; i < this.localData.length; i++) {
-              this.incomingData.push({ name: this.localData[i].name, roadprice: 0, emi: 0, quantityy: 0 });
+              this.incomingData.push({ name: this.localData[i].name, roadprice: 0, emi: 0, quantityy: 0, variant:['',0],  service:['',0], tenure:0});
             }
 
             this.updatedPrice = this.techDetailsParameter.price;

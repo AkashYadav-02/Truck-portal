@@ -46,7 +46,8 @@ export class CarSubsCardComponent implements OnInit {
 
  
 
-  @Output() outGoingData=new EventEmitter<{id:number, roadprice:any, emi:any, quantityy:any}>()
+  @Output() outGoingData=new EventEmitter<{id:number, roadprice:any, emi:any, quantityy:any, variant:[any, any], service:[any, any], tenure:any}>()
+  
 
   storePrice:any;
   // techDetailsParameterList: any = [];
@@ -55,7 +56,13 @@ export class CarSubsCardComponent implements OnInit {
   increNum(){
     this.quantityy++;
     this.storePrice = this.storePrice.replace(/,/g, '');
-    this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),quantityy:this.quantityy})
+    this.outGoingData.emit({id:this.compid, 
+      roadprice:this.storePrice,
+      emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),
+      quantityy:this.quantityy, 
+      variant:[this.variantName, this.variant * 10000], 
+        service:[this.serviceName, this.service * 10000], 
+        tenure:this.selectedRadio})
     // console.log(this.storePrice);
     
     // this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),quantityy:this.quantityy})
@@ -66,7 +73,13 @@ export class CarSubsCardComponent implements OnInit {
     if (this.quantityy >1){
       this.quantityy--;
       this.storePrice = this.storePrice.replace(/,/g, '');
-    this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),quantityy:this.quantityy})
+      this.outGoingData.emit({id:this.compid, 
+        roadprice:this.storePrice,
+        emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),
+        quantityy:this.quantityy, 
+        variant:[this.variantName, this.variant * 10000], 
+          service:[this.serviceName, this.service * 10000], 
+          tenure:this.selectedRadio})
     // this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),quantityy:this.quantityy})
 
     }
@@ -78,7 +91,7 @@ export class CarSubsCardComponent implements OnInit {
   EMI: any;
   colorList: string[] = [];
   maxDownPayment?: number;
-  selectedRadio: string = 'large';
+  selectedRadio: string = '24';
   months_24: number = 1000; //3244
   months_36: number = 1500; //2246
   months_48: number = 2000; //1,750
@@ -224,6 +237,13 @@ export class CarSubsCardComponent implements OnInit {
         }
         break;
     }
+    this.outGoingData.emit({id:this.compid, 
+      roadprice:this.storePrice,
+      emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),
+      quantityy:this.quantityy, 
+      variant:[this.variantName, this.variant * 10000], 
+        service:[this.serviceName, this.service * 10000], 
+        tenure:this.selectedRadio})
   }
 
   resetAddedCost() {
@@ -335,7 +355,13 @@ export class CarSubsCardComponent implements OnInit {
     this.storePrice = this.updatedPrice;
     console.log("total emi is ", this.globalEMI);
       
-    this.outGoingData.emit({id:this.compid ,roadprice:this.price,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),quantityy:this.quantityy})
+    this.outGoingData.emit({id:this.compid, 
+      roadprice:this.storePrice,
+      emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),
+      quantityy:this.quantityy, 
+      variant:[this.variantName, this.variant * 10000], 
+        service:[this.serviceName, this.service * 10000], 
+        tenure:this.selectedRadio})
     
     this.currentCarDetails=this.carDetails.filter((car)=> {return car.name === this.techDetailsParameter.name});
     console.log("Current Car:", this.currentCarDetails);
@@ -608,7 +634,13 @@ export class CarSubsCardComponent implements OnInit {
       // console.log('EMI is of else loop ' + emi + typeof emi);
       this.globalEMI = emi;
       console.log("total emi is ", this.globalEMI);
-      this.outGoingData.emit({id:this.compid ,roadprice:this.price,emi:this.globalEMI,quantityy:this.quantityy})
+      this.outGoingData.emit({id:this.compid, 
+        roadprice:this.storePrice,
+        emi:this.globalEMI,
+        quantityy:this.quantityy, 
+        variant:[this.variantName, this.variant * 10000], 
+          service:[this.serviceName, this.service * 10000], 
+          tenure:this.selectedRadio})
       return emi;
     }
   }
@@ -629,11 +661,18 @@ export class CarSubsCardComponent implements OnInit {
     } else {
       this.storePrice = this.price + (num + this.service) * 10000;
     }
-    this.outGoingData.emit({id:this.compid,roadprice:this.storePrice,emi:this.globalEMI,quantityy:this.quantityy})
+    // this.outGoingData.emit({id:this.compid,roadprice:this.storePrice,emi:this.globalEMI,quantityy:this.quantityy})
     this.variant = num;
     // this.techDetailsParameter.price = this.storePrice;
     console.log(this.storePrice);
     this.variantName = this.currentCarDetails[0].select_variant[this.variant];
+    this.outGoingData.emit({id:this.compid, 
+      roadprice:this.storePrice,
+      emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),
+      quantityy:this.quantityy, 
+      variant:[this.variantName, this.variant * 10000], 
+        service:[this.serviceName, this.service * 10000], 
+        tenure:this.selectedRadio})
     // console.log(this.variantName);
     // console.log(this.currentCarDetails[0].select_variant);
     
@@ -654,15 +693,31 @@ export class CarSubsCardComponent implements OnInit {
       console.log('serive option else loop ' + this.service_package);
       this.storePrice = this.price + (num + this.variant) * 10000;
     }
-    this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.globalEMI,quantityy:this.quantityy})
+    // this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.globalEMI,quantityy:this.quantityy})
+    
     this.service = num;
+    this.outGoingData.emit({id:this.compid, 
+      roadprice:this.storePrice,
+      emi:this.globalEMI,
+      quantityy:this.quantityy, 
+      variant:[this.variantName, this.variant * 10000], 
+        service:[this.serviceName, this.service * 10000], 
+        tenure:this.selectedRadio})
     // this.techDetailsParameter.price = this.storePrice;
     console.log(this.storePrice);
   }
 
   selecMile(num: number) {
     this.mile = num;
-    this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),quantityy:this.quantityy})
+    this.outGoingData.emit({id:this.compid, 
+      roadprice:this.storePrice,
+      emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),
+      quantityy:this.quantityy, 
+      variant:[this.variantName, this.variant * 10000], 
+        service:[this.serviceName, this.service * 10000], 
+        tenure:this.selectedRadio})
+    
+    // this.outGoingData.emit({id:this.compid, roadprice:this.storePrice,emi:this.showEmi(this.calculateEMI(this.techDetailsParameter.price)),quantityy:this.quantityy})
     console.log("total emi is ", this.showEmi(this.calculateEMI(this.techDetailsParameter.price)));
   }
 

@@ -424,20 +424,20 @@
                                     <div class="qoute-leasehire form-checkbox form-check-inline">
                                         <input type="checkbox" name="radio11" checked disabled>
                                         <label class="form-check-label" for="inlineRadio1">
-                                            Signature Edition
+                                            {{incomingData[0].variant[0]}}
                                         </label>
                                     </div>
-                                    <label class="qoute-num">$ 0</label>
+                                    <label class="qoute-num">$ {{incomingData[0].variant[1]}}</label>
                                 </div>
                                 <div class="qoute-radio-body1" style="margin-left: 0;">
                                     <div class="qoute-leasehire form-checkbox form-check-inline">
                                         <input type="checkbox" name="radio12" checked disabled>
                                         <label class="form-check-label" for="inlineRadio1">
-                                            <!-- {{serviceName}} --> Standard
+                                            <!-- {{serviceName}} --> {{incomingData[0].service[0]}}
                                         </label>
                                     </div>
                                     <label class="qoute-num">
-                                        $ {{numberWithCommas(service * 10000)}}
+                                        $ {{numberWithCommas(incomingData[0].service[1])}}
                                     </label>
                                 </div>
                                 <div class="qoute-radio-body1" style="margin-left: 0;">
@@ -448,7 +448,7 @@
                                         </label>
                                     </div>
                                     <label class="qoute-num">
-                                        60
+                                        {{incomingData[0].tenure}}
                                     </label>
                                 </div>
                                 <div class="qoute-radio-body1" style="margin-left: 0;">
@@ -546,16 +546,16 @@
                                 <div class="qoute-radio-body1" style="margin-left: 0;">
                                     <div class="qoute-leasehire form-checkbox form-check-inline">
                                         <input type="checkbox" name="radio11" checked disabled>
-                                        <label class="form-check-label" for="inlineRadio1">Next Generation</label>
+                                        <label class="form-check-label" for="inlineRadio1">{{incomingData[1].variant[0]}}</label>
                                     </div>
-                                    <label class="qoute-num">$ 10,000</label>
+                                    <label class="qoute-num">$ {{incomingData[1].variant[1]}}</label>
                                 </div>
                                 <div class="qoute-radio-body1" style="margin-left: 0;">
                                     <div class="qoute-leasehire form-checkbox form-check-inline">
                                         <input type="checkbox" name="radio12" checked disabled>
-                                        <label class="form-check-label" for="inlineRadio1">{{serviceName}}</label>
+                                        <label class="form-check-label" for="inlineRadio1">{{incomingData[1].service[0]}}</label>
                                     </div>
-                                    <label class="qoute-num">$ {{numberWithCommas(service * 10000)}}</label>
+                                    <label class="qoute-num">$ {{numberWithCommas(incomingData[1].service[1])}}</label>
                                 </div>
                                 <div class="qoute-radio-body1" style="margin-left: 0;">
                                     <div class="qoute-leasehire form-checkbox form-check-inline">
@@ -565,7 +565,7 @@
                                         </label>
                                     </div>
                                     <label class="qoute-num">
-                                        60
+                                        {{incomingData[1].tenure}}
                                     </label>
                                 </div>
                                 <div class="qoute-radio-body1" style="margin-left: 0;">
