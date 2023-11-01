@@ -257,6 +257,7 @@ export class CarSubsCardComponent implements OnInit {
     private renderer: Renderer2,
     private formBuilder: FormBuilder
   ) {
+    this.ngOnInit()
     // this.myObserver = this.router.events.subscribe((event) => {
     //   if (event instanceof NavigationEnd) {
     //     this.currentUrl = event.url;

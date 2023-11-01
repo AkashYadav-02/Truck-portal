@@ -26,7 +26,7 @@
                       <div [style.display]="isCarCardVisible[i] ? 'inherit' : 'none'" [style.height]="isCarCardVisible[i] ? 'fit-content' : '0'">
                         <div class="d-flex" style="justify-content: space-between;">
                           <div class="package-details">
-                            <p><b>Variant: Standard</b> </p>
+                            <p><b>Variant: {{techDetailsParameter.detailsList[i].variant[0]}}</b> </p>
                             <p><b>No.of Units: {{techDetailsParameter.detailsList[i].quantityy}}</b> </p>
                           </div>
                         </div>
