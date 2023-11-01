@@ -105,7 +105,7 @@
                     <div *ngIf="currentCarDetails[0].category == 'Trucks'">
                         <h2 class="mt-4">ORC Details</h2>
                         <div>
-                            <div class="d-flex radio-btn-group mt-3">
+                            <div class="d-flex radio-btn-group mt-3" id="orc">
                                 <label class="mt-auto mb-auto OCR-cc d-flex" for="">ORC (exclusive):</label>
                                 <label class="ocr-input">$ 8173.90</label>
                             </div>
@@ -115,8 +115,10 @@
                             </div>
                             <div class="d-flex radio-btn-group mt-3">
                                 <label class="mt-auto mb-auto OCR-cc d-flex" for="">Term (Months):</label>
-                                <div class="scrollable-drop">
-                                    <select class="ocr-input" size="4">
+                                
+                                    <select class="ocr-input"   >
+                                     
+                                      
                                         <option value="">1</option>
                                         <option value="">2</option>
                                         <option value="">3</option>
@@ -128,9 +130,9 @@
                                         <option value="">9</option>
                                         <option value="">10</option>
                                         <option value="">11</option>
-                                        <option value="">12</option>
+                                        <option value="" selected>12</option>
                                     </select>
-                                </div>
+                                
                             </div>
                         </div>
 
