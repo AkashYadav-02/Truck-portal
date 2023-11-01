@@ -92,6 +92,11 @@ export class CreditInformationComponent implements OnInit {
  
 
   package: string = 'Standard';
+  isCarCardVisible: boolean[] = [];
+
+  toggleCarCardVisibility(index: number) {
+    this.isCarCardVisible[index] = !this.isCarCardVisible[index];
+  }
 
   romDigits: any[] = [
 
@@ -177,7 +182,7 @@ export class CreditInformationComponent implements OnInit {
   optcost:any='';
   netcost:any = '';
   netcost1:any = '';
-  isCarCardVisible:boolean = false;
+  // isCarCardVisible:boolean = false;
   isCarCardVisible1:boolean = false;
 
   calcnetcost(){

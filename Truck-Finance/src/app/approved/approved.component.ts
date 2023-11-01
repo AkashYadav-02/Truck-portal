@@ -24,11 +24,17 @@ disbursmentdetails = disbursmentdetails;
 myObserver ;
 currentUrl : any;
 techDetailsParameter : any;
-isCarCardVisible:boolean = false;
+// isCarCardVisible:boolean = false;
 isCarCardVisible1:boolean = false;
 package:string='Standard'
 
 public rowData$!: Observable<any[]>;
+
+isCarCardVisible: boolean[] = [];
+
+toggleCarCardVisibility(index: number) {
+  this.isCarCardVisible[index] = !this.isCarCardVisible[index];
+}
 carDetails=[
   {
     name:"Audi A8 L 2022",

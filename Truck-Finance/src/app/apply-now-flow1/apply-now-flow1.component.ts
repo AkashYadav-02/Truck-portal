@@ -27,7 +27,7 @@ export class ApplyNowFlow1Component implements OnInit {
   radio3 = '';
   radio4 = 'Individual';
   radio5 = 'Individual';
-  isCarCardVisible :boolean =false;
+  // isCarCardVisible :boolean =false;
   isCarCardVisible1 :boolean =false;
   
 
@@ -87,7 +87,11 @@ export class ApplyNowFlow1Component implements OnInit {
   dp: any = this.leftcard.downpayment
   //  lastname: string = "Aurionpro";
   // driversLicense: string = "1223@"; 
+  isCarCardVisible: boolean[] = [];
 
+  toggleCarCardVisibility(index: number) {
+    this.isCarCardVisible[index] = !this.isCarCardVisible[index];
+  }
 
   ngOnInit(): void {
     if (this.techDetailsParameter.option == 0) {

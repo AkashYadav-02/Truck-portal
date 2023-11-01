@@ -16,7 +16,7 @@ interface UploadEvent {
 })
 export class ApplyNowPendingComponent implements OnInit{
   uploadedFiles: any[] = [];
-  isCarCardVisible1:boolean=false;
+  // isCarCardVisible1:boolean=false;
 
   myObserver;
   currentUrl: any;
@@ -37,12 +37,17 @@ export class ApplyNowPendingComponent implements OnInit{
       }
     });
   }
+  isCarCardVisible: boolean[] = [];
+
+  toggleCarCardVisibility(index: number) {
+    this.isCarCardVisible[index] = !this.isCarCardVisible[index];
+  }
 
   numberWithCommas(x: any) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
-  isCarCardVisible:boolean = false;
+  // isCarCardVisible:boolean = false;
 
   ngOnInit(): void {
     console.log(this.techDetailsParameter);
