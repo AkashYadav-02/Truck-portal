@@ -42,11 +42,10 @@
         <p style="font-family: 'Verdana'; color: #0381BA;"><b>Your current installment is:</b></p>
         <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>Your Total Amount of Finance </b></p>
         <p style="font-family: 'Verdana';">Down Payment</p>
+        <p>Fees & Charges</p>
         <p style="font-family: 'Verdana';">Repayment Frequency </p>
         <p style="font-family: 'Verdana';">APR of </p>
         <p style="font-family: 'Verdana';">Add on (installment)</p>
-        <!-- <p>Upfront Taxes</p> -->
-        <!-- <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>Your Final Installment is</b></p> -->
         <p style="font-family: 'Verdana';"><b>Your first payment is</b></p>
 
       </div>
@@ -59,14 +58,14 @@
         <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>${{numberWithCommas(total_amt)}}</b></p>
 
         <p style="font-family: 'Verdana';">{{leftcard.downpayment}}</p>
+        <p>$20,667.82</p>
 
         <p style="font-family: 'Verdana';">{{leftcard.repaymentfrequency}}</p>
 
         <p style="font-family: 'Verdana';">{{leftcard.APR}}</p>
 
         <p style="font-family: 'Verdana';">{{ leftcard.addonInstallment }}</p>
-        <!-- <p style="font-family: 'Verdana';">${{numberWithCommas(taxes)}}</p> -->
-        <!-- <p style="font-family: 'Verdana'; font-family: 'Verdana';"><b>{{techDetailsParameter.pramData.pramData.leftcard.yourfinalinstallment}}</b></p> -->
+        
 
         <p style="font-family: 'Verdana';"><b>${{numberWithCommas(display_First_Pay)}}</b></p>
 
