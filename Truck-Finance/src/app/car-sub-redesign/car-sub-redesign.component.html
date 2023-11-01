@@ -194,46 +194,7 @@
                     </div>
                 </div>
 
-                <!-- <p class='subhead'>Tenure <span class="text-secondary">(Months)</span></p>
-                <p style="font-weight: bold; font-size: 13px; color: grey; margin-top: -15px;">Select Preferred
-                    Tenure</p>
-                <div class="numbers select-size">
-                    <input (click)="calculateTenure('small')" class="numbtn" type="radio" name="s-size" id="small"
-                        value="small" [(ngModel)]="selectedRadio" />
-                    <input (click)="calculateTenure('medium')" class="numbtn" type="radio" name="s-size" id="medium"
-                        value="medium" [(ngModel)]="selectedRadio" />
-                    <input (click)="calculateTenure('large')" class="numbtn" type="radio" name="s-size" id="large"
-                        value="large" [(ngModel)]="selectedRadio" />
-                    <input (click)="calculateTenure('xl')" class="numbtn" type="radio" name="s-size" id="x-large"
-                        value="xl" [(ngModel)]="selectedRadio" />
-                    <input (click)="calculateTenure('xxl')" class="numbtn" type="radio" name="s-size" id="xx-large"
-                        value="xxl" [(ngModel)]="selectedRadio" />
-                    <input (click)="calculateTenure('xxxl')" class="numbtn" type="radio" name="s-size" id="xtra-large"
-                        value="xxxl" [(ngModel)]="selectedRadio" />
-                    <label for="small" class="option-text">
-                        <p>24</p>
-                    </label>
-                    <label for="medium" class="option-text">
-                        <p>36</p>
-                    </label>
-                    <label for="large" class="option-text">
-                        <p>48</p>
-                    </label>
-                    <label for="x-large" class="option-text">
-                        <p>60</p>
-                    </label>
-                    <label for="xx-large" class="option-text">
-                        <p>72</p>
-                    </label>
-                    <label for="xtra-large" class="option-text">
-                        <p>84</p>
-                    </label>
-
-                </div> -->
-
-
-
-
+                
 
                 <p class='subhead'>Ownership</p>
 
@@ -518,7 +479,7 @@
 
                     </div>
 
-                    <div class="qoute-card">
+                    <div *ngIf="localData[1]" class="qoute-card">
                         <div class="qoute-head1" (click)="visible2 = !visible2">
                             <label>{{localData[1].name}}  on road price:</label>
                             <label>$ {{numberWithCommas(incomingData[1].roadprice)}}<i class="fa-solid" [class.fa-angle-down]="!visible2"

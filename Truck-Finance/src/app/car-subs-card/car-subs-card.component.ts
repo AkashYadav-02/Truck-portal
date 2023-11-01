@@ -288,6 +288,7 @@ export class CarSubsCardComponent implements OnInit {
       },
       category:'Trailers',
       emi: '811',
+      value: '--',
       select_variant: ['Standard', 'Next Generation', 'Signature Edition'],
     },
     {
@@ -302,6 +303,7 @@ export class CarSubsCardComponent implements OnInit {
       },
       category:'Trucks',
       emi: '2,778',
+      value: '134708',
       select_variant: [ 'Signature Edition', 'Next Generation'],
     },
     {
@@ -316,6 +318,7 @@ export class CarSubsCardComponent implements OnInit {
       },
       category:'Trailers',
       emi: '1,400',
+      value: '--',
       select_variant: ['T680', 'Next Generation', 'Signature Edition'],
     }
   ];
@@ -435,6 +438,11 @@ export class CarSubsCardComponent implements OnInit {
     
   }
 
+  truckValue(details:any){
+      return details.value;
+  }
+
+  
   // Function to update the percentage value when the slider changes
 
   updatePercentage(event: Event) {
