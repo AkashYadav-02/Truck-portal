@@ -114,15 +114,23 @@
                                 <label class="ocr-input">$ 817.39</label>
                             </div>
                             <div class="d-flex radio-btn-group mt-3">
-                                <label class="mt-auto mb-auto OCR-cc d-flex" for="">Term:</label>
-                                <select class="ocr-input">
-                                    <option value="">12</option>
-                                    <option value="">24</option>
-                                    <option value="">36</option>
-                                    <option value="">48</option>
-                                    <option value="">60</option>
-                                    <option value="">72</option>
-                                </select>
+                                <label class="mt-auto mb-auto OCR-cc d-flex" for="">Term (Months):</label>
+                                <div class="scrollable-drop">
+                                    <select class="ocr-input" size="4">
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                        <option value="">5</option>
+                                        <option value="">6</option>
+                                        <option value="">7</option>
+                                        <option value="">8</option>
+                                        <option value="">9</option>
+                                        <option value="">10</option>
+                                        <option value="">11</option>
+                                        <option value="">12</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
@@ -222,7 +230,7 @@
                 <div *ngIf="currentCarDetails[0].category == 'Trucks'">
                     <div class="d-flex radio-btn-group mt-4">
                         <label class="mt-auto mb-auto OCR-cc d-flex" for="">On Road:</label>
-                        <label class="ocr-input">$ {{numberWithCommas(storePrice)}}</label>
+                        <label class="ocr-input">$ {{numberWithCommas(storePrice)}}.60</label>
                         
                     </div>
                     <div class="d-flex radio-btn-group mt-3">
@@ -231,7 +239,7 @@
                     </div>
                     <div class="d-flex radio-btn-group mt-3">
                         <label class="mt-auto mb-auto OCR-cc d-flex" for="">Residual Value:</label>
-                        <label class="ocr-input">$ {{numberWithCommas('134708')}}</label>
+                        <label class="ocr-input">$ {{numberWithCommas('134,708')}}</label>
                     </div>
                 </div>
             </div>
@@ -241,7 +249,7 @@
                 <div *ngIf="currentCarDetails[0].category == 'Trailers'">
                     <div class="d-flex radio-btn-group mt-4">
                         <label class="mt-auto mb-auto OCR-cc d-flex" for="">On Road:</label>
-                        <label class="ocr-input">$ {{numberWithCommas(storePrice)}}</label>
+                        <label class="ocr-input">$ {{numberWithCommas(storePrice)}}.00</label>
                         
                     </div>
                     <div class="d-flex radio-btn-group mt-3">
