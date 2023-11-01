@@ -59,16 +59,18 @@ export class CarSubRedesignComponent implements OnInit {
     this.incomingData[listt.id].emi = listt.emi
     this.incomingData[listt.id].quantityy = listt.quantityy
     this.calculateTotalPrice();
-    // this.incomingData.forEach((a: { roadprice: number; }) => sum += a.roadprice);
+    // this.incomingData.forEach((a: { roadprice: number; }) => sum += a.roadprice);//
 
   }
+  ORC :number = 8173.90;
 
   calculateTotalPrice() {
     this.totalonroadprice = 0
-    this.totalemiprice = 0
+    this.totalemiprice = 7351.96
     for (let i = 0; i < this.incomingData.length; i++) {
-      this.totalonroadprice += this.incomingData[i].roadprice * this.incomingData[i].quantityy
-      this.totalemiprice += this.incomingData[i].emi * this.incomingData[i].quantityy
+      this.totalonroadprice += (this.incomingData[i].roadprice * this.incomingData[i].quantityy)
+      // this.totalemiprice += this.incomingData[i].emi * this.incomingData[i].quantityy
+    
     }
 
   }
@@ -1023,7 +1025,7 @@ export class CarSubRedesignComponent implements OnInit {
     { field: 'Name', maxWidth: 115, width: 115, editable: true },
     { field: 'Amount', maxWidth: 80, width: 80, editable: true },
     { field: 'Date', maxWidth: 100, width: 100, editable: true },
-    { field: 'Timing' }
+    { field: 'Timing',editable: true }
   ];
 
 
