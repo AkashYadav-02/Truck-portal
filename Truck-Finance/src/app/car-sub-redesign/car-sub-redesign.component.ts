@@ -4,7 +4,7 @@ import { saveAs } from 'file-saver';
 // import * as fs from 'fs-extra';
 // import * as fs from 'fs-extra';
 import { Router, NavigationEnd } from '@angular/router';
-import {ElementRef } from '@angular/core';
+import { ElementRef } from '@angular/core';
 
 import { flatMap, partition } from 'rxjs';
 import { GridOptions, ColDef } from 'ag-grid-community';
@@ -29,13 +29,13 @@ export class CarSubRedesignComponent implements OnInit {
   currentUrl: any;
   variantName: any = "Default";
 
-  
+
 
   // currentCar:any;
 
-  visible1:boolean=false;
-  visible2:boolean=false;
-  visible3:boolean=false;
+  visible1: boolean = false;
+  visible2: boolean = false;
+  visible3: boolean = false;
   // selectedProgram: string ='';
   ownership: any = "Business";
   currentCarDetails!: any;
@@ -47,12 +47,12 @@ export class CarSubRedesignComponent implements OnInit {
   price = 0;
   localData: any;
 
-  incomingData:any= [];
+  incomingData: any = [];
 
-  totalonroadprice:number = 0;
-  totalemiprice:number = 0;
+  totalonroadprice: number = 0;
+  totalemiprice: number = 0;
 
-  setCarData(listt: { id: number, roadprice: any, emi: any, quantityy:number}) {
+  setCarData(listt: { id: number, roadprice: any, emi: any, quantityy: number }) {
     // console.log("before", this.incomingData);
     console.log("Hellll", listt);
     this.incomingData[listt.id].roadprice = listt.roadprice;
@@ -60,27 +60,27 @@ export class CarSubRedesignComponent implements OnInit {
     this.incomingData[listt.id].quantityy = listt.quantityy
     this.calculateTotalPrice();
     // this.incomingData.forEach((a: { roadprice: number; }) => sum += a.roadprice);
-    
+
   }
 
-  calculateTotalPrice(){
+  calculateTotalPrice() {
     this.totalonroadprice = 0
     this.totalemiprice = 0
-    for (let i=0; i<this.incomingData.length; i++){
+    for (let i = 0; i < this.incomingData.length; i++) {
       this.totalonroadprice += this.incomingData[i].roadprice * this.incomingData[i].quantityy
       this.totalemiprice += this.incomingData[i].emi * this.incomingData[i].quantityy
     }
-    
+
   }
-  Paccar :string =''
-  Monthly :string =''
-  Advance :string =''
-  AUD :string =''
-  lessor : string =''
+  Paccar: string = ''
+  Monthly: string = ''
+  Advance: string = ''
+  AUD: string = ''
+  lessor: string = ''
 
   datapopulate(event: Event): void {
     const selectedValue = (event.target as HTMLSelectElement).value;
-  
+
     // Use the selectedValue to populate other fields or properties
     if (selectedValue === 'Term') {
       this.Paccar = 'Paccar';
@@ -94,8 +94,8 @@ export class CarSubRedesignComponent implements OnInit {
       this.Advance = 'Advance';
       this.AUD = 'AUD ($)';
       this.lessor = '5.24'
-    } 
-    else if (selectedValue === 'Select'){
+    }
+    else if (selectedValue === 'Select') {
       this.Paccar = '';
       this.Monthly = '';
       this.Advance = '';
@@ -103,13 +103,13 @@ export class CarSubRedesignComponent implements OnInit {
       this.lessor = ''
     }
   }
-  
-  
-  
+
+
+
   specificaiton: any;
   isEligible: number = -1;
   EMI: any;
-  downpayment1:any = '';
+  downpayment1: any = '';
   colorList: string[] = [];
   maxDownPayment?: number;
   selectedRadio: string = 'large';
@@ -139,75 +139,75 @@ export class CarSubRedesignComponent implements OnInit {
       this.isCarCardVisible = true;
     }
   }
-   jsonData: any[] = [   // Replace with your JSON data
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status":"Pending","Allocation Status":"Unallocated","Installment":"1","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status":"Pending","Allocation Status":"Unallocated","Installment":"0","Type":"Documentation Fee","Calc Date":"23-10-2023","Currency":"AUD","Gross Amount":"360.00","Amount":"360.00","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status":"Pending","Allocation Status":"Unallocated","Installment":"0","Type":"PPSR Fee","Calc Date":"23-10-2023","Currency":"AUD","Gross Amount":"8.00","Amount":"8.00","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "OutFlow","Status":"Pending","Allocation Status":"Unallocated","Installment":"0","Type":"Commission","Calc Date":"23-10-2023","Currency":"AUD","Gross Amount":"-300.00","Amount":"-300.00","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status":"Pending","Allocation Status":"Unallocated","Installment":"0","Type":"PPSR Fee","Calc Date":"23-10-2023","Currency":"AUD","Gross Amount":"160.00","Amount":"160.00","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status":"Pending","Allocation Status":"Unallocated","Installment":"2","Type":"Installment","Calc Date":"02-12-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status":"Pending","Allocation Status":"Unallocated","Installment":"3","Type":"Installment","Calc Date":"02-01-2024","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },    
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status":"Pending","Allocation Status":"Unallocated","Installment":"4","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },    
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status":"Pending","Allocation Status":"Unallocated","Installment":"0","Type":"GST Pay Back","Calc Date":"23-01-2024","Currency":"AUD","Gross Amount":"42182.86","Amount":"42182.86","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },    
-    
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"5","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },    
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"6","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"7","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"8","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-     { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"9","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-     { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"10","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"11","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"12","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"13","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"14","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"15","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" }, 
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"16","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"17","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"18","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"19","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"20","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"21","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"22","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"23","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"24","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"25","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"26","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"27","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"28","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"29","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"30","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"31","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"32","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"33","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"34","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"35","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"36","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"37","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"38","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"39","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"40","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"41","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"42","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"43","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"44","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"45","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"46","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"47","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"48","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"49","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"50","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"51","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"52","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"53","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"54","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"55","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"56","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"57","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"58","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"59","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" },
-    { "Is Cash": "Is Cash", "Flow Direction": "Inflow","Status": "Pending","Allocation Status":"Unallocated","Installment":"60","Type":"Installment","Calc Date":"02-11-2023","Currency":"AUD","Gross Amount":"7351.96","Amount":"7351.96","Bank Account":"880656904","Business Unit":"PACCAR","Party Name":"ABC logistics Pty Ltd" }
-    
-  
+  jsonData: any[] = [   // Replace with your JSON data
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "1", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "0", "Type": "Documentation Fee", "Calc Date": "23-10-2023", "Currency": "AUD", "Gross Amount": "360.00", "Amount": "360.00", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "0", "Type": "PPSR Fee", "Calc Date": "23-10-2023", "Currency": "AUD", "Gross Amount": "8.00", "Amount": "8.00", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "OutFlow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "0", "Type": "Commission", "Calc Date": "23-10-2023", "Currency": "AUD", "Gross Amount": "-300.00", "Amount": "-300.00", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "0", "Type": "PPSR Fee", "Calc Date": "23-10-2023", "Currency": "AUD", "Gross Amount": "160.00", "Amount": "160.00", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "2", "Type": "Installment", "Calc Date": "02-12-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "3", "Type": "Installment", "Calc Date": "02-01-2024", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "4", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "0", "Type": "GST Pay Back", "Calc Date": "23-01-2024", "Currency": "AUD", "Gross Amount": "42182.86", "Amount": "42182.86", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "5", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "6", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "7", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "8", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "9", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "10", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "11", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "12", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "13", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "14", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "15", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "16", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "17", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "18", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "19", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "20", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "21", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "22", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "23", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "24", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "25", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "26", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "27", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "28", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "29", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "30", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "31", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "32", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "33", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "34", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "35", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "36", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "37", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "38", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "39", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "40", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "41", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "42", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "43", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "44", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "45", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "46", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "47", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "48", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "49", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "50", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "51", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "52", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "53", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "54", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "55", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "56", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "57", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "58", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "59", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" },
+    { "Is Cash": "Is Cash", "Flow Direction": "Inflow", "Status": "Pending", "Allocation Status": "Unallocated", "Installment": "60", "Type": "Installment", "Calc Date": "02-11-2023", "Currency": "AUD", "Gross Amount": "7351.96", "Amount": "7351.96", "Bank Account": "880656904", "Business Unit": "PACCAR", "Party Name": "ABC logistics Pty Ltd" }
+
+
   ];
   exportToExcel() {
     const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.jsonData);
@@ -344,7 +344,7 @@ export class CarSubRedesignComponent implements OnInit {
   //   this.techDetailsParameter.price = this.updatedPrice;
   // }
 
-
+  display: boolean = false;
 
   constructor(
     private redirectMenu: RedirectMenuService,
@@ -353,10 +353,8 @@ export class CarSubRedesignComponent implements OnInit {
     private formBuilder: FormBuilder,
     private el: ElementRef,
     private http: HttpClient
-  )
-
-   {
-  this.loanHire='HirePurchase'
+  ) {
+    this.loanHire = 'HirePurchase'
     this.myObserver = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.currentUrl = event.url;
@@ -366,26 +364,31 @@ export class CarSubRedesignComponent implements OnInit {
         if (navigation?.extras.state) {
           this.techDetailsParameterList = navigation.extras.state;
           this.localData = Object.values(this.techDetailsParameterList);
-          this.techDetailsParameter = this.localData[0];
-          // console.log("constructor");
-          // console.log("Tech-Param: ",this.techDetailsParameter);
-          // console.log("List: ", this.techDetailsParameterList);
-          // console.log("Local Data: ", this.localData);
-          // console.log("Incoming Data: ", this.localData);
-          for (let i = 0; i < this.localData.length; i++) {
-            this.incomingData.push({name:this.localData[i].name, roadprice: 0, emi: 0, quantityy:0});
-          }
+          if (this.localData.length != 0) {
+            this.display=true
+            this.techDetailsParameter = this.localData[0];
+            // console.log("constructor");
+            // console.log("Tech-Param: ",this.techDetailsParameter);
+            // console.log("List: ", this.techDetailsParameterList);
+            console.log("Local Data: ", this.localData);
+            // console.log("Incoming Data: ", this.localData);
+            for (let i = 0; i < this.localData.length; i++) {
+              this.incomingData.push({ name: this.localData[i].name, roadprice: 0, emi: 0, quantityy: 0 });
+            }
 
-          this.updatedPrice = this.techDetailsParameter.price;
-          this.price = Number(
-            this.techDetailsParameter.price.replace(/,/g, '')
-          );
+            this.updatedPrice = this.techDetailsParameter.price;
+            this.price = Number(
+              this.techDetailsParameter.price.replace(/,/g, '')
+            );
 
-          console.log(this.price);
+            console.log(this.price);
 
-          this.amm = Math.ceil(this.techDetailsParameter.price.replace(/,/g, '') * 0.35);
+            this.amm = Math.ceil(this.techDetailsParameter.price.replace(/,/g, '') * 0.35);
 
-          this.storePrice = this.updatedPrice;
+            this.storePrice = this.updatedPrice;
+
+          } 
+
           // console.log('stored price', this.storePrice);\
         }
       }
@@ -467,7 +470,7 @@ export class CarSubRedesignComponent implements OnInit {
     //     grey: 'Grey',
     //   },
     // },
-    
+
   ];
 
   //this.currentCar = this.carDetails.filter((car) => { return car.name === this.techDetailsParameter.name; })
@@ -501,7 +504,7 @@ export class CarSubRedesignComponent implements OnInit {
 
     this.filterDetails();
     // this.rowData$ = this.http.get<any[]>('../../assets/JSONfiles/approved-data.json');
-    
+
 
     // $(document).ready(function () {
     //   $('#demo').vc3dEye({
@@ -540,7 +543,7 @@ export class CarSubRedesignComponent implements OnInit {
     link.click();
     this.renderer.removeChild(this.el.nativeElement, link);
   }
-  EXCELTOJSON(){
+  EXCELTOJSON() {
 
   }
   checkNow() {
@@ -992,13 +995,13 @@ export class CarSubRedesignComponent implements OnInit {
   }
 
   downpay() {
-    if (this.downpayment1){
-      let value= '$'+this.downpayment1?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    return value;
+    if (this.downpayment1) {
+      let value = '$' + this.downpayment1?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      return value;
 
     }
     return '$0'
-    
+
   }
 
   defaultColDef = {
@@ -1006,37 +1009,37 @@ export class CarSubRedesignComponent implements OnInit {
     width: 100
   };
 
-  rowData =[
-    { Name: 'Commission', Amount: '-300.00', Date:'23/10/2023', Timing:"Start"},
-    { Name: 'Documentation Fee', Amount: '-360.00', Date: '23/10/2023', Timing:"Date"},
-    { Name: 'GST Pay Back', Amount: '42,182.86', Date: '23/01/2024',  Timing:"Date"},
-    { Name: 'PPSR Fee', Amount: '8.00', Date: '23/10/2023', Timing:"Start"},
-    { Name: 'PPSR Search Fee', Amount: '160.00', Date: '23/10/2023', Timing:"Start"},
-    { Name: 'Stamp Duty', Amount: '-21,743', Date: '23/10/2023', Timing:"Start"},
-    { Name: 'Documentation Fee', Amount: '360', Date: '23/10/2023', Timing:"Start"},
+  rowData = [
+    { Name: 'Commission', Amount: '-300.00', Date: '23/10/2023', Timing: "Start" },
+    { Name: 'Documentation Fee', Amount: '-360.00', Date: '23/10/2023', Timing: "Date" },
+    { Name: 'GST Pay Back', Amount: '42,182.86', Date: '23/01/2024', Timing: "Date" },
+    { Name: 'PPSR Fee', Amount: '8.00', Date: '23/10/2023', Timing: "Start" },
+    { Name: 'PPSR Search Fee', Amount: '160.00', Date: '23/10/2023', Timing: "Start" },
+    { Name: 'Stamp Duty', Amount: '-21,743', Date: '23/10/2023', Timing: "Start" },
+    { Name: 'Documentation Fee', Amount: '360', Date: '23/10/2023', Timing: "Start" },
 
 
 
 
   ];
 
-columnDefs: ColDef[] = [
-  { field: 'Name',maxWidth: 115, width:115, editable: true },
-  { field: 'Amount',maxWidth: 80,width:80, editable: true },
-  { field: 'Date',maxWidth: 100, width:100, editable: true  },
-  { field: 'Timing' }
-];
+  columnDefs: ColDef[] = [
+    { field: 'Name', maxWidth: 115, width: 115, editable: true },
+    { field: 'Amount', maxWidth: 80, width: 80, editable: true },
+    { field: 'Date', maxWidth: 100, width: 100, editable: true },
+    { field: 'Timing' }
+  ];
 
 
-gridOptions = {
-  defaultColDef: {
-    sortable: true,
-    filter: true,
-    // floatingFilter: true,
-    width: 93,
-    maxWidth: 93,
-    cellStyle: { 'font-family': 'Verdana', 'font-size': '12px', 'padding':'0px 10px'}
-  },
-  headerHeight: 25
-};
+  gridOptions = {
+    defaultColDef: {
+      sortable: true,
+      filter: true,
+      // floatingFilter: true,
+      width: 93,
+      maxWidth: 93,
+      cellStyle: { 'font-family': 'Verdana', 'font-size': '12px', 'padding': '0px 10px' }
+    },
+    headerHeight: 25
+  };
 }
