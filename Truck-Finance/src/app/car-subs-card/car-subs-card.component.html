@@ -107,7 +107,7 @@
                         <div>
                             <div class="d-flex radio-btn-group mt-3">
                                 <label class="mt-auto mb-auto OCR-cc d-flex" for="">ORC (exclusive):</label>
-                                <input type="text" class="ocr-input">
+                                <label class="ocr-input">$ 8173.90</label>
                             </div>
                             <div class="d-flex radio-btn-group mt-3">
                                 <label class="mt-auto mb-auto OCR-cc d-flex" for="">Tax (ORC):</label>
@@ -226,12 +226,50 @@
 
                     </div>
                 </div>
-                <div class="mt-4">
+            <div>
+                <div *ngIf="currentCarDetails[0].category == 'Trucks'">
+                    <div class="d-flex radio-btn-group mt-4">
+                        <label class="mt-auto mb-auto OCR-cc d-flex" for="">On Road:</label>
+                        <label class="ocr-input">$ {{numberWithCommas(storePrice)}}</label>
+                        
+                    </div>
+                    <div class="d-flex radio-btn-group mt-3">
+                        <label class="mt-auto mb-auto OCR-cc d-flex" for="">Taxes:</label>
+                        <label class="ocr-input">$ 19,023.36</label>
+                    </div>
+                    <div class="d-flex radio-btn-group mt-3">
+                        <label class="mt-auto mb-auto OCR-cc d-flex" for="">Residual Value:</label>
+                        <label class="ocr-input">$ {{numberWithCommas('134708')}}</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div>
+                <div *ngIf="currentCarDetails[0].category == 'Trailers'">
+                    <div class="d-flex radio-btn-group mt-4">
+                        <label class="mt-auto mb-auto OCR-cc d-flex" for="">On Road:</label>
+                        <label class="ocr-input">$ {{numberWithCommas(storePrice)}}</label>
+                        
+                    </div>
+                    <div class="d-flex radio-btn-group mt-3">
+                        <label class="mt-auto mb-auto OCR-cc d-flex" for="">Taxes:</label>
+                        <label class="ocr-input">$ 23,159.50    </label>
+                    </div>
+                    <div class="d-flex radio-btn-group mt-3">
+                        <label class="mt-auto mb-auto OCR-cc d-flex" for="">Residual Value:</label>
+                        <label class="ocr-input">$ </label>
+                    </div>
+                </div>
+            </div>
+
+
+                <!-- <div class="mt-4">
                     <h6><b>On Road: {{numberWithCommas(storePrice)}}</b></h6>
                     <h6><b>Residual Value: {{numberWithCommas('134708')}}</b></h6>
-                </div>
+                </div> -->
 
-            </div>
+        </div>
         </div>
     </div>
 
